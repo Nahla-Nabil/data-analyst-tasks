@@ -3,75 +3,62 @@
 <head>
 <meta charset="UTF-8">
 <title>Data Quality Summary</title>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   @page { size: A4; margin: 0; }
   * { box-sizing: border-box; }
   body {
-    margin: 0; background: #faf9f6; color: #1a1a18;
-    font-family: 'IBM Plex Sans', system-ui, -apple-system, sans-serif; font-size: 12.5px; line-height: 1.55;
+    margin: 0; background: #eef4fb; color: #1c3d5a;
+    font-family: Arial, Helvetica, sans-serif; font-size: 12.5px; line-height: 1.55;
   }
-  .page { width: 210mm; min-height: 297mm; margin: 0 auto; padding: 16mm 16mm 14mm 16mm; }
+  .page { width: 210mm; min-height: 297mm; margin: 0 auto; padding: 14mm 14mm 12mm 14mm; }
 
-  .masthead { border-top: 2px solid #1a1a18; padding-top: 10px; }
-  .eyebrow { font-size: 10px; letter-spacing: 0.13em; text-transform: uppercase; color: #5a584f; font-weight: 600; }
-  h1 { font-family: 'Newsreader', Georgia, serif; font-size: 27px; font-weight: 600; margin: 6px 0 6px 0; letter-spacing: -0.01em; }
-  .byline { font-size: 11px; color: #5a584f; padding-bottom: 10mm; border-bottom: 1px solid #ddd9cd; margin-bottom: 8mm; }
-  .byline b { color: #1a1a18; font-weight: 600; }
+  h1 { font-size: 22px; font-weight: bold; margin: 0 0 4px 0; color: #123456; }
+  .subtitle { font-size: 11px; color: #4d6e8c; margin-bottom: 8mm; }
 
-  .stat-strip { display: flex; margin-bottom: 8mm; }
-  .stat { flex: 1; padding-right: 14px; margin-right: 14px; border-right: 1px solid #ddd9cd; }
-  .stat:last-child { border-right: none; }
-  .stat-num { font-family: 'Newsreader', Georgia, serif; font-size: 21px; font-weight: 600; }
-  .stat-label { font-size: 9.5px; color: #8c8a80; text-transform: uppercase; letter-spacing: 0.05em; margin-top: 2px; }
+  .stat-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 8mm; }
+  .stat { background: #ffffff; border: 1px solid #c7dcf0; border-radius: 6px; padding: 10px 12px; text-align: center; }
+  .stat-num { font-size: 18px; font-weight: bold; color: #1c3d5a; }
+  .stat-label { font-size: 9.5px; color: #4d6e8c; margin-top: 2px; }
 
-  .context { border-top: 1px solid #ddd9cd; padding-top: 10px; margin-bottom: 8mm; }
-  .section-label { font-size: 10px; letter-spacing: 0.07em; text-transform: uppercase; color: #5a584f; font-weight: 600; margin-bottom: 6px; }
-  .context p { margin: 0; color: #5a584f; font-size: 12px; max-width: 165mm; }
-  .context em { font-style: italic; color: #1a1a18; }
+  .box { background: #ffffff; border: 1px solid #c7dcf0; border-radius: 6px; padding: 10px 14px; margin-bottom: 6mm; }
+  .box p { margin: 0; color: #1c3d5a; font-size: 11.5px; }
 
-  table { width: 100%; border-collapse: collapse; margin-bottom: 8mm; }
+  table { width: 100%; border-collapse: collapse; background: #ffffff; border: 1px solid #c7dcf0; border-radius: 6px; overflow: hidden; margin-bottom: 6mm; }
   thead th {
-    text-align: left; font-size: 9.5px; text-transform: uppercase; letter-spacing: 0.05em;
-    color: #5a584f; font-weight: 600; padding: 0 10px 8px 0; border-bottom: 2px solid #1a1a18;
+    text-align: left; font-size: 10px; color: #4d6e8c; font-weight: bold;
+    padding: 8px 10px; background: #eef4fb; border-bottom: 1px solid #c7dcf0;
   }
-  tbody tr { border-bottom: 1px solid #ddd9cd; }
-  tbody td { padding: 10px 10px 10px 0; vertical-align: top; font-size: 11.5px; }
-  .c-issue { font-weight: 600; width: 24%; }
-  .c-scope { width: 15%; color: #5a584f; white-space: nowrap; }
-  .c-fix { width: 45%; color: #1a1a18; }
+  tbody tr { border-bottom: 1px solid #c7dcf0; }
+  tbody tr:last-child { border-bottom: none; }
+  tbody td { padding: 9px 10px; vertical-align: top; font-size: 11.5px; }
+  .c-issue { font-weight: bold; width: 24%; }
+  .c-scope { width: 15%; color: #4d6e8c; white-space: nowrap; }
+  .c-fix { width: 45%; }
   .c-status { width: 11%; }
-  .tag { display: inline-flex; align-items: center; gap: 5px; font-size: 10.5px; font-weight: 600; color: #5a584f; white-space: nowrap; }
-  .dot { width: 6px; height: 6px; border-radius: 50%; display: inline-block; }
+  .tag { font-size: 10.5px; font-weight: bold; white-space: nowrap; }
 
-  .validated { border-top: 1px solid #ddd9cd; padding-top: 10px; }
-  .check-list { display: flex; flex-direction: column; gap: 6px; margin-top: 6px; }
-  .check { display: flex; align-items: baseline; gap: 8px; font-size: 11.5px; color: #1a1a18; font-family: 'Newsreader', Georgia, serif; }
-  .check .mark { color: #1e7a4a; font-family: 'IBM Plex Sans', system-ui, -apple-system, sans-serif; font-weight: 600; }
+  .check-list { display: flex; flex-direction: column; gap: 5px; }
+  .check { font-size: 11.5px; color: #1c3d5a; }
+  .check b { color: #1e7a4a; }
 
   footer {
-    margin-top: 12mm; padding-top: 8px; border-top: 1px solid #ddd9cd;
-    color: #8c8a80; font-size: 9.5px; display: flex; justify-content: space-between;
+    margin-top: 8mm; color: #4d6e8c; font-size: 9.5px; display: flex; justify-content: space-between;
   }
 </style>
 </head>
 <body>
 <div class="page">
-  <div class="masthead">
-    <div class="eyebrow">Task 2 &middot; Sales Data (FactSale)</div>
-    <h1>Data Quality Summary</h1>
-    <div class="byline"><b>Prepared by Nahla Nabil</b> &middot; VOLTIX Data Analyst Internship &middot; what was checked in 26,397 raw sales line items, what was found, and how each issue was resolved before analysis.</div>
-  </div>
+  <h1>Data Quality Summary</h1>
+  <div class="subtitle">Task 2 &mdash; Sales Data (FactSale) &middot; Nahla Nabil, VOLTIX Data Analyst Internship &middot; what was checked in 26,397 raw sales line items, what was found, and how each issue was resolved before analysis.</div>
 
-  <div class="stat-strip">
+  <div class="stat-row">
     <div class="stat"><div class="stat-num">26,397</div><div class="stat-label">Rows checked</div></div>
     <div class="stat"><div class="stat-num">8</div><div class="stat-label">Issues reviewed</div></div>
     <div class="stat"><div class="stat-num">0</div><div class="stat-label">Broken formulas</div></div>
     <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Rows clean after fixes</div></div>
   </div>
 
-  <div class="context">
-    <div class="section-label">Context</div>
+  <div class="box">
     <p>I only got the fact table (<em>FactSale.csv</em>) &mdash; no lookup tables for products, customers, or
     salespeople. So a couple of items below aren't things I "fixed," they're just limits of what I was
     given. I flagged those instead of making up IDs or names that don't actually exist in the data.</p>
@@ -87,7 +74,7 @@
   <td class="c-issue">Missing Delivery Date</td>
   <td class="c-scope">13 rows (0.05%)</td>
   <td class="c-fix">Filled in as Invoice Date + 1 day &mdash; the pattern in 100% of the complete rows.</td>
-  <td class="c-status"><span class="tag"><span class="dot" style="background:#1e7a4a"></span>Fixed</span></td>
+  <td class="c-status"><span class="tag" style="color:#1e7a4a">&#9679; Fixed</span></td>
 </tr>
 
 
@@ -95,7 +82,7 @@
   <td class="c-issue">Inconsistent date text format</td>
   <td class="c-scope">All rows</td>
   <td class="c-fix">Parsed and standardized to ISO format (YYYY-MM-DD).</td>
-  <td class="c-status"><span class="tag"><span class="dot" style="background:#1e7a4a"></span>Fixed</span></td>
+  <td class="c-status"><span class="tag" style="color:#1e7a4a">&#9679; Fixed</span></td>
 </tr>
 
 
@@ -103,7 +90,7 @@
   <td class="c-issue">Numeric columns stored as quoted text</td>
   <td class="c-scope">All rows</td>
   <td class="c-fix">Verified / converted to proper numeric types.</td>
-  <td class="c-status"><span class="tag"><span class="dot" style="background:#1e7a4a"></span>Fixed</span></td>
+  <td class="c-status"><span class="tag" style="color:#1e7a4a">&#9679; Fixed</span></td>
 </tr>
 
 
@@ -111,7 +98,7 @@
   <td class="c-issue">Customer Key = 0 (no customer captured)</td>
   <td class="c-scope">9,077 rows (34.4%)</td>
   <td class="c-fix">Not an error &mdash; flagged with a new Customer_Type column instead of guessing an ID.</td>
-  <td class="c-status"><span class="tag"><span class="dot" style="background:#a8631a"></span>Flagged</span></td>
+  <td class="c-status"><span class="tag" style="color:#a8631a">&#9679; Flagged</span></td>
 </tr>
 
 
@@ -119,7 +106,7 @@
   <td class="c-issue">Duplicate rows</td>
   <td class="c-scope">0 found</td>
   <td class="c-fix">Checked full-row and Sale Key (primary key) duplication &mdash; none present.</td>
-  <td class="c-status"><span class="tag"><span class="dot" style="background:#2a5f8f"></span>Checked</span></td>
+  <td class="c-status"><span class="tag" style="color:#2e75b6">&#9679; Checked</span></td>
 </tr>
 
 
@@ -127,7 +114,7 @@
   <td class="c-issue">Negative Quantity / Unit Price</td>
   <td class="c-scope">0 found</td>
   <td class="c-fix">No invalid transaction volumes or prices.</td>
-  <td class="c-status"><span class="tag"><span class="dot" style="background:#2a5f8f"></span>Checked</span></td>
+  <td class="c-status"><span class="tag" style="color:#2e75b6">&#9679; Checked</span></td>
 </tr>
 
 
@@ -135,7 +122,7 @@
   <td class="c-issue">Negative Profit (loss-making sales)</td>
   <td class="c-scope">566 rows (2.1%)</td>
   <td class="c-fix">Kept as-is &mdash; a real, concentrated business finding (see Key Insights), not a data error.</td>
-  <td class="c-status"><span class="tag"><span class="dot" style="background:#b5322f"></span>Kept</span></td>
+  <td class="c-status"><span class="tag" style="color:#b5322f">&#9679; Kept</span></td>
 </tr>
 
 
@@ -143,18 +130,17 @@
   <td class="c-issue">No product / customer / salesperson names</td>
   <td class="c-scope">All rows</td>
   <td class="c-fix">Only the fact table was provided (no dimension tables) &mdash; those fields are reported by ID.</td>
-  <td class="c-status"><span class="tag"><span class="dot" style="background:#8c8a80"></span>Noted</span></td>
+  <td class="c-status"><span class="tag" style="color:#4d6e8c">&#9679; Noted</span></td>
 </tr>
 
     </tbody>
   </table>
 
-  <div class="validated">
-    <div class="section-label">Financial formulas validated across all 26,397 rows</div>
+  <div class="box">
     <div class="check-list">
-      <div class="check"><span class="mark">&#10003;</span> Total Excluding Tax = Quantity &times; Unit Price</div>
-      <div class="check"><span class="mark">&#10003;</span> Tax Amount = Total Excluding Tax &times; (Tax Rate &divide; 100)</div>
-      <div class="check"><span class="mark">&#10003;</span> Total Including Tax = Total Excluding Tax + Tax Amount</div>
+      <div class="check"><b>&#10003;</b> Total Excluding Tax = Quantity &times; Unit Price &mdash; validated across all 26,397 rows</div>
+      <div class="check"><b>&#10003;</b> Tax Amount = Total Excluding Tax &times; (Tax Rate &divide; 100) &mdash; validated across all 26,397 rows</div>
+      <div class="check"><b>&#10003;</b> Total Including Tax = Total Excluding Tax + Tax Amount &mdash; validated across all 26,397 rows</div>
     </div>
   </div>
 

@@ -1,9 +1,8 @@
 """
 Renders DATA_QUALITY_ISSUES.pdf: a short, print-ready summary of the data
-quality issues found in FactSale.csv and how each was handled. Same editorial
-"analyst report" look as Sales_Dashboard.html (serif/sans masthead, hairline
-rules, one ink palette, no gradients/boxed cards) so everything submitted for
-this task reads as one consistent, hand-built piece of work.
+quality issues found in FactSale.csv and how each was handled. Same plain
+blue look as Sales_Dashboard.html (Arial, simple bordered boxes, no fancy
+typography) so everything submitted for this task matches.
 
 Source of truth for the content is DATA_QUALITY_REPORT.md (the full write-up);
 this is the "simple summary" version of the same findings, designed to print.
@@ -15,18 +14,18 @@ import pathlib
 OUT_HTML = "DATA_QUALITY_ISSUES.html"
 OUT_PDF = "DATA_QUALITY_ISSUES.pdf"
 
-INK = "#1a1a18"
-INK_SEC = "#5a584f"
-MUTED = "#8c8a80"
-RULE = "#ddd9cd"
-PAPER = "#faf9f6"
+PAGE_BG = "#eef4fb"
+CARD_BG = "#ffffff"
+BORDER = "#c7dcf0"
+INK = "#1c3d5a"
+INK_SOFT = "#4d6e8c"
+BLUE_DEEP = "#123456"
 GOOD = "#1e7a4a"
 FLAG = "#a8631a"
-KEPT = "#2a5f8f"
+KEPT = "#2e75b6"
 CRIT = "#b5322f"
 
-SERIF = "'Newsreader', Georgia, serif"
-SANS = "'IBM Plex Sans', system-ui, -apple-system, sans-serif"
+FONT = "Arial, Helvetica, sans-serif"
 
 rows = [
     ("Missing Delivery Date", "13 rows (0.05%)",
@@ -44,7 +43,7 @@ rows = [
     ("Negative Profit (loss-making sales)", "566 rows (2.1%)",
      "Kept as-is &mdash; a real, concentrated business finding (see Key Insights), not a data error.", "Kept", CRIT),
     ("No product / customer / salesperson names", "All rows",
-     "Only the fact table was provided (no dimension tables) &mdash; those fields are reported by ID.", "Noted", MUTED),
+     "Only the fact table was provided (no dimension tables) &mdash; those fields are reported by ID.", "Noted", INK_SOFT),
 ]
 
 row_html = "\n".join(f"""
@@ -52,7 +51,7 @@ row_html = "\n".join(f"""
   <td class="c-issue">{issue}</td>
   <td class="c-scope">{scope}</td>
   <td class="c-fix">{fix}</td>
-  <td class="c-status"><span class="tag"><span class="dot" style="background:{color}"></span>{status}</span></td>
+  <td class="c-status"><span class="tag" style="color:{color}">&#9679; {status}</span></td>
 </tr>
 """ for issue, scope, fix, status, color in rows)
 
@@ -61,75 +60,62 @@ html = f"""<!DOCTYPE html>
 <head>
 <meta charset="UTF-8">
 <title>Data Quality Summary</title>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   @page {{ size: A4; margin: 0; }}
   * {{ box-sizing: border-box; }}
   body {{
-    margin: 0; background: {PAPER}; color: {INK};
-    font-family: {SANS}; font-size: 12.5px; line-height: 1.55;
+    margin: 0; background: {PAGE_BG}; color: {INK};
+    font-family: {FONT}; font-size: 12.5px; line-height: 1.55;
   }}
-  .page {{ width: 210mm; min-height: 297mm; margin: 0 auto; padding: 16mm 16mm 14mm 16mm; }}
+  .page {{ width: 210mm; min-height: 297mm; margin: 0 auto; padding: 14mm 14mm 12mm 14mm; }}
 
-  .masthead {{ border-top: 2px solid {INK}; padding-top: 10px; }}
-  .eyebrow {{ font-size: 10px; letter-spacing: 0.13em; text-transform: uppercase; color: {INK_SEC}; font-weight: 600; }}
-  h1 {{ font-family: {SERIF}; font-size: 27px; font-weight: 600; margin: 6px 0 6px 0; letter-spacing: -0.01em; }}
-  .byline {{ font-size: 11px; color: {INK_SEC}; padding-bottom: 10mm; border-bottom: 1px solid {RULE}; margin-bottom: 8mm; }}
-  .byline b {{ color: {INK}; font-weight: 600; }}
+  h1 {{ font-size: 22px; font-weight: bold; margin: 0 0 4px 0; color: {BLUE_DEEP}; }}
+  .subtitle {{ font-size: 11px; color: {INK_SOFT}; margin-bottom: 8mm; }}
 
-  .stat-strip {{ display: flex; margin-bottom: 8mm; }}
-  .stat {{ flex: 1; padding-right: 14px; margin-right: 14px; border-right: 1px solid {RULE}; }}
-  .stat:last-child {{ border-right: none; }}
-  .stat-num {{ font-family: {SERIF}; font-size: 21px; font-weight: 600; }}
-  .stat-label {{ font-size: 9.5px; color: {MUTED}; text-transform: uppercase; letter-spacing: 0.05em; margin-top: 2px; }}
+  .stat-row {{ display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 8mm; }}
+  .stat {{ background: {CARD_BG}; border: 1px solid {BORDER}; border-radius: 6px; padding: 10px 12px; text-align: center; }}
+  .stat-num {{ font-size: 18px; font-weight: bold; color: {INK}; }}
+  .stat-label {{ font-size: 9.5px; color: {INK_SOFT}; margin-top: 2px; }}
 
-  .context {{ border-top: 1px solid {RULE}; padding-top: 10px; margin-bottom: 8mm; }}
-  .section-label {{ font-size: 10px; letter-spacing: 0.07em; text-transform: uppercase; color: {INK_SEC}; font-weight: 600; margin-bottom: 6px; }}
-  .context p {{ margin: 0; color: {INK_SEC}; font-size: 12px; max-width: 165mm; }}
-  .context em {{ font-style: italic; color: {INK}; }}
+  .box {{ background: {CARD_BG}; border: 1px solid {BORDER}; border-radius: 6px; padding: 10px 14px; margin-bottom: 6mm; }}
+  .box p {{ margin: 0; color: {INK}; font-size: 11.5px; }}
 
-  table {{ width: 100%; border-collapse: collapse; margin-bottom: 8mm; }}
+  table {{ width: 100%; border-collapse: collapse; background: {CARD_BG}; border: 1px solid {BORDER}; border-radius: 6px; overflow: hidden; margin-bottom: 6mm; }}
   thead th {{
-    text-align: left; font-size: 9.5px; text-transform: uppercase; letter-spacing: 0.05em;
-    color: {INK_SEC}; font-weight: 600; padding: 0 10px 8px 0; border-bottom: 2px solid {INK};
+    text-align: left; font-size: 10px; color: {INK_SOFT}; font-weight: bold;
+    padding: 8px 10px; background: {PAGE_BG}; border-bottom: 1px solid {BORDER};
   }}
-  tbody tr {{ border-bottom: 1px solid {RULE}; }}
-  tbody td {{ padding: 10px 10px 10px 0; vertical-align: top; font-size: 11.5px; }}
-  .c-issue {{ font-weight: 600; width: 24%; }}
-  .c-scope {{ width: 15%; color: {INK_SEC}; white-space: nowrap; }}
-  .c-fix {{ width: 45%; color: {INK}; }}
+  tbody tr {{ border-bottom: 1px solid {BORDER}; }}
+  tbody tr:last-child {{ border-bottom: none; }}
+  tbody td {{ padding: 9px 10px; vertical-align: top; font-size: 11.5px; }}
+  .c-issue {{ font-weight: bold; width: 24%; }}
+  .c-scope {{ width: 15%; color: {INK_SOFT}; white-space: nowrap; }}
+  .c-fix {{ width: 45%; }}
   .c-status {{ width: 11%; }}
-  .tag {{ display: inline-flex; align-items: center; gap: 5px; font-size: 10.5px; font-weight: 600; color: {INK_SEC}; white-space: nowrap; }}
-  .dot {{ width: 6px; height: 6px; border-radius: 50%; display: inline-block; }}
+  .tag {{ font-size: 10.5px; font-weight: bold; white-space: nowrap; }}
 
-  .validated {{ border-top: 1px solid {RULE}; padding-top: 10px; }}
-  .check-list {{ display: flex; flex-direction: column; gap: 6px; margin-top: 6px; }}
-  .check {{ display: flex; align-items: baseline; gap: 8px; font-size: 11.5px; color: {INK}; font-family: {SERIF}; }}
-  .check .mark {{ color: {GOOD}; font-family: {SANS}; font-weight: 600; }}
+  .check-list {{ display: flex; flex-direction: column; gap: 5px; }}
+  .check {{ font-size: 11.5px; color: {INK}; }}
+  .check b {{ color: {GOOD}; }}
 
   footer {{
-    margin-top: 12mm; padding-top: 8px; border-top: 1px solid {RULE};
-    color: {MUTED}; font-size: 9.5px; display: flex; justify-content: space-between;
+    margin-top: 8mm; color: {INK_SOFT}; font-size: 9.5px; display: flex; justify-content: space-between;
   }}
 </style>
 </head>
 <body>
 <div class="page">
-  <div class="masthead">
-    <div class="eyebrow">Task 2 &middot; Sales Data (FactSale)</div>
-    <h1>Data Quality Summary</h1>
-    <div class="byline"><b>Prepared by Nahla Nabil</b> &middot; VOLTIX Data Analyst Internship &middot; what was checked in 26,397 raw sales line items, what was found, and how each issue was resolved before analysis.</div>
-  </div>
+  <h1>Data Quality Summary</h1>
+  <div class="subtitle">Task 2 &mdash; Sales Data (FactSale) &middot; Nahla Nabil, VOLTIX Data Analyst Internship &middot; what was checked in 26,397 raw sales line items, what was found, and how each issue was resolved before analysis.</div>
 
-  <div class="stat-strip">
+  <div class="stat-row">
     <div class="stat"><div class="stat-num">26,397</div><div class="stat-label">Rows checked</div></div>
     <div class="stat"><div class="stat-num">8</div><div class="stat-label">Issues reviewed</div></div>
     <div class="stat"><div class="stat-num">0</div><div class="stat-label">Broken formulas</div></div>
     <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Rows clean after fixes</div></div>
   </div>
 
-  <div class="context">
-    <div class="section-label">Context</div>
+  <div class="box">
     <p>I only got the fact table (<em>FactSale.csv</em>) &mdash; no lookup tables for products, customers, or
     salespeople. So a couple of items below aren't things I "fixed," they're just limits of what I was
     given. I flagged those instead of making up IDs or names that don't actually exist in the data.</p>
@@ -144,12 +130,11 @@ html = f"""<!DOCTYPE html>
     </tbody>
   </table>
 
-  <div class="validated">
-    <div class="section-label">Financial formulas validated across all 26,397 rows</div>
+  <div class="box">
     <div class="check-list">
-      <div class="check"><span class="mark">&#10003;</span> Total Excluding Tax = Quantity &times; Unit Price</div>
-      <div class="check"><span class="mark">&#10003;</span> Tax Amount = Total Excluding Tax &times; (Tax Rate &divide; 100)</div>
-      <div class="check"><span class="mark">&#10003;</span> Total Including Tax = Total Excluding Tax + Tax Amount</div>
+      <div class="check"><b>&#10003;</b> Total Excluding Tax = Quantity &times; Unit Price &mdash; validated across all 26,397 rows</div>
+      <div class="check"><b>&#10003;</b> Tax Amount = Total Excluding Tax &times; (Tax Rate &divide; 100) &mdash; validated across all 26,397 rows</div>
+      <div class="check"><b>&#10003;</b> Total Including Tax = Total Excluding Tax + Tax Amount &mdash; validated across all 26,397 rows</div>
     </div>
   </div>
 
