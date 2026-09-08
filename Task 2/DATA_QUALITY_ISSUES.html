@@ -3,105 +3,91 @@
 <head>
 <meta charset="UTF-8">
 <title>Data Quality Summary</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   @page { size: A4; margin: 0; }
   * { box-sizing: border-box; }
   body {
-    margin: 0; background: #f7fafc; color: #1c2b36;
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    font-size: 13px; line-height: 1.55;
+    margin: 0; background: #faf9f6; color: #1a1a18;
+    font-family: 'IBM Plex Sans', system-ui, -apple-system, sans-serif; font-size: 12.5px; line-height: 1.55;
   }
-  .page { width: 210mm; min-height: 297mm; margin: 0 auto; padding: 0 0 16mm 0; position: relative; }
+  .page { width: 210mm; min-height: 297mm; margin: 0 auto; padding: 16mm 16mm 14mm 16mm; }
 
-  .hero {
-    background: linear-gradient(135deg, #0f2942 0%, #2a5f8f 65%, #3d7ab5 100%);
-    color: #fff; padding: 15mm 16mm 11mm 16mm; position: relative; overflow: hidden;
-  }
-  .hero::after {
-    content: ''; position: absolute; right: -60px; top: -60px; width: 220px; height: 220px;
-    border-radius: 50%; background: rgba(255,255,255,0.07);
-  }
-  .hero::before {
-    content: ''; position: absolute; right: 40px; bottom: -80px; width: 160px; height: 160px;
-    border-radius: 50%; background: rgba(255,255,255,0.06);
-  }
-  .eyebrow { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.75; font-weight: 600; margin-bottom: 8px; }
-  h1 { font-size: 26px; font-weight: 800; margin: 0 0 6px 0; }
-  .hero-sub { font-size: 13px; opacity: 0.85; max-width: 460px; }
+  .masthead { border-top: 2px solid #1a1a18; padding-top: 10px; }
+  .eyebrow { font-size: 10px; letter-spacing: 0.13em; text-transform: uppercase; color: #5a584f; font-weight: 600; }
+  h1 { font-family: 'Newsreader', Georgia, serif; font-size: 27px; font-weight: 600; margin: 6px 0 6px 0; letter-spacing: -0.01em; }
+  .byline { font-size: 11px; color: #5a584f; padding-bottom: 10mm; border-bottom: 1px solid #ddd9cd; margin-bottom: 8mm; }
+  .byline b { color: #1a1a18; font-weight: 600; }
 
-  .stats { display: flex; gap: 10mm; margin-top: 12mm; }
-  .stat-num { font-size: 22px; font-weight: 800; }
-  .stat-label { font-size: 10.5px; opacity: 0.8; }
+  .stat-strip { display: flex; margin-bottom: 8mm; }
+  .stat { flex: 1; padding-right: 14px; margin-right: 14px; border-right: 1px solid #ddd9cd; }
+  .stat:last-child { border-right: none; }
+  .stat-num { font-family: 'Newsreader', Georgia, serif; font-size: 21px; font-weight: 600; }
+  .stat-label { font-size: 9.5px; color: #8c8a80; text-transform: uppercase; letter-spacing: 0.05em; margin-top: 2px; }
 
-  .content { padding: 10mm 16mm 0 16mm; }
-  .intro {
-    background: #eef4f9; border-left: 3px solid #3d7ab5; border-radius: 6px;
-    padding: 10px 14px; color: #54697a; font-size: 12.5px; margin-bottom: 8mm;
-  }
+  .context { border-top: 1px solid #ddd9cd; padding-top: 10px; margin-bottom: 8mm; }
+  .section-label { font-size: 10px; letter-spacing: 0.07em; text-transform: uppercase; color: #5a584f; font-weight: 600; margin-bottom: 6px; }
+  .context p { margin: 0; color: #5a584f; font-size: 12px; max-width: 165mm; }
+  .context em { font-style: italic; color: #1a1a18; }
 
   table { width: 100%; border-collapse: collapse; margin-bottom: 8mm; }
   thead th {
-    text-align: left; font-size: 10px; text-transform: uppercase; letter-spacing: 0.05em;
-    color: #54697a; font-weight: 700; padding: 0 10px 8px 10px; border-bottom: 2px solid #0f2942;
+    text-align: left; font-size: 9.5px; text-transform: uppercase; letter-spacing: 0.05em;
+    color: #5a584f; font-weight: 600; padding: 0 10px 8px 0; border-bottom: 2px solid #1a1a18;
   }
-  tbody tr { border-bottom: 1px solid #dbe6ee; }
-  tbody td { padding: 10px; vertical-align: top; font-size: 12px; }
-  .c-issue { font-weight: 700; color: #0f2942; width: 24%; }
-  .c-scope { width: 15%; color: #54697a; white-space: nowrap; }
-  .c-fix { width: 43%; color: #1c2b36; }
-  .c-status { width: 12%; }
-  .badge {
-    display: inline-block; font-size: 10.5px; font-weight: 700; padding: 3px 10px;
-    border-radius: 20px; border: 1px solid; white-space: nowrap;
-  }
+  tbody tr { border-bottom: 1px solid #ddd9cd; }
+  tbody td { padding: 10px 10px 10px 0; vertical-align: top; font-size: 11.5px; }
+  .c-issue { font-weight: 600; width: 24%; }
+  .c-scope { width: 15%; color: #5a584f; white-space: nowrap; }
+  .c-fix { width: 45%; color: #1a1a18; }
+  .c-status { width: 11%; }
+  .tag { display: inline-flex; align-items: center; gap: 5px; font-size: 10.5px; font-weight: 600; color: #5a584f; white-space: nowrap; }
+  .dot { width: 6px; height: 6px; border-radius: 50%; display: inline-block; }
 
-  .validated {
-    background: #eef4f9; border-radius: 10px; padding: 12px 16px; margin-bottom: 6mm;
-  }
-  .validated h3 { margin: 0 0 8px 0; font-size: 13px; color: #0f2942; }
-  .check-list { display: flex; flex-direction: column; gap: 6px; }
-  .check { display: flex; align-items: center; gap: 8px; font-size: 12px; color: #1c2b36; }
-  .check .dot {
-    width: 16px; height: 16px; border-radius: 50%; background: #1e7a4a; color: #fff;
-    display: flex; align-items: center; justify-content: center; font-size: 10px; flex: none;
-  }
+  .validated { border-top: 1px solid #ddd9cd; padding-top: 10px; }
+  .check-list { display: flex; flex-direction: column; gap: 6px; margin-top: 6px; }
+  .check { display: flex; align-items: baseline; gap: 8px; font-size: 11.5px; color: #1a1a18; font-family: 'Newsreader', Georgia, serif; }
+  .check .mark { color: #1e7a4a; font-family: 'IBM Plex Sans', system-ui, -apple-system, sans-serif; font-weight: 600; }
 
-  footer { position: absolute; bottom: 0; left: 0; right: 0; padding: 6mm 16mm; color: #54697a; font-size: 9.5px; display: flex; justify-content: space-between; border-top: 1px solid #dbe6ee; }
+  footer {
+    margin-top: 12mm; padding-top: 8px; border-top: 1px solid #ddd9cd;
+    color: #8c8a80; font-size: 9.5px; display: flex; justify-content: space-between;
+  }
 </style>
 </head>
 <body>
 <div class="page">
-  <div class="hero">
+  <div class="masthead">
     <div class="eyebrow">Task 2 &middot; Sales Data (FactSale)</div>
     <h1>Data Quality Summary</h1>
-    <div class="hero-sub">What was checked in 26,397 raw sales line items, what was found, and how each issue was resolved before analysis.</div>
-    <div class="stats">
-      <div><div class="stat-num">26,397</div><div class="stat-label">rows checked</div></div>
-      <div><div class="stat-num">8</div><div class="stat-label">issues reviewed</div></div>
-      <div><div class="stat-num">0</div><div class="stat-label">broken formulas</div></div>
-      <div><div class="stat-num">100%</div><div class="stat-label">rows clean after fixes</div></div>
-    </div>
+    <div class="byline"><b>Prepared by Nahla Nabil</b> &middot; VOLTIX Data Analyst Internship &middot; what was checked in 26,397 raw sales line items, what was found, and how each issue was resolved before analysis.</div>
   </div>
 
-  <div class="content">
-    <div class="intro">
-      Only the fact table (<em>FactSale.csv</em>) was provided &mdash; no product, customer, or salesperson
-      lookup tables. That shapes two of the findings below: they aren't cleaning gaps, they're a known limit
-      of the source data, handled by labelling rather than guessing.
-    </div>
+  <div class="stat-strip">
+    <div class="stat"><div class="stat-num">26,397</div><div class="stat-label">Rows checked</div></div>
+    <div class="stat"><div class="stat-num">8</div><div class="stat-label">Issues reviewed</div></div>
+    <div class="stat"><div class="stat-num">0</div><div class="stat-label">Broken formulas</div></div>
+    <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Rows clean after fixes</div></div>
+  </div>
 
-    <table>
-      <thead>
-        <tr><th>Issue</th><th>Scope</th><th>How it was handled</th><th>Status</th></tr>
-      </thead>
-      <tbody>
-        
+  <div class="context">
+    <div class="section-label">Context</div>
+    <p>Only the fact table (<em>FactSale.csv</em>) was provided &mdash; no product, customer, or salesperson
+    lookup tables. That shapes two of the findings below: they aren't cleaning gaps, they're a known limit
+    of the source data, handled by labelling rather than guessing.</p>
+  </div>
+
+  <table>
+    <thead>
+      <tr><th>Issue</th><th>Scope</th><th>How it was handled</th><th>Status</th></tr>
+    </thead>
+    <tbody>
+      
 <tr>
   <td class="c-issue">Missing Delivery Date</td>
   <td class="c-scope">13 rows (0.05%)</td>
   <td class="c-fix">Filled in as Invoice Date + 1 day &mdash; the pattern in 100% of the complete rows.</td>
-  <td class="c-status"><span class="badge" style="background:#1e7a4a1a;color:#1e7a4a;border-color:#1e7a4a55">Fixed</span></td>
+  <td class="c-status"><span class="tag"><span class="dot" style="background:#1e7a4a"></span>Fixed</span></td>
 </tr>
 
 
@@ -109,7 +95,7 @@
   <td class="c-issue">Inconsistent date text format</td>
   <td class="c-scope">All rows</td>
   <td class="c-fix">Parsed and standardized to ISO format (YYYY-MM-DD).</td>
-  <td class="c-status"><span class="badge" style="background:#1e7a4a1a;color:#1e7a4a;border-color:#1e7a4a55">Fixed</span></td>
+  <td class="c-status"><span class="tag"><span class="dot" style="background:#1e7a4a"></span>Fixed</span></td>
 </tr>
 
 
@@ -117,7 +103,7 @@
   <td class="c-issue">Numeric columns stored as quoted text</td>
   <td class="c-scope">All rows</td>
   <td class="c-fix">Verified / converted to proper numeric types.</td>
-  <td class="c-status"><span class="badge" style="background:#1e7a4a1a;color:#1e7a4a;border-color:#1e7a4a55">Fixed</span></td>
+  <td class="c-status"><span class="tag"><span class="dot" style="background:#1e7a4a"></span>Fixed</span></td>
 </tr>
 
 
@@ -125,7 +111,7 @@
   <td class="c-issue">Customer Key = 0 (no customer captured)</td>
   <td class="c-scope">9,077 rows (34.4%)</td>
   <td class="c-fix">Not an error &mdash; flagged with a new Customer_Type column instead of guessing an ID.</td>
-  <td class="c-status"><span class="badge" style="background:#b5651d1a;color:#b5651d;border-color:#b5651d55">Flagged</span></td>
+  <td class="c-status"><span class="tag"><span class="dot" style="background:#a8631a"></span>Flagged</span></td>
 </tr>
 
 
@@ -133,7 +119,7 @@
   <td class="c-issue">Duplicate rows</td>
   <td class="c-scope">0 found</td>
   <td class="c-fix">Checked full-row and Sale Key (primary key) duplication &mdash; none present.</td>
-  <td class="c-status"><span class="badge" style="background:#2a5f8f1a;color:#2a5f8f;border-color:#2a5f8f55">Checked</span></td>
+  <td class="c-status"><span class="tag"><span class="dot" style="background:#2a5f8f"></span>Checked</span></td>
 </tr>
 
 
@@ -141,7 +127,7 @@
   <td class="c-issue">Negative Quantity / Unit Price</td>
   <td class="c-scope">0 found</td>
   <td class="c-fix">No invalid transaction volumes or prices.</td>
-  <td class="c-status"><span class="badge" style="background:#2a5f8f1a;color:#2a5f8f;border-color:#2a5f8f55">Checked</span></td>
+  <td class="c-status"><span class="tag"><span class="dot" style="background:#2a5f8f"></span>Checked</span></td>
 </tr>
 
 
@@ -149,7 +135,7 @@
   <td class="c-issue">Negative Profit (loss-making sales)</td>
   <td class="c-scope">566 rows (2.1%)</td>
   <td class="c-fix">Kept as-is &mdash; a real, concentrated business finding (see Key Insights), not a data error.</td>
-  <td class="c-status"><span class="badge" style="background:#3d7ab51a;color:#3d7ab5;border-color:#3d7ab555">Kept</span></td>
+  <td class="c-status"><span class="tag"><span class="dot" style="background:#b5322f"></span>Kept</span></td>
 </tr>
 
 
@@ -157,19 +143,18 @@
   <td class="c-issue">No product / customer / salesperson names</td>
   <td class="c-scope">All rows</td>
   <td class="c-fix">Only the fact table was provided (no dimension tables) &mdash; those fields are reported by ID.</td>
-  <td class="c-status"><span class="badge" style="background:#54697a1a;color:#54697a;border-color:#54697a55">Noted</span></td>
+  <td class="c-status"><span class="tag"><span class="dot" style="background:#8c8a80"></span>Noted</span></td>
 </tr>
 
-      </tbody>
-    </table>
+    </tbody>
+  </table>
 
-    <div class="validated">
-      <h3>Financial formulas validated across all 26,397 rows</h3>
-      <div class="check-list">
-        <div class="check"><span class="dot">&#10003;</span> Total Excluding Tax = Quantity &times; Unit Price</div>
-        <div class="check"><span class="dot">&#10003;</span> Tax Amount = Total Excluding Tax &times; (Tax Rate &divide; 100)</div>
-        <div class="check"><span class="dot">&#10003;</span> Total Including Tax = Total Excluding Tax + Tax Amount</div>
-      </div>
+  <div class="validated">
+    <div class="section-label">Financial formulas validated across all 26,397 rows</div>
+    <div class="check-list">
+      <div class="check"><span class="mark">&#10003;</span> Total Excluding Tax = Quantity &times; Unit Price</div>
+      <div class="check"><span class="mark">&#10003;</span> Tax Amount = Total Excluding Tax &times; (Tax Rate &divide; 100)</div>
+      <div class="check"><span class="mark">&#10003;</span> Total Including Tax = Total Excluding Tax + Tax Amount</div>
     </div>
   </div>
 
