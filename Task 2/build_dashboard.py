@@ -25,18 +25,20 @@ import plotly.graph_objects as go
 IN_PATH = "Cleaned_FactSale.csv"
 OUT_PATH = "Sales_Dashboard.html"
 
-# ---- paper + ink (report palette - one accent, no gradients) --------------
-PAPER = "#faf9f6"
-INK_PRIMARY = "#1a1a18"
-INK_SECONDARY = "#5a584f"
-INK_MUTED = "#8c8a80"
-RULE = "#ddd9cd"
-GRID = "#eae7dc"
+# ---- paper + ink (report palette, blue family throughout - no black) ------
+PAPER = "#f7fafc"
+INK_PRIMARY = "#123a5e"      # navy - headings, stat values, top rule
+INK_SECONDARY = "#4d6a85"    # steel blue - body copy, byline
+INK_MUTED = "#8ba0b6"        # soft blue-gray - axis ticks, muted captions
+RULE = "#d7e2ec"             # light blue-gray hairlines
+GRID = "#e7eff5"
 
-BLUE, ORANGE, AQUA, YELLOW, MAGENTA, GREEN, VIOLET, RED = (
-    "#2a78d6", "#eb6834", "#1baf7a", "#eda100",
-    "#e87ba4", "#008300", "#4a3aa7", "#e34948",
+# One blue family, light -> dark, used across the single-series bar charts
+# so the whole report reads as one hue instead of a different color per panel.
+BLUE_100, BLUE_200, BLUE_300, BLUE, BLUE_500, BLUE_600, BLUE_700 = (
+    "#9ec5f4", "#5598e7", "#3987e5", "#2a78d6", "#1c5cab", "#184f95", "#104281",
 )
+ORANGE, YELLOW = "#eb6834", "#eda100"   # kept only where a 2nd hue carries real meaning
 STATUS_GOOD = "#1e7a4a"
 STATUS_CRITICAL = "#b5322f"
 
@@ -159,7 +161,7 @@ def build():
     top_products = (df.groupby("Description")["Total Excluding Tax"].sum()
                      .nlargest(10).sort_values(ascending=True))
     fig_top = go.Figure(go.Bar(x=top_products.values, y=top_products.index, orientation="h",
-                                marker_color=AQUA,
+                                marker_color=BLUE_600,
                                 hovertemplate="%{y}<br>Revenue: $%{x:,.0f}<extra></extra>"))
     fig_top.update_layout(**base_layout(height=380))
     fig_top.update_xaxes(tickprefix="$", tickformat=",.0f")
@@ -187,7 +189,7 @@ def build():
     sp = (df.groupby("Salesperson Key")["Total Excluding Tax"].sum()
           .nlargest(10).sort_values(ascending=True))
     fig_sp = go.Figure(go.Bar(x=sp.values, y=[f"Salesperson #{k}" for k in sp.index], orientation="h",
-                               marker_color=VIOLET,
+                               marker_color=BLUE_700,
                                hovertemplate="%{y}<br>Revenue: $%{x:,.0f}<extra></extra>"))
     fig_sp.update_layout(**base_layout(height=380))
     fig_sp.update_xaxes(tickprefix="$", tickformat=",.0f")
@@ -196,7 +198,7 @@ def build():
     # ---------------- 8. Revenue by package type ----------------
     pkg = df.groupby("Package")["Total Excluding Tax"].sum().sort_values(ascending=True)
     pkg_pct = pkg / pkg.sum() * 100
-    fig_pkg = go.Figure(go.Bar(x=pkg.values, y=pkg.index, orientation="h", marker_color=GREEN,
+    fig_pkg = go.Figure(go.Bar(x=pkg.values, y=pkg.index, orientation="h", marker_color=BLUE_300,
                                 text=[f"{p:.1f}%" for p in pkg_pct], textposition="outside",
                                 textfont=dict(color=INK_SECONDARY),
                                 hovertemplate="%{y}<br>Revenue: $%{x:,.0f}<extra></extra>"))
@@ -214,8 +216,8 @@ def build():
         ("Total Revenue", money(total_revenue), INK_PRIMARY, monthly["Revenue"], BLUE),
         ("Total Profit", money(total_profit), INK_PRIMARY, monthly["Profit"], ORANGE),
         ("Profit Margin", f"{profit_margin:.1f}%", STATUS_GOOD, monthly["Margin"], STATUS_GOOD),
-        ("Orders", f"{total_orders:,}", INK_PRIMARY, monthly["Orders"], AQUA),
-        ("Avg. Order Value", money(aov), INK_PRIMARY, monthly["AOV"], VIOLET),
+        ("Orders", f"{total_orders:,}", INK_PRIMARY, monthly["Orders"], BLUE_600),
+        ("Avg. Order Value", money(aov), INK_PRIMARY, monthly["AOV"], BLUE_700),
         ("Loss-Making Lines", f"{loss_pct:.1f}%", STATUS_CRITICAL, monthly["LossRate"], STATUS_CRITICAL),
     ]
     kpi_html = "".join(
