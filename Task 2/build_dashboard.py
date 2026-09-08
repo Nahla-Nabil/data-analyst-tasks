@@ -41,6 +41,13 @@ CATEGORICAL = [BLUE, ORANGE, AQUA, YELLOW, MAGENTA, GREEN, VIOLET, RED]
 STATUS_GOOD = "#0ca30c"
 STATUS_CRITICAL = "#d03b3b"
 
+# Calm-blue page chrome, matching DATA_QUALITY_ISSUES.pdf for a consistent look
+# across everything submitted for this task.
+NAVY = "#0f2942"
+BRAND_BLUE = "#2a5f8f"
+ACCENT = "#3d7ab5"
+LIGHT_BLUE_BG = "#eef4f9"
+
 BASE_FONT = dict(family="system-ui, -apple-system, Segoe UI, sans-serif", color=INK_PRIMARY, size=13)
 
 
@@ -182,9 +189,9 @@ def build():
         ("Loss-Making Lines", f"{loss_pct:.1f}%", STATUS_CRITICAL),
     ]
     kpi_html = "".join(
-        f'<div class="kpi"><div class="kpi-label">{label}</div>'
+        f'<div class="kpi" style="animation-delay:{i*0.06:.2f}s"><div class="kpi-label">{label}</div>'
         f'<div class="kpi-value" style="color:{color}">{value}</div></div>'
-        for label, value, color in kpis
+        for i, (label, value, color) in enumerate(kpis)
     )
 
     html = f"""<!DOCTYPE html>
@@ -198,21 +205,50 @@ def build():
   :root {{
     --surface: {SURFACE}; --page: {PAGE}; --ink: {INK_PRIMARY};
     --ink-sec: {INK_SECONDARY}; --muted: {INK_MUTED}; --border: {BORDER};
+    --navy: {NAVY}; --brand: {BRAND_BLUE}; --accent: {ACCENT}; --light-blue: {LIGHT_BLUE_BG};
   }}
   * {{ box-sizing: border-box; }}
+  @keyframes fadeInUp {{
+    from {{ opacity: 0; transform: translateY(14px); }}
+    to {{ opacity: 1; transform: translateY(0); }}
+  }}
+  @keyframes floatSlow {{
+    0%, 100% {{ transform: translateY(0) scale(1); }}
+    50% {{ transform: translateY(-10px) scale(1.03); }}
+  }}
   body {{
-    margin: 0; padding: 32px; background: var(--page); color: var(--ink);
+    margin: 0; padding: 0 0 32px 0;
+    background: linear-gradient(180deg, var(--light-blue) 0%, var(--page) 420px, var(--page) 100%);
+    color: var(--ink);
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
   }}
-  .wrap {{ max-width: 1360px; margin: 0 auto; }}
-  header {{ margin-bottom: 24px; }}
-  h1 {{ font-size: 1.65rem; font-weight: 700; margin: 0 0 4px 0; }}
-  .subtitle {{ color: var(--ink-sec); font-size: 0.95rem; }}
+  .wrap {{ max-width: 1360px; margin: 0 auto; padding: 0 32px; }}
+
+  .hero {{
+    background: linear-gradient(135deg, var(--navy) 0%, var(--brand) 65%, var(--accent) 100%);
+    color: #fff; padding: 30px 32px 26px 32px; margin-bottom: 24px;
+    position: relative; overflow: hidden;
+  }}
+  .hero::before {{
+    content: ''; position: absolute; right: -40px; top: -60px; width: 220px; height: 220px;
+    border-radius: 50%; background: rgba(255,255,255,0.07); animation: floatSlow 9s ease-in-out infinite;
+  }}
+  .hero::after {{
+    content: ''; position: absolute; right: 120px; bottom: -90px; width: 160px; height: 160px;
+    border-radius: 50%; background: rgba(255,255,255,0.06); animation: floatSlow 11s ease-in-out infinite reverse;
+  }}
+  .hero-inner {{ max-width: 1360px; margin: 0 auto; padding: 0 32px; position: relative; }}
+  .eyebrow {{ font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.75; font-weight: 600; margin-bottom: 6px; }}
+  h1 {{ font-size: 1.7rem; font-weight: 800; margin: 0 0 4px 0; }}
+  .subtitle {{ color: rgba(255,255,255,0.82); font-size: 0.92rem; }}
+
   .kpi-row {{ display: grid; grid-template-columns: repeat(6, 1fr); gap: 14px; margin-bottom: 20px; }}
   .kpi {{
     background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
-    padding: 18px 16px;
+    padding: 18px 16px; opacity: 0; animation: fadeInUp 0.55s ease-out forwards;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
   }}
+  .kpi:hover {{ transform: translateY(-3px); box-shadow: 0 10px 24px -8px rgba(15,41,66,0.18); }}
   .kpi-label {{ font-size: 0.78rem; color: var(--muted); text-transform: uppercase;
                 letter-spacing: 0.04em; margin-bottom: 8px; font-weight: 600; }}
   .kpi-value {{ font-size: 1.6rem; font-weight: 700; }}
@@ -220,12 +256,23 @@ def build():
   .full {{ grid-column: 1 / -1; }}
   .card {{
     background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
-    padding: 8px 12px 4px 12px;
+    padding: 8px 12px 4px 12px; opacity: 0; animation: fadeInUp 0.6s ease-out forwards;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
   }}
+  .card:hover {{ transform: translateY(-3px); box-shadow: 0 12px 28px -10px rgba(15,41,66,0.16); }}
+  .grid > *:nth-child(1) {{ animation-delay: 0.05s; }}
+  .grid > *:nth-child(2) {{ animation-delay: 0.10s; }}
+  .grid > *:nth-child(3) {{ animation-delay: 0.14s; }}
+  .grid > *:nth-child(4) {{ animation-delay: 0.18s; }}
+  .grid > *:nth-child(5) {{ animation-delay: 0.22s; }}
+  .grid > *:nth-child(6) {{ animation-delay: 0.26s; }}
+  .grid > *:nth-child(7) {{ animation-delay: 0.30s; }}
+  .grid > *:nth-child(8) {{ animation-delay: 0.34s; }}
   .note {{
-    grid-column: 1 / -1; background: var(--surface); border: 1px solid var(--border);
+    grid-column: 1 / -1; background: var(--light-blue); border: 1px solid var(--border);
     border-left: 4px solid {STATUS_CRITICAL}; border-radius: 8px; padding: 14px 18px;
     color: var(--ink-sec); font-size: 0.9rem; line-height: 1.5;
+    opacity: 0; animation: fadeInUp 0.6s ease-out forwards;
   }}
   footer {{ margin-top: 20px; color: var(--muted); font-size: 0.8rem; text-align: center; }}
   @media (max-width: 900px) {{
@@ -235,12 +282,15 @@ def build():
 </style>
 </head>
 <body>
-<div class="wrap">
-  <header>
-    <h1>Sales Performance Dashboard</h1>
-    <div class="subtitle">FactSale data &middot; {date_min} &ndash; {date_max} &middot; {len(df):,} line items across {total_orders:,} orders</div>
-  </header>
+  <div class="hero">
+    <div class="hero-inner">
+      <div class="eyebrow">Task 2 &middot; VOLTIX Data Analyst Internship</div>
+      <h1>Sales Performance Dashboard</h1>
+      <div class="subtitle">FactSale data &middot; {date_min} &ndash; {date_max} &middot; {len(df):,} line items across {total_orders:,} orders</div>
+    </div>
+  </div>
 
+<div class="wrap">
   <div class="kpi-row">{kpi_html}</div>
 
   <div class="grid">
