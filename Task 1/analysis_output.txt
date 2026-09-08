@@ -1,0 +1,143 @@
+
+======================================================================
+1. LOADING DATA
+======================================================================
+Rows loaded: 9,994
+Columns: ['Row ID', 'Order ID', 'Order Date', 'Ship Date', 'Ship Mode', 'Customer ID', 'Customer Name', 'Segment', 'Country', 'City', 'State', 'Postal Code', 'Region', 'Product ID', 'Category', 'Sub-Category', 'Product Name', 'Sales', 'Quantity', 'Discount', 'Profit']
+
+======================================================================
+2. DATA CLEANING
+======================================================================
+
+-- Missing values per column --
+Postal Code    11
+dtype: int64
+-> Filled missing 'Postal Code' values with 0 (placeholder); column is not used in the analysis below.
+
+-- Duplicate rows --
+Fully duplicated rows: 0
+-> No duplicate rows found.
+
+-- Data types before cleaning --
+Row ID             int64
+Order ID             str
+Order Date           str
+Ship Date            str
+Ship Mode            str
+Customer ID          str
+Customer Name        str
+Segment              str
+Country              str
+City                 str
+State                str
+Postal Code        int64
+Region               str
+Product ID           str
+Category             str
+Sub-Category         str
+Product Name         str
+Sales            float64
+Quantity           int64
+Discount         float64
+Profit           float64
+dtype: object
+
+Rows with unparseable Order Date after conversion: 0
+Rows with unparseable numeric values after conversion: 0
+
+-- Data types after cleaning --
+Order Date    datetime64[us]
+Ship Date     datetime64[us]
+Sales                float64
+Quantity               int64
+Discount             float64
+Profit               float64
+dtype: object
+
+-- Sanity checks --
+Rows with negative Sales: 0
+Rows with Quantity <= 0: 0
+-> None found; no rows removed on this basis.
+
+Cleaned dataset saved to: Sales_Dataset_Cleaned.csv  (9,994 rows)
+
+======================================================================
+3. DATA ANALYSIS
+======================================================================
+
+Q1. Total Sales:  $2,297,200.86
+Q2. Total Profit: $286,397.02
+    Overall profit margin: 12.5%
+
+Q3. Sales by Category:
+Category
+Technology         836154.0330
+Furniture          741999.7953
+Office Supplies    719047.0320
+-> Top category by sales: Technology ($836,154.03)
+
+Q4. Top 5 products by Sales revenue:
+Product Name
+Canon imageCLASS 2200 Advanced Copier                                          61599.824
+Fellowes PB500 Electric Punch Plastic Comb Binding Machine with Manual Bind    27453.384
+Cisco TelePresence System EX90 Videoconferencing Unit                          22638.480
+HON 5400 Series Task Chairs for Big and Tall                                   21870.576
+GBC DocuBind TL300 Electric Binding System                                     19823.479
+
+Q4b. Top 5 products by Quantity sold (units):
+Product Name
+Staples                       215
+Staple envelope               170
+Easy-staple paper             150
+Staples in misc. colors        86
+KI Adjustable-Height Table     74
+-> Best-selling product by revenue: Canon imageCLASS 2200 Advanced Copier
+-> Best-selling product by units sold: Staples (215 units)
+
+Q5. Sales by Region:
+Region
+West       725457.8245
+East       678781.2400
+Central    501239.8908
+South      391721.9050
+-> Top region by sales: West ($725,457.82)
+
+Q6. Top 5 single months (year-month) by Sales:
+Order Month
+2018-11    118447.8250
+2017-12     96999.0430
+2018-09     87866.6520
+2018-12     83829.3188
+2015-09     81777.3508
+Freq: M
+-> Highest single sales month: 2018-11 ($118,447.82)
+
+Q6b. Sales aggregated by calendar month (seasonality, all years combined):
+Month Name
+January       94924.8356
+February      59751.2514
+March        205005.4888
+April        137762.1286
+May          155028.8117
+June         152718.6793
+July         147238.0970
+August       159044.0630
+September    307649.9457
+October      200322.9847
+November     352461.0710
+December     325293.5035
+-> Best-performing calendar month overall: November ($352,461.07)
+
+======================================================================
+4. BUILDING CHARTS
+======================================================================
+Saved 5 charts to: charts/
+ - 01_sales_by_category.png
+ - 02_sales_over_time.png
+ - 03_top_10_products.png
+ - 04_sales_by_region.png
+ - 05_sales_vs_profit_by_category.png (bonus)
+
+======================================================================
+DONE
+======================================================================
