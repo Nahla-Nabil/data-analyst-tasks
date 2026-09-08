@@ -174,12 +174,6 @@ def build():
     fig_loss.update_layout(**base_layout(height=380))
     fig_loss.update_xaxes(tickprefix="$", tickformat=",.0f")
     style_axes(fig_loss, ygrid=False)
-    worst_val = loss["Loss"].iloc[-1]  # last item = plotted at top (most negative)
-    fig_loss.add_annotation(
-        x=worst_val, y=loss.index[-1], text="100% of its sales<br>lose money", showarrow=True,
-        arrowhead=0, arrowcolor=INK_MUTED, arrowwidth=1, ax=-90, ay=-4,
-        font=dict(family=SANS, size=11, color=INK_SECONDARY), align="right",
-    )
 
     # ---------------- 6. Customer type split ----------------
     cust = df.groupby("Customer_Type")["Total Excluding Tax"].sum()
@@ -225,10 +219,10 @@ def build():
         ("Loss-Making Lines", f"{loss_pct:.1f}%", STATUS_CRITICAL, monthly["LossRate"], STATUS_CRITICAL),
     ]
     kpi_html = "".join(
-        f'<div class="stat"><div class="stat-label">{label}</div>'
+        f'<div class="stat{" lead" if i < 2 else ""}"><div class="stat-label">{label}</div>'
         f'<div class="stat-value" style="color:{color}">{value}</div>'
         f'{sparkline(series, spark_color)}</div>'
-        for label, value, color, series, spark_color in kpis
+        for i, (label, value, color, series, spark_color) in enumerate(kpis)
     )
 
     html = f"""<!DOCTYPE html>
@@ -256,29 +250,33 @@ def build():
   .byline {{ font-size: 0.82rem; color: var(--ink-sec); padding-bottom: 16px; border-bottom: 1px solid var(--rule); margin-bottom: 24px; }}
   .byline b {{ color: var(--ink); font-weight: 600; }}
 
-  .stat-strip {{ display: flex; margin-bottom: 8px; }}
-  .stat {{ flex: 1; padding: 0 22px 0 0; margin-right: 22px; border-right: 1px solid var(--rule); }}
+  .stat-strip {{ display: flex; align-items: flex-end; margin-bottom: 6px; }}
+  .stat {{ flex: 1; padding: 0 20px 0 0; margin-right: 20px; border-right: 1px solid var(--rule); }}
   .stat:last-child {{ border-right: none; margin-right: 0; padding-right: 0; }}
+  .stat.lead {{ flex: 1.5; }}
   .stat-label {{ font-size: 0.68rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; font-weight: 500; }}
-  .stat-value {{ font-family: {SERIF}; font-size: 1.55rem; font-weight: 600; line-height: 1; margin-bottom: 6px; }}
+  .stat-value {{ font-family: {SERIF}; font-size: 1.5rem; font-weight: 600; line-height: 1; margin-bottom: 6px; }}
+  .stat.lead .stat-value {{ font-size: 2.05rem; }}
   .spark {{ display: block; opacity: 0.9; }}
 
-  .section-row {{ display: grid; grid-template-columns: 1fr 1fr; gap: 36px; border-top: 1px solid var(--rule); padding-top: 22px; margin-top: 26px; }}
+  .section-row {{ display: grid; grid-template-columns: 1fr 1fr; gap: 36px; border-top: 1px solid var(--rule); padding-top: 22px; margin-top: 28px; }}
   .section-row.single {{ display: block; }}
+  .section-row.wide-left {{ grid-template-columns: 3fr 2fr; }}
+  .section-row.wide-right {{ grid-template-columns: 2fr 3fr; }}
   .col.full {{ grid-column: 1 / -1; }}
   .section-label {{ font-size: 0.72rem; letter-spacing: 0.07em; text-transform: uppercase; color: var(--ink-sec); font-weight: 600; margin-bottom: 6px; }}
-  .chart-caption {{ font-size: 0.78rem; color: var(--muted); margin-top: 2px; }}
+  .chart-caption {{ font-size: 0.78rem; color: var(--muted); margin-top: 2px; max-width: 46ch; }}
 
   .analyst-note {{
-    grid-column: 1 / -1; border-top: 1px solid var(--rule); padding: 22px 0 0 0; margin-top: 26px;
+    grid-column: 1 / -1; border-top: 1px solid var(--rule); padding: 20px 0 0 0; margin-top: 28px;
   }}
   .analyst-note .section-label {{ color: {STATUS_CRITICAL}; }}
   .analyst-note blockquote {{
-    margin: 6px 0 0 0; padding-left: 18px; border-left: 2px solid {STATUS_CRITICAL};
-    font-family: {SERIF}; font-style: italic; font-size: 1.05rem; color: var(--ink); line-height: 1.5;
-    max-width: 760px;
+    margin: 8px 0 0 0; padding-left: 18px; border-left: 2px solid {STATUS_CRITICAL};
+    font-family: {SERIF}; font-style: italic; font-size: 1.08rem; color: var(--ink); line-height: 1.5;
+    max-width: 700px;
   }}
-  .analyst-note .rec {{ margin: 10px 0 0 18px; font-size: 0.86rem; color: var(--ink-sec); }}
+  .analyst-note .rec {{ margin: 12px 0 0 18px; font-size: 0.86rem; color: var(--ink-sec); max-width: 640px; }}
 
   footer {{
     margin-top: 36px; padding-top: 14px; border-top: 1px solid var(--rule);
@@ -312,27 +310,29 @@ def build():
 
   <div class="section-row">
     {section("Top 10 Products by Revenue", html_parts['top'])}
-    {section("Biggest Loss-Making Products", html_parts['loss'], caption="Every unit of these products is sold below cost.")}
+    {section("Biggest Loss-Making Products", html_parts['loss'], caption="Every one of these lost money, every time.")}
   </div>
 
   <div class="analyst-note">
-    <div class="section-label">Analyst note</div>
+    <div class="section-label">Worth flagging</div>
     <blockquote>
-      The Halloween zombie mask has never once sold at a profit &mdash; all 492 line items, 100% of its sales,
-      lose money. Its sibling product, the Halloween skull mask, runs a healthy ~17% margin, so this is a
-      single mispriced SKU, not a weak product line.
+      The Halloween zombie mask has sold 492 times and lost money all 492 times. Not "sometimes unprofitable"
+      &mdash; every single sale. And it's not that the mask itself is a bad idea: the nearly identical skull
+      mask makes about 17% margin. So somebody just priced this one wrong, probably a while ago, and nobody's
+      touched it since.
     </blockquote>
-    <div class="rec">Recommendation: re-price or discontinue the zombie mask and the small cluster of
-      loss-making novelty USB drives shown above &mdash; a low-effort, high-confidence margin recovery.</div>
+    <div class="rec">I'd fix the price (or pull the SKU) before doing anything else in this data &mdash; it's the
+      one change here that recovers real money without needing a single new sale. A few of the USB novelty
+      drives above have the same problem on a smaller scale.</div>
   </div>
 
-  <div class="section-row">
+  <div class="section-row wide-right">
     {section("Registered vs. Unknown/Walk-in Revenue", html_parts['cust'])}
-    {section("Revenue by Package Type", html_parts['pkg'], caption="96.8% of revenue is single-unit (‘Each’) sales.")}
+    {section("Revenue by Package Type", html_parts['pkg'], caption="Almost nothing here is sold in bulk &mdash; 97% is single units.")}
   </div>
 
   <div class="section-row single">
-    {section("Top 10 Salespeople by Revenue", html_parts['sp'], caption="By salesperson ID — no name lookup table was provided with this dataset.", full=True)}
+    {section("Top 10 Salespeople by Revenue", html_parts['sp'], caption="Shown by salesperson ID &mdash; I wasn't given a name lookup table for this file, so I didn't guess.", full=True)}
   </div>
 
   <footer>
