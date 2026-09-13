@@ -1,0 +1,306 @@
+{
+  "overview": {
+    "n_employees": 1470,
+    "attrition_rate_pct": 16.12
+  },
+  "by_department": [
+    {
+      "Department": "Human Resources",
+      "Headcount": 63,
+      "AttritionRate": 19.0,
+      "AvgIncome": 6654.51
+    },
+    {
+      "Department": "Research & Development",
+      "Headcount": 961,
+      "AttritionRate": 14.0,
+      "AvgIncome": 6281.25
+    },
+    {
+      "Department": "Sales",
+      "Headcount": 446,
+      "AttritionRate": 21.0,
+      "AvgIncome": 6959.17
+    }
+  ],
+  "by_job_role": [
+    {
+      "JobRole": "Sales Representative",
+      "Headcount": 83,
+      "AttritionRate": 40.0,
+      "AvgIncome": 2626.0
+    },
+    {
+      "JobRole": "Laboratory Technician",
+      "Headcount": 259,
+      "AttritionRate": 24.0,
+      "AvgIncome": 3237.17
+    },
+    {
+      "JobRole": "Human Resources",
+      "Headcount": 52,
+      "AttritionRate": 23.0,
+      "AvgIncome": 4235.75
+    },
+    {
+      "JobRole": "Sales Executive",
+      "Headcount": 326,
+      "AttritionRate": 17.0,
+      "AvgIncome": 6924.28
+    },
+    {
+      "JobRole": "Research Scientist",
+      "Headcount": 292,
+      "AttritionRate": 16.0,
+      "AvgIncome": 3239.97
+    },
+    {
+      "JobRole": "Healthcare Representative",
+      "Headcount": 131,
+      "AttritionRate": 7.0,
+      "AvgIncome": 7528.76
+    },
+    {
+      "JobRole": "Manufacturing Director",
+      "Headcount": 145,
+      "AttritionRate": 7.0,
+      "AvgIncome": 7295.14
+    },
+    {
+      "JobRole": "Manager",
+      "Headcount": 102,
+      "AttritionRate": 5.0,
+      "AvgIncome": 17181.68
+    },
+    {
+      "JobRole": "Research Director",
+      "Headcount": 80,
+      "AttritionRate": 2.0,
+      "AvgIncome": 16033.55
+    }
+  ],
+  "by_job_level": [
+    {
+      "JobLevel": 1,
+      "Headcount": 543,
+      "AvgIncome": 2787.0,
+      "AvgTotalYears": 6.0
+    },
+    {
+      "JobLevel": 2,
+      "Headcount": 534,
+      "AvgIncome": 5502.0,
+      "AvgTotalYears": 10.0
+    },
+    {
+      "JobLevel": 3,
+      "Headcount": 218,
+      "AvgIncome": 9817.0,
+      "AvgTotalYears": 15.0
+    },
+    {
+      "JobLevel": 4,
+      "Headcount": 106,
+      "AvgIncome": 15504.0,
+      "AvgTotalYears": 25.0
+    },
+    {
+      "JobLevel": 5,
+      "Headcount": 69,
+      "AvgIncome": 19192.0,
+      "AvgTotalYears": 26.0
+    }
+  ],
+  "correlations": {
+    "income_vs_experience": 0.773,
+    "income_vs_age": 0.498
+  },
+  "by_performance_rating": [
+    {
+      "PerformanceRating": 3,
+      "Headcount": 1244,
+      "AvgSalaryHike": 14.0,
+      "AvgIncome": 6537.3
+    },
+    {
+      "PerformanceRating": 4,
+      "Headcount": 226,
+      "AvgSalaryHike": 21.8,
+      "AvgIncome": 6313.9
+    }
+  ],
+  "satisfaction_overall": {
+    "JobSatisfaction": 2.73,
+    "EnvironmentSatisfaction": 2.72,
+    "RelationshipSatisfaction": 2.71,
+    "WorkLifeBalance": 2.76
+  },
+  "satisfaction_by_attrition": [
+    {
+      "Attrition": "No",
+      "JobSatisfaction": 2.78,
+      "EnvironmentSatisfaction": 2.77,
+      "RelationshipSatisfaction": 2.73,
+      "WorkLifeBalance": 2.78
+    },
+    {
+      "Attrition": "Yes",
+      "JobSatisfaction": 2.47,
+      "EnvironmentSatisfaction": 2.46,
+      "RelationshipSatisfaction": 2.6,
+      "WorkLifeBalance": 2.66
+    }
+  ],
+  "attrition_by_overtime": [
+    {
+      "OverTime": "No",
+      "Headcount": 1054,
+      "AttritionRatePct": 10.4
+    },
+    {
+      "OverTime": "Yes",
+      "Headcount": 416,
+      "AttritionRatePct": 30.5
+    }
+  ],
+  "attrition_by_job_satisfaction": [
+    {
+      "JobSatisfaction": 1,
+      "Headcount": 289,
+      "AttritionRatePct": 22.8
+    },
+    {
+      "JobSatisfaction": 2,
+      "Headcount": 280,
+      "AttritionRatePct": 16.4
+    },
+    {
+      "JobSatisfaction": 3,
+      "Headcount": 442,
+      "AttritionRatePct": 16.5
+    },
+    {
+      "JobSatisfaction": 4,
+      "Headcount": 459,
+      "AttritionRatePct": 11.3
+    }
+  ],
+  "attrition_by_worklife_balance": [
+    {
+      "WorkLifeBalance": 1,
+      "Headcount": 80,
+      "AttritionRatePct": 31.2
+    },
+    {
+      "WorkLifeBalance": 2,
+      "Headcount": 344,
+      "AttritionRatePct": 16.9
+    },
+    {
+      "WorkLifeBalance": 3,
+      "Headcount": 893,
+      "AttritionRatePct": 14.2
+    },
+    {
+      "WorkLifeBalance": 4,
+      "Headcount": 153,
+      "AttritionRatePct": 17.6
+    }
+  ],
+  "attrition_by_business_travel": [
+    {
+      "BusinessTravel": "Non-Travel",
+      "Headcount": 150,
+      "AttritionRatePct": 8.0
+    },
+    {
+      "BusinessTravel": "Travel_Frequently",
+      "Headcount": 277,
+      "AttritionRatePct": 24.9
+    },
+    {
+      "BusinessTravel": "Travel_Rarely",
+      "Headcount": 1043,
+      "AttritionRatePct": 15.0
+    }
+  ],
+  "attrition_by_marital_status": [
+    {
+      "MaritalStatus": "Divorced",
+      "Headcount": 327,
+      "AttritionRatePct": 10.1
+    },
+    {
+      "MaritalStatus": "Married",
+      "Headcount": 673,
+      "AttritionRatePct": 12.5
+    },
+    {
+      "MaritalStatus": "Single",
+      "Headcount": 470,
+      "AttritionRatePct": 25.5
+    }
+  ],
+  "attrition_by_age_group": [
+    {
+      "AgeGroup": "18-25",
+      "Headcount": 123,
+      "AttritionRatePct": 35.8
+    },
+    {
+      "AgeGroup": "26-35",
+      "Headcount": 606,
+      "AttritionRatePct": 19.1
+    },
+    {
+      "AgeGroup": "36-45",
+      "Headcount": 468,
+      "AttritionRatePct": 9.2
+    },
+    {
+      "AgeGroup": "46-55",
+      "Headcount": 226,
+      "AttritionRatePct": 11.5
+    },
+    {
+      "AgeGroup": "56-60",
+      "Headcount": 47,
+      "AttritionRatePct": 17.0
+    }
+  ],
+  "attrition_by_tenure_band": [
+    {
+      "TenureBand": "0-2 yrs",
+      "Headcount": 342,
+      "AttritionRatePct": 29.8
+    },
+    {
+      "TenureBand": "11-20 yrs",
+      "Headcount": 180,
+      "AttritionRatePct": 6.7
+    },
+    {
+      "TenureBand": "20+ yrs",
+      "Headcount": 66,
+      "AttritionRatePct": 12.1
+    },
+    {
+      "TenureBand": "3-5 yrs",
+      "Headcount": 434,
+      "AttritionRatePct": 13.8
+    },
+    {
+      "TenureBand": "6-10 yrs",
+      "Headcount": 448,
+      "AttritionRatePct": 12.3
+    }
+  ],
+  "income_by_attrition": {
+    "No": 6833.0,
+    "Yes": 4787.0
+  },
+  "distance_by_attrition": {
+    "No": 8.9,
+    "Yes": 10.6
+  }
+}

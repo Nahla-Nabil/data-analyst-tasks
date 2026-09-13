@@ -1,0 +1,158 @@
+
+==============================================================================
+0. OVERVIEW
+==============================================================================
+Total employees: 1470
+Overall attrition rate: 16.1%  (237 left / 1233 stayed)
+
+==============================================================================
+1. HEADCOUNT & ATTRITION BY DEPARTMENT
+==============================================================================
+                        Headcount  AttritionRate  AvgIncome
+Department                                                 
+Research & Development        961           14.0    6281.25
+Sales                         446           21.0    6959.17
+Human Resources                63           19.0    6654.51
+
+==============================================================================
+1b. HEADCOUNT & ATTRITION BY JOB ROLE
+==============================================================================
+                           Headcount  AttritionRate  AvgIncome
+JobRole                                                       
+Sales Representative              83           40.0    2626.00
+Laboratory Technician            259           24.0    3237.17
+Human Resources                   52           23.0    4235.75
+Sales Executive                  326           17.0    6924.28
+Research Scientist               292           16.0    3239.97
+Healthcare Representative        131            7.0    7528.76
+Manufacturing Director           145            7.0    7295.14
+Manager                          102            5.0   17181.68
+Research Director                 80            2.0   16033.55
+
+==============================================================================
+2. SALARY BY JOB LEVEL
+==============================================================================
+          Headcount  AvgIncome  AvgTotalYears
+JobLevel                                     
+1               543     2787.0            6.0
+2               534     5502.0           10.0
+3               218     9817.0           15.0
+4               106    15504.0           25.0
+5                69    19192.0           26.0
+
+==============================================================================
+2b. SALARY vs EXPERIENCE (correlation)
+==============================================================================
+Correlation MonthlyIncome vs TotalWorkingYears: 0.77
+Correlation MonthlyIncome vs Age: 0.50
+
+==============================================================================
+2c. PERFORMANCE RATING DISTRIBUTION & SALARY HIKE
+==============================================================================
+                   Headcount  AvgSalaryHike  AvgIncome
+PerformanceRating                                     
+3                       1244           14.0     6537.3
+4                        226           21.8     6313.9
+
+==============================================================================
+3. SATISFACTION LEVELS (overall averages, scale 1-4)
+==============================================================================
+JobSatisfaction             2.73
+EnvironmentSatisfaction     2.72
+RelationshipSatisfaction    2.71
+WorkLifeBalance             2.76
+dtype: float64
+
+==============================================================================
+3b. SATISFACTION LEVELS SPLIT BY ATTRITION
+==============================================================================
+           JobSatisfaction  EnvironmentSatisfaction  RelationshipSatisfaction  WorkLifeBalance
+Attrition                                                                                     
+No                    2.78                     2.77                      2.73             2.78
+Yes                   2.47                     2.46                      2.60             2.66
+
+==============================================================================
+4. ATTRITION RATE BY OVERTIME
+==============================================================================
+          Headcount  AttritionRate%
+OverTime                           
+No             1054            10.4
+Yes             416            30.5
+
+==============================================================================
+4b. ATTRITION RATE BY JOB SATISFACTION LEVEL (1=Low .. 4=Very High)
+==============================================================================
+                 Headcount  AttritionRate%
+JobSatisfaction                           
+1                      289            22.8
+2                      280            16.4
+3                      442            16.5
+4                      459            11.3
+
+==============================================================================
+4c. ATTRITION RATE BY WORK-LIFE BALANCE (1=Bad .. 4=Best)
+==============================================================================
+                 Headcount  AttritionRate%
+WorkLifeBalance                           
+1                       80            31.2
+2                      344            16.9
+3                      893            14.2
+4                      153            17.6
+
+==============================================================================
+4d. ATTRITION RATE BY BUSINESS TRAVEL
+==============================================================================
+                   Headcount  AttritionRate%
+BusinessTravel                              
+Non-Travel               150             8.0
+Travel_Frequently        277            24.9
+Travel_Rarely           1043            15.0
+
+==============================================================================
+4e. ATTRITION RATE BY MARITAL STATUS
+==============================================================================
+               Headcount  AttritionRate%
+MaritalStatus                           
+Divorced             327            10.1
+Married              673            12.5
+Single               470            25.5
+
+==============================================================================
+4f. ATTRITION RATE BY AGE GROUP
+==============================================================================
+          Headcount  AttritionRate%
+AgeGroup                           
+18-25           123            35.8
+26-35           606            19.1
+36-45           468             9.2
+46-55           226            11.5
+56-60            47            17.0
+
+==============================================================================
+4g. ATTRITION RATE BY TENURE BAND
+==============================================================================
+            Headcount  AttritionRate%
+TenureBand                           
+0-2 yrs           342            29.8
+11-20 yrs         180             6.7
+20+ yrs            66            12.1
+3-5 yrs           434            13.8
+6-10 yrs          448            12.3
+
+==============================================================================
+4h. AVERAGE MONTHLY INCOME: STAYED vs LEFT
+==============================================================================
+Attrition
+No     6833.0
+Yes    4787.0
+Name: MonthlyIncome, dtype: float64
+
+==============================================================================
+4i. DISTANCE FROM HOME: STAYED vs LEFT
+==============================================================================
+Attrition
+No      8.9
+Yes    10.6
+Name: DistanceFromHome, dtype: float64
+
+Saved -> analysis_summary.json
