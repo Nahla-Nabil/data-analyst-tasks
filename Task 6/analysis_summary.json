@@ -1,0 +1,953 @@
+{
+  "days": 3271,
+  "period": [
+    "2008-02-01",
+    "2017-06-25"
+  ],
+  "avg_max_temp": 23.0,
+  "avg_min_temp": 14.9,
+  "avg_temp_range": 8.1,
+  "avg_humidity_9am": 68.2,
+  "avg_humidity_3pm": 54.7,
+  "avg_gust": 41.7,
+  "avg_sunshine": 7.2,
+  "rain_day_pct": 26.0,
+  "mean_daily_rain": 3.34,
+  "hot_days_30": 187,
+  "extreme_heat_days_35": 36,
+  "anomaly_days": 90,
+  "annual": {
+    "Year": [
+      2009,
+      2010,
+      2011,
+      2012,
+      2013,
+      2014,
+      2015,
+      2016
+    ],
+    "days": [
+      359,
+      334,
+      333,
+      320,
+      337,
+      357,
+      362,
+      361
+    ],
+    "rain_mm_per_day": [
+      2.66,
+      3.29,
+      3.49,
+      3.45,
+      3.5,
+      2.48,
+      3.7,
+      3.67
+    ],
+    "rain_day_pct": [
+      23.96,
+      26.35,
+      27.33,
+      25.94,
+      21.36,
+      26.33,
+      26.8,
+      23.82
+    ],
+    "max_temp": [
+      22.87,
+      22.63,
+      22.51,
+      22.45,
+      23.5,
+      23.4,
+      23.1,
+      23.85
+    ],
+    "min_temp": [
+      15.06,
+      15.06,
+      14.73,
+      14.1,
+      14.65,
+      15.08,
+      14.91,
+      15.45
+    ],
+    "hot_days": [
+      21,
+      17,
+      23,
+      9,
+      19,
+      16,
+      21,
+      27
+    ],
+    "humidity3": [
+      54.33,
+      57.67,
+      56.85,
+      54.29,
+      51.41,
+      54.07,
+      55.02,
+      51.6
+    ]
+  },
+  "hottest_month": "Jan",
+  "coolest_month": "Jul",
+  "hottest_month_val": 27.48,
+  "coolest_month_val": 18.01,
+  "wettest_month_by_rainmean": "Jun",
+  "driest_month_by_rainmean": "Sep",
+  "monthly": {
+    "Month": [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec"
+    ],
+    "max_t": [
+      27.48,
+      26.88,
+      25.88,
+      23.49,
+      21.15,
+      18.38,
+      18.01,
+      19.38,
+      21.99,
+      23.55,
+      24.83,
+      25.83
+    ],
+    "min_t": [
+      20.3,
+      20.19,
+      18.86,
+      15.36,
+      12.11,
+      10.54,
+      8.99,
+      9.75,
+      12.61,
+      14.77,
+      17.32,
+      18.58
+    ],
+    "hum3": [
+      58.5,
+      60.82,
+      59.8,
+      57.57,
+      52.05,
+      57.51,
+      49.3,
+      45.9,
+      48.84,
+      50.59,
+      57.82,
+      57.62
+    ],
+    "gust": [
+      43.82,
+      40.81,
+      41.82,
+      37.43,
+      37.11,
+      39.98,
+      40.55,
+      40.58,
+      43.57,
+      44.7,
+      44.65,
+      45.11
+    ],
+    "rain_days": [
+      22.0,
+      33.0,
+      29.0,
+      34.0,
+      20.0,
+      35.0,
+      25.0,
+      18.0,
+      18.0,
+      23.0,
+      29.0,
+      24.0
+    ],
+    "rain_mean": [
+      3.15,
+      4.32,
+      4.48,
+      5.26,
+      2.43,
+      5.9,
+      2.87,
+      1.98,
+      1.73,
+      2.21,
+      3.01,
+      2.42
+    ],
+    "sun": [
+      7.59,
+      6.91,
+      6.8,
+      6.81,
+      6.96,
+      5.36,
+      6.71,
+      7.87,
+      8.2,
+      7.97,
+      7.39,
+      7.81
+    ],
+    "n": [
+      277,
+      255,
+      310,
+      265,
+      310,
+      290,
+      276,
+      269,
+      260,
+      262,
+      257,
+      240
+    ]
+  },
+  "seasonal": {
+    "Season": [
+      "Summer",
+      "Autumn",
+      "Winter",
+      "Spring"
+    ],
+    "max_t": [
+      26.77,
+      23.51,
+      18.58,
+      23.45
+    ],
+    "min_t": [
+      19.73,
+      15.45,
+      9.77,
+      14.89
+    ],
+    "hum3": [
+      58.99,
+      56.42,
+      51.06,
+      52.39
+    ],
+    "gust": [
+      43.33,
+      38.87,
+      40.36,
+      44.34
+    ],
+    "rain_day_pct": [
+      27.0,
+      27.0,
+      26.0,
+      23.0
+    ],
+    "rain_mean": [
+      3.31,
+      4.0,
+      3.63,
+      2.31
+    ],
+    "sun": [
+      7.43,
+      6.86,
+      6.62,
+      7.85
+    ],
+    "days": [
+      772,
+      885,
+      835,
+      779
+    ]
+  },
+  "seasonal_range_max_t": 8.2,
+  "diurnal_range_by_season": {
+    "Summer": 7.0,
+    "Autumn": 8.1,
+    "Winter": 8.8,
+    "Spring": 8.6
+  },
+  "temp_change_9to3": 3.7,
+  "days_ge35_by_year": {
+    "2008": 1,
+    "2009": 3,
+    "2010": 3,
+    "2011": 4,
+    "2013": 5,
+    "2014": 1,
+    "2015": 7,
+    "2016": 5,
+    "2017": 7
+  },
+  "trend_MaxTemp_per_decade": 1.68,
+  "trend_MaxTemp_p": 0.0,
+  "trend_MaxTemp_r2": 0.198,
+  "trend_MinTemp_per_decade": 0.84,
+  "trend_MinTemp_p": 0.001,
+  "trend_MinTemp_r2": 0.095,
+  "trend_Rain_mm_per_day_per_decade": 0.78,
+  "trend_Rain_p": 0.335,
+  "window": {
+    "Year": [
+      2008,
+      2009,
+      2010,
+      2011,
+      2012,
+      2013,
+      2014,
+      2015,
+      2016,
+      2017
+    ],
+    "max_t": [
+      22.16,
+      22.56,
+      23.5,
+      23.07,
+      22.7,
+      22.7,
+      23.96,
+      23.24,
+      24.58,
+      23.62
+    ],
+    "min_t": [
+      14.77,
+      15.52,
+      15.96,
+      15.48,
+      14.86,
+      14.25,
+      15.93,
+      15.47,
+      16.58,
+      15.81
+    ],
+    "rain_mm": [
+      593.2,
+      593.4,
+      631.4,
+      435.8,
+      790.6,
+      566.8,
+      377.2,
+      705.2,
+      683.6,
+      815.6
+    ],
+    "rain_days": [
+      49,
+      46,
+      42,
+      30,
+      45,
+      31,
+      47,
+      45,
+      34,
+      50
+    ],
+    "days": [
+      145,
+      144,
+      141,
+      115,
+      144,
+      117,
+      145,
+      145,
+      146,
+      144
+    ],
+    "rain_mm_per_day": [
+      4.09,
+      4.12,
+      4.48,
+      3.79,
+      5.49,
+      4.84,
+      2.6,
+      4.86,
+      4.68,
+      5.66
+    ]
+  },
+  "max_temp_2008_12": 22.45,
+  "max_temp_2013_17": 23.6,
+  "max_temp_diff_month_matched": 1.0,
+  "max_anom_2013_17_minus_2008_12": 0.99,
+  "max_anom_ttest_p": 0.0,
+  "warmest_months": [
+    {
+      "YearMonth": "2013-09",
+      "MaxA": 2.44,
+      "MinA": 1.18,
+      "RainA": -0.54
+    },
+    {
+      "YearMonth": "2016-12",
+      "MaxA": 2.3,
+      "MinA": 1.46,
+      "RainA": -0.32
+    },
+    {
+      "YearMonth": "2013-10",
+      "MaxA": 2.15,
+      "MinA": 0.23,
+      "RainA": -0.84
+    },
+    {
+      "YearMonth": "2017-01",
+      "MaxA": 2.15,
+      "MinA": 1.25,
+      "RainA": -1.59
+    },
+    {
+      "YearMonth": "2014-05",
+      "MaxA": 2.0,
+      "MinA": 0.97,
+      "RainA": -1.55
+    },
+    {
+      "YearMonth": "2016-05",
+      "MaxA": 1.73,
+      "MinA": 1.14,
+      "RainA": -2.2
+    }
+  ],
+  "coolest_months": [
+    {
+      "YearMonth": "2011-12",
+      "MaxA": -2.7,
+      "MinA": -1.87,
+      "RainA": 0.11
+    },
+    {
+      "YearMonth": "2009-10",
+      "MaxA": -2.22,
+      "MinA": -0.78,
+      "RainA": 3.97
+    },
+    {
+      "YearMonth": "2008-02",
+      "MaxA": -2.13,
+      "MinA": -1.68,
+      "RainA": 4.59
+    },
+    {
+      "YearMonth": "2008-08",
+      "MaxA": -2.05,
+      "MinA": -1.66,
+      "RainA": -0.5
+    },
+    {
+      "YearMonth": "2008-04",
+      "MaxA": -1.96,
+      "MinA": -1.55,
+      "RainA": -0.4
+    },
+    {
+      "YearMonth": "2010-11",
+      "MaxA": -1.71,
+      "MinA": -0.5,
+      "RainA": 2.17
+    }
+  ],
+  "max_anom_by_year": {
+    "2008": -0.92,
+    "2009": -0.15,
+    "2010": -0.44,
+    "2011": -0.49,
+    "2012": -0.45,
+    "2013": 0.77,
+    "2014": 0.38,
+    "2015": 0.07,
+    "2016": 0.77,
+    "2017": 0.66
+  },
+  "wet_day_mean_mm": 12.7,
+  "wet_day_median_mm": 6.4,
+  "rain_top10_share_pct": 22.2,
+  "rain_top1pct_days": 33,
+  "rain_category_days": {
+    "Dry (<=1 mm)": 2422,
+    "Light (1-10)": 537,
+    "Moderate (10-25)": 190,
+    "Heavy (25-50)": 87,
+    "Very heavy (>50)": 35
+  },
+  "top_rain_days": [
+    {
+      "date": "2015-04-21",
+      "mm": 119.4
+    },
+    {
+      "date": "2012-03-08",
+      "mm": 109.4
+    },
+    {
+      "date": "2015-04-22",
+      "mm": 105.8
+    },
+    {
+      "date": "2011-03-20",
+      "mm": 99.4
+    },
+    {
+      "date": "2013-01-29",
+      "mm": 95.2
+    },
+    {
+      "date": "2016-04-04",
+      "mm": 94.4
+    },
+    {
+      "date": "2016-06-05",
+      "mm": 93.8
+    },
+    {
+      "date": "2011-07-22",
+      "mm": 88.2
+    },
+    {
+      "date": "2017-02-08",
+      "mm": 85.0
+    },
+    {
+      "date": "2008-02-05",
+      "mm": 77.4
+    }
+  ],
+  "wettest_months": {
+    "2015-04": 366.8,
+    "2017-03": 326.6,
+    "2013-06": 316.4,
+    "2016-06": 305.0,
+    "2011-07": 282.2
+  },
+  "p_rain_tomorrow_given_rain": 51.6,
+  "p_rain_tomorrow_given_dry": 17.0,
+  "base_rain_tomorrow": 26.0,
+  "persistence_accuracy_pct": 74.9,
+  "always_dry_accuracy_pct": 74.0,
+  "longest_wet_spell_days": 11,
+  "gust_valid_days": 2314,
+  "gust_valid_from": "2010-10-14",
+  "gust_dir_top": [
+    {
+      "WindGustDir": "W",
+      "days": 468,
+      "share_pct": 20.2
+    },
+    {
+      "WindGustDir": "SSE",
+      "days": 239,
+      "share_pct": 10.3
+    },
+    {
+      "WindGustDir": "ENE",
+      "days": 214,
+      "share_pct": 9.2
+    }
+  ],
+  "wettest_gust_dirs": [
+    {
+      "WindGustDir": "SE",
+      "days": 68,
+      "rain_today": 52.9,
+      "gust": 42.397
+    },
+    {
+      "WindGustDir": "ESE",
+      "days": 140,
+      "rain_today": 42.9,
+      "gust": 37.457
+    },
+    {
+      "WindGustDir": "SW",
+      "days": 50,
+      "rain_today": 42.0,
+      "gust": 46.86
+    },
+    {
+      "WindGustDir": "SSW",
+      "days": 163,
+      "rain_today": 40.5,
+      "gust": 45.54
+    }
+  ],
+  "driest_gust_dirs": [
+    {
+      "WindGustDir": "NNW",
+      "days": 52,
+      "rain_today": 13.5,
+      "gust": 41.538
+    },
+    {
+      "WindGustDir": "N",
+      "days": 30,
+      "rain_today": 13.3,
+      "gust": 35.467
+    },
+    {
+      "WindGustDir": "NNE",
+      "days": 149,
+      "rain_today": 10.1,
+      "gust": 41.919
+    }
+  ],
+  "se_sector_rain_day_pct": 40.3,
+  "other_sector_rain_day_pct": 17.8,
+  "se_sector_share_pct": 35.8,
+  "se_sector_share_of_rain_days_pct": 55.8,
+  "se_sector_share_of_rain_mm_pct": 59.7,
+  "w_dir_share_pct": 20.2,
+  "w_dir_rain_day_pct": 19.0,
+  "gust_by_season": {
+    "Summer": 43.3,
+    "Autumn": 38.9,
+    "Winter": 40.4,
+    "Spring": 44.3
+  },
+  "gust_ge70_days": 86,
+  "gust_ge50_days": 576,
+  "gust_ge70_by_season": {
+    "Spring": 33,
+    "Winter": 24,
+    "Autumn": 15,
+    "Summer": 14
+  },
+  "top_gust_days": [
+    {
+      "date": "2014-06-28",
+      "kmh": 96,
+      "dir": "W"
+    },
+    {
+      "date": "2016-06-05",
+      "kmh": 96,
+      "dir": "ENE"
+    },
+    {
+      "date": "2011-05-30",
+      "kmh": 94,
+      "dir": "ESE"
+    },
+    {
+      "date": "2013-08-12",
+      "kmh": 94,
+      "dir": "W"
+    },
+    {
+      "date": "2012-08-10",
+      "kmh": 93,
+      "dir": "S"
+    },
+    {
+      "date": "2013-10-29",
+      "kmh": 93,
+      "dir": "S"
+    },
+    {
+      "date": "2012-08-23",
+      "kmh": 91,
+      "dir": "NW"
+    },
+    {
+      "date": "2014-03-15",
+      "kmh": 91,
+      "dir": "WSW"
+    }
+  ],
+  "wind_9am_vs_3pm": [
+    15.1,
+    19.3
+  ],
+  "humidity_by_season": {
+    "Season": [
+      "Summer",
+      "Autumn",
+      "Winter",
+      "Spring"
+    ],
+    "Humidity9am": [
+      68.7,
+      72.4,
+      69.9,
+      61.3
+    ],
+    "Humidity3pm": [
+      59.0,
+      56.4,
+      51.1,
+      52.4
+    ]
+  },
+  "humidity_drop_9to3": 13.5,
+  "rain_vs_dry": {
+    "0": {
+      "Humidity9am": 64.6,
+      "Humidity3pm": 51.4,
+      "Pressure9am": 1018.3,
+      "Sunshine": 8.0,
+      "Cloud3pm": 3.8,
+      "MaxTemp": 23.5
+    },
+    "1": {
+      "Humidity9am": 78.6,
+      "Humidity3pm": 64.2,
+      "Pressure9am": 1018.3,
+      "Sunshine": 4.8,
+      "Cloud3pm": 5.5,
+      "MaxTemp": 21.6
+    }
+  },
+  "rain_by_humidity_band": {
+    "[0, 40)": [
+      10.2,
+      5.7,
+      619
+    ],
+    "[40, 55)": [
+      16.8,
+      12.1,
+      914
+    ],
+    "[55, 70)": [
+      26.7,
+      26.6,
+      1216
+    ],
+    "[70, 85)": [
+      49.2,
+      63.6,
+      368
+    ],
+    "[85, 101)": [
+      81.8,
+      94.8,
+      154
+    ]
+  },
+  "rain_by_pressure_band": {
+    "[0, 1010)": [
+      29.0,
+      29.6,
+      389
+    ],
+    "[1010, 1015)": [
+      27.8,
+      29.9,
+      615
+    ],
+    "[1015, 1020)": [
+      22.3,
+      23.3,
+      892
+    ],
+    "[1020, 1025)": [
+      24.9,
+      24.5,
+      824
+    ],
+    "[1025, 2000)": [
+      29.2,
+      25.4,
+      551
+    ]
+  },
+  "pressure_change_by_rainday": {
+    "0": -2.56,
+    "1": -1.67
+  },
+  "corr_hum3_sun": -0.55,
+  "corr_rain_hum3": 0.35,
+  "corr_rain_sun": -0.38,
+  "corr_maxt_evap": 0.53,
+  "corr_maxt_pressure3": -0.4,
+  "corr_maxt_hum3": -0.04,
+  "corr_rain_cloud3": 0.3,
+  "corr_rain_pressure9": 0.0,
+  "corr_maxt_min": 0.8,
+  "corr_rain_gust": 0.1,
+  "anomalies_by_year": {
+    "2008": 6,
+    "2009": 7,
+    "2010": 8,
+    "2011": 14,
+    "2012": 7,
+    "2013": 10,
+    "2014": 5,
+    "2015": 15,
+    "2016": 12,
+    "2017": 6
+  },
+  "anomalies_by_type": {
+    "Extreme rain": 31,
+    "Heat": 28,
+    "Extreme gust": 14,
+    "Very dry": 9,
+    "Warm night": 7,
+    "Low pressure": 6,
+    "Cold night": 3,
+    "High pressure": 2,
+    "Cold": 1
+  },
+  "anomalies_by_season": {
+    "Summer": 25,
+    "Autumn": 25,
+    "Winter": 24,
+    "Spring": 16
+  },
+  "heat_anomaly_days": 28,
+  "heat_anomaly_by_year": {
+    "2009": 3,
+    "2010": 2,
+    "2011": 3,
+    "2012": 2,
+    "2013": 4,
+    "2014": 1,
+    "2015": 6,
+    "2016": 5,
+    "2017": 2
+  },
+  "heat_anomaly_dirs": {
+    "NNW": 4,
+    "SSE": 4,
+    "W": 4,
+    "S": 3,
+    "SSW": 2,
+    "NW": 2,
+    "NE": 1,
+    "NNE": 1,
+    "WSW": 1,
+    "E": 1
+  },
+  "compound_anomaly_days": 10,
+  "top_heat_z": [
+    {
+      "date": "2013-01-18",
+      "t": 45.8,
+      "z": 4.78
+    },
+    {
+      "date": "2011-02-05",
+      "t": 41.5,
+      "z": 4.59
+    },
+    {
+      "date": "2015-03-01",
+      "t": 36.4,
+      "z": 4.29
+    },
+    {
+      "date": "2015-11-20",
+      "t": 40.9,
+      "z": 4.13
+    },
+    {
+      "date": "2009-11-22",
+      "t": 40.4,
+      "z": 4.0
+    },
+    {
+      "date": "2013-01-08",
+      "t": 42.3,
+      "z": 3.87
+    },
+    {
+      "date": "2016-04-06",
+      "t": 34.2,
+      "z": 3.84
+    },
+    {
+      "date": "2010-01-23",
+      "t": 41.3,
+      "z": 3.61
+    }
+  ],
+  "heavy_rain_days": 122,
+  "heavy_rain_by_season": {
+    "Summer": 30,
+    "Autumn": 42,
+    "Winter": 33,
+    "Spring": 17
+  },
+  "heavy_rain_share_of_total_mm": 49.5,
+  "ge35_mean_humidity3pm": 30.2,
+  "ge35_share_below_25_humidity": 52.8,
+  "ge35_by_season": {
+    "Summer": 26,
+    "Autumn": 1,
+    "Winter": 0,
+    "Spring": 9
+  },
+  "ge35_days_2009_2012": 10,
+  "ge30_days_2009_2012": 70,
+  "obs_days_2009_2012": 1346,
+  "ge35_days_2013_2016": 18,
+  "ge30_days_2013_2016": 83,
+  "obs_days_2013_2016": 1417,
+  "ge30_rate_per_100d_2008_12": 5.0,
+  "ge30_rate_per_100d_2013_17": 6.47,
+  "heavy_plus_days_pct": 3.7,
+  "heavy_plus_mm_share_pct": 49.5,
+  "total_rain_mm": 10932.0,
+  "two_day_top": [
+    {
+      "date": "2015-04-21",
+      "mm": 225.2
+    },
+    {
+      "date": "2016-06-05",
+      "mm": 162.2
+    },
+    {
+      "date": "2016-06-04",
+      "mm": 158.2
+    },
+    {
+      "date": "2011-07-22",
+      "mm": 145.6
+    }
+  ],
+  "rule_hum70_accuracy_pct": 81.3,
+  "rule_hum70_precision_pct": 72.8,
+  "rule_hum70_recall_pct": 44.8,
+  "rule_hum70_days_flagged_pct": 16.0,
+  "rank_corr_rain_tomorrow": {
+    "Humidity3pm": 0.46,
+    "Pressure9am": -0.04,
+    "Sunshine": -0.51,
+    "Cloud3pm": 0.46
+  }
+}
