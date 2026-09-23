@@ -1,13 +1,16 @@
 # Power BI Guide: the hospital dashboard in Power BI
 
-## 0. Ready-made Power BI project: `PowerBI/Hospital_Dashboard.pbip`
+## 0. Ready-made report: `Hospital_Dashboard.pbix` (and its source project `PowerBI/Hospital_Dashboard.pbip`)
+
+`Hospital_Dashboard.pbix` is the finished Power BI report with the data included. Double-click it to open it in Power BI Desktop.
+It was saved from the project described below.
 
 `build_powerbi.py` generates a complete Power BI project (PBIP). It has the Power Query load of the CSV, a Calendar table, 22 DAX measures,
 sort orders, and a 5-page report: **Overview, Case Mix & LOS, Doctors & Billing, Clinical Review, Insights**. The report has 6 synced drop-down
 slicers, 8 KPI cards, the charts, a severity matrix, a doctor scorecard and the review table. It was opened in Power BI Desktop (2.157)
 and refreshed; the numbers match the HTML dashboard. Screenshots are in `screenshots/powerbi_*.png`.
 
-**To get a `.pbix` (about 30 seconds):**
+**To regenerate the `.pbix` from the project (about 30 seconds):**
 1. Double-click `PowerBI/Hospital_Dashboard.pbip`. It opens in Power BI Desktop.
 2. Click **Refresh now** on the yellow bar. The project stores no data, so it loads the CSV.
 3. **File → Save as → Browse this device**. Set *Save as type* to **Power BI file (\*.pbix)** and save as `Hospital_Dashboard.pbix` in `Task 7`.

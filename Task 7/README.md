@@ -14,7 +14,8 @@ The workflow is **raw data → clean data → measures and KPIs → analysis →
 | `DATA_QUALITY_REPORT.md` | Every cleaning check, the evidence for it, and the decision taken |
 | `KEY_INSIGHTS.md` | KPI scorecard, 6 findings, variable relationships (with significance tests), problems, recommendations |
 | `Hospital_Dashboard.twbx` | Tableau workbook: 4 dashboards, 23 sheets, 6 shared filters plus click-to-filter. See `Tableau_Guide.md` |
-| `PowerBI/Hospital_Dashboard.pbip` | Power BI project: 5 pages, 22 DAX measures, synced slicers. Open it, press Refresh, then Save as `.pbix`. See `Power_BI_Guide.md` |
+| `Hospital_Dashboard.pbix` | **Power BI report** (data included): 5 pages, 22 DAX measures, synced slicers. Open it in Power BI Desktop |
+| `PowerBI/Hospital_Dashboard.pbip` | The same report as a generated Power BI project (the source for the .pbix). See `Power_BI_Guide.md` |
 | `Power_BI_Guide.md` / `Tableau_Guide.md` | How the Power BI and Tableau versions are built, and what was checked |
 | `clean_and_validate.py` → `analysis.py` → `build_workbook.py` → `build_dashboard.py` → `build_tableau.py` → `build_twb.py` → `build_powerbi.py` | The pipeline, in run order (`cleaning_log.json`, `analysis_summary.json`, `analysis_output.txt` and `Hospital.hyper` are intermediate outputs) |
 
@@ -52,7 +53,7 @@ The workflow is **raw data → clean data → measures and KPIs → analysis →
 ![Tableau clinical review](screenshots/tableau_4_clinical_review.png)
 ![Tableau shared-filter test: Dr. Sara Ibrahim](screenshots/tableau_5_filter_test_dr_sara_ibrahim.png)
 
-### Power BI project (`PowerBI/Hospital_Dashboard.pbip`)
+### Power BI report (`Hospital_Dashboard.pbix`)
 
 ![Power BI overview](screenshots/powerbi_1_overview.png)
 ![Power BI case mix](screenshots/powerbi_2_case_mix.png)
