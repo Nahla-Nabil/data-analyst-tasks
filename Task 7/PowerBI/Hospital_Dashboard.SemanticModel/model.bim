@@ -1,0 +1,494 @@
+{
+  "compatibilityLevel": 1567,
+  "model": {
+    "culture": "en-US",
+    "dataAccessOptions": {
+      "legacyRedirects": true,
+      "returnErrorValuesAsNull": true
+    },
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "sourceQueryCulture": "en-US",
+    "tables": [
+      {
+        "name": "Admissions",
+        "lineageTag": "98d4728c-dc51-491a-80ab-d0fe548445d7",
+        "columns": [
+          {
+            "name": "Patient_ID",
+            "dataType": "string",
+            "sourceColumn": "Patient_ID",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Patient_Name",
+            "dataType": "string",
+            "sourceColumn": "Patient_Name",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Age",
+            "dataType": "int64",
+            "sourceColumn": "Age",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Age_Group",
+            "dataType": "string",
+            "sourceColumn": "Age_Group",
+            "summarizeBy": "none",
+            "sortByColumn": "AgeSort"
+          },
+          {
+            "name": "Gender",
+            "dataType": "string",
+            "sourceColumn": "Gender",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Gender_AR",
+            "dataType": "string",
+            "sourceColumn": "Gender_AR",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Diagnosis",
+            "dataType": "string",
+            "sourceColumn": "Diagnosis",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Diagnosis_AR",
+            "dataType": "string",
+            "sourceColumn": "Diagnosis_AR",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Diagnosis_Group",
+            "dataType": "string",
+            "sourceColumn": "Diagnosis_Group",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Doctor",
+            "dataType": "string",
+            "sourceColumn": "Doctor",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Doctor_AR",
+            "dataType": "string",
+            "sourceColumn": "Doctor_AR",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Admission_Date",
+            "dataType": "dateTime",
+            "sourceColumn": "Admission_Date",
+            "summarizeBy": "none",
+            "formatString": "yyyy-mm-dd"
+          },
+          {
+            "name": "Discharge_Date",
+            "dataType": "dateTime",
+            "sourceColumn": "Discharge_Date",
+            "summarizeBy": "none",
+            "formatString": "yyyy-mm-dd"
+          },
+          {
+            "name": "Length_of_Stay",
+            "dataType": "int64",
+            "sourceColumn": "Length_of_Stay",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Stay_Band",
+            "dataType": "string",
+            "sourceColumn": "Stay_Band",
+            "summarizeBy": "none",
+            "sortByColumn": "StaySort"
+          },
+          {
+            "name": "Long_Stay",
+            "dataType": "boolean",
+            "sourceColumn": "Long_Stay",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "LOS_Outlier",
+            "dataType": "boolean",
+            "sourceColumn": "LOS_Outlier",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Admission_Month",
+            "dataType": "int64",
+            "sourceColumn": "Admission_Month",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Admission_Month_Name",
+            "dataType": "string",
+            "sourceColumn": "Admission_Month_Name",
+            "summarizeBy": "none",
+            "sortByColumn": "Admission_Month"
+          },
+          {
+            "name": "Admission_Quarter",
+            "dataType": "string",
+            "sourceColumn": "Admission_Quarter",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Admission_Weekday",
+            "dataType": "string",
+            "sourceColumn": "Admission_Weekday",
+            "summarizeBy": "none",
+            "sortByColumn": "WeekdaySort"
+          },
+          {
+            "name": "Is_Weekend",
+            "dataType": "boolean",
+            "sourceColumn": "Is_Weekend",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Insurance",
+            "dataType": "string",
+            "sourceColumn": "Insurance",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Insurance_AR",
+            "dataType": "string",
+            "sourceColumn": "Insurance_AR",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Is_Uninsured",
+            "dataType": "boolean",
+            "sourceColumn": "Is_Uninsured",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Severity",
+            "dataType": "string",
+            "sourceColumn": "Severity",
+            "summarizeBy": "none",
+            "sortByColumn": "SeveritySort"
+          },
+          {
+            "name": "Severity_AR",
+            "dataType": "string",
+            "sourceColumn": "Severity_AR",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "High_Severity",
+            "dataType": "boolean",
+            "sourceColumn": "High_Severity",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Bill",
+            "dataType": "double",
+            "sourceColumn": "Bill",
+            "summarizeBy": "sum",
+            "formatString": "#,0"
+          },
+          {
+            "name": "Bill_Raw",
+            "dataType": "double",
+            "sourceColumn": "Bill_Raw",
+            "summarizeBy": "none",
+            "formatString": "#,0"
+          },
+          {
+            "name": "Bill_Status",
+            "dataType": "string",
+            "sourceColumn": "Bill_Status",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Bill_Per_Day",
+            "dataType": "double",
+            "sourceColumn": "Bill_Per_Day",
+            "summarizeBy": "none",
+            "formatString": "#,0"
+          },
+          {
+            "name": "Date_Corrected",
+            "dataType": "boolean",
+            "sourceColumn": "Date_Corrected",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Review_Flag",
+            "dataType": "string",
+            "sourceColumn": "Review_Flag",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "SeveritySort",
+            "dataType": "int64",
+            "sourceColumn": "SeveritySort",
+            "summarizeBy": "none",
+            "isHidden": true
+          },
+          {
+            "name": "AgeSort",
+            "dataType": "int64",
+            "sourceColumn": "AgeSort",
+            "summarizeBy": "none",
+            "isHidden": true
+          },
+          {
+            "name": "StaySort",
+            "dataType": "int64",
+            "sourceColumn": "StaySort",
+            "summarizeBy": "none",
+            "isHidden": true
+          },
+          {
+            "name": "WeekdaySort",
+            "dataType": "int64",
+            "sourceColumn": "WeekdaySort",
+            "summarizeBy": "none",
+            "isHidden": true
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Admissions",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(\"C:\\Users\\nahla\\Desktop\\VOLTIX\\Task 7\\Cleaned_Hospital_Data.csv\"), [Delimiter = \",\", Columns = 34, Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),",
+                "    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),",
+                "    Blanks = Table.ReplaceValue(Promoted, \"\", null, Replacer.ReplaceValue, {\"Bill\", \"Bill_Per_Day\", \"Review_Flag\"}),",
+                "    Typed = Table.TransformColumnTypes(Blanks, {{\"Patient_ID\", type text}, {\"Patient_Name\", type text}, {\"Age\", Int64.Type}, {\"Age_Group\", type text}, {\"Gender\", type text}, {\"Gender_AR\", type text}, {\"Diagnosis\", type text}, {\"Diagnosis_AR\", type text}, {\"Diagnosis_Group\", type text}, {\"Doctor\", type text}, {\"Doctor_AR\", type text}, {\"Admission_Date\", type date}, {\"Discharge_Date\", type date}, {\"Length_of_Stay\", Int64.Type}, {\"Stay_Band\", type text}, {\"Long_Stay\", type logical}, {\"LOS_Outlier\", type logical}, {\"Admission_Month\", Int64.Type}, {\"Admission_Month_Name\", type text}, {\"Admission_Quarter\", type text}, {\"Admission_Weekday\", type text}, {\"Is_Weekend\", type logical}, {\"Insurance\", type text}, {\"Insurance_AR\", type text}, {\"Is_Uninsured\", type logical}, {\"Severity\", type text}, {\"Severity_AR\", type text}, {\"High_Severity\", type logical}, {\"Bill\", type number}, {\"Bill_Raw\", type number}, {\"Bill_Status\", type text}, {\"Bill_Per_Day\", type number}, {\"Date_Corrected\", type logical}, {\"Review_Flag\", type text}}, \"en-US\"),",
+                "    SevSort = Table.AddColumn(Typed, \"SeveritySort\", each if [Severity] = \"Low\" then 1 else if [Severity] = \"Medium\" then 2 else 3, Int64.Type),",
+                "    AgeSort = Table.AddColumn(SevSort, \"AgeSort\", each if [Age] <= 17 then 1 else if [Age] <= 39 then 2 else if [Age] <= 59 then 3 else 4, Int64.Type),",
+                "    StaySort = Table.AddColumn(AgeSort, \"StaySort\", each if [Length_of_Stay] <= 3 then 1 else if [Length_of_Stay] <= 7 then 2 else if [Length_of_Stay] <= 14 then 3 else 4, Int64.Type),",
+                "    WdSort = Table.AddColumn(StaySort, \"WeekdaySort\", each List.PositionOf({\"Saturday\", \"Sunday\", \"Monday\", \"Tuesday\", \"Wednesday\", \"Thursday\", \"Friday\"}, [Admission_Weekday]) + 1, Int64.Type)",
+                "in",
+                "    WdSort"
+              ]
+            }
+          }
+        ],
+        "measures": [
+          {
+            "name": "Admissions",
+            "expression": "COUNTROWS ( Admissions )",
+            "formatString": "#,0",
+            "description": "Volume: number of admissions",
+            "lineageTag": "bc855035-e24e-4d70-8cc6-e492782dda9d"
+          },
+          {
+            "name": "Bed Days",
+            "expression": "SUM ( Admissions[Length_of_Stay] )",
+            "formatString": "#,0",
+            "description": "Efficiency: total bed-days used",
+            "lineageTag": "f3ed526b-5267-4be9-9e5b-442d6f51b455"
+          },
+          {
+            "name": "ALOS",
+            "expression": "AVERAGE ( Admissions[Length_of_Stay] )",
+            "formatString": "0.0",
+            "description": "Efficiency: average length of stay (days)",
+            "lineageTag": "d7a7b5d8-b91d-4705-a87c-96836c9b1005"
+          },
+          {
+            "name": "Median LOS",
+            "expression": "MEDIAN ( Admissions[Length_of_Stay] )",
+            "formatString": "0.0",
+            "description": "Efficiency: median length of stay",
+            "lineageTag": "e1b6c2dd-2f9e-4e7c-b732-ee862a8a5780"
+          },
+          {
+            "name": "Long Stay Rate",
+            "expression": "DIVIDE ( CALCULATE ( [Admissions], Admissions[Long_Stay] = TRUE () ), [Admissions] )",
+            "formatString": "0.0%",
+            "description": "Efficiency: share of stays over 7 days",
+            "lineageTag": "3d2a8847-e721-4c01-a69e-efa16c66ef94"
+          },
+          {
+            "name": "Bed Days 15+ Share",
+            "expression": "DIVIDE ( CALCULATE ( [Bed Days], Admissions[Length_of_Stay] >= 15 ), [Bed Days] )",
+            "formatString": "0.0%",
+            "description": "Efficiency: bed-days used by stays of 15+ days",
+            "lineageTag": "bf0a9d3b-a85a-47a1-9e79-fd63c9bc8887"
+          },
+          {
+            "name": "High Severity Share",
+            "expression": "DIVIDE ( CALCULATE ( [Admissions], Admissions[Severity] = \"High\" ), [Admissions] )",
+            "formatString": "0.0%",
+            "description": "Acuity",
+            "lineageTag": "f5496c7d-7a43-4996-94eb-929c80892b8a"
+          },
+          {
+            "name": "Senior Share",
+            "expression": "DIVIDE ( CALCULATE ( [Admissions], Admissions[Age] >= 60 ), [Admissions] )",
+            "formatString": "0.0%",
+            "description": "Acuity: patients 60+",
+            "lineageTag": "13130008-9f04-48dc-9472-993a1c19007e"
+          },
+          {
+            "name": "Uninsured Rate",
+            "expression": "DIVIDE ( CALCULATE ( [Admissions], Admissions[Insurance] = \"Uninsured\" ), [Admissions] )",
+            "formatString": "0.0%",
+            "description": "Finance: revenue exposed to non-payment",
+            "lineageTag": "b40637e9-aa10-46ed-8618-077b6302addf"
+          },
+          {
+            "name": "Billing Completeness",
+            "expression": "DIVIDE ( COUNT ( Admissions[Bill] ), [Admissions] )",
+            "formatString": "0.0%",
+            "description": "Finance: admissions with a genuine bill (999/3852 placeholders are blank)",
+            "lineageTag": "c28e1e5d-9e79-4893-a0bb-6291dc891c25"
+          },
+          {
+            "name": "Avg Genuine Bill",
+            "expression": "AVERAGE ( Admissions[Bill] )",
+            "formatString": "#,0",
+            "description": "Finance: average of genuine bills only",
+            "lineageTag": "57edbe29-3330-4038-934c-0175d577d4d2"
+          },
+          {
+            "name": "Median Bill per Day",
+            "expression": "MEDIAN ( Admissions[Bill_Per_Day] )",
+            "formatString": "#,0",
+            "description": "Finance: price of a bed-day",
+            "lineageTag": "32d39401-5965-4204-8723-e5a7cb7f2d07"
+          },
+          {
+            "name": "Date Correction Rate",
+            "expression": "DIVIDE ( CALCULATE ( [Admissions], Admissions[Date_Corrected] = TRUE () ), [Admissions] )",
+            "formatString": "0.0%",
+            "description": "Data quality: reversed admission/discharge dates",
+            "lineageTag": "caa99562-1806-4cea-bcf9-40d4fa3a4ad2"
+          },
+          {
+            "name": "Review Flags",
+            "expression": "CALCULATE ( [Admissions], NOT ISBLANK ( Admissions[Review_Flag] ) )",
+            "formatString": "#,0",
+            "description": "Data quality: records flagged for clinical review",
+            "lineageTag": "7dbb0536-9a58-4b3d-9e59-6f28bed8e376"
+          },
+          {
+            "name": "Admission Share",
+            "expression": "DIVIDE ( [Admissions], CALCULATE ( [Admissions], ALLSELECTED ( Admissions ) ) )",
+            "formatString": "0%",
+            "description": "Share of the current slice",
+            "lineageTag": "6e54f0d0-8909-42f2-b09e-c5028a85f6e2"
+          },
+          {
+            "name": "Bed Day Share",
+            "expression": "DIVIDE ( [Bed Days], CALCULATE ( [Bed Days], ALLSELECTED ( Admissions ) ) )",
+            "formatString": "0%",
+            "description": "Share of the current slice",
+            "lineageTag": "cd4b110a-56e2-4e7f-a958-8d399c62d906"
+          },
+          {
+            "name": "Severity Row %",
+            "expression": "DIVIDE ( [Admissions], CALCULATE ( [Admissions], ALLSELECTED ( Admissions[Severity], Admissions[SeveritySort] ) ) )",
+            "formatString": "0%",
+            "description": "Severity mix within a diagnosis (matrix)",
+            "lineageTag": "599eedfa-bce4-4858-afbf-54670a6da5bf"
+          },
+          {
+            "name": "ALOS vs Hospital",
+            "expression": "[ALOS] - CALCULATE ( [ALOS], ALL ( Admissions ) )",
+            "formatString": "+0.0;-0.0;0.0",
+            "description": "Gap to the hospital average",
+            "lineageTag": "699d89cb-8dc9-4d94-bd0d-5755a56069a2"
+          },
+          {
+            "name": "Census",
+            "expression": [
+              "VAR d = MAX ( 'Calendar'[Date] )",
+              "RETURN",
+              "    CALCULATE ( [Admissions], REMOVEFILTERS ( 'Calendar' ),",
+              "        Admissions[Admission_Date] <= d, Admissions[Discharge_Date] > d ) + 0"
+            ],
+            "formatString": "#,0",
+            "description": "Capacity: patients in a bed on a date",
+            "lineageTag": "ff03d966-59fe-42fa-a497-62ce7dd70e64"
+          },
+          {
+            "name": "Peak Census",
+            "expression": "MAXX ( VALUES ( 'Calendar'[Date] ), [Census] )",
+            "formatString": "#,0",
+            "description": "Capacity: busiest night",
+            "lineageTag": "01401f07-90a0-4009-8345-f36c07f2f1f0"
+          },
+          {
+            "name": "Avg Census",
+            "expression": "AVERAGEX ( FILTER ( VALUES ( 'Calendar'[Date] ), YEAR ( 'Calendar'[Date] ) = 2023 ), [Census] )",
+            "formatString": "0.0",
+            "description": "Capacity: average occupied beds per night in 2023",
+            "lineageTag": "8251eb9b-058f-4002-80eb-be6c3c6cb0c7"
+          },
+          {
+            "name": "Flagged Stay (days)",
+            "expression": "IF ( NOT ISBLANK ( SELECTEDVALUE ( Admissions[Review_Flag] ) ), SUM ( Admissions[Length_of_Stay] ) )",
+            "formatString": "#,0",
+            "description": "Review list: shows only flagged records",
+            "lineageTag": "a35da370-5d72-4547-b4e8-0eb895d9d27c"
+          }
+        ]
+      },
+      {
+        "name": "Calendar",
+        "lineageTag": "381fc218-3a79-4350-b9bc-a30cbad25bcd",
+        "columns": [
+          {
+            "type": "calculatedTableColumn",
+            "name": "Date",
+            "dataType": "dateTime",
+            "isNameInferred": true,
+            "isDataTypeInferred": true,
+            "sourceColumn": "[Date]",
+            "formatString": "yyyy-mm-dd",
+            "summarizeBy": "none"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Calendar",
+            "mode": "import",
+            "source": {
+              "type": "calculated",
+              "expression": "CALENDAR ( DATE ( 2022, 12, 31 ), DATE ( 2024, 1, 14 ) )"
+            }
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "ad6fc999-fba0-408d-a77f-f4cde3193553",
+        "fromTable": "Admissions",
+        "fromColumn": "Admission_Date",
+        "toTable": "Calendar",
+        "toColumn": "Date"
+      }
+    ],
+    "annotations": [
+      {
+        "name": "PBI_QueryOrder",
+        "value": "[\"Admissions\"]"
+      },
+      {
+        "name": "__PBI_TimeIntelligenceEnabled",
+        "value": "0"
+      },
+      {
+        "name": "PBIDesktopVersion",
+        "value": "2.157.1354.0"
+      }
+    ]
+  }
+}

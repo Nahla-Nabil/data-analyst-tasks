@@ -1,0 +1,182 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "1f4467402dca4b5591d8",
+  "position": {
+    "x": 16,
+    "y": 56,
+    "z": 2000,
+    "height": 640,
+    "width": 1248,
+    "tabOrder": 2000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Key insights (full year)",
+                    "textStyle": {
+                      "fontSize": "12pt",
+                      "color": "#1F3A5F",
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "- Very long stays: stays of 15+ days are 11% of admissions but 35% of bed-days; 17 of them are colds, flu, allergy or migraine.",
+                    "textStyle": {
+                      "fontSize": "12pt",
+                      "color": "#1F3A5F"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "- Severity does not predict stay: high 6.3 days vs low 5.88 (p = 0.91); a common cold (7.74 d) stays longer than a stroke (7.45 d).",
+                    "textStyle": {
+                      "fontSize": "12pt",
+                      "color": "#1F3A5F"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "- Age is the one real driver: children 4.7 days, seniors 7.1; seniors are 36% of admissions and 41% of bed-days.",
+                    "textStyle": {
+                      "fontSize": "12pt",
+                      "color": "#1F3A5F"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "- Billing: only 21% of admissions have a genuine bill (the rest are 999/3852 placeholders); none of the 28 longest stays is billed.",
+                    "textStyle": {
+                      "fontSize": "12pt",
+                      "color": "#1F3A5F"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "- Demand: May is busiest (32 admissions, peak census 13 on 16 May), August quietest (10); admissions cluster Tuesday-Wednesday and drop on Friday.",
+                    "textStyle": {
+                      "fontSize": "12pt",
+                      "color": "#1F3A5F"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "- Doctors: Dr. Reem Abdullah and Dr. Mohamed Hassan treat 34% of patients but use 39% of bed-days (not statistically conclusive, p = 0.30).",
+                    "textStyle": {
+                      "fontSize": "12pt",
+                      "color": "#1F3A5F"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "",
+                    "textStyle": {
+                      "fontSize": "12pt",
+                      "color": "#1F3A5F"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Recommendations",
+                    "textStyle": {
+                      "fontSize": "12pt",
+                      "color": "#1F3A5F",
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "1. Fix billing capture: make a real bill mandatory at discharge and block the 999/3852 defaults (target: 100% completeness).",
+                    "textStyle": {
+                      "fontSize": "12pt",
+                      "color": "#1F3A5F"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "2. Weekly review of every patient past day 7, starting with the 17 minor-condition stays of 15+ days (about 250 bed-days, 16% of the year).",
+                    "textStyle": {
+                      "fontSize": "12pt",
+                      "color": "#1F3A5F"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "3. Audit severity coding against clear triage criteria (sample of stroke and pneumonia records).",
+                    "textStyle": {
+                      "fontSize": "12pt",
+                      "color": "#1F3A5F"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "4. Flexible capacity for the May / October peaks (13 and 9 beds vs an average of about 4); roster for Tuesday-Wednesday intake; geriatric discharge support.",
+                    "textStyle": {
+                      "fontSize": "12pt",
+                      "color": "#1F3A5F"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "5. Add a unique patient ID and date validation to the admission form (12% of records had reversed dates; readmissions cannot be tracked).",
+                    "textStyle": {
+                      "fontSize": "12pt",
+                      "color": "#1F3A5F"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

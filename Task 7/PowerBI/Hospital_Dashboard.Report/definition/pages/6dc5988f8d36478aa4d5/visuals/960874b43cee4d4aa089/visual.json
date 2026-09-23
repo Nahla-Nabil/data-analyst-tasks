@@ -1,0 +1,161 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "960874b43cee4d4aa089",
+  "position": {
+    "x": 848,
+    "y": 112,
+    "z": 10000,
+    "height": 300,
+    "width": 416,
+    "tabOrder": 10000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Admissions"
+                    }
+                  },
+                  "Property": "Doctor"
+                }
+              },
+              "queryRef": "Admissions.Doctor",
+              "nativeQueryRef": "Doctor"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Admissions"
+                    }
+                  },
+                  "Property": "Admissions"
+                }
+              },
+              "queryRef": "Admissions.Admissions",
+              "nativeQueryRef": "Admissions"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Admissions"
+                    }
+                  },
+                  "Property": "ALOS"
+                }
+              },
+              "queryRef": "Admissions.ALOS",
+              "nativeQueryRef": "ALOS"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Admissions"
+                    }
+                  },
+                  "Property": "Long Stay Rate"
+                }
+              },
+              "queryRef": "Admissions.Long Stay Rate",
+              "nativeQueryRef": "Long Stay Rate"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Admissions"
+                    }
+                  },
+                  "Property": "High Severity Share"
+                }
+              },
+              "queryRef": "Admissions.High Severity Share",
+              "nativeQueryRef": "High Severity Share"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Admissions"
+                    }
+                  },
+                  "Property": "Review Flags"
+                }
+              },
+              "queryRef": "Admissions.Review Flags",
+              "nativeQueryRef": "Review Flags"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Admissions"
+                  }
+                },
+                "Property": "Admissions"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "objects": {},
+    "drillFilterOtherVisuals": true,
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Doctor scorecard'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

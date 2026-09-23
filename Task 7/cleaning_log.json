@@ -1,0 +1,102 @@
+{
+  "checks": [
+    {
+      "check": "Missing values (all columns)",
+      "count": 0,
+      "action": "none found - no imputation needed",
+      "detail": "blank cells checked after type coercion; the real 'missing' data is hidden as placeholder bills (step 4)"
+    },
+    {
+      "check": "Exact duplicate rows",
+      "count": 1,
+      "action": "removed (kept first occurrence)",
+      "detail": "row 23: محمود يوسف, 2023-06-11"
+    },
+    {
+      "check": "Discharge date before admission date",
+      "count": 29,
+      "action": "dates swapped + Date_Corrected flag",
+      "detail": "gaps of 1-5 days, the same size as normal stays -> a data-entry order error, not a real value"
+    },
+    {
+      "check": "Same-day admission/discharge",
+      "count": 0,
+      "action": "none found",
+      "detail": ""
+    },
+    {
+      "check": "Placeholder bill values (999, 3852)",
+      "count": 195,
+      "action": "set to missing + Bill_Status flag (not imputed)",
+      "detail": "999 x100 and 3852 x95 repeat across every diagnosis, severity and stay length; the other 52 bills are all distinct and rise with stay length (r = 0.64). Imputing 79% of bills from 21% would invent the financial picture, so finance KPIs use recorded bills only."
+    },
+    {
+      "check": "Category spelling variants",
+      "count": 0,
+      "action": "none found; Arabic labels mapped to English (Arabic kept in *_AR columns)",
+      "detail": "Gender 2, Diagnosis 10, Doctor 7, Insurance 3, Severity 3 distinct values"
+    },
+    {
+      "check": "Age outside 0-110",
+      "count": 0,
+      "action": "none found",
+      "detail": "range 1-90"
+    },
+    {
+      "check": "Zero/negative recorded bills",
+      "count": 0,
+      "action": "none found",
+      "detail": ""
+    },
+    {
+      "check": "Admissions outside 2023",
+      "count": 1,
+      "action": "kept - a New-Year stay (31 Dec 2022 -> 3 Jan 2023) produced by the date swap",
+      "detail": "admissions 2022-12-31 to 2023-12-28; the 12-month charts count it under December (1 of 247 rows)"
+    },
+    {
+      "check": "Length of stay above IQR fence (> 17 days)",
+      "count": 18,
+      "action": "kept + LOS_Outlier flag",
+      "detail": "long stays are possible and drive bed capacity; removing them would understate workload"
+    },
+    {
+      "check": "Stay > 14 days for a minor condition (cold, flu, migraine, allergy)",
+      "count": 17,
+      "action": "kept + flagged in Review_Flag",
+      "detail": "clinically unusual - worth a chart review / coding audit"
+    },
+    {
+      "check": "Atypical age for diagnosis (stroke < 18, hypertension < 12)",
+      "count": 7,
+      "action": "kept + flagged in Review_Flag",
+      "detail": "rare but possible in children - cannot be proved wrong from this file"
+    },
+    {
+      "check": "Gender disagrees with first name",
+      "count": 131,
+      "action": "reported, not changed",
+      "detail": "53% of rows - near a coin toss, so the recorded gender cannot be trusted but also cannot be corrected reliably (which of name or gender is wrong is unknown). Gender charts carry this caveat."
+    },
+    {
+      "check": "Repeated patient names with different ages",
+      "count": 64,
+      "action": "Patient_ID created per admission; names treated as non-unique",
+      "detail": "75 names across 247 admissions; same name appears with different ages/genders -> different people, so readmission rate cannot be measured"
+    }
+  ],
+  "raw_rows": 248,
+  "raw_cols": 10,
+  "bill_evidence": {
+    "recorded_n": 52,
+    "placeholder_n": 195,
+    "corr_bill_los_recorded": 0.639,
+    "avg_los_recorded": 3.44,
+    "avg_los_placeholder": 7.02,
+    "recorded_min": 503,
+    "recorded_max": 6763
+  },
+  "clean_rows": 247,
+  "clean_cols": 34,
+  "los_fence": 17.0
+}
