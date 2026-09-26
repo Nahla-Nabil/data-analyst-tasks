@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="98" viewBox="0 0 1200 98" role="img" aria-label="Task 8: Healthcare No-Shows">
+<defs><linearGradient id="g8" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#E4572E"/><stop offset="1" stop-color="#E4572E" stop-opacity="0.72"/></linearGradient></defs>
+<rect width="1200" height="98" rx="16" fill="url(#g8)"/>
+<g font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <text x="30" y="70" fill="#FFFFFF" fill-opacity="0.35" font-size="58" font-weight="900">08</text>
+  <text x="122" y="46" fill="#FFFFFF" font-size="26" font-weight="800">Healthcare No-Shows</text>
+  <text x="122" y="74" fill="#FFFFFF" fill-opacity="0.88" font-size="15">TASK 8 · 106,987 appointments</text>
+  <rect x="1097" y="34" width="67" height="30" rx="15" fill="#FFFFFF" fill-opacity="0.28"/><text x="1130" y="54" fill="#FFFFFF" font-size="13" font-weight="700" text-anchor="middle">Python</text><rect x="1013" y="34" width="75" height="30" rx="15" fill="#FFFFFF" fill-opacity="0.28"/><text x="1051" y="54" fill="#FFFFFF" font-size="13" font-weight="700" text-anchor="middle">Slicers</text><rect x="938" y="34" width="67" height="30" rx="15" fill="#FFFFFF" fill-opacity="0.28"/><text x="972" y="54" fill="#FFFFFF" font-size="13" font-weight="700" text-anchor="middle">Pivots</text><rect x="871" y="34" width="59" height="30" rx="15" fill="#FFFFFF" fill-opacity="0.28"/><text x="901" y="54" fill="#FFFFFF" font-size="13" font-weight="700" text-anchor="middle">Excel</text>
+</g>
+</svg>

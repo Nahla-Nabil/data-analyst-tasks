@@ -1,60 +1,17 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300" role="img" aria-label="Data Analyst Internship at VOLTIX - Nahla Nabil - 8 of 12 tasks complete">
-  <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#0F2438"/>
-      <stop offset="0.6" stop-color="#1F3B57"/>
-      <stop offset="1" stop-color="#155E63"/>
-    </linearGradient>
-    <linearGradient id="bar" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#1B998B"/>
-      <stop offset="1" stop-color="#7FD1C7"/>
-    </linearGradient>
-  </defs>
-  <rect width="1200" height="300" rx="18" fill="url(#bg)"/>
-
-  <!-- decorative chart in the background (right side) -->
-  <g opacity="0.16" fill="#9BC4E2">
-    <rect x="820" y="170" width="34" height="90" rx="4"/>
-    <rect x="866" y="140" width="34" height="120" rx="4"/>
-    <rect x="912" y="185" width="34" height="75" rx="4"/>
-    <rect x="958" y="110" width="34" height="150" rx="4"/>
-    <rect x="1004" y="130" width="34" height="130" rx="4"/>
-    <rect x="1050" y="80" width="34" height="180" rx="4"/>
-    <rect x="1096" y="60" width="34" height="200" rx="4"/>
-  </g>
-  <polyline points="837,150 883,120 929,160 975,92 1021,108 1067,62 1113,40" fill="none" stroke="#E4572E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="0.85"/>
-  <g fill="#E4572E">
-    <circle cx="837" cy="150" r="5"/><circle cx="883" cy="120" r="5"/><circle cx="929" cy="160" r="5"/>
-    <circle cx="975" cy="92" r="5"/><circle cx="1021" cy="108" r="5"/><circle cx="1067" cy="62" r="5"/><circle cx="1113" cy="40" r="6"/>
-  </g>
-
-  <g font-family="Segoe UI, Helvetica, Arial, sans-serif">
-    <text x="56" y="70" fill="#7FD1C7" font-size="16" font-weight="700" letter-spacing="4">VOLTIX · DATA ANALYST TRACK</text>
-    <text x="56" y="122" fill="#FFFFFF" font-size="44" font-weight="800">Data Analyst Internship</text>
-    <text x="56" y="160" fill="#D6E4F0" font-size="20">Nahla Nabil · raw data → clean data → KPIs → dashboards → insights</text>
-
-    <!-- progress: 12 task cells, 8 done -->
-    <text x="56" y="214" fill="#D6E4F0" font-size="14" font-weight="700" letter-spacing="2">PROGRESS · 8 / 12 TASKS</text>
-    <g>
-      <rect x="56"  y="228" width="44" height="18" rx="5" fill="url(#bar)"/>
-      <rect x="106" y="228" width="44" height="18" rx="5" fill="url(#bar)"/>
-      <rect x="156" y="228" width="44" height="18" rx="5" fill="url(#bar)"/>
-      <rect x="206" y="228" width="44" height="18" rx="5" fill="url(#bar)"/>
-      <rect x="256" y="228" width="44" height="18" rx="5" fill="url(#bar)"/>
-      <rect x="306" y="228" width="44" height="18" rx="5" fill="url(#bar)"/>
-      <rect x="356" y="228" width="44" height="18" rx="5" fill="url(#bar)"/>
-      <rect x="406" y="228" width="44" height="18" rx="5" fill="url(#bar)"/>
-      <rect x="456" y="228" width="44" height="18" rx="5" fill="none" stroke="#5A7A96" stroke-width="1.5" stroke-dasharray="4 3"/>
-      <rect x="506" y="228" width="44" height="18" rx="5" fill="none" stroke="#5A7A96" stroke-width="1.5" stroke-dasharray="4 3"/>
-      <rect x="556" y="228" width="44" height="18" rx="5" fill="none" stroke="#5A7A96" stroke-width="1.5" stroke-dasharray="4 3"/>
-      <rect x="606" y="228" width="44" height="18" rx="5" fill="none" stroke="#5A7A96" stroke-width="1.5" stroke-dasharray="4 3"/>
-    </g>
-    <g fill="#0F2438" font-size="11" font-weight="700" text-anchor="middle">
-      <text x="78" y="241">1</text><text x="128" y="241">2</text><text x="178" y="241">3</text><text x="228" y="241">4</text>
-      <text x="278" y="241">5</text><text x="328" y="241">6</text><text x="378" y="241">7</text><text x="428" y="241">8</text>
-    </g>
-    <g fill="#5A7A96" font-size="11" font-weight="700" text-anchor="middle">
-      <text x="478" y="241">9</text><text x="528" y="241">10</text><text x="578" y="241">11</text><text x="628" y="241">12</text>
-    </g>
-  </g>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0F2438"/><stop offset="0.6" stop-color="#1F3B57"/><stop offset="1" stop-color="#155E63"/></linearGradient>
+  <linearGradient id="bar" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1B998B"/><stop offset="1" stop-color="#7FD1C7"/></linearGradient>
+</defs>
+<rect width="1200" height="300" rx="18" fill="url(#bg)"/>
+<g opacity="0.16" fill="#9BC4E2"><rect x="820" y="170" width="34" height="90" rx="4"/><rect x="866" y="140" width="34" height="120" rx="4"/><rect x="912" y="185" width="34" height="75" rx="4"/><rect x="958" y="110" width="34" height="150" rx="4"/><rect x="1004" y="130" width="34" height="130" rx="4"/><rect x="1050" y="80" width="34" height="180" rx="4"/><rect x="1096" y="60" width="34" height="200" rx="4"/></g>
+<polyline points="837,150 883,120 929,160 975,92 1021,108 1067,62 1113,40" fill="none" stroke="#E4572E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="0.85"/>
+<g fill="#E4572E"><circle cx="837" cy="150" r="5"/><circle cx="883" cy="120" r="5"/><circle cx="929" cy="160" r="5"/><circle cx="975" cy="92" r="5"/><circle cx="1021" cy="108" r="5"/><circle cx="1067" cy="62" r="5"/><circle cx="1113" cy="40" r="5"/></g>
+<g font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <text x="56" y="70" fill="#7FD1C7" font-size="16" font-weight="700" letter-spacing="4">VOLTIX · DATA ANALYST TRACK</text>
+  <text x="56" y="122" fill="#FFFFFF" font-size="44" font-weight="800">Data Analyst Internship</text>
+  <text x="56" y="160" fill="#D6E4F0" font-size="20">Nahla Nabil · raw data → clean data → KPIs → dashboards → insights</text>
+  <text x="56" y="214" fill="#D6E4F0" font-size="14" font-weight="700" letter-spacing="2">PROGRESS · 8 / 12 TASKS</text>
+  <rect x="56" y="228" width="44" height="18" rx="5" fill="url(#bar)"/><text x="78" y="241" fill="#0F2438" font-size="11" font-weight="700" text-anchor="middle">1</text><rect x="106" y="228" width="44" height="18" rx="5" fill="url(#bar)"/><text x="128" y="241" fill="#0F2438" font-size="11" font-weight="700" text-anchor="middle">2</text><rect x="156" y="228" width="44" height="18" rx="5" fill="url(#bar)"/><text x="178" y="241" fill="#0F2438" font-size="11" font-weight="700" text-anchor="middle">3</text><rect x="206" y="228" width="44" height="18" rx="5" fill="url(#bar)"/><text x="228" y="241" fill="#0F2438" font-size="11" font-weight="700" text-anchor="middle">4</text><rect x="256" y="228" width="44" height="18" rx="5" fill="url(#bar)"/><text x="278" y="241" fill="#0F2438" font-size="11" font-weight="700" text-anchor="middle">5</text><rect x="306" y="228" width="44" height="18" rx="5" fill="url(#bar)"/><text x="328" y="241" fill="#0F2438" font-size="11" font-weight="700" text-anchor="middle">6</text><rect x="356" y="228" width="44" height="18" rx="5" fill="url(#bar)"/><text x="378" y="241" fill="#0F2438" font-size="11" font-weight="700" text-anchor="middle">7</text><rect x="406" y="228" width="44" height="18" rx="5" fill="url(#bar)"/><text x="428" y="241" fill="#0F2438" font-size="11" font-weight="700" text-anchor="middle">8</text><rect x="456" y="228" width="44" height="18" rx="5" fill="none" stroke="#5A7A96" stroke-width="1.5" stroke-dasharray="4 3"/><text x="478" y="241" fill="#5A7A96" font-size="11" font-weight="700" text-anchor="middle">9</text><rect x="506" y="228" width="44" height="18" rx="5" fill="none" stroke="#5A7A96" stroke-width="1.5" stroke-dasharray="4 3"/><text x="528" y="241" fill="#5A7A96" font-size="11" font-weight="700" text-anchor="middle">10</text><rect x="556" y="228" width="44" height="18" rx="5" fill="none" stroke="#5A7A96" stroke-width="1.5" stroke-dasharray="4 3"/><text x="578" y="241" fill="#5A7A96" font-size="11" font-weight="700" text-anchor="middle">11</text><rect x="606" y="228" width="44" height="18" rx="5" fill="none" stroke="#5A7A96" stroke-width="1.5" stroke-dasharray="4 3"/><text x="628" y="241" fill="#5A7A96" font-size="11" font-weight="700" text-anchor="middle">12</text>
+</g>
 </svg>

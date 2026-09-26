@@ -1,170 +1,298 @@
+<a id="top"></a>
 <p align="center">
   <img src="assets/banner.svg" alt="Data Analyst Internship at VOLTIX - Nahla Nabil - 8 of 12 tasks complete" width="100%">
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Python-pandas%20·%20matplotlib%20·%20plotly-3776AB?logo=python&logoColor=white" alt="Python">
-  <img src="https://img.shields.io/badge/Excel-Pivots%20·%20Slicers%20·%20Formulas-217346?logo=microsoftexcel&logoColor=white" alt="Excel">
-  <img src="https://img.shields.io/badge/Power%20BI-DAX%20·%20Reports-F2C811?logo=powerbi&logoColor=black" alt="Power BI">
-  <img src="https://img.shields.io/badge/Tableau-Dashboards-E97627?logo=tableau&logoColor=white" alt="Tableau">
-  <img src="https://img.shields.io/badge/Progress-8%20%2F%2012%20tasks-1B998B" alt="Progress 8 of 12">
+  <img src="https://img.shields.io/badge/Python-pandas%20·%20matplotlib%20·%20plotly-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
+  <img src="https://img.shields.io/badge/Excel-Pivots%20·%20Slicers%20·%20Formulas-217346?style=for-the-badge&logo=microsoftexcel&logoColor=white" alt="Excel">
+  <br>
+  <img src="https://img.shields.io/badge/Power%20BI-DAX%20·%20Reports-F2C811?style=for-the-badge&logo=powerbi&logoColor=black" alt="Power BI">
+  <img src="https://img.shields.io/badge/Tableau-Dashboards-E97627?style=for-the-badge&logo=tableau&logoColor=white" alt="Tableau">
 </p>
 
-This repository holds my work for the one-month **Data Analyst internship at VOLTIX**. The internship has 12 tasks, and each one is due 3 days after it is released.
-Every task starts from a raw dataset. I clean it, check it, and turn it into KPIs, an interactive dashboard, and insights a decision-maker can act on.
-Each folder is self-contained, with the raw data, the cleaned data, the scripts that produced it, the dashboard, and the written findings.
+<p align="center">
+  This repository holds my work for the one-month <b>Data Analyst internship at VOLTIX</b>: 12 tasks, each due 3 days after it is released.<br>
+  Every task starts from a raw dataset. I clean it, check it, and turn it into <b>KPIs</b>, an <b>interactive dashboard</b>, and <b>insights</b> a decision-maker can act on.
+</p>
 
----
+<p align="center">
+  <a href="#-at-a-glance">At a glance</a> ·
+  <a href="#-tools--skills">Tools &amp; skills</a> ·
+  <a href="#-how-every-task-is-approached">Workflow</a> ·
+  <a href="#-the-tasks">The tasks</a> ·
+  <a href="#-repository-layout">Layout</a>
+</p>
 
-## At a glance
+<br>
 
-| # | Task | Dataset | Built with | Main deliverable | Key finding |
-|:-:|---|---|---|---|---|
-| 1 | [Basic Sales Analysis](Task%201) | Superstore, 9,994 orders | Python, Excel | Report (HTML/PDF) and charts | Technology leads with 36% of $2.30M sales. November is the peak month. |
-| 2 | [Sales Performance](Task%202) | FactSale, 26,397 line items | Python, HTML | Interactive dashboard and data-quality PDF | Every sale of one SKU loses money, which points to a pricing error, not noise. |
-| 3 | [HR Attrition](Task%203) | IBM HR, 1,470 employees | Python, Power BI | HTML dashboard and `.pbix` | Employees who work overtime leave at about **3×** the rate. Sales Reps churn at 40%. |
-| 4 | [Excel Skills](Task%204) | 7 practical exercises | Excel | Formatted workbook | Formatting, conditional formatting, formulas, reports, charts, invoice |
-| 5 | [Titanic Survival](Task%205) | 418 passengers | Python, Plotly | Interactive dashboard | Found that `Survived` = `Sex` in every row: the file is a benchmark, not real outcomes. |
-| 6 | [Weather Patterns](Task%206) | 3,271 daily records | Python, Plotly, Tableau | HTML dashboard and `.twbx` | Found 2 blocks of placeholder data. 3.7% of days bring half of all rain. |
-| 7 | [Hospital Analytics](Task%207) | 247 admissions (Arabic source) | Python, Excel, Tableau, Power BI | 3 dashboards (HTML, `.twbx`, `.pbix`) | 79% of bills are placeholders. Recorded severity does not predict length of stay. |
-| 8 | [Healthcare No-Shows](Task%208) | 106,987 appointments | Excel (Pivots, Slicers), Python | Interactive Excel dashboard | SMS looks harmful overall but helps at every lead time (Simpson's paradox). |
-| 9 | *coming soon* | | | | |
-| 10 | *coming soon* | | | | |
-| 11 | *coming soon* | | | | |
-| 12 | *coming soon* | | | | |
+<img src="assets/stats.svg" alt="8 of 12 tasks, 149K+ rows cleaned, 11 dashboards and reports, 4 core tools" width="100%">
 
----
+<br>
 
-## How every task is approached
+## 📋 At a glance
+
+| | Task | Dataset | Main deliverable | Key finding |
+|:-:|---|---|---|---|
+| <img src="assets/chips/01.svg" alt="01" width="56"> | [**Basic Sales Analysis**](#task-1) | Superstore · 9,994 orders | Report (HTML/PDF) and charts | Technology leads with 36% of $2.30M sales |
+| <img src="assets/chips/02.svg" alt="02" width="56"> | [**Sales Performance**](#task-2) | FactSale · 26,397 lines | Dashboard and data-quality PDF | One SKU loses money on every sale |
+| <img src="assets/chips/03.svg" alt="03" width="56"> | [**HR Attrition**](#task-3) | IBM HR · 1,470 employees | HTML dashboard and Power BI | Overtime workers leave at about 3× the rate |
+| <img src="assets/chips/04.svg" alt="04" width="56"> | [**Excel Skills**](#task-4) | 7 exercises | Formatted workbook | Formatting, formulas, reports, charts |
+| <img src="assets/chips/05.svg" alt="05" width="56"> | [**Titanic Survival**](#task-5) | 418 passengers | Plotly dashboard | `Survived` = `Sex` in all 418 rows (a benchmark file) |
+| <img src="assets/chips/06.svg" alt="06" width="56"> | [**Weather Patterns**](#task-6) | 3,271 days | HTML and Tableau | 3.7% of days bring half of all rain |
+| <img src="assets/chips/07.svg" alt="07" width="56"> | [**Hospital Analytics**](#task-7) | 247 admissions | HTML, Tableau and Power BI | 79% of bills are placeholders |
+| <img src="assets/chips/08.svg" alt="08" width="56"> | [**Healthcare No-Shows**](#task-8) | 106,987 appointments | Excel dashboard (Pivots and Slicers) | SMS helps, but raw numbers hide it (Simpson's paradox) |
+| <img src="assets/chips/09.svg" alt="09" width="56"> | *coming soon* | | | |
+| <img src="assets/chips/10.svg" alt="10" width="56"> | *coming soon* | | | |
+| <img src="assets/chips/11.svg" alt="11" width="56"> | *coming soon* | | | |
+| <img src="assets/chips/12.svg" alt="12" width="56"> | *coming soon* | | | |
+
+<br>
+
+## 🧰 Tools & skills
+
+<img src="assets/skills.svg" alt="Tools used and skills practised across the tasks" width="100%">
+
+<br>
+
+## 🗓️ Timeline
 
 ```mermaid
-flowchart LR
-    A[("Raw data<br/>CSV / XLSX")] --> B{"Data quality<br/>checks"}
-    B -->|missing · duplicates<br/>types · impossible values<br/>placeholders| C["Clean & flag<br/>(nothing silently deleted)"]
-    C --> D["Feature engineering<br/>bands · flags · history"]
-    D --> E["KPIs<br/>each with a purpose"]
-    E --> F["Analysis<br/>drivers · segments · tests"]
-    F --> G["Dashboards<br/>Excel · Power BI · Tableau · HTML"]
-    G --> H["Insights &<br/>recommendations"]
-    H --> I[["Submission<br/>zip + GitHub"]]
-
-    classDef data fill:#1F3B57,stroke:#1F3B57,color:#fff
-    classDef work fill:#E8F6F3,stroke:#1B998B,color:#12313a
-    classDef out fill:#E4572E,stroke:#E4572E,color:#fff
-    class A data
-    class B,C,D,E,F work
-    class G,H,I out
+%%{init: {'theme':'base','themeVariables':{'cScale0':'#2E86AB','cScale1':'#1B998B','cScale2':'#8E5572','cScale3':'#E4572E','cScaleLabel0':'#ffffff','cScaleLabel1':'#ffffff','cScaleLabel2':'#ffffff','cScaleLabel3':'#ffffff'}}}%%
+timeline
+    title Internship timeline · September 2026
+    section Week 1
+        09 Sep : Task 1 · Sales analysis : Task 2 · Sales dashboard
+    section Week 2
+        13 Sep : Task 3 · HR attrition
+        16 Sep : Task 4 · Excel skills
+        17 Sep : Task 5 · Titanic
+    section Week 3
+        21 Sep : Task 6 · Weather
+        23 Sep : Task 7 · Hospital
+    section Week 4
+        26 Sep : Task 8 · No-shows
+        Next : Tasks 9–12
 ```
 
-The same principles apply in every task:
-- **Every cleaning decision is logged** with the evidence behind it, in a `DATA_QUALITY_REPORT.md` or a Cleaning Log sheet.
-- **Suspicious rows are flagged rather than deleted**, unless they are impossible.
-- **Every KPI states why it matters.** Each insight comes with numbers you can trace back to the data.
-- **Dashboards are generated by scripts**, so the whole pipeline can be re-run from the raw file.
+<br>
 
-### Tools across the tasks
+## 🔁 How every task is approached
 
-| Tool | T1 | T2 | T3 | T4 | T5 | T6 | T7 | T8 |
-|---|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-| Python (pandas) | ● | ● | ● | | ● | ● | ● | ● |
-| Excel | ● | | | ● | | | ● | ● |
-| Pivot Tables / Slicers | | | | | | | | ● |
-| HTML / Plotly dashboard | ● | ● | ● | | ● | ● | ● | |
-| Power BI | | | ● | | | ○ | ● | |
-| Tableau | | | | | | ● | ● | |
-| PDF report | ● | ● | | | | | | |
+```mermaid
+flowchart TB
+    subgraph P1["① Prepare"]
+        direction LR
+        A[("Raw data<br/>CSV / XLSX")] --> B{{"Quality checks<br/>missing · duplicates<br/>types · placeholders"}}
+        B --> C["Clean & flag<br/>nothing silently deleted"]
+        C --> D["Feature engineering<br/>bands · flags · history"]
+    end
+    subgraph P2["② Analyse & deliver"]
+        direction LR
+        E["KPIs<br/>each with a purpose"] --> F["Analysis<br/>drivers · segments"]
+        F --> G["Dashboards<br/>Excel · Power BI<br/>Tableau · HTML"]
+        G --> H["Insights &<br/>recommendations"]
+        H --> I[["Submission<br/>zip + GitHub"]]
+    end
+    P1 ==> P2
 
-● = delivered · ○ = build guide only
+    classDef data fill:#1F3B57,stroke:#1F3B57,color:#fff
+    classDef clean fill:#1B998B,stroke:#1B998B,color:#fff
+    classDef kpi fill:#E0A030,stroke:#E0A030,color:#fff
+    classDef out fill:#E4572E,stroke:#E4572E,color:#fff
+    class A data
+    class B,C,D clean
+    class E,F kpi
+    class G,H,I out
+    style P1 fill:#F1F8F7,stroke:#1B998B,stroke-width:1px
+    style P2 fill:#FDF4F1,stroke:#E4572E,stroke-width:1px
+```
 
----
+| 🧾 Every decision is logged | 🚩 Flag, don't delete | 🎯 KPIs with a purpose | ⚙️ Reproducible |
+|---|---|---|---|
+| Each cleaning step is recorded with its evidence in a data-quality report or Cleaning Log sheet | Suspicious rows are flagged and kept, unless they are impossible | Every KPI says why it matters, and every insight has numbers behind it | Scripts rebuild everything from the raw file |
 
-## The tasks
+<br>
 
-### Task 1: Basic Sales Data Analysis
-<img src="assets/previews/task1.png" alt="Task 1 sales analysis report" width="100%">
+## 📂 The tasks
 
-- Cleaned the Superstore dataset: fixed text dates, handled missing postal codes, and validated the numeric columns.
-- Answered 6 business questions (sales, profit, top category, product, region and month) and made 5 charts.
-- Delivered the results as a styled HTML/PDF report and an Excel summary.
+<a id="task-1"></a>
+<img src="assets/headers/task01.svg" alt="Task 1: Basic Sales Analysis" width="100%">
 
-**Key finding:** $2.30M in sales at a 12.5% margin. **Technology** brings 36% of sales, **West** is the top region, and **November** is the best month.
-→ [Report](Task%201/Sales_Analysis_Report.md) · [Charts](Task%201/charts)
+<table>
+<tr>
+<td width="46%"><a href="Task%201"><img src="assets/previews/task1.png" alt="Task 1 preview"></a></td>
+<td>
 
-### Task 2: Sales Performance Dashboard
-<img src="assets/previews/task2.png" alt="Task 2 sales dashboard" width="100%">
+**What I did**
+- Cleaned the Superstore data: fixed text dates, handled missing postal codes, validated the numbers
+- Answered 6 business questions and made 5 charts
+- Delivered an HTML/PDF report and an Excel summary
 
-- Validated 26,397 invoice lines and imputed 13 missing delivery dates. The rule behind the fill holds in 100% of the other rows.
-- Built a product-category dimension from free text, because no lookup tables were provided.
-- Delivered an interactive dashboard and a one-page data-quality PDF.
+**💡 Key finding:** $2.30M in sales at a 12.5% margin. **Technology** brings 36% of sales, **West** is the top region, and **November** is the peak month.
 
-**Key finding:** the margin is a healthy 49.9%, but **every single sale of one Halloween mask SKU is at a loss**. That points to a costing error that can be fixed.
-→ [Insights](Task%202/KEY_INSIGHTS.md) · [Data quality](Task%202/DATA_QUALITY_REPORT.md)
+📎 [Report](Task%201/Sales_Analysis_Report.md) · [Charts](Task%201/charts)
+</td>
+</tr>
+</table>
 
-### Task 3: HR Employee Attrition
-<img src="assets/previews/task3.png" alt="Task 3 HR attrition dashboard" width="100%">
+<p align="right"><a href="#top">↑ back to top</a></p>
 
-- Analysed attrition by department, role, pay, satisfaction and overtime for 1,470 employees.
-- Delivered an HTML dashboard and a **Power BI** model (`.pbix`) with a build guide.
+<a id="task-2"></a>
+<img src="assets/headers/task02.svg" alt="Task 2: Sales Performance Dashboard" width="100%">
 
-**Key finding:** 16.1% attrition overall. Overtime workers leave at about **3×** the rate of others, and **Sales Representatives** at 40%.
-→ [Insights](Task%203/KEY_INSIGHTS.md) · [Power BI guide](Task%203/Power_BI_Guide.md)
+<table>
+<tr>
+<td width="46%"><a href="Task%202"><img src="assets/previews/task2.png" alt="Task 2 preview"></a></td>
+<td>
 
-### Task 4: Excel Skills
-<img src="assets/previews/task4.png" alt="Task 4 Excel sales person report" width="100%">
+**What I did**
+- Validated 26,397 invoice lines and imputed 13 missing delivery dates, based on a rule that holds in 100% of the other rows
+- Built a product-category field from free text, because no lookup tables were provided
+- Delivered an interactive dashboard and a one-page data-quality PDF
 
-The 7 exercises cover:
+**💡 Key finding:** the margin is 49.9%, but **every sale of one Halloween mask SKU loses money**. That points to a costing error, not noise.
+
+📎 [Insights](Task%202/KEY_INSIGHTS.md) · [Data quality](Task%202/DATA_QUALITY_REPORT.md)
+</td>
+</tr>
+</table>
+
+<p align="right"><a href="#top">↑ back to top</a></p>
+
+<a id="task-3"></a>
+<img src="assets/headers/task03.svg" alt="Task 3: HR Employee Attrition" width="100%">
+
+<table>
+<tr>
+<td width="46%"><a href="Task%203"><img src="assets/previews/task3.png" alt="Task 3 preview"></a></td>
+<td>
+
+**What I did**
+- Analysed attrition by department, role, pay, satisfaction and overtime
+- Delivered an HTML dashboard and a **Power BI** model (`.pbix`) with a build guide
+
+**💡 Key finding:** 16.1% attrition overall. **Overtime workers leave at about 3×** the rate of others, and Sales Representatives at 40%.
+
+📎 [Insights](Task%203/KEY_INSIGHTS.md) · [Power BI guide](Task%203/Power_BI_Guide.md)
+</td>
+</tr>
+</table>
+
+<p align="right"><a href="#top">↑ back to top</a></p>
+
+<a id="task-4"></a>
+<img src="assets/headers/task04.svg" alt="Task 4: Excel Skills" width="100%">
+
+<table>
+<tr>
+<td width="46%"><a href="Task%204"><img src="assets/previews/task4.png" alt="Task 4 preview"></a></td>
+<td>
+
+**What I did** (7 exercises)
 - Professional date and currency formatting
 - Highlighting the highest and lowest values
 - Conditional formatting against a reference cell
-- Formula-driven cells
+- Formula-driven cells and a price lookup with order totals
 - A sales-person report with a chart
-- A price lookup with order totals
 - A new invoice
 
-→ [Workbook](Task%204)
+📎 [Workbook](Task%204)
+</td>
+</tr>
+</table>
 
-### Task 5: Titanic Survival
-<img src="assets/previews/task5.png" alt="Task 5 Titanic dashboard" width="100%">
+<p align="right"><a href="#top">↑ back to top</a></p>
 
-- Cleaned 418 passengers and engineered family size, travelling alone, and cabin fields.
-- Built an interactive Plotly dashboard.
+<a id="task-5"></a>
+<img src="assets/headers/task05.svg" alt="Task 5: Titanic Survival" width="100%">
 
-**Key finding:** a data-quality catch. `Survived` matches `Sex` in all 418 rows, which is the signature of Kaggle's `gender_submission` benchmark. For that reason, survival-by-sex results are labelled as tautological rather than presented as a discovery.
-→ [Insights](Task%205/KEY_INSIGHTS.md) · [Data quality](Task%205/DATA_QUALITY_REPORT.md)
+<table>
+<tr>
+<td width="46%"><a href="Task%205"><img src="assets/previews/task5.png" alt="Task 5 preview"></a></td>
+<td>
 
-### Task 6: Weather & Climate Patterns
-<img src="assets/previews/task6.png" alt="Task 6 weather dashboard" width="100%">
+**What I did**
+- Cleaned 418 passengers and engineered family size, travelling-alone and cabin fields
+- Built an interactive Plotly dashboard
 
-- Found and blanked two blocks of **placeholder values**: wind gusts were fixed at 41 km/h W for 957 days, and cloud cover was constant for 520 days. Left in, they would have made westerly winds look twice as common as they are.
-- Delivered an HTML dashboard, a **Tableau** workbook with 4 dashboards, and a Power BI guide.
+**💡 Key finding:** a data-quality catch. `Survived` matches `Sex` in **all 418 rows**, which is the signature of Kaggle's benchmark file. Survival-by-sex is therefore labelled as tautological, not presented as a discovery.
 
-**Key finding:** rain is concentrated in a few days. Heavy-rain days are 3.7% of all days but carry **49.5% of all rainfall**.
-→ [README](Task%206/README.md) · [Insights](Task%206/KEY_INSIGHTS.md)
+📎 [Insights](Task%205/KEY_INSIGHTS.md) · [Data quality](Task%205/DATA_QUALITY_REPORT.md)
+</td>
+</tr>
+</table>
 
-### Task 7: Hospital Analytics
-<img src="assets/previews/task7.png" alt="Task 7 hospital dashboard" width="100%">
+<p align="right"><a href="#top">↑ back to top</a></p>
 
-- Cleaned an Arabic-language admissions file. The work included fixing 29 reversed admission/discharge dates and finding that **79% of bills are placeholders**.
-- Built the same dashboard three times: **HTML**, **Tableau** (`.twbx`) and **Power BI** (`.pbix`, 22 DAX measures).
+<a id="task-6"></a>
+<img src="assets/headers/task06.svg" alt="Task 6: Weather and Climate Patterns" width="100%">
 
-**Key finding:** recorded severity does not predict length of stay (p = 0.91), so severity coding needs an audit. Stays of 15+ days are 11% of admissions but 35% of bed-days.
-→ [README](Task%207/README.md) · [Insights](Task%207/KEY_INSIGHTS.md)
+<table>
+<tr>
+<td width="46%"><a href="Task%206"><img src="assets/previews/task6.png" alt="Task 6 preview"></a></td>
+<td>
 
-### Task 8: Healthcare No-Shows (Excel Dashboard)
-<img src="assets/previews/task8.png" alt="Task 8 Excel no-show dashboard" width="100%">
+**What I did**
+- Found and blanked 2 blocks of **placeholder values** (wind gusts and cloud cover). Left in, they would have made westerly winds look twice as common as they are
+- Delivered an HTML dashboard, a **Tableau** workbook with 4 dashboards, and a Power BI guide
 
-- Cleaned 106,987 appointments. I removed 5 rows booked after their own appointment date, flagged corrupted patient IDs and ages of 115, and derived each patient's no-show history.
-- Built an Excel dashboard with 10 **Pivot Tables**, 9 **Pivot Charts**, 9 **Slicers** and a **Timeline**. KPI cards update through `GETPIVOTDATA`. The workbook also has 23 formula KPIs.
+**💡 Key finding:** heavy-rain days are 3.7% of all days but carry **49.5% of all rainfall**.
 
-**Key finding:** at first glance, SMS reminders seem to *raise* no-shows (27.7% vs 16.7%). The reason is that SMS is only sent for advance bookings. Compared at the same lead time, SMS **lowers** no-shows by 1.6–7.8 points, yet half of advance bookings get no SMS.
-→ [README](Task%208/README.md) · [Insights](Task%208/KEY_INSIGHTS.md)
+📎 [README](Task%206/README.md) · [Insights](Task%206/KEY_INSIGHTS.md)
+</td>
+</tr>
+</table>
 
-### Tasks 9–12
-*Coming soon. They will be added here as they are released.*
+<p align="right"><a href="#top">↑ back to top</a></p>
 
----
+<a id="task-7"></a>
+<img src="assets/headers/task07.svg" alt="Task 7: Hospital Analytics" width="100%">
 
-## Repository layout
+<table>
+<tr>
+<td width="46%"><a href="Task%207"><img src="assets/previews/task7.png" alt="Task 7 preview"></a></td>
+<td>
+
+**What I did**
+- Cleaned an Arabic-language admissions file: fixed 29 reversed dates and found that **79% of bills are placeholders**
+- Built the same dashboard 3 times: **HTML**, **Tableau** and **Power BI** (22 DAX measures)
+
+**💡 Key finding:** recorded severity **does not predict** length of stay (p = 0.91). Stays of 15+ days are 11% of admissions but 35% of bed-days.
+
+📎 [README](Task%207/README.md) · [Insights](Task%207/KEY_INSIGHTS.md)
+</td>
+</tr>
+</table>
+
+<p align="right"><a href="#top">↑ back to top</a></p>
+
+<a id="task-8"></a>
+<img src="assets/headers/task08.svg" alt="Task 8: Healthcare No-Shows" width="100%">
+
+<table>
+<tr>
+<td width="46%"><a href="Task%208"><img src="assets/previews/task8.png" alt="Task 8 preview"></a></td>
+<td>
+
+**What I did**
+- Cleaned 106,987 appointments: removed 5 impossible rows, flagged corrupted IDs and ages of 115, and derived each patient's no-show history
+- Built an Excel dashboard with 10 **Pivot Tables**, 9 **Pivot Charts**, 9 **Slicers** and a **Timeline**, plus 23 formula KPIs
+
+**💡 Key finding:** SMS seems to *raise* no-shows (27.7% vs 16.7%), because it is only sent for advance bookings. Compared at the same lead time, it **lowers** them by 1.6–7.8 points.
+
+📎 [README](Task%208/README.md) · [Insights](Task%208/KEY_INSIGHTS.md)
+</td>
+</tr>
+</table>
+
+<p align="right"><a href="#top">↑ back to top</a></p>
+
+<p align="center"><b>Tasks 9–12:</b> <i>coming soon. Each will be added here once it is released.</i></p>
+
+<br>
+
+## 🗂️ Repository layout
 
 ```
 Task N/
@@ -172,11 +300,12 @@ Task N/
 ├── Cleaned_*.csv              # cleaned + engineered data
 ├── clean_*.py / analysis.py   # pipeline scripts, in run order
 ├── build_*.py                 # dashboard / workbook generators
-├── *Dashboard*                # .html / .xlsx / .pbix / .twbx
+├── *Dashboard*                # .html / .xlsb / .pbix / .twbx
 ├── DATA_QUALITY_REPORT.md     # what was checked and why
 ├── KEY_INSIGHTS.md            # findings + recommendations
 ├── screenshots/               # dashboard previews
 └── NahlaNabil.zip             # the submitted package
+assets/                        # README graphics (python assets/make_assets.py)
 ```
 
 <p align="center"><sub>Nahla Nabil · VOLTIX Data Analyst Internship · 2026</sub></p>

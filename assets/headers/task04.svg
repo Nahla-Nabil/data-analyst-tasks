@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="98" viewBox="0 0 1200 98" role="img" aria-label="Task 4: Excel Skills">
+<defs><linearGradient id="g4" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#217346"/><stop offset="1" stop-color="#217346" stop-opacity="0.72"/></linearGradient></defs>
+<rect width="1200" height="98" rx="16" fill="url(#g4)"/>
+<g font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <text x="30" y="70" fill="#FFFFFF" fill-opacity="0.35" font-size="58" font-weight="900">04</text>
+  <text x="122" y="46" fill="#FFFFFF" font-size="26" font-weight="800">Excel Skills</text>
+  <text x="122" y="74" fill="#FFFFFF" fill-opacity="0.88" font-size="15">TASK 4 · 7 practical exercises</text>
+  <rect x="1105" y="34" width="59" height="30" rx="15" fill="#FFFFFF" fill-opacity="0.28"/><text x="1134" y="54" fill="#FFFFFF" font-size="13" font-weight="700" text-anchor="middle">Excel</text>
+</g>
+</svg>
