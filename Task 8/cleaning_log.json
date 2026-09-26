@@ -1,0 +1,86 @@
+[
+  {
+    "step": 1,
+    "check": "Load raw file",
+    "found": "106,987 rows x 15 columns",
+    "action": "Loaded as UTF-8",
+    "rows_after": 106987
+  },
+  {
+    "step": 2,
+    "check": "Missing / blank values",
+    "found": "0 nulls, 0 blank strings",
+    "action": "None to treat",
+    "rows_after": 106987
+  },
+  {
+    "step": 3,
+    "check": "Duplicate rows / AppointmentID",
+    "found": "0 full duplicates, 0 repeated IDs",
+    "action": "None to remove",
+    "rows_after": 106987
+  },
+  {
+    "step": 4,
+    "check": "Column names",
+    "found": "Misspelled 'Hipertension', 'Handcap'; mixed styles ('Date.diff')",
+    "action": "Renamed to Hypertension, Handicap, Lead_Days, etc.",
+    "rows_after": 106987
+  },
+  {
+    "step": 5,
+    "check": "Patient_ID format",
+    "found": "5 IDs have decimals (e.g. 93779.52927); IDs are 13-15 digits and lose precision as numbers",
+    "action": "Kept as text; malformed IDs flagged, rows kept (appointment itself is valid)",
+    "rows_after": 106987
+  },
+  {
+    "step": 6,
+    "check": "Lead_Days vs dates",
+    "found": "0 mismatches with recomputed day difference",
+    "action": "None",
+    "rows_after": 106987
+  },
+  {
+    "step": 7,
+    "check": "Negative lead time",
+    "found": "5 appointments scheduled AFTER the appointment date (all no-shows)",
+    "action": "Removed: impossible sequence",
+    "rows_after": 106982
+  },
+  {
+    "step": 8,
+    "check": "Age range",
+    "found": "min 1, max 115; 7 rows over 100, 5 at 115 (2 patients)",
+    "action": "Kept and flagged (booking data is valid); ages 0/negative: none",
+    "rows_after": 106982
+  },
+  {
+    "step": 9,
+    "check": "Category values",
+    "found": "Gender: ['F', 'M']; 81 neighbourhoods, upper case",
+    "action": "Trimmed; neighbourhoods set to Title Case",
+    "rows_after": 106982
+  },
+  {
+    "step": 10,
+    "check": "Weekend appointments",
+    "found": "39 on Saturday, 0 on Sunday",
+    "action": "Kept (valid, tiny volume)",
+    "rows_after": 106982
+  },
+  {
+    "step": 11,
+    "check": "Multiple bookings same patient/day",
+    "found": "11,024 rows share patient + scheduled + appointment date",
+    "action": "Kept (distinct Appointment_IDs = separate services), flagged",
+    "rows_after": 106982
+  },
+  {
+    "step": 12,
+    "check": "Derived columns",
+    "found": "32 columns in final table",
+    "action": "Added Status, No_Show (1/0), SMS_Flag (1/0), Age_Group, Lead_Time_Group, Appt_Weekday, Appt_Month, Chronic_Count/Group, patient history (visit #, prior no-shows, patient type), First_Appt, flags",
+    "rows_after": 106982
+  }
+]
