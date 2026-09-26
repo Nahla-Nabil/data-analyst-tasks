@@ -7,7 +7,7 @@ import pythoncom
 import win32com.client as win32
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-WB = os.path.join(HERE, "Healthcare_NoShows_Dashboard.xlsx")
+WB = os.path.join(HERE, "Healthcare_NoShows_Dashboard.xlsb")
 AREA = "A1:CS88"
 SHOTS = os.path.join(HERE, "screenshots")
 os.makedirs(SHOTS, exist_ok=True)

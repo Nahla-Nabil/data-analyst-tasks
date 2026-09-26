@@ -1,7 +1,7 @@
 # Key insights: Healthcare No-Shows
 
 These figures cover all 106,982 appointments that remain after cleaning (60,270 patients, 29 Apr to 8 Jun 2016).
-Each number can be traced to the **KPIs** and **Analysis** sheets of `Healthcare_NoShows_Dashboard.xlsx`.
+Each number can be traced to the **KPIs** and **Analysis** sheets of `Healthcare_NoShows_Dashboard.xlsb`.
 
 ## KPI scorecard
 

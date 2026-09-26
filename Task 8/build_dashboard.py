@@ -2,7 +2,7 @@
 pivot tables, pivot charts, slicers, a date timeline, KPI cards driven by
 GETPIVOTDATA, an insights panel and the Insights sheet.
 
-Output: Healthcare_NoShows_Dashboard.xlsx
+Output: Healthcare_NoShows_Dashboard.xlsb
 """
 import os
 import pythoncom
@@ -10,7 +10,7 @@ import win32com.client as win32
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 SRC = os.path.join(HERE, "NoShows_Base.xlsx")
-OUT = os.path.join(HERE, "Healthcare_NoShows_Dashboard.xlsx")
+OUT = os.path.join(HERE, "Healthcare_NoShows_Dashboard.xlsb")
 
 # Excel constants
 xlDatabase, xlRow, xlCol, xlPage = 1, 1, 2, 3
@@ -552,7 +552,7 @@ try:
     print("pivots:", piv.PivotTables().Count, "charts:", dash.ChartObjects().Count, "slicer caches:", wb.SlicerCaches.Count)
     if os.path.exists(OUT):
         os.remove(OUT)
-    wb.SaveAs(OUT, FileFormat=51)
+    wb.SaveAs(OUT, FileFormat=50)  # .xlsb: same features, half the size of .xlsx
     wb.Close(False)
     print("saved", OUT)
 finally:

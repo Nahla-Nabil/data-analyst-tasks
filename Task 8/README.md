@@ -3,8 +3,13 @@
 This task turns 106,987 raw medical appointments from Vitória, Brazil (2016) into an interactive Excel dashboard.
 The dashboard explains who misses appointments and why.
 
-**Start here:** open `Healthcare_NoShows_Dashboard.xlsx`, go to the **Dashboard** sheet and use the slicers and the timeline.
+**Start here:** open `Healthcare_NoShows_Dashboard.xlsb`, go to the **Dashboard** sheet and use the slicers and the timeline.
+
+The workbook is saved as an **Excel Binary Workbook (.xlsb)**. It has all the same features as .xlsx (pivots, slicers, timeline, formulas) at half the size: 8.4MB instead of 17.6MB. That keeps the submission under the 10MB upload limit.
+If Excel opens it in Protected View, click **Enable Editing** so the slicers work.
 Then read the **Insights** sheet or `KEY_INSIGHTS.md`.
+
+The submission zip leaves out the two CSVs (raw data and `Cleaned_NoShows.csv`) to stay under the limit. The cleaned data is still in the workbook's **Data** sheet, and both CSVs are in this repository.
 
 ## Workbook contents
 
