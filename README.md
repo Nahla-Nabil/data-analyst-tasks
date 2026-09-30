@@ -303,7 +303,7 @@ flowchart TB
 
 **💡 Key finding:** **$750+ orders are 26% of orders but 45% of revenue**, and customers are split 39% / 39% between dissatisfied and satisfied. The August–September "slump" is a calendar-coverage artefact, and no segment differs. The file behaves like randomly generated data.
 
-📎 [README](Task%209/README.md) · [Insights](Task%209/KEY_INSIGHTS.md) · [Summary PDF](Task%209/Customer_Analysis_Summary.pdf)
+📎 [README](Task%209/README.md) · [Insights](Task%209/KEY_INSIGHTS.md) · [Summary PDF](Task%209/Customer_Analysis_Summary.pdf) · [Power BI (.pbix)](Task%209/Customer_Dashboard.pbix)
 </td>
 </tr>
 </table>

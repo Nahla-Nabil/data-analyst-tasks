@@ -2,6 +2,9 @@
 
 ## 0. The report: `Customer_Dashboard.pbix` (source project: `PowerBI/Customer_Dashboard.pbip`)
 
+`Customer_Dashboard.pbix` is the finished report, with the data included (196 KB). Double-click it to open it in Power BI Desktop.
+It was saved from the project described below.
+
 `build_powerbi.py` generates a complete Power BI project (PBIP):
 - a Power Query load of `Cleaned_Customers.csv`
 - a `Calendar` table and a small `Field Quality` helper table
