@@ -20,18 +20,19 @@ TASKS = [
     (6, "Weather & Climate Patterns", "3,271 daily records", "#3D5A80", ["Python", "Plotly", "Tableau"]),
     (7, "Hospital Analytics", "247 admissions · Arabic source", "#8E5572", ["Python", "Excel", "Tableau", "Power BI"]),
     (8, "Healthcare No-Shows", "106,987 appointments", "#E4572E", ["Excel", "Pivots", "Slicers", "Python"]),
+    (9, "Customer Data Analysis", "2,150 customer records", "#4A5FC1", ["Python", "Plotly", "Power BI", "PDF"]),
 ]
 DONE = len(TASKS)
-ROWS_CLEANED = 9994 + 26397 + 1470 + 418 + 3271 + 247 + 106987
-DASHBOARDS = 11  # T1 report, T2, T3 html + pbix, T5, T6 html + twbx, T7 html + twbx + pbix, T8 xlsb
+ROWS_CLEANED = 9994 + 26397 + 1470 + 418 + 3271 + 247 + 106987 + 2150
+DASHBOARDS = 14  # T1 report, T2, T3 html + pbix, T5, T6 html + twbx, T7 html + twbx + pbix, T8 xlsb, T9 html + pbix + pdf
 
 TOOL_COLORS = {"Python": "#3776AB", "Excel": "#217346", "Power BI": "#C9A000", "Tableau": "#E97627",
                "Plotly / HTML": "#7B61FF", "PDF reports": "#B03A2E"}
-TOOL_USE = {"Python": 7, "Excel": 4, "Plotly / HTML": 6, "Power BI": 2, "Tableau": 2, "PDF reports": 2}
-SKILLS = [("Data visualization", 8), ("Data cleaning & validation", 7), ("KPI design", 7),
-          ("Automation with Python scripts", 7), ("Interactive dashboards", 6),
-          ("Data-quality detective work", 5), ("Excel formulas, pivots & slicers", 4),
-          ("BI tools (Power BI / Tableau)", 3)]
+TOOL_USE = {"Python": 8, "Excel": 4, "Plotly / HTML": 7, "Power BI": 3, "Tableau": 2, "PDF reports": 3}
+SKILLS = [("Data visualization", 9), ("Data cleaning & validation", 8), ("KPI design", 8),
+          ("Automation with Python scripts", 8), ("Interactive dashboards", 7),
+          ("Data-quality detective work", 6), ("Excel formulas, pivots & slicers", 4),
+          ("BI tools (Power BI / Tableau)", 4)]
 SKILL_COLORS = ["#2E86AB", "#1B998B", "#E0A030", "#3D5A80", "#E4572E", "#8E5572", "#217346", "#E97627"]
 
 

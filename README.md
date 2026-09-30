@@ -1,6 +1,6 @@
 <a id="top"></a>
 <p align="center">
-  <img src="assets/banner.svg" alt="Data Analyst Internship at VOLTIX - Nahla Nabil - 8 of 12 tasks complete" width="100%">
+  <img src="assets/banner.svg" alt="Data Analyst Internship at VOLTIX - Nahla Nabil - 9 of 12 tasks complete" width="100%">
 </p>
 
 <p align="center">
@@ -26,7 +26,7 @@
 
 <br>
 
-<img src="assets/stats.svg" alt="8 of 12 tasks, 149K+ rows cleaned, 11 dashboards and reports, 4 core tools" width="100%">
+<img src="assets/stats.svg" alt="9 of 12 tasks, 151K+ rows cleaned, 14 dashboards and reports, 4 core tools" width="100%">
 
 <br>
 
@@ -42,7 +42,7 @@
 | <img src="assets/chips/06.svg" alt="06" width="56"> | [**Weather Patterns**](#task-6) | 3,271 days | HTML and Tableau | 3.7% of days bring half of all rain |
 | <img src="assets/chips/07.svg" alt="07" width="56"> | [**Hospital Analytics**](#task-7) | 247 admissions | HTML, Tableau and Power BI | 79% of bills are placeholders |
 | <img src="assets/chips/08.svg" alt="08" width="56"> | [**Healthcare No-Shows**](#task-8) | 106,987 appointments | Excel dashboard (Pivots and Slicers) | SMS helps, but raw numbers hide it (Simpson's paradox) |
-| <img src="assets/chips/09.svg" alt="09" width="56"> | *coming soon* | | | |
+| <img src="assets/chips/09.svg" alt="09" width="56"> | [**Customer Data Analysis**](#task-9) | Customers · 2,150 records | HTML, Power BI and PDF summary | $750+ orders: 26% of orders, 45% of revenue |
 | <img src="assets/chips/10.svg" alt="10" width="56"> | *coming soon* | | | |
 | <img src="assets/chips/11.svg" alt="11" width="56"> | *coming soon* | | | |
 | <img src="assets/chips/12.svg" alt="12" width="56"> | *coming soon* | | | |
@@ -72,7 +72,8 @@ timeline
         23 Sep : Task 7 · Hospital
     section Week 4
         26 Sep : Task 8 · No-shows
-        Next : Tasks 9–12
+        29 Sep : Task 9 · Customers
+        Next : Tasks 10–12
 ```
 
 <br>
@@ -288,7 +289,28 @@ flowchart TB
 
 <p align="right"><a href="#top">↑ back to top</a></p>
 
-<p align="center"><b>Tasks 9–12:</b> <i>coming soon. Each will be added here once it is released.</i></p>
+<a id="task-9"></a>
+<img src="assets/headers/task09.svg" alt="Task 9: Customer Data Analysis" width="100%">
+
+<table>
+<tr>
+<td width="46%"><a href="Task%209"><img src="assets/previews/task9.png" alt="Task 9 preview"></a></td>
+<td>
+
+**What I did**
+- Cleaned 2,150 customer records: 50 duplicates, age placeholders (-1 / 200), ratings of 10 on a 1–5 scale and impossible dates were handled one by one. Only **9.7%** of records turned out to be complete
+- Built an interactive **HTML dashboard**, a 5-page **Power BI** report (30 DAX measures, checked against Python with DAX queries) and a 5-page PDF summary
+
+**💡 Key finding:** **$750+ orders are 26% of orders but 45% of revenue**, and customers are split 39% / 39% between dissatisfied and satisfied. The August–September "slump" is a calendar-coverage artefact, and no segment differs. The file behaves like randomly generated data.
+
+📎 [README](Task%209/README.md) · [Insights](Task%209/KEY_INSIGHTS.md) · [Summary PDF](Task%209/Customer_Analysis_Summary.pdf)
+</td>
+</tr>
+</table>
+
+<p align="right"><a href="#top">↑ back to top</a></p>
+
+<p align="center"><b>Tasks 10–12:</b> <i>coming soon. Each will be added here once it is released.</i></p>
 
 <br>
 
