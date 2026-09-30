@@ -1,0 +1,215 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "7206c52139aa403cba82",
+  "position": {
+    "x": 16,
+    "y": 56,
+    "z": 2000,
+    "height": 640,
+    "width": 1248,
+    "tabOrder": 2000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Key findings",
+                    "textStyle": {
+                      "fontSize": "14pt",
+                      "color": "#1F3A5F",
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "- Data quality is the biggest finding: only 9.7% of records are valid in every field; age is usable for 24% of customers and no phone number is real.",
+                    "textStyle": {
+                      "fontSize": "14pt",
+                      "color": "#1F3A5F"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "- Big tickets carry the revenue: $750+ orders are 26% of orders but 45% of the $1.02M revenue (average order $510).",
+                    "textStyle": {
+                      "fontSize": "14pt",
+                      "color": "#1F3A5F"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "- Satisfaction is split: average 3.03 / 5, with 39% dissatisfied (1-2) and 39% satisfied (4-5), the same in every segment.",
+                    "textStyle": {
+                      "fontSize": "14pt",
+                      "color": "#1F3A5F"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "- Sales are flat: about 60 purchases and $29K a month, no trend (p = 0.48); Jan-Jun revenue +1.3% in 2024 and -2.6% in 2025.",
+                    "textStyle": {
+                      "fontSize": "14pt",
+                      "color": "#1F3A5F"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "- No seasonality: Aug-Sep only look low because they occur in 2 of the years covered; per 30 days all months are alike (p = 0.82).",
+                    "textStyle": {
+                      "fontSize": "14pt",
+                      "color": "#1F3A5F"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "- No segment stands out: gender, age, category, weekday and email provider show no significant difference in order value or rating (all p >= 0.09).",
+                    "textStyle": {
+                      "fontSize": "14pt",
+                      "color": "#1F3A5F"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "- 26% of revenue ($268K) has no product category.",
+                    "textStyle": {
+                      "fontSize": "14pt",
+                      "color": "#1F3A5F"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "",
+                    "textStyle": {
+                      "fontSize": "14pt",
+                      "color": "#1F3A5F"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Recommendations",
+                    "textStyle": {
+                      "fontSize": "14pt",
+                      "color": "#1F3A5F",
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "1. Fix data capture: date of birth instead of age, drop-downs for gender / category / rating, validated dates and phones, no duplicate IDs (target: 90%+ complete records).",
+                    "textStyle": {
+                      "fontSize": "14pt",
+                      "color": "#1F3A5F"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "2. Back-fill the 565 uncategorised purchases from the order system.",
+                    "textStyle": {
+                      "fontSize": "14pt",
+                      "color": "#1F3A5F"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "3. Add a reason code to every rating and follow up 1-2 star customers within 48 hours (targets: rating 3.5, dissatisfied below 25%).",
+                    "textStyle": {
+                      "fontSize": "14pt",
+                      "color": "#1F3A5F"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "4. Protect $750+ orders (45% of revenue) and A/B-test upgrades for $250-749 orders; use experiments, not demographic targeting.",
+                    "textStyle": {
+                      "fontSize": "14pt",
+                      "color": "#1F3A5F"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "5. Use one customer ID across orders so repeat rate and lifetime value can be measured; track purchases against the ~60 / month baseline.",
+                    "textStyle": {
+                      "fontSize": "14pt",
+                      "color": "#1F3A5F"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "",
+                    "textStyle": {
+                      "fontSize": "14pt",
+                      "color": "#1F3A5F"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Note: the file behaves like randomly generated data (uniform amounts and ages, equally likely ratings, gender unrelated to name), so flat results are expected.",
+                    "textStyle": {
+                      "fontSize": "14pt",
+                      "color": "#1F3A5F"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -1,0 +1,107 @@
+[
+  {
+    "step": 1,
+    "check": "Load raw file",
+    "found": "2,150 rows x 12 columns: 'CustomerID', 'Name', 'Age', 'Gender', 'Email', 'Phone', 'PurchaseAmount', 'PurchaseDate', 'ProductCategory', 'Rating', 'Unnamed', '  Gender  '",
+    "action": "Loaded as text",
+    "rows_after": 2150
+  },
+  {
+    "step": 2,
+    "check": "Redundant / empty columns",
+    "found": "'  Gender  ' (header padded with spaces) is an exact copy of Gender in all rows: True; ['Unnamed'] is 100% empty",
+    "action": "Both dropped",
+    "rows_after": 2150
+  },
+  {
+    "step": 3,
+    "check": "Duplicate rows",
+    "found": "50 exact copies of earlier rows, all appended at the end of the file (lines 2102-2151); every repeated CustomerID is an exact copy",
+    "action": "Removed; CustomerID is now unique (0 repeats left)",
+    "rows_after": 2100
+  },
+  {
+    "step": 4,
+    "check": "Age validity",
+    "found": "553 x '-1' and 546 x '200' (impossible ages used as placeholders), 506 blank; the 495 real ages run 15-90",
+    "action": "Placeholders blanked; NOT imputed (76% of ages are unusable - a median fill would invent most of the column); Age_Status keeps the reason",
+    "rows_after": 2100
+  },
+  {
+    "step": 5,
+    "check": "Gender spelling",
+    "found": "6 spellings ['F', 'Female', 'M', 'Male', 'female', 'male'] + 267 blank",
+    "action": "Mapped to Male / Female; blank -> 'Unknown' (kept as its own group)",
+    "rows_after": 2100
+  },
+  {
+    "step": 6,
+    "check": "Gender vs first name",
+    "found": "Recorded gender contradicts a clearly gendered first name in 797 of 1602 testable rows (50%), e.g. 'Sara' recorded as Male 125 times - what random assignment would give",
+    "action": "Kept as recorded (cannot tell which field is wrong); flagged; gender results carry a caveat",
+    "rows_after": 2100
+  },
+  {
+    "step": 7,
+    "check": "Email",
+    "found": "2100/2100 valid format, 100% built as first.last@domain; only 144 distinct addresses for 2,100 customers (and 48 distinct names)",
+    "action": "Lower-cased; Email_Domain derived. Email/name cannot identify a person, so CustomerID stays the key",
+    "rows_after": 2100
+  },
+  {
+    "step": 8,
+    "check": "Phone",
+    "found": "1057 blank; the rest hold only 2 values: '0987654321' x534, '0123456789' x509 (dummy digit sequences)",
+    "action": "Column dropped: it contains no real phone number. Phone_Status kept (0% reachable by phone)",
+    "rows_after": 2100
+  },
+  {
+    "step": 9,
+    "check": "PurchaseAmount",
+    "found": "97 blank; recorded values $5.06-$999.56, no zero/negative values, 0 outside the IQR fences ($0-$1518)",
+    "action": "Blanks kept blank, NOT imputed: revenue KPIs use recorded amounts only (an imputed amount would be invented revenue)",
+    "rows_after": 2100
+  },
+  {
+    "step": 10,
+    "check": "PurchaseDate",
+    "found": "Format M/D/YYYY; 118 invalid: '32/13/2020' x118 (day 32, month 13 - impossible, and cannot be recovered); valid dates 27 Oct 2022 - 23 Jul 2025 (1000 days), none in the future",
+    "action": "Invalid dates blanked; rows kept for the non-time analyses; excluded from trends",
+    "rows_after": 2100
+  },
+  {
+    "step": 11,
+    "check": "Partial periods",
+    "found": "The window starts 27 Oct 2022 and ends 23 Jul 2025, so Oct 2022 and Jul 2025 are partial months; full months = 2022-11 to 2025-06",
+    "action": "Full_Month flag added; trend charts and growth rates use full months only",
+    "rows_after": 2100
+  },
+  {
+    "step": 12,
+    "check": "ProductCategory",
+    "found": "5 consistent values ['Books', 'Clothing', 'Electronics', 'Home', 'Toys']; 565 blank (27%)",
+    "action": "Blank -> 'Unknown', kept as its own group so its revenue stays visible",
+    "rows_after": 2100
+  },
+  {
+    "step": 13,
+    "check": "Rating",
+    "found": "Scale 1-5; 291 x '10' and 322 blank. No 6-9 values exist, so '10' is not a 10-point scale that could be rescaled - it is an invalid entry",
+    "action": "Out-of-range blanked (not capped to 5, which would inflate the top score); Rating_Status keeps the reason",
+    "rows_after": 2100
+  },
+  {
+    "step": 14,
+    "check": "Completeness",
+    "found": "Only 204 rows (9.7%) are valid in all 6 analytic fields; problems are independent of each other (max |r| between missing-flags = 0.04)",
+    "action": "Pairwise handling: each metric uses every row valid for that metric (listwise deletion would keep only 9.7%). Independence means this does not bias segment comparisons",
+    "rows_after": 2100
+  },
+  {
+    "step": 15,
+    "check": "Output",
+    "found": "2,100 rows x 31 columns",
+    "action": "Saved Cleaned_Customers.csv (UTF-8, ISO dates)",
+    "rows_after": 2100
+  }
+]

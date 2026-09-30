@@ -1,0 +1,1571 @@
+{
+  "kpi": {
+    "raw_rows": 2150,
+    "duplicates_removed": 50,
+    "customers": 2100,
+    "priced_purchases": 2003,
+    "missing_amounts": 97,
+    "revenue": 1021324.45,
+    "aov": 509.9,
+    "median_order": 519.42,
+    "min_order": 5.06,
+    "max_order": 999.56,
+    "revenue_per_full_month": 29261.04,
+    "purchases_per_full_month": 59.9,
+    "full_months": 32,
+    "first_date": "2022-10-27",
+    "last_date": "2025-07-23",
+    "big_ticket_order_share": 0.2616,
+    "big_ticket_revenue_share": 0.4494,
+    "rated": 1487,
+    "avg_rating": 3.03,
+    "median_rating": 3.0,
+    "satisfied_share": 0.3934,
+    "neutral_share": 0.2192,
+    "dissatisfied_share": 0.3874,
+    "five_star_share": 0.2065,
+    "one_star_share": 0.1789,
+    "net_satisfaction": 0.0061,
+    "female_share_known": 0.4861,
+    "male_share_known": 0.5139,
+    "gender_unknown_share": 0.1271,
+    "valid_ages": 495,
+    "median_age": 55.0,
+    "mean_age": 54.4,
+    "min_age": 15,
+    "max_age": 90,
+    "top_category": "Clothing",
+    "top_category_revenue": 163864.98,
+    "top_category_share_of_known": 0.2174,
+    "unknown_category_customers": 565,
+    "unknown_category_revenue": 267729.35,
+    "unknown_category_revenue_share": 0.2621,
+    "complete_record_rate": 0.0971,
+    "complete_records": 204,
+    "email_domains": 3
+  },
+  "quality": {
+    "Age": 0.2357,
+    "Rating": 0.7081,
+    "Product category": 0.731,
+    "Gender": 0.8729,
+    "Purchase date": 0.9438,
+    "Purchase amount": 0.9538,
+    "Phone": 0.0
+  },
+  "quality_detail": {
+    "Age": {
+      "Valid": 495,
+      "Blank": 506,
+      "Invalid": 1099,
+      "invalid_label": "-1 / 200 placeholders"
+    },
+    "Rating": {
+      "Valid": 1487,
+      "Blank": 322,
+      "Invalid": 291,
+      "invalid_label": "'10' on a 1-5 scale"
+    },
+    "Product category": {
+      "Valid": 1535,
+      "Blank": 565,
+      "Invalid": 0,
+      "invalid_label": ""
+    },
+    "Gender": {
+      "Valid": 1833,
+      "Blank": 267,
+      "Invalid": 0,
+      "invalid_label": "6 spellings merged"
+    },
+    "Purchase date": {
+      "Valid": 1982,
+      "Blank": 0,
+      "Invalid": 118,
+      "invalid_label": "'32/13/2020'"
+    },
+    "Purchase amount": {
+      "Valid": 2003,
+      "Blank": 97,
+      "Invalid": 0,
+      "invalid_label": ""
+    },
+    "Phone": {
+      "Valid": 0,
+      "Blank": 1057,
+      "Invalid": 1043,
+      "invalid_label": "dummy 0123456789 / 0987654321"
+    }
+  },
+  "tests": {
+    "Amount by gender (Kruskal-Wallis)": 0.0953,
+    "Amount by age group (Kruskal-Wallis)": 0.7546,
+    "Amount by category (Kruskal-Wallis)": 0.4453,
+    "Amount by weekday (Kruskal-Wallis)": 0.0917,
+    "Amount by email domain (Kruskal-Wallis)": 0.2595,
+    "Rating by gender (Kruskal-Wallis)": 0.587,
+    "Rating by age group (Kruskal-Wallis)": 0.9955,
+    "Rating by category (Kruskal-Wallis)": 0.8374,
+    "Rating by spend band (Kruskal-Wallis)": 0.1111,
+    "Category mix by gender (chi-square)": 0.248,
+    "Category mix by age group (chi-square)": 0.5171,
+    "Age vs amount (Spearman)": 0.7018,
+    "Age vs rating (Spearman)": 0.947,
+    "Amount vs rating (Spearman)": 0.3011,
+    "Monthly purchases trend (linear regression, full months)": 0.4794,
+    "Monthly revenue trend (linear regression, full months)": 0.5657,
+    "Month-of-year purchases vs calendar coverage (chi-square)": 0.8197,
+    "Weekday purchases vs calendar coverage (chi-square)": 0.8205,
+    "H1 purchases 2023 vs 2024 vs 2025 (chi-square)": 0.7668
+  },
+  "randomness": {
+    "Amounts follow a uniform $5-$1,000 distribution (Kolmogorov-Smirnov)": 0.503,
+    "Ages follow a uniform 15-90 distribution (Kolmogorov-Smirnov, discrete-adjusted)": 0.1622,
+    "Ratings 1-5 equally likely (chi-square)": 0.0854,
+    "Gender independent of first name (chi-square)": 0.1238
+  },
+  "corr": {
+    "age_amount_rho": 0.018,
+    "age_rating_rho": 0.004,
+    "amount_rating_rho": -0.027,
+    "purchases_slope_per_month": 0.123,
+    "revenue_slope_per_month": 55.4
+  },
+  "by_gender": [
+    {
+      "Gender": "Female",
+      "customers": 891,
+      "priced": 845,
+      "revenue": 440940.4,
+      "aov": 521.823,
+      "median_order": 542.58,
+      "rated": 631,
+      "avg_rating": 2.9952,
+      "satisfied": 0.3819,
+      "dissatisfied": 0.4057,
+      "customer_share": 0.4243,
+      "revenue_share": 0.4317
+    },
+    {
+      "Gender": "Male",
+      "customers": 942,
+      "priced": 898,
+      "revenue": 448129.42,
+      "aov": 499.0305,
+      "median_order": 494.92,
+      "rated": 671,
+      "avg_rating": 3.0358,
+      "satisfied": 0.3905,
+      "dissatisfied": 0.38,
+      "customer_share": 0.4486,
+      "revenue_share": 0.4388
+    },
+    {
+      "Gender": "Unknown",
+      "customers": 267,
+      "priced": 260,
+      "revenue": 132254.63,
+      "aov": 508.6717,
+      "median_order": 521.3,
+      "rated": 185,
+      "avg_rating": 3.1568,
+      "satisfied": 0.4432,
+      "dissatisfied": 0.3514,
+      "customer_share": 0.1271,
+      "revenue_share": 0.1295
+    }
+  ],
+  "by_age": [
+    {
+      "Age_Group": "15-29",
+      "customers": 79,
+      "priced": 72,
+      "revenue": 39318.21,
+      "aov": 546.0862,
+      "median_order": 593.125,
+      "rated": 56,
+      "avg_rating": 3.0536,
+      "satisfied": 0.4464,
+      "dissatisfied": 0.4107,
+      "customer_share": 0.0376,
+      "revenue_share": 0.0385
+    },
+    {
+      "Age_Group": "30-44",
+      "customers": 95,
+      "priced": 89,
+      "revenue": 44574.9,
+      "aov": 500.8416,
+      "median_order": 528.99,
+      "rated": 66,
+      "avg_rating": 3.0455,
+      "satisfied": 0.3939,
+      "dissatisfied": 0.3939,
+      "customer_share": 0.0452,
+      "revenue_share": 0.0436
+    },
+    {
+      "Age_Group": "45-59",
+      "customers": 107,
+      "priced": 104,
+      "revenue": 53966.14,
+      "aov": 518.9052,
+      "median_order": 551.92,
+      "rated": 72,
+      "avg_rating": 3.125,
+      "satisfied": 0.3889,
+      "dissatisfied": 0.3611,
+      "customer_share": 0.051,
+      "revenue_share": 0.0528
+    },
+    {
+      "Age_Group": "60-74",
+      "customers": 100,
+      "priced": 97,
+      "revenue": 52741.16,
+      "aov": 543.7233,
+      "median_order": 574.72,
+      "rated": 72,
+      "avg_rating": 3.1111,
+      "satisfied": 0.3889,
+      "dissatisfied": 0.3472,
+      "customer_share": 0.0476,
+      "revenue_share": 0.0516
+    },
+    {
+      "Age_Group": "75-90",
+      "customers": 114,
+      "priced": 110,
+      "revenue": 60256.01,
+      "aov": 547.7819,
+      "median_order": 573.335,
+      "rated": 81,
+      "avg_rating": 3.0494,
+      "satisfied": 0.3827,
+      "dissatisfied": 0.358,
+      "customer_share": 0.0543,
+      "revenue_share": 0.059
+    },
+    {
+      "Age_Group": "Unknown",
+      "customers": 1605,
+      "priced": 1531,
+      "revenue": 770468.03,
+      "aov": 503.245,
+      "median_order": 500.01,
+      "rated": 1140,
+      "avg_rating": 3.0202,
+      "satisfied": 0.3921,
+      "dissatisfied": 0.3921,
+      "customer_share": 0.7643,
+      "revenue_share": 0.7544
+    }
+  ],
+  "by_category": [
+    {
+      "Product_Category": "Books",
+      "customers": 305,
+      "priced": 294,
+      "revenue": 150083.23,
+      "aov": 510.4872,
+      "median_order": 517.825,
+      "rated": 209,
+      "avg_rating": 2.9617,
+      "satisfied": 0.378,
+      "dissatisfied": 0.4115,
+      "customer_share": 0.1452,
+      "revenue_share": 0.1469
+    },
+    {
+      "Product_Category": "Clothing",
+      "customers": 323,
+      "priced": 305,
+      "revenue": 163864.98,
+      "aov": 537.2622,
+      "median_order": 545.24,
+      "rated": 232,
+      "avg_rating": 3.0647,
+      "satisfied": 0.3922,
+      "dissatisfied": 0.3448,
+      "customer_share": 0.1538,
+      "revenue_share": 0.1604
+    },
+    {
+      "Product_Category": "Electronics",
+      "customers": 323,
+      "priced": 309,
+      "revenue": 154691.51,
+      "aov": 500.6198,
+      "median_order": 507.92,
+      "rated": 229,
+      "avg_rating": 3.1135,
+      "satisfied": 0.4061,
+      "dissatisfied": 0.3755,
+      "customer_share": 0.1538,
+      "revenue_share": 0.1515
+    },
+    {
+      "Product_Category": "Home",
+      "customers": 296,
+      "priced": 287,
+      "revenue": 143571.07,
+      "aov": 500.2476,
+      "median_order": 512.36,
+      "rated": 193,
+      "avg_rating": 3.0415,
+      "satisfied": 0.3886,
+      "dissatisfied": 0.3886,
+      "customer_share": 0.141,
+      "revenue_share": 0.1406
+    },
+    {
+      "Product_Category": "Toys",
+      "customers": 288,
+      "priced": 269,
+      "revenue": 141384.31,
+      "aov": 525.5922,
+      "median_order": 558.31,
+      "rated": 209,
+      "avg_rating": 3.0144,
+      "satisfied": 0.3732,
+      "dissatisfied": 0.3876,
+      "customer_share": 0.1371,
+      "revenue_share": 0.1384
+    },
+    {
+      "Product_Category": "Unknown",
+      "customers": 565,
+      "priced": 539,
+      "revenue": 267729.35,
+      "aov": 496.7149,
+      "median_order": 497.9,
+      "rated": 415,
+      "avg_rating": 3.0145,
+      "satisfied": 0.4072,
+      "dissatisfied": 0.4048,
+      "customer_share": 0.269,
+      "revenue_share": 0.2621
+    }
+  ],
+  "by_spend_band": [
+    {
+      "Spend_Band": "Under $250",
+      "customers": 475,
+      "priced": 475,
+      "revenue": 59404.28,
+      "aov": 125.0616,
+      "median_order": 119.58,
+      "rated": 344,
+      "avg_rating": 2.9797,
+      "satisfied": 0.3895,
+      "dissatisfied": 0.4099,
+      "customer_share": 0.2262,
+      "revenue_share": 0.0582
+    },
+    {
+      "Spend_Band": "$250-499",
+      "customers": 492,
+      "priced": 492,
+      "revenue": 183724.98,
+      "aov": 373.4248,
+      "median_order": 372.24,
+      "rated": 337,
+      "avg_rating": 3.1899,
+      "satisfied": 0.4303,
+      "dissatisfied": 0.3383,
+      "customer_share": 0.2343,
+      "revenue_share": 0.1799
+    },
+    {
+      "Spend_Band": "$500-749",
+      "customers": 512,
+      "priced": 512,
+      "revenue": 319178.35,
+      "aov": 623.3952,
+      "median_order": 620.125,
+      "rated": 359,
+      "avg_rating": 3.0195,
+      "satisfied": 0.3983,
+      "dissatisfied": 0.3955,
+      "customer_share": 0.2438,
+      "revenue_share": 0.3125
+    },
+    {
+      "Spend_Band": "$750+",
+      "customers": 524,
+      "priced": 524,
+      "revenue": 459016.84,
+      "aov": 875.9863,
+      "median_order": 875.225,
+      "rated": 379,
+      "avg_rating": 2.9525,
+      "satisfied": 0.3641,
+      "dissatisfied": 0.3984,
+      "customer_share": 0.2495,
+      "revenue_share": 0.4494
+    },
+    {
+      "Spend_Band": "Unknown",
+      "customers": 97,
+      "priced": 0,
+      "revenue": 0.0,
+      "aov": null,
+      "median_order": null,
+      "rated": 68,
+      "avg_rating": 3.0588,
+      "satisfied": 0.3676,
+      "dissatisfied": 0.4118,
+      "customer_share": 0.0462,
+      "revenue_share": 0.0
+    }
+  ],
+  "by_domain": [
+    {
+      "Email_Domain": "gmail.com",
+      "customers": 685,
+      "priced": 648,
+      "revenue": 336715.38,
+      "aov": 519.6225,
+      "median_order": 526.73,
+      "rated": 484,
+      "avg_rating": 3.0496,
+      "satisfied": 0.3781,
+      "dissatisfied": 0.3719,
+      "customer_share": 0.3262,
+      "revenue_share": 0.3297
+    },
+    {
+      "Email_Domain": "hotmail.com",
+      "customers": 715,
+      "priced": 683,
+      "revenue": 351956.04,
+      "aov": 515.309,
+      "median_order": 513.63,
+      "rated": 517,
+      "avg_rating": 3.0677,
+      "satisfied": 0.4159,
+      "dissatisfied": 0.3888,
+      "customer_share": 0.3405,
+      "revenue_share": 0.3446
+    },
+    {
+      "Email_Domain": "yahoo.com",
+      "customers": 700,
+      "priced": 672,
+      "revenue": 332653.03,
+      "aov": 495.0194,
+      "median_order": 507.705,
+      "rated": 486,
+      "avg_rating": 2.9815,
+      "satisfied": 0.3848,
+      "dissatisfied": 0.4012,
+      "customer_share": 0.3333,
+      "revenue_share": 0.3257
+    }
+  ],
+  "by_weekday": [
+    {
+      "Weekday": "Mon",
+      "customers": 294,
+      "priced": 279,
+      "revenue": 148289.61,
+      "aov": 531.504,
+      "median_order": 549.44,
+      "rated": 216,
+      "avg_rating": 3.0046,
+      "satisfied": 0.3565,
+      "dissatisfied": 0.3796,
+      "customer_share": 0.1483,
+      "revenue_share": 0.1539
+    },
+    {
+      "Weekday": "Tue",
+      "customers": 280,
+      "priced": 269,
+      "revenue": 133164.51,
+      "aov": 495.0354,
+      "median_order": 491.42,
+      "rated": 208,
+      "avg_rating": 3.1827,
+      "satisfied": 0.4423,
+      "dissatisfied": 0.3558,
+      "customer_share": 0.1413,
+      "revenue_share": 0.1382
+    },
+    {
+      "Weekday": "Wed",
+      "customers": 282,
+      "priced": 263,
+      "revenue": 129062.38,
+      "aov": 490.7315,
+      "median_order": 507.92,
+      "rated": 190,
+      "avg_rating": 3.0579,
+      "satisfied": 0.3947,
+      "dissatisfied": 0.3579,
+      "customer_share": 0.1423,
+      "revenue_share": 0.1339
+    },
+    {
+      "Weekday": "Thu",
+      "customers": 281,
+      "priced": 275,
+      "revenue": 134010.7,
+      "aov": 487.3116,
+      "median_order": 470.0,
+      "rated": 186,
+      "avg_rating": 2.8602,
+      "satisfied": 0.3495,
+      "dissatisfied": 0.4516,
+      "customer_share": 0.1418,
+      "revenue_share": 0.1391
+    },
+    {
+      "Weekday": "Fri",
+      "customers": 271,
+      "priced": 258,
+      "revenue": 131007.67,
+      "aov": 507.7817,
+      "median_order": 520.65,
+      "rated": 195,
+      "avg_rating": 3.0769,
+      "satisfied": 0.4103,
+      "dissatisfied": 0.3692,
+      "customer_share": 0.1367,
+      "revenue_share": 0.1359
+    },
+    {
+      "Weekday": "Sat",
+      "customers": 303,
+      "priced": 285,
+      "revenue": 156759.4,
+      "aov": 550.033,
+      "median_order": 569.5,
+      "rated": 213,
+      "avg_rating": 3.061,
+      "satisfied": 0.3897,
+      "dissatisfied": 0.385,
+      "customer_share": 0.1529,
+      "revenue_share": 0.1627
+    },
+    {
+      "Weekday": "Sun",
+      "customers": 271,
+      "priced": 261,
+      "revenue": 131414.52,
+      "aov": 503.5039,
+      "median_order": 535.88,
+      "rated": 200,
+      "avg_rating": 2.86,
+      "satisfied": 0.36,
+      "dissatisfied": 0.44,
+      "customer_share": 0.1367,
+      "revenue_share": 0.1364
+    }
+  ],
+  "rating_dist": {
+    "1": 266,
+    "2": 310,
+    "3": 326,
+    "4": 278,
+    "5": 307
+  },
+  "rating_mix": {
+    "Product_Category": {
+      "Books": [
+        0.201,
+        0.2105,
+        0.2105,
+        0.1818,
+        0.1962
+      ],
+      "Clothing": [
+        0.1681,
+        0.1767,
+        0.2629,
+        0.2069,
+        0.1853
+      ],
+      "Electronics": [
+        0.1485,
+        0.2271,
+        0.2183,
+        0.1747,
+        0.2314
+      ],
+      "Home": [
+        0.1658,
+        0.2228,
+        0.2228,
+        0.1813,
+        0.2073
+      ],
+      "Toys": [
+        0.1866,
+        0.201,
+        0.2392,
+        0.1579,
+        0.2153
+      ],
+      "Unknown": [
+        0.1928,
+        0.212,
+        0.188,
+        0.2024,
+        0.2048
+      ]
+    },
+    "Gender": {
+      "Female": [
+        0.1854,
+        0.2203,
+        0.2124,
+        0.1775,
+        0.2044
+      ],
+      "Male": [
+        0.1773,
+        0.2027,
+        0.2295,
+        0.1878,
+        0.2027
+      ],
+      "Unknown": [
+        0.1622,
+        0.1892,
+        0.2054,
+        0.2162,
+        0.227
+      ]
+    },
+    "Age_Group": {
+      "15-29": [
+        0.1964,
+        0.2143,
+        0.1429,
+        0.2321,
+        0.2143
+      ],
+      "30-44": [
+        0.1818,
+        0.2121,
+        0.2121,
+        0.1667,
+        0.2273
+      ],
+      "45-59": [
+        0.1389,
+        0.2222,
+        0.25,
+        0.1528,
+        0.2361
+      ],
+      "60-74": [
+        0.1111,
+        0.2361,
+        0.2639,
+        0.2083,
+        0.1806
+      ],
+      "75-90": [
+        0.1728,
+        0.1852,
+        0.2593,
+        0.1852,
+        0.1975
+      ]
+    },
+    "Spend_Band": {
+      "Under $250": [
+        0.2006,
+        0.2093,
+        0.2006,
+        0.189,
+        0.2006
+      ],
+      "$250-499": [
+        0.1513,
+        0.1869,
+        0.2315,
+        0.181,
+        0.2493
+      ],
+      "$500-749": [
+        0.1866,
+        0.2089,
+        0.2061,
+        0.195,
+        0.2033
+      ],
+      "$750+": [
+        0.1926,
+        0.2058,
+        0.2375,
+        0.1847,
+        0.1794
+      ]
+    }
+  },
+  "monthly": [
+    {
+      "Year_Month": "2022-10",
+      "purchases": 10,
+      "revenue": 5644.64,
+      "aov": 564.464,
+      "avg_rating": 2.625,
+      "full": "Partial",
+      "days_covered": 5
+    },
+    {
+      "Year_Month": "2022-11",
+      "purchases": 67,
+      "revenue": 33983.4,
+      "aov": 522.8215,
+      "avg_rating": 2.9362,
+      "full": "Yes",
+      "days_covered": 30
+    },
+    {
+      "Year_Month": "2022-12",
+      "purchases": 56,
+      "revenue": 27817.23,
+      "aov": 534.9467,
+      "avg_rating": 2.925,
+      "full": "Yes",
+      "days_covered": 31
+    },
+    {
+      "Year_Month": "2023-01",
+      "purchases": 55,
+      "revenue": 26306.19,
+      "aov": 496.3432,
+      "avg_rating": 2.8333,
+      "full": "Yes",
+      "days_covered": 31
+    },
+    {
+      "Year_Month": "2023-02",
+      "purchases": 53,
+      "revenue": 23693.04,
+      "aov": 493.605,
+      "avg_rating": 2.85,
+      "full": "Yes",
+      "days_covered": 28
+    },
+    {
+      "Year_Month": "2023-03",
+      "purchases": 43,
+      "revenue": 21604.74,
+      "aov": 526.9449,
+      "avg_rating": 3.1364,
+      "full": "Yes",
+      "days_covered": 31
+    },
+    {
+      "Year_Month": "2023-04",
+      "purchases": 77,
+      "revenue": 35863.89,
+      "aov": 484.6472,
+      "avg_rating": 3.0,
+      "full": "Yes",
+      "days_covered": 30
+    },
+    {
+      "Year_Month": "2023-05",
+      "purchases": 62,
+      "revenue": 29797.97,
+      "aov": 488.4913,
+      "avg_rating": 2.9091,
+      "full": "Yes",
+      "days_covered": 31
+    },
+    {
+      "Year_Month": "2023-06",
+      "purchases": 63,
+      "revenue": 33463.86,
+      "aov": 567.1841,
+      "avg_rating": 3.1163,
+      "full": "Yes",
+      "days_covered": 30
+    },
+    {
+      "Year_Month": "2023-07",
+      "purchases": 52,
+      "revenue": 24032.19,
+      "aov": 471.2194,
+      "avg_rating": 3.1212,
+      "full": "Yes",
+      "days_covered": 31
+    },
+    {
+      "Year_Month": "2023-08",
+      "purchases": 51,
+      "revenue": 27323.96,
+      "aov": 535.7639,
+      "avg_rating": 3.0465,
+      "full": "Yes",
+      "days_covered": 31
+    },
+    {
+      "Year_Month": "2023-09",
+      "purchases": 50,
+      "revenue": 23260.32,
+      "aov": 494.9004,
+      "avg_rating": 3.1034,
+      "full": "Yes",
+      "days_covered": 30
+    },
+    {
+      "Year_Month": "2023-10",
+      "purchases": 56,
+      "revenue": 28015.47,
+      "aov": 528.5938,
+      "avg_rating": 2.925,
+      "full": "Yes",
+      "days_covered": 31
+    },
+    {
+      "Year_Month": "2023-11",
+      "purchases": 60,
+      "revenue": 29004.76,
+      "aov": 527.3593,
+      "avg_rating": 3.1389,
+      "full": "Yes",
+      "days_covered": 30
+    },
+    {
+      "Year_Month": "2023-12",
+      "purchases": 73,
+      "revenue": 40048.6,
+      "aov": 564.0648,
+      "avg_rating": 3.0926,
+      "full": "Yes",
+      "days_covered": 31
+    },
+    {
+      "Year_Month": "2024-01",
+      "purchases": 44,
+      "revenue": 19623.06,
+      "aov": 456.3502,
+      "avg_rating": 2.6667,
+      "full": "Yes",
+      "days_covered": 31
+    },
+    {
+      "Year_Month": "2024-02",
+      "purchases": 59,
+      "revenue": 28998.06,
+      "aov": 508.7379,
+      "avg_rating": 3.0444,
+      "full": "Yes",
+      "days_covered": 29
+    },
+    {
+      "Year_Month": "2024-03",
+      "purchases": 63,
+      "revenue": 31642.12,
+      "aov": 555.1249,
+      "avg_rating": 3.3,
+      "full": "Yes",
+      "days_covered": 31
+    },
+    {
+      "Year_Month": "2024-04",
+      "purchases": 58,
+      "revenue": 26648.11,
+      "aov": 493.4835,
+      "avg_rating": 2.907,
+      "full": "Yes",
+      "days_covered": 30
+    },
+    {
+      "Year_Month": "2024-05",
+      "purchases": 72,
+      "revenue": 31906.95,
+      "aov": 483.4386,
+      "avg_rating": 3.1522,
+      "full": "Yes",
+      "days_covered": 31
+    },
+    {
+      "Year_Month": "2024-06",
+      "purchases": 70,
+      "revenue": 34191.99,
+      "aov": 518.0605,
+      "avg_rating": 2.9412,
+      "full": "Yes",
+      "days_covered": 30
+    },
+    {
+      "Year_Month": "2024-07",
+      "purchases": 58,
+      "revenue": 27198.11,
+      "aov": 485.6805,
+      "avg_rating": 3.0435,
+      "full": "Yes",
+      "days_covered": 31
+    },
+    {
+      "Year_Month": "2024-08",
+      "purchases": 68,
+      "revenue": 34001.86,
+      "aov": 500.0274,
+      "avg_rating": 3.1739,
+      "full": "Yes",
+      "days_covered": 31
+    },
+    {
+      "Year_Month": "2024-09",
+      "purchases": 63,
+      "revenue": 31963.9,
+      "aov": 551.1017,
+      "avg_rating": 2.9787,
+      "full": "Yes",
+      "days_covered": 30
+    },
+    {
+      "Year_Month": "2024-10",
+      "purchases": 75,
+      "revenue": 37059.24,
+      "aov": 507.6608,
+      "avg_rating": 2.9057,
+      "full": "Yes",
+      "days_covered": 31
+    },
+    {
+      "Year_Month": "2024-11",
+      "purchases": 57,
+      "revenue": 30744.91,
+      "aov": 569.3502,
+      "avg_rating": 2.825,
+      "full": "Yes",
+      "days_covered": 30
+    },
+    {
+      "Year_Month": "2024-12",
+      "purchases": 65,
+      "revenue": 29643.62,
+      "aov": 470.5337,
+      "avg_rating": 2.9804,
+      "full": "Yes",
+      "days_covered": 31
+    },
+    {
+      "Year_Month": "2025-01",
+      "purchases": 65,
+      "revenue": 31643.63,
+      "aov": 510.3811,
+      "avg_rating": 3.0426,
+      "full": "Yes",
+      "days_covered": 31
+    },
+    {
+      "Year_Month": "2025-02",
+      "purchases": 49,
+      "revenue": 22250.12,
+      "aov": 473.4068,
+      "avg_rating": 3.1667,
+      "full": "Yes",
+      "days_covered": 28
+    },
+    {
+      "Year_Month": "2025-03",
+      "purchases": 67,
+      "revenue": 33491.63,
+      "aov": 515.2558,
+      "avg_rating": 2.9149,
+      "full": "Yes",
+      "days_covered": 31
+    },
+    {
+      "Year_Month": "2025-04",
+      "purchases": 45,
+      "revenue": 21298.32,
+      "aov": 495.3098,
+      "avg_rating": 2.7812,
+      "full": "Yes",
+      "days_covered": 30
+    },
+    {
+      "Year_Month": "2025-05",
+      "purchases": 64,
+      "revenue": 32469.22,
+      "aov": 569.6354,
+      "avg_rating": 3.1702,
+      "full": "Yes",
+      "days_covered": 31
+    },
+    {
+      "Year_Month": "2025-06",
+      "purchases": 57,
+      "revenue": 27362.83,
+      "aov": 488.622,
+      "avg_rating": 3.0222,
+      "full": "Yes",
+      "days_covered": 30
+    },
+    {
+      "Year_Month": "2025-07",
+      "purchases": 55,
+      "revenue": 21710.85,
+      "aov": 402.0528,
+      "avg_rating": 3.3947,
+      "full": "Partial",
+      "days_covered": 23
+    }
+  ],
+  "quarterly": [
+    {
+      "Quarter": "2022-Q4",
+      "purchases": 133,
+      "revenue": 67445.27,
+      "aov": 531.0651,
+      "days_covered": 66,
+      "purchases_per_30d": 60.4545
+    },
+    {
+      "Quarter": "2023-Q1",
+      "purchases": 151,
+      "revenue": 71603.97,
+      "aov": 504.2533,
+      "days_covered": 90,
+      "purchases_per_30d": 50.3333
+    },
+    {
+      "Quarter": "2023-Q2",
+      "purchases": 202,
+      "revenue": 99125.72,
+      "aov": 510.9573,
+      "days_covered": 91,
+      "purchases_per_30d": 66.5934
+    },
+    {
+      "Quarter": "2023-Q3",
+      "purchases": 153,
+      "revenue": 74616.47,
+      "aov": 500.7817,
+      "days_covered": 92,
+      "purchases_per_30d": 49.8913
+    },
+    {
+      "Quarter": "2023-Q4",
+      "purchases": 189,
+      "revenue": 97068.83,
+      "aov": 542.284,
+      "days_covered": 92,
+      "purchases_per_30d": 61.6304
+    },
+    {
+      "Quarter": "2024-Q1",
+      "purchases": 166,
+      "revenue": 80263.24,
+      "aov": 511.2308,
+      "days_covered": 91,
+      "purchases_per_30d": 54.7253
+    },
+    {
+      "Quarter": "2024-Q2",
+      "purchases": 200,
+      "revenue": 92747.05,
+      "aov": 498.6401,
+      "days_covered": 91,
+      "purchases_per_30d": 65.9341
+    },
+    {
+      "Quarter": "2024-Q3",
+      "purchases": 189,
+      "revenue": 93163.87,
+      "aov": 511.8894,
+      "days_covered": 92,
+      "purchases_per_30d": 61.6304
+    },
+    {
+      "Quarter": "2024-Q4",
+      "purchases": 197,
+      "revenue": 97447.77,
+      "aov": 512.883,
+      "days_covered": 92,
+      "purchases_per_30d": 64.2391
+    },
+    {
+      "Quarter": "2025-Q1",
+      "purchases": 181,
+      "revenue": 87385.38,
+      "aov": 502.2148,
+      "days_covered": 90,
+      "purchases_per_30d": 60.3333
+    },
+    {
+      "Quarter": "2025-Q2",
+      "purchases": 166,
+      "revenue": 81130.37,
+      "aov": 520.0665,
+      "days_covered": 91,
+      "purchases_per_30d": 54.7253
+    },
+    {
+      "Quarter": "2025-Q3",
+      "purchases": 55,
+      "revenue": 21710.85,
+      "aov": 402.0528,
+      "days_covered": 23,
+      "purchases_per_30d": 71.7391
+    }
+  ],
+  "h1": [
+    {
+      "Year": 2023,
+      "purchases": 353,
+      "revenue": 170729.69,
+      "aov": 508.1241,
+      "avg_rating": 2.9668
+    },
+    {
+      "Year": 2024,
+      "purchases": 366,
+      "revenue": 173010.29,
+      "aov": 504.4032,
+      "avg_rating": 3.0305
+    },
+    {
+      "Year": 2025,
+      "purchases": 347,
+      "revenue": 168515.75,
+      "aov": 510.6538,
+      "avg_rating": 3.0236
+    }
+  ],
+  "month_of_year": [
+    {
+      "Month": "Jan",
+      "purchases": 164,
+      "revenue": 77572.88,
+      "aov": 490.9676,
+      "avg_rating": 2.8818,
+      "days_covered": 93,
+      "years_covered": 3.0,
+      "purchases_per_30d": 52.9032
+    },
+    {
+      "Month": "Feb",
+      "purchases": 161,
+      "revenue": 74941.22,
+      "aov": 493.0343,
+      "avg_rating": 3.0165,
+      "days_covered": 85,
+      "years_covered": 3.04,
+      "purchases_per_30d": 56.8235
+    },
+    {
+      "Month": "Mar",
+      "purchases": 173,
+      "revenue": 86738.49,
+      "aov": 532.138,
+      "avg_rating": 3.1176,
+      "days_covered": 93,
+      "years_covered": 3.0,
+      "purchases_per_30d": 55.8065
+    },
+    {
+      "Month": "Apr",
+      "purchases": 180,
+      "revenue": 83810.32,
+      "aov": 490.1188,
+      "avg_rating": 2.916,
+      "days_covered": 90,
+      "years_covered": 3.0,
+      "purchases_per_30d": 60.0
+    },
+    {
+      "Month": "May",
+      "purchases": 198,
+      "revenue": 94174.14,
+      "aov": 511.816,
+      "avg_rating": 3.0803,
+      "days_covered": 93,
+      "years_covered": 3.0,
+      "purchases_per_30d": 63.871
+    },
+    {
+      "Month": "Jun",
+      "purchases": 190,
+      "revenue": 95018.68,
+      "aov": 524.9651,
+      "avg_rating": 3.0216,
+      "days_covered": 90,
+      "years_covered": 3.0,
+      "purchases_per_30d": 63.3333
+    },
+    {
+      "Month": "Jul",
+      "purchases": 165,
+      "revenue": 72941.15,
+      "aov": 453.0506,
+      "avg_rating": 3.1795,
+      "days_covered": 85,
+      "years_covered": 2.74,
+      "purchases_per_30d": 58.2353
+    },
+    {
+      "Month": "Aug",
+      "purchases": 119,
+      "revenue": 61325.82,
+      "aov": 515.343,
+      "avg_rating": 3.1124,
+      "days_covered": 62,
+      "years_covered": 2.0,
+      "purchases_per_30d": 57.5806
+    },
+    {
+      "Month": "Sep",
+      "purchases": 113,
+      "revenue": 55224.22,
+      "aov": 525.945,
+      "avg_rating": 3.0263,
+      "days_covered": 60,
+      "years_covered": 2.0,
+      "purchases_per_30d": 56.5
+    },
+    {
+      "Month": "Oct",
+      "purchases": 141,
+      "revenue": 70719.35,
+      "aov": 519.9952,
+      "avg_rating": 2.8911,
+      "days_covered": 67,
+      "years_covered": 2.16,
+      "purchases_per_30d": 63.1343
+    },
+    {
+      "Month": "Nov",
+      "purchases": 184,
+      "revenue": 93733.07,
+      "aov": 538.6958,
+      "avg_rating": 2.9593,
+      "days_covered": 90,
+      "years_covered": 3.0,
+      "purchases_per_30d": 61.3333
+    },
+    {
+      "Month": "Dec",
+      "purchases": 194,
+      "revenue": 97509.45,
+      "aov": 524.2444,
+      "avg_rating": 3.0069,
+      "days_covered": 93,
+      "years_covered": 3.0,
+      "purchases_per_30d": 62.5806
+    }
+  ],
+  "aov_ci": [
+    {
+      "dimension": "Gender",
+      "segment": "Female",
+      "n": 845,
+      "aov": 521.82,
+      "lo": 502.45,
+      "hi": 541.2
+    },
+    {
+      "dimension": "Gender",
+      "segment": "Male",
+      "n": 898,
+      "aov": 499.03,
+      "lo": 480.18,
+      "hi": 517.88
+    },
+    {
+      "dimension": "Age group",
+      "segment": "15-29",
+      "n": 72,
+      "aov": 546.09,
+      "lo": 477.17,
+      "hi": 615.01
+    },
+    {
+      "dimension": "Age group",
+      "segment": "30-44",
+      "n": 89,
+      "aov": 500.84,
+      "lo": 437.25,
+      "hi": 564.43
+    },
+    {
+      "dimension": "Age group",
+      "segment": "45-59",
+      "n": 104,
+      "aov": 518.91,
+      "lo": 464.17,
+      "hi": 573.64
+    },
+    {
+      "dimension": "Age group",
+      "segment": "60-74",
+      "n": 97,
+      "aov": 543.72,
+      "lo": 483.23,
+      "hi": 604.21
+    },
+    {
+      "dimension": "Age group",
+      "segment": "75-90",
+      "n": 110,
+      "aov": 547.78,
+      "lo": 493.07,
+      "hi": 602.5
+    },
+    {
+      "dimension": "Category",
+      "segment": "Books",
+      "n": 294,
+      "aov": 510.49,
+      "lo": 476.67,
+      "hi": 544.31
+    },
+    {
+      "dimension": "Category",
+      "segment": "Clothing",
+      "n": 305,
+      "aov": 537.26,
+      "lo": 504.8,
+      "hi": 569.73
+    },
+    {
+      "dimension": "Category",
+      "segment": "Electronics",
+      "n": 309,
+      "aov": 500.62,
+      "lo": 469.1,
+      "hi": 532.14
+    },
+    {
+      "dimension": "Category",
+      "segment": "Home",
+      "n": 287,
+      "aov": 500.25,
+      "lo": 466.05,
+      "hi": 534.44
+    },
+    {
+      "dimension": "Category",
+      "segment": "Toys",
+      "n": 269,
+      "aov": 525.59,
+      "lo": 490.67,
+      "hi": 560.51
+    },
+    {
+      "dimension": "Weekday",
+      "segment": "Mon",
+      "n": 279,
+      "aov": 531.5,
+      "lo": 497.59,
+      "hi": 565.41
+    },
+    {
+      "dimension": "Weekday",
+      "segment": "Tue",
+      "n": 269,
+      "aov": 495.04,
+      "lo": 459.23,
+      "hi": 530.84
+    },
+    {
+      "dimension": "Weekday",
+      "segment": "Wed",
+      "n": 263,
+      "aov": 490.73,
+      "lo": 455.91,
+      "hi": 525.55
+    },
+    {
+      "dimension": "Weekday",
+      "segment": "Thu",
+      "n": 275,
+      "aov": 487.31,
+      "lo": 453.42,
+      "hi": 521.2
+    },
+    {
+      "dimension": "Weekday",
+      "segment": "Fri",
+      "n": 258,
+      "aov": 507.78,
+      "lo": 473.12,
+      "hi": 542.45
+    },
+    {
+      "dimension": "Weekday",
+      "segment": "Sat",
+      "n": 285,
+      "aov": 550.03,
+      "lo": 517.25,
+      "hi": 582.82
+    },
+    {
+      "dimension": "Weekday",
+      "segment": "Sun",
+      "n": 261,
+      "aov": 503.5,
+      "lo": 468.7,
+      "hi": 538.31
+    }
+  ],
+  "rating_ci": [
+    {
+      "dimension": "Gender",
+      "segment": "Female",
+      "n": 631,
+      "avg": 3.0,
+      "lo": 2.89,
+      "hi": 3.1
+    },
+    {
+      "dimension": "Gender",
+      "segment": "Male",
+      "n": 671,
+      "avg": 3.04,
+      "lo": 2.93,
+      "hi": 3.14
+    },
+    {
+      "dimension": "Age group",
+      "segment": "15-29",
+      "n": 56,
+      "avg": 3.05,
+      "lo": 2.66,
+      "hi": 3.44
+    },
+    {
+      "dimension": "Age group",
+      "segment": "30-44",
+      "n": 66,
+      "avg": 3.05,
+      "lo": 2.69,
+      "hi": 3.4
+    },
+    {
+      "dimension": "Age group",
+      "segment": "45-59",
+      "n": 72,
+      "avg": 3.12,
+      "lo": 2.8,
+      "hi": 3.45
+    },
+    {
+      "dimension": "Age group",
+      "segment": "60-74",
+      "n": 72,
+      "avg": 3.11,
+      "lo": 2.81,
+      "hi": 3.41
+    },
+    {
+      "dimension": "Age group",
+      "segment": "75-90",
+      "n": 81,
+      "avg": 3.05,
+      "lo": 2.75,
+      "hi": 3.35
+    },
+    {
+      "dimension": "Category",
+      "segment": "Books",
+      "n": 209,
+      "avg": 2.96,
+      "lo": 2.77,
+      "hi": 3.15
+    },
+    {
+      "dimension": "Category",
+      "segment": "Clothing",
+      "n": 232,
+      "avg": 3.06,
+      "lo": 2.89,
+      "hi": 3.24
+    },
+    {
+      "dimension": "Category",
+      "segment": "Electronics",
+      "n": 229,
+      "avg": 3.11,
+      "lo": 2.93,
+      "hi": 3.29
+    },
+    {
+      "dimension": "Category",
+      "segment": "Home",
+      "n": 193,
+      "avg": 3.04,
+      "lo": 2.85,
+      "hi": 3.24
+    },
+    {
+      "dimension": "Category",
+      "segment": "Toys",
+      "n": 209,
+      "avg": 3.01,
+      "lo": 2.82,
+      "hi": 3.21
+    },
+    {
+      "dimension": "Spend band",
+      "segment": "Under $250",
+      "n": 344,
+      "avg": 2.98,
+      "lo": 2.83,
+      "hi": 3.13
+    },
+    {
+      "dimension": "Spend band",
+      "segment": "$250-499",
+      "n": 337,
+      "avg": 3.19,
+      "lo": 3.04,
+      "hi": 3.34
+    },
+    {
+      "dimension": "Spend band",
+      "segment": "$500-749",
+      "n": 359,
+      "avg": 3.02,
+      "lo": 2.87,
+      "hi": 3.17
+    },
+    {
+      "dimension": "Spend band",
+      "segment": "$750+",
+      "n": 379,
+      "avg": 2.95,
+      "lo": 2.81,
+      "hi": 3.09
+    }
+  ],
+  "category_gender_mix": {
+    "Books": {
+      "Female": 0.423,
+      "Male": 0.4459,
+      "Unknown": 0.1311
+    },
+    "Clothing": {
+      "Female": 0.4396,
+      "Male": 0.4551,
+      "Unknown": 0.1053
+    },
+    "Electronics": {
+      "Female": 0.4118,
+      "Male": 0.452,
+      "Unknown": 0.1362
+    },
+    "Home": {
+      "Female": 0.3818,
+      "Male": 0.4899,
+      "Unknown": 0.1284
+    },
+    "Toys": {
+      "Female": 0.4757,
+      "Male": 0.4062,
+      "Unknown": 0.1181
+    }
+  }
+}

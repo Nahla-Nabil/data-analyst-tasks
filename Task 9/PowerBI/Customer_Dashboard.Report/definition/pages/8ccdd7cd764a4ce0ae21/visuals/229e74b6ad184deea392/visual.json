@@ -1,0 +1,104 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "229e74b6ad184deea392",
+  "position": {
+    "x": 856,
+    "y": 256,
+    "z": 9000,
+    "height": 456,
+    "width": 408,
+    "tabOrder": 9000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Cleaning decisions",
+                    "textStyle": {
+                      "fontSize": "10.5pt",
+                      "color": "#1F3A5F",
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "- 50 exact duplicate rows removed (all appended at the end of the file); the padded '  Gender  ' copy and the empty 'Unnamed' column dropped.",
+                    "textStyle": {
+                      "fontSize": "10.5pt",
+                      "color": "#1F3A5F"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "- Age: 1099 placeholders (-1 / 200) and 506 blanks set to missing, NOT imputed (76% unusable).",
+                    "textStyle": {
+                      "fontSize": "10.5pt",
+                      "color": "#1F3A5F"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "- Rating: 291 values of '10' on a 1-5 scale set to missing (no 6-9 exist, so it is not a 10-point scale).",
+                    "textStyle": {
+                      "fontSize": "10.5pt",
+                      "color": "#1F3A5F"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "- Date: 118 impossible dates '32/13/2020' set to missing; rows kept for non-time analysis.",
+                    "textStyle": {
+                      "fontSize": "10.5pt",
+                      "color": "#1F3A5F"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "- Gender: 6 spellings (M, male, Male, F, female, Female) merged; blanks = 'Unknown'. Gender contradicts the first name in 50% of rows.",
+                    "textStyle": {
+                      "fontSize": "10.5pt",
+                      "color": "#1F3A5F"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "- Category blanks = 'Unknown' (27%); amounts left blank (5%), not estimated; phone dropped (only 2 dummy numbers).",
+                    "textStyle": {
+                      "fontSize": "10.5pt",
+                      "color": "#1F3A5F"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
