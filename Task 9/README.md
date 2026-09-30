@@ -11,7 +11,7 @@ This task analyses 2,150 raw customer records (age, gender, purchases, product c
 | `Cleaned_Customers.csv` | Cleaned data: 2,100 rows × 31 columns, with status flags and calculated columns |
 | `Customer_Analysis_Summary.pdf` | **Short summary report**: KPIs, 6 findings with charts, recommendations, limitations |
 | `Customer_Dashboard.html` | **Interactive dashboard**: 8 KPI cards, 14 charts, a segment scorecard, 9 filters plus click-to-filter, CSV export, light and dark mode |
-| `Customer_Dashboard.pbix` | **Power BI report**: 5 pages, 30 DAX measures, 6 synced slicers. Source project: `PowerBI/Customer_Dashboard.pbip` (see `Power_BI_Guide.md`) |
+| `Customer_Dashboard.pbix` | **Power BI report**: 5 pages, 30 DAX measures, 6 synced slicers. Its source project (`PowerBI/Customer_Dashboard.pbip`) is created by `build_powerbi.py` (see `Power_BI_Guide.md`) |
 | `KEY_INSIGHTS.md` | KPI scorecard, 7 findings, relationships between variables (with significance tests), recommendations, limitations |
 | `DATA_QUALITY_REPORT.md` | Every cleaning check, the evidence for it, and the decision taken |
 | `charts/` | 8 static charts (PNG) used in the report |

@@ -15,7 +15,7 @@ The workflow is **raw data → clean data → measures and KPIs → analysis →
 | `KEY_INSIGHTS.md` | KPI scorecard, 6 findings, variable relationships (with significance tests), problems, recommendations |
 | `Hospital_Dashboard.twbx` | Tableau workbook: 4 dashboards, 23 sheets, 6 shared filters plus click-to-filter. See `Tableau_Guide.md` |
 | `Hospital_Dashboard.pbix` | **Power BI report** (data included): 5 pages, 22 DAX measures, synced slicers. Open it in Power BI Desktop |
-| `PowerBI/Hospital_Dashboard.pbip` | The same report as a generated Power BI project (the source for the .pbix). See `Power_BI_Guide.md` |
+| `PowerBI/Hospital_Dashboard.pbip` | The same report as a Power BI project (the source for the .pbix), created by `build_powerbi.py` and not stored in the repository. See `Power_BI_Guide.md` |
 | `Power_BI_Guide.md` / `Tableau_Guide.md` | How the Power BI and Tableau versions are built, and what was checked |
 | `clean_and_validate.py` → `analysis.py` → `build_workbook.py` → `build_dashboard.py` → `build_tableau.py` → `build_twb.py` → `build_powerbi.py` | The pipeline, in run order (`cleaning_log.json`, `analysis_summary.json`, `analysis_output.txt` and `Hospital.hyper` are intermediate outputs) |
 

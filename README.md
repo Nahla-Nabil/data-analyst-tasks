@@ -325,8 +325,7 @@ Task N/
 ├── *Dashboard*                # .html / .xlsb / .pbix / .twbx
 ├── DATA_QUALITY_REPORT.md     # what was checked and why
 ├── KEY_INSIGHTS.md            # findings + recommendations
-├── screenshots/               # dashboard previews
-└── NahlaNabil.zip             # the submitted package
+└── screenshots/               # dashboard previews
 assets/                        # README graphics (python assets/make_assets.py)
 ```
 

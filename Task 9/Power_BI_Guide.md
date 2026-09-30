@@ -15,7 +15,7 @@ The project was opened in Power BI Desktop (2.157) and refreshed with no load er
 Screenshots of all five pages are in `screenshots/powerbi_*.png`.
 
 **To create the `.pbix` from the project (about 30 seconds):**
-1. Double-click `PowerBI/Customer_Dashboard.pbip`. It opens in Power BI Desktop.
+1. Run `python build_powerbi.py` (the project folder is not stored in the repository), then double-click `PowerBI/Customer_Dashboard.pbip`. It opens in Power BI Desktop.
 2. Click **Refresh now** on the yellow bar. The project stores no data, so this loads the CSV.
 3. **File → Save as → Browse this device**. Set *Save as type* to **Power BI file (\*.pbix)**, and save as `Customer_Dashboard.pbix` in `Task 9`.
 
