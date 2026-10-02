@@ -341,15 +341,16 @@ flowchart TB
 
 ```
 Task N/
-├── <raw dataset>              # input, never modified
-├── Cleaned_*.csv              # cleaned + engineered data
-├── clean_*.py / analysis.py   # pipeline scripts, in run order
-├── build_*.py                 # dashboard / workbook generators
-├── *Dashboard*                # .html / .xlsb / .pbix / .twbx
-├── DATA_QUALITY_REPORT.md     # what was checked and why
-├── KEY_INSIGHTS.md            # findings + recommendations
-└── screenshots/               # dashboard previews
-assets/                        # README graphics (python assets/make_assets.py)
+├── <raw dataset>                # input, never modified
+├── Cleaned_*.csv / *_clean.csv  # cleaned + engineered data
+├── clean_*.py / analysis.py     # pipeline scripts, in run order
+├── build_*.py                   # dashboard / workbook generators
+├── *Dashboard*                  # .html / .xlsb / .pbix / .twbx
+├── README.md                    # (Task 6 on) what was done, cleaning decisions, findings
+├── DATA_QUALITY_REPORT.md       # (most tasks up to 9) what was checked and why
+├── KEY_INSIGHTS.md              # (most tasks up to 9) findings + recommendations
+└── screenshots/                 # dashboard previews
+assets/                          # README graphics (python assets/make_assets.py)
 ```
 
 <p align="center"><sub>Nahla Nabil · VOLTIX Data Analyst Internship · 2026</sub></p>
