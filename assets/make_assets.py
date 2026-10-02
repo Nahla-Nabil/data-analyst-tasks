@@ -21,18 +21,19 @@ TASKS = [
     (7, "Hospital Analytics", "247 admissions · Arabic source", "#8E5572", ["Python", "Excel", "Tableau", "Power BI"]),
     (8, "Healthcare No-Shows", "106,987 appointments", "#E4572E", ["Excel", "Pivots", "Slicers", "Python"]),
     (9, "Customer Data Analysis", "2,150 customer records", "#4A5FC1", ["Python", "Plotly", "Power BI", "PDF"]),
+    (10, "Movie Analytics", "TMDB 5000 · 4,803 movies + credits", "#6A4C93", ["Python", "Power BI", "DAX"]),
 ]
 DONE = len(TASKS)
-ROWS_CLEANED = 9994 + 26397 + 1470 + 418 + 3271 + 247 + 106987 + 2150
-DASHBOARDS = 14  # T1 report, T2, T3 html + pbix, T5, T6 html + twbx, T7 html + twbx + pbix, T8 xlsb, T9 html + pbix + pdf
+ROWS_CLEANED = 9994 + 26397 + 1470 + 418 + 3271 + 247 + 106987 + 2150 + 4803
+DASHBOARDS = 15  # T1 report, T2, T3 html + pbix, T5, T6 html + twbx, T7 html + twbx + pbix, T8 xlsb, T9 html + pbix + pdf, T10 pbix
 
 TOOL_COLORS = {"Python": "#3776AB", "Excel": "#217346", "Power BI": "#C9A000", "Tableau": "#E97627",
                "Plotly / HTML": "#7B61FF", "PDF reports": "#B03A2E"}
-TOOL_USE = {"Python": 8, "Excel": 4, "Plotly / HTML": 7, "Power BI": 3, "Tableau": 2, "PDF reports": 3}
-SKILLS = [("Data visualization", 9), ("Data cleaning & validation", 8), ("KPI design", 8),
-          ("Automation with Python scripts", 8), ("Interactive dashboards", 7),
-          ("Data-quality detective work", 6), ("Excel formulas, pivots & slicers", 4),
-          ("BI tools (Power BI / Tableau)", 4)]
+TOOL_USE = {"Python": 9, "Excel": 4, "Plotly / HTML": 7, "Power BI": 4, "Tableau": 2, "PDF reports": 3}
+SKILLS = [("Data visualization", 10), ("Data cleaning & validation", 9), ("KPI design", 9),
+          ("Automation with Python scripts", 9), ("Interactive dashboards", 8),
+          ("Data-quality detective work", 7), ("Excel formulas, pivots & slicers", 4),
+          ("BI tools (Power BI / Tableau)", 5)]
 SKILL_COLORS = ["#2E86AB", "#1B998B", "#E0A030", "#3D5A80", "#E4572E", "#8E5572", "#217346", "#E97627"]
 
 
@@ -106,11 +107,12 @@ def skills():
         col = TOOL_COLORS[tool]
         p.append(f'<rect x="36" y="{y}" width="130" height="32" rx="16" fill="{col}"/>'
                  f'<text x="101" y="{y + 21}" fill="#fff" font-size="14" font-weight="700" text-anchor="middle">{tool}</text>')
+        step = min(42, 360 // DONE)          # keeps 10-12 cells and the count left of the column divider at x=590
         for k in range(DONE):
-            cx = 190 + k * 42
+            cx = 190 + k * step
             fill = col if k < n else "#E1E7EF"
-            p.append(f'<rect x="{cx}" y="{y + 6}" width="34" height="20" rx="6" fill="{fill}"/>')
-        p.append(f'<text x="{190 + DONE * 42 + 6}" y="{y + 21}" fill="#22313F" font-size="14" font-weight="700">{n}</text>')
+            p.append(f'<rect x="{cx}" y="{y + 6}" width="{step - 8}" height="20" rx="6" fill="{fill}"/>')
+        p.append(f'<text x="{190 + DONE * step + 6}" y="{y + 21}" fill="#22313F" font-size="14" font-weight="700">{n}</text>')
     # right: skills
     X = 620
     p.append(f'<line x1="{X - 30}" y1="30" x2="{X - 30}" y2="{H - 30}" stroke="#E1E7EF" stroke-width="2"/>')

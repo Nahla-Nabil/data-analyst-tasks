@@ -1,6 +1,6 @@
 <a id="top"></a>
 <p align="center">
-  <img src="assets/banner.svg" alt="Data Analyst Internship at VOLTIX - Nahla Nabil - 9 of 12 tasks complete" width="100%">
+  <img src="assets/banner.svg" alt="Data Analyst Internship at VOLTIX - Nahla Nabil - 10 of 12 tasks complete" width="100%">
 </p>
 
 <p align="center">
@@ -26,7 +26,7 @@
 
 <br>
 
-<img src="assets/stats.svg" alt="9 of 12 tasks, 151K+ rows cleaned, 14 dashboards and reports, 4 core tools" width="100%">
+<img src="assets/stats.svg" alt="10 of 12 tasks, 156K+ rows cleaned, 15 dashboards and reports, 4 core tools" width="100%">
 
 <br>
 
@@ -43,7 +43,7 @@
 | <img src="assets/chips/07.svg" alt="07" width="56"> | [**Hospital Analytics**](#task-7) | 247 admissions | HTML, Tableau and Power BI | 79% of bills are placeholders |
 | <img src="assets/chips/08.svg" alt="08" width="56"> | [**Healthcare No-Shows**](#task-8) | 106,987 appointments | Excel dashboard (Pivots and Slicers) | SMS helps, but raw numbers hide it (Simpson's paradox) |
 | <img src="assets/chips/09.svg" alt="09" width="56"> | [**Customer Data Analysis**](#task-9) | Customers · 2,150 records | HTML, Power BI and PDF summary | $750+ orders: 26% of orders, 45% of revenue |
-| <img src="assets/chips/10.svg" alt="10" width="56"> | *coming soon* | | | |
+| <img src="assets/chips/10.svg" alt="10" width="56"> | [**Movie Analytics**](#task-10) | TMDB 5000 · 4,803 movies | Power BI dashboard (7 pages) | Small films return most per dollar; $100M+ films are the safest bet |
 | <img src="assets/chips/11.svg" alt="11" width="56"> | *coming soon* | | | |
 | <img src="assets/chips/12.svg" alt="12" width="56"> | *coming soon* | | | |
 
@@ -58,9 +58,9 @@
 ## 🗓️ Timeline
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables':{'cScale0':'#2E86AB','cScale1':'#1B998B','cScale2':'#8E5572','cScale3':'#E4572E','cScaleLabel0':'#ffffff','cScaleLabel1':'#ffffff','cScaleLabel2':'#ffffff','cScaleLabel3':'#ffffff'}}}%%
+%%{init: {'theme':'base','themeVariables':{'cScale0':'#2E86AB','cScale1':'#1B998B','cScale2':'#8E5572','cScale3':'#E4572E','cScale4':'#6A4C93','cScaleLabel0':'#ffffff','cScaleLabel1':'#ffffff','cScaleLabel2':'#ffffff','cScaleLabel3':'#ffffff','cScaleLabel4':'#ffffff'}}}%%
 timeline
-    title Internship timeline · September 2026
+    title Internship timeline · September–October 2026
     section Week 1
         09 Sep : Task 1 · Sales analysis : Task 2 · Sales dashboard
     section Week 2
@@ -73,7 +73,9 @@ timeline
     section Week 4
         26 Sep : Task 8 · No-shows
         29 Sep : Task 9 · Customers
-        Next : Tasks 10–12
+    section Week 5
+        02 Oct : Task 10 · Movies
+        Next : Tasks 11–12
 ```
 
 <br>
@@ -310,7 +312,28 @@ flowchart TB
 
 <p align="right"><a href="#top">↑ back to top</a></p>
 
-<p align="center"><b>Tasks 10–12:</b> <i>coming soon. Each will be added here once it is released.</i></p>
+<a id="task-10"></a>
+<img src="assets/headers/task10.svg" alt="Task 10: Movie Analytics" width="100%">
+
+<table>
+<tr>
+<td width="46%"><a href="Task%2010"><img src="assets/previews/task10.png" alt="Task 10 preview"></a></td>
+<td>
+
+**What I did**
+- Joined the TMDB movies and credits files (4,803 movies). A budget or revenue of 0 was treated as "unknown", not zero, and ratings with under 50 votes were left out of averages
+- Built a 7-page **Power BI** dashboard: 28 DAX measures, Top N filters, correlation measures, an IMDb-style **weighted rating** with a minimum-votes slicer, and 5 synced slicers
+
+**💡 Key finding:** budget and revenue move together (r = 0.70). **$100M+ movies are the safest (91% profitable)**, but **films under $10M earn the best return (3.7×)**. Longer movies are rated higher (r = 0.40), and June, July and December releases earn the most.
+
+📎 [README](Task%2010/README.md) · [Power BI (.pbix)](Task%2010/Movie_Dashboard.pbix)
+</td>
+</tr>
+</table>
+
+<p align="right"><a href="#top">↑ back to top</a></p>
+
+<p align="center"><b>Tasks 11–12:</b> <i>coming soon. Each will be added here once it is released.</i></p>
 
 <br>
 

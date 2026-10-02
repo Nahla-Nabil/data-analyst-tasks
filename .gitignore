@@ -6,3 +6,4 @@
 **/PowerBI/
 **/*.hyper
 Task 9/powerbi_tools/
+__pycache__/
