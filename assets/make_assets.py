@@ -22,17 +22,18 @@ TASKS = [
     (8, "Healthcare No-Shows", "106,987 appointments", "#E4572E", ["Excel", "Pivots", "Slicers", "Python"]),
     (9, "Customer Data Analysis", "2,150 customer records", "#4A5FC1", ["Python", "Plotly", "Power BI", "PDF"]),
     (10, "Movie Analytics", "TMDB 5000 · 4,803 movies + credits", "#6A4C93", ["Python", "Power BI", "DAX"]),
+    (11, "Video Game Industry", "16,717 titles · 8,920M sales", "#155E63", ["Python", "Excel", "Pivots"]),
 ]
 DONE = len(TASKS)
-ROWS_CLEANED = 9994 + 26397 + 1470 + 418 + 3271 + 247 + 106987 + 2150 + 4803
-DASHBOARDS = 15  # T1 report, T2, T3 html + pbix, T5, T6 html + twbx, T7 html + twbx + pbix, T8 xlsb, T9 html + pbix + pdf, T10 pbix
+ROWS_CLEANED = 9994 + 26397 + 1470 + 418 + 3271 + 247 + 106987 + 2150 + 4803 + 16717
+DASHBOARDS = 16  # T1 report, T2, T3 html + pbix, T5, T6 html + twbx, T7 html + twbx + pbix, T8 xlsb, T9 html + pbix + pdf, T10 pbix, T11 xlsx
 
 TOOL_COLORS = {"Python": "#3776AB", "Excel": "#217346", "Power BI": "#C9A000", "Tableau": "#E97627",
                "Plotly / HTML": "#7B61FF", "PDF reports": "#B03A2E"}
-TOOL_USE = {"Python": 9, "Excel": 4, "Plotly / HTML": 7, "Power BI": 4, "Tableau": 2, "PDF reports": 3}
-SKILLS = [("Data visualization", 10), ("Data cleaning & validation", 9), ("KPI design", 9),
-          ("Automation with Python scripts", 9), ("Interactive dashboards", 8),
-          ("Data-quality detective work", 7), ("Excel formulas, pivots & slicers", 4),
+TOOL_USE = {"Python": 10, "Excel": 5, "Plotly / HTML": 7, "Power BI": 4, "Tableau": 2, "PDF reports": 3}
+SKILLS = [("Data visualization", 11), ("Data cleaning & validation", 10), ("KPI design", 10),
+          ("Automation with Python scripts", 10), ("Interactive dashboards", 9),
+          ("Data-quality detective work", 8), ("Excel formulas, pivots & slicers", 5),
           ("BI tools (Power BI / Tableau)", 5)]
 SKILL_COLORS = ["#2E86AB", "#1B998B", "#E0A030", "#3D5A80", "#E4572E", "#8E5572", "#217346", "#E97627"]
 

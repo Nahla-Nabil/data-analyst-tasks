@@ -1,0 +1,93 @@
+[
+  {
+    "step": 1,
+    "check": "Load the raw file",
+    "found": "16,719 rows, 16 columns, 31 platforms, 12 genres, 582 publishers",
+    "action": "Read as-is, nothing changed yet",
+    "rows_after": 16719
+  },
+  {
+    "step": 2,
+    "check": "Data types",
+    "found": "10 numeric columns expected, 0 wrongly typed; User_Score already numeric (no 'tbd' strings)",
+    "action": "Types accepted as loaded",
+    "rows_after": 16719
+  },
+  {
+    "step": 3,
+    "check": "Exact duplicate rows",
+    "found": "0 rows duplicated on all 16 columns",
+    "action": "Nothing to remove",
+    "rows_after": 16719
+  },
+  {
+    "step": 4,
+    "check": "Duplicates on Name + Platform + Year",
+    "found": "4 rows in 2 pairs: Madden NFL 13 (PS3 2012), (unnamed title) (GEN 1993)",
+    "action": "Kept the row with the higher Global_Sales (identical scores and developer, the other row only carries a few thousand units)",
+    "rows_after": 16717
+  },
+  {
+    "step": 5,
+    "check": "Missing game title / genre",
+    "found": "1 rows without a title, 1 rows without a genre (same row)",
+    "action": "Kept the row with Flag_Unnamed = Yes and the placeholder name '(unnamed title)'; genre set to 'Unknown' so it still appears in the pivots",
+    "rows_after": 16717
+  },
+  {
+    "step": 6,
+    "check": "Missing Year_of_Release",
+    "found": "269 rows missing (12 belong to a title whose release years differ between platforms, the rest have no other row)",
+    "action": "Imputed 111 of them from the same title on other platforms (all known years agree); left 158 blank and flagged Flag_Year_Unknown - they are excluded from the yearly trend",
+    "rows_after": 16717
+  },
+  {
+    "step": 7,
+    "check": "Years after the 22 Dec 2016 cutoff",
+    "found": "4 rows dated 2017-2020 (Imagine: Makeup Artist 2020, Phantasy Star Online 2 x2, Brothers Conflict)",
+    "action": "Kept with Flag_Year_Future = Yes and excluded from the trend line, which stops at 2016",
+    "rows_after": 16717
+  },
+  {
+    "step": 8,
+    "check": "Missing Publisher / Developer",
+    "found": "54 rows without publisher, 6,622 without developer",
+    "action": "Publisher set to 'Unknown publisher' (kept in the totals, flagged); developer kept as a placeholder and used for display only",
+    "rows_after": 16717
+  },
+  {
+    "step": 9,
+    "check": "Sales additivity and negative values",
+    "found": "8 rows where the four regions differ from Global_Sales by more than 0.01M (max 0.02M = rounding), 0 negative values",
+    "action": "Kept the published Global_Sales (the gap is rounding in the source), no row changed",
+    "rows_after": 16717
+  },
+  {
+    "step": 10,
+    "check": "Ratings completeness",
+    "found": "8,581 rows with no critic score, 9,128 with no user score, 8,709 rows rated by critics or users; 1 row has a user score of 0 (4 votes only)",
+    "action": "Left blank (never invented); the ESRB column had 6769 missing values, set to 'Unknown' and grouped into Rating_Band for the charts",
+    "rows_after": 16717
+  },
+  {
+    "step": 11,
+    "check": "PS4 file",
+    "found": "1034 rows, 6 rows repeating a title (all with 0.00M sales - announced games), 207 missing Year and Publisher, latin-1 encoding",
+    "action": "Removed the repeated titles, filled Year with a blank (flagged by absence), publisher/genre to 'Unknown publisher'/'Unknown' -> 1031 rows",
+    "rows_after": 16717
+  },
+  {
+    "step": 12,
+    "check": "XboxOne file",
+    "found": "613 rows, 2 rows repeating a title (all with 0.00M sales - announced games), 108 missing Year and Publisher, latin-1 encoding",
+    "action": "Removed the repeated titles, filled Year with a blank (flagged by absence), publisher/genre to 'Unknown publisher'/'Unknown' -> 612 rows",
+    "rows_after": 16717
+  },
+  {
+    "step": 99,
+    "check": "Output",
+    "found": "16,717 rows x 30 columns in Cleaned_Video_Games.csv; 1031 PS4 and 612 Xbox One rows",
+    "action": "Cleaned files written; every decision above is reversible from this log",
+    "rows_after": 16717
+  }
+]

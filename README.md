@@ -1,6 +1,6 @@
 <a id="top"></a>
 <p align="center">
-  <img src="assets/banner.svg" alt="Data Analyst Internship at VOLTIX - Nahla Nabil - 10 of 12 tasks complete" width="100%">
+   <img src="assets/banner.svg" alt="Data Analyst Internship at VOLTIX - Nahla Nabil - 11 of 12 tasks complete" width="100%">
 </p>
 
 <p align="center">
@@ -26,7 +26,7 @@
 
 <br>
 
-<img src="assets/stats.svg" alt="10 of 12 tasks, 156K+ rows cleaned, 15 dashboards and reports, 4 core tools" width="100%">
+<img src="assets/stats.svg" alt="11 of 12 tasks, 172K+ rows cleaned, 16 dashboards and reports, 4 core tools" width="100%">
 
 <br>
 
@@ -44,7 +44,7 @@
 | <img src="assets/chips/08.svg" alt="08" width="56"> | [**Healthcare No-Shows**](#task-8) | 106,987 appointments | Excel dashboard (Pivots and Slicers) | SMS helps, but raw numbers hide it (Simpson's paradox) |
 | <img src="assets/chips/09.svg" alt="09" width="56"> | [**Customer Data Analysis**](#task-9) | Customers · 2,150 records | HTML, Power BI and PDF summary | $750+ orders: 26% of orders, 45% of revenue |
 | <img src="assets/chips/10.svg" alt="10" width="56"> | [**Movie Analytics**](#task-10) | TMDB 5000 · 4,803 movies | Power BI dashboard (7 pages) | Small films return most per dollar; $100M+ films are the safest bet |
-| <img src="assets/chips/11.svg" alt="11" width="56"> | *coming soon* | | | |
+| <img src="assets/chips/11.svg" alt="11" width="56"> | [**Video Game Industry**](#task-11) | Games · 16,717 titles | Excel dashboard (Pivots, Slicers and Timeline) | Top 1% of titles take 22% of all sales |
 | <img src="assets/chips/12.svg" alt="12" width="56"> | *coming soon* | | | |
 
 <br>
@@ -75,7 +75,8 @@ timeline
         29 Sep : Task 9 · Customers
     section Week 5
         02 Oct : Task 10 · Movies
-        Next : Tasks 11–12
+        05 Oct : Task 11 · Video games
+        Next : Task 12
 ```
 
 <br>
@@ -333,7 +334,28 @@ flowchart TB
 
 <p align="right"><a href="#top">↑ back to top</a></p>
 
-<p align="center"><b>Tasks 11–12:</b> <i>coming soon. Each will be added here once it is released.</i></p>
+<a id="task-11"></a>
+<img src="assets/headers/task11.svg" alt="Task 11: Video Game Industry" width="100%">
+
+<table>
+<tr>
+<td width="46%"><a href="Task%2011"><img src="assets/previews/task11.png" alt="Task 11 preview"></a></td>
+<td>
+
+**What I did**
+- Cleaned 16,719 game records (plus PS4 and Xbox One console files): 2 duplicates removed, 111 missing years recovered from other platforms, the rest flagged, never silently dropped
+- Built an Excel dashboard with 7 **Pivot Tables**, 7 **Pivot Charts**, 6 **Slicers** and a **Timeline**, plus 25 formula KPIs and 10 analysis tables
+
+**💡 Key finding:** **16,717 titles sold 8,920.3M copies, but the top 1% take 22% of sales.** Nintendo alone is 20.1%, reviews track sales only weakly (r = 0.25), and the market peaked in 2008.
+
+📎 [README](Task%2011/README.md) · [Insights](Task%2011/KEY_INSIGHTS.md)
+</td>
+</tr>
+</table>
+
+<p align="right"><a href="#top">↑ back to top</a></p>
+
+<p align="center"><b>Task 12:</b> <i>coming soon. It will be added here once it is released.</i></p>
 
 <br>
 

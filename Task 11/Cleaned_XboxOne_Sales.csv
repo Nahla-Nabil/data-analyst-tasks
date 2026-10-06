@@ -1,0 +1,613 @@
+Platform,Game,Year,Genre,Publisher,NA_Sales,EU_Sales,JP_Sales,Other_Sales,Global_Sales
+XOne,Grand Theft Auto V,2014,Action,Rockstar Games,4.7,3.25,0.01,0.76,8.72
+XOne,Call of Duty: Black Ops 3,2015,Shooter,Activision,4.63,2.04,0.02,0.68,7.37
+XOne,Call of Duty: WWII,2017,Shooter,Activision,3.75,1.91,0.0,0.57,6.23
+XOne,Red Dead Redemption 2,2018,Action-Adventure,Rockstar Games,3.76,1.47,0.0,0.54,5.77
+XOne,MineCraft,2014,Misc,Microsoft Studios,3.23,1.71,0.0,0.49,5.43
+XOne,Call of Duty: Advanced Warfare,2014,Shooter,Activision,3.25,1.49,0.01,0.48,5.22
+XOne,Battlefield 1,2016,Shooter,Electronic Arts,3.37,1.26,0.02,0.48,5.13
+XOne,Fallout 4,2015,Role-Playing,Bethesda Softworks,2.94,1.62,0.02,0.45,5.03
+XOne,Halo 5: Guardians,2015,Shooter,Microsoft Studios,2.94,1.49,0.03,0.45,4.92
+XOne,Call of Duty: Infinite Warfare,2016,Shooter,Activision,2.91,1.44,0.0,0.44,4.79
+XOne,Star Wars Battlefront (2015),2015,Shooter,Electronic Arts,2.49,1.26,0.02,0.38,4.15
+XOne,Forza Horizon 3,2016,Racing,Microsoft Studios,1.64,1.96,0.02,0.32,3.93
+XOne,FIFA 17,2016,Sports,Electronic Arts,1.04,2.4,0.0,0.27,3.71
+XOne,Gears of War: Ultimate Edition,2015,Shooter,Microsoft Studios,2.88,0.37,0.0,0.37,3.62
+XOne,Assassin's Creed: Unity,2014,Action,Ubisoft,2.34,0.9,0.0,0.34,3.58
+XOne,Halo: The Master Chief Collection,2014,Shooter,Microsoft Studios,2.06,1.04,0.03,0.31,3.44
+XOne,Destiny,2014,Shooter,Activision,2.17,0.92,0.0,0.32,3.41
+XOne,Gears of War 4,2016,Shooter,Microsoft Studios,2.17,0.9,0.0,0.32,3.38
+XOne,FIFA 16,2015,Sports,EA Sports,0.92,2.1,0.0,0.24,3.25
+XOne,FIFA 18,2017,Sports,EA Sports,0.98,1.92,0.0,0.23,3.14
+XOne,Titanfall,2014,Shooter,Electronic Arts,1.88,0.91,0.04,0.28,3.11
+XOne,Call of Duty: Ghosts,2013,Shooter,Activision,1.92,0.86,0.0,0.28,3.07
+XOne,Overwatch,2016,Shooter,Blizzard Entertainment,1.63,0.84,0.0,0.25,2.72
+XOne,Tom Clancy's Rainbow Six: Siege,2015,Shooter,Ubisoft,1.62,0.84,0.0,0.25,2.71
+XOne,Tom Clancy's The Division,2016,Shooter,Ubisoft,1.54,0.82,0.0,0.24,2.59
+XOne,Assassin's Creed Origins,2017,Action,Ubisoft,1.34,0.92,0.0,0.22,2.47
+XOne,Madden NFL 16,2015,Sports,EA Sports,2.13,0.08,0.0,0.26,2.47
+XOne,Madden NFL 17,2016,Sports,EA Sports,2.14,0.04,0.0,0.26,2.44
+XOne,NBA 2K16,2015,Sports,2K Sports,2.01,0.15,0.0,0.25,2.41
+XOne,Forza Motorsport 5,2013,Racing,Microsoft Studios,1.28,0.9,0.01,0.21,2.4
+XOne,Destiny 2,2017,Shooter,Activision,1.66,0.47,0.0,0.23,2.35
+XOne,Assassin's Creed IV: Black Flag,2013,Action,Ubisoft,1.51,0.59,0.0,0.22,2.32
+XOne,FIFA 15,2014,Sports,EA Sports,0.64,1.39,0.0,0.16,2.19
+XOne,PlayerUnknown's Battlegrounds,2017,Shooter,Microsoft Studios,1.29,0.69,0.0,0.2,2.17
+XOne,Battlefield 4,2013,Shooter,Electronic Arts,1.26,0.65,0.0,0.19,2.09
+XOne,NBA 2K17,2016,Sports,2K Sports,1.7,0.12,0.0,0.21,2.04
+XOne,Forza Motorsport 6,2015,Racing,Microsoft Studios,0.9,0.92,0.04,0.16,2.02
+XOne,NBA 2K18,2017,Sports,2K Sports,1.67,0.14,0.0,0.21,2.02
+XOne,Star Wars Battlefront II (2017),2017,Shooter,Electronic Arts,1.15,0.59,0.0,0.17,1.92
+XOne,Madden NFL 18,2017,Sports,EA Sports,1.63,0.07,0.0,0.2,1.91
+XOne,The Elder Scrolls V: Skyrim,2016,Role-Playing,Bethesda Softworks,1.13,0.53,0.0,0.17,1.83
+XOne,Far Cry 5,2018,Action,Ubisoft,1.14,0.47,0.0,0.17,1.78
+XOne,Mortal Kombat X,2015,Fighting,Warner Bros. Interactive Entertainment,1.34,0.23,0.0,0.18,1.74
+XOne,NBA 2K15,2014,Sports,2K Sports,1.39,0.18,0.0,0.18,1.74
+XOne,The Witcher 3: Wild Hunt,2015,Role-Playing,Namco Bandai Games,0.97,0.61,0.01,0.15,1.74
+XOne,Far Cry 4,2014,Shooter,Ubisoft,0.85,0.68,0.02,0.14,1.68
+XOne,Watch Dogs,2014,Action-Adventure,Ubisoft,0.91,0.59,0.0,0.15,1.64
+XOne,Dead Rising 3,2013,Action,Microsoft Studios,1.06,0.4,0.01,0.15,1.63
+XOne,Tom Clancy's Ghost Recon Wildlands,2017,Shooter,Ubisoft,0.98,0.48,0.0,0.15,1.61
+XOne,Madden NFL 15,2014,Sports,EA Sports,1.34,0.1,0.0,0.17,1.6
+XOne,Rise of the Tomb Raider,2015,Adventure,Square Enix,0.61,0.82,0.03,0.12,1.58
+XOne,Batman: Arkham Knight,2015,Action,Warner Bros. Interactive Entertainment,0.97,0.46,0.0,0.14,1.58
+XOne,Forza Motorsport 7,2017,Racing,Microsoft Studios,0.58,0.81,0.01,0.12,1.52
+XOne,Dying Light,2015,Action,Warner Bros. Interactive Entertainment,1.01,0.31,0.01,0.14,1.47
+XOne,Ryse,2013,Action,Microsoft Studios,0.84,0.49,0.0,0.13,1.47
+XOne,Forza Horizon 2,2014,Racing,Microsoft Studios,0.56,0.79,0.01,0.11,1.46
+XOne,Doom (2016),2016,Shooter,Bethesda Softworks,0.76,0.57,0.0,0.13,1.45
+XOne,Assassin's Creed Syndicate,2015,Action,Ubisoft,0.71,0.61,0.0,0.12,1.44
+XOne,Middle-Earth: Shadow of Mordor,2014,Action,Warner Bros. Interactive Entertainment,0.77,0.52,0.01,0.12,1.42
+XOne,Rocket League,2016,Sports,505 Games,0.52,0.75,0.0,0.11,1.38
+XOne,The Elder Scrolls Online,2015,MMO,Bethesda Softworks,0.86,0.39,0.0,0.13,1.38
+XOne,Titanfall 2,2016,Shooter,Electronic Arts,0.88,0.37,0.0,0.13,1.37
+XOne,Watch Dogs 2,2016,Action,Ubisoft,0.71,0.53,0.0,0.12,1.35
+XOne,FIFA Soccer 14,2013,Sports,EA Sports,0.44,0.78,0.0,0.1,1.31
+XOne,Destiny: The Taken King,2015,Shooter,Activision,0.91,0.23,0.0,0.12,1.27
+XOne,Battlefield: Hardline,2015,Shooter,Electronic Arts,0.73,0.39,0.01,0.11,1.24
+XOne,Sunset Overdrive,2014,Action,Microsoft Studios,0.64,0.42,0.0,0.1,1.16
+XOne,Middle-Earth: Shadow of War,2017,Action,Warner Bros. Interactive Entertainment,0.75,0.29,0.0,0.11,1.15
+XOne,Lego Marvel Super Heroes,2013,Action,Warner Bros. Interactive Entertainment,0.61,0.44,0.0,0.1,1.15
+XOne,Final Fantasy XV,2016,Role-Playing,Square Enix,0.72,0.3,0.01,0.11,1.14
+XOne,Mafia III,2016,Action-Adventure,2K Games,0.54,0.48,0.0,0.09,1.11
+XOne,Diablo III,2014,Role-Playing,Blizzard Entertainment,0.62,0.32,0.0,0.09,1.04
+XOne,Just Cause 3,2015,Action-Adventure,Square Enix,0.52,0.41,0.0,0.09,1.01
+XOne,Far Cry: Primal,2016,Action-Adventure,Ubisoft,0.51,0.41,0.0,0.09,1.0
+XOne,Dragon Age III: Inquisition,2014,Role-Playing,Electronic Arts,0.63,0.27,0.0,0.09,0.99
+XOne,Sea of Thieves,2018,Action-Adventure,Microsoft Studios,0.6,0.27,0.0,0.09,0.96
+XOne,NBA 2K14,2013,Sports,2K Sports,0.72,0.12,0.0,0.09,0.94
+XOne,Monster Hunter: World,2018,Action,Capcom,0.67,0.17,0.0,0.09,0.93
+XOne,Injustice 2,2017,Fighting,Warner Bros. Interactive Entertainment,0.65,0.16,0.0,0.09,0.89
+XOne,Resident Evil VII: Biohazard,2017,Action,Capcom,0.51,0.3,0.0,0.08,0.89
+XOne,For Honor,2017,Action,Ubisoft,0.57,0.21,0.0,0.08,0.87
+XOne,Dishonored 2,2016,Action,Bethesda Softworks,0.47,0.31,0.0,0.08,0.86
+XOne,Plants vs. Zombies: Garden Warfare 2,2016,Shooter,Electronic Arts,0.47,0.32,0.0,0.08,0.86
+XOne,Madden NFL 25,2013,Sports,EA Sports,0.69,0.06,0.0,0.09,0.83
+XOne,Metal Gear Solid V: The Phantom Pain,2015,Action,Konami Digital Entertainment,0.49,0.25,0.02,0.07,0.83
+XOne,Guitar Hero Live,2015,Music,Activision,0.52,0.23,0.0,0.08,0.83
+XOne,Dark Souls III,2016,Role-Playing,Namco Bandai Games,0.56,0.15,0.0,0.08,0.79
+XOne,LEGO Jurassic World,2015,Action,Warner Bros. Interactive Entertainment,0.44,0.27,0.0,0.07,0.78
+XOne,Rare Replay,2015,Misc,Microsoft Studios,0.42,0.27,0.01,0.07,0.78
+XOne,Mass Effect: Andromeda,2017,Role-Playing,Electronic Arts,0.5,0.2,0.0,0.07,0.78
+XOne,Minecraft: Story Mode,2015,Adventure,Mojang,0.46,0.24,0.0,0.07,0.77
+XOne,Fortnite,2017,Action,Gearbox Software,0.6,0.09,0.0,0.08,0.77
+XOne,Quantum Break,2016,Action,Microsoft Studios,0.42,0.25,0.02,0.07,0.76
+XOne,Wolfenstein: The New Order,2014,Shooter,Bethesda Softworks,0.39,0.3,0.0,0.06,0.75
+XOne,Rock Band 4,2015,Music,Harmonix Music Systems,0.62,0.05,0.0,0.08,0.75
+XOne,Need for Speed (2015),2015,Racing,Electronic Arts,0.35,0.33,0.0,0.06,0.74
+XOne,The Sims 4,2017,Simulation,Electronic Arts,0.42,0.24,0.0,0.07,0.73
+XOne,Need for Speed: Payback,2017,Racing,Electronic Arts,0.42,0.24,0.0,0.07,0.73
+XOne,Dead Rising 4,2016,Action-Adventure,Microsoft Studios,0.41,0.25,0.0,0.06,0.73
+XOne,LEGO Dimensions,2015,Action,Warner Bros. Interactive Entertainment,0.47,0.18,0.0,0.07,0.72
+XOne,The Crew,2014,Racing,Ubisoft,0.32,0.34,0.0,0.06,0.71
+XOne,Plants vs Zombies: Garden Warfare,2014,Shooter,Electronic Arts,0.39,0.25,0.0,0.06,0.71
+XOne,Need for Speed Rivals,2013,Racing,Electronic Arts,0.45,0.19,0.0,0.07,0.7
+XOne,Wolfenstein II: The New Colossus,2017,Shooter,Bethesda Softworks,0.45,0.19,0.0,0.07,0.7
+XOne,The Evil Within,2014,Misc,Bethesda Softworks,0.36,0.27,0.0,0.06,0.69
+XOne,LEGO Worlds,2017,Misc,Warner Bros. Interactive Entertainment,0.28,0.35,0.0,0.05,0.69
+XOne,Borderlands: The Handsome Collection,2015,Shooter,2K Games,0.49,0.13,0.0,0.07,0.68
+XOne,Evolve,2015,Shooter,2K Games,0.4,0.2,0.0,0.06,0.67
+XOne,WWE 2K18,2017,Sports,2K Sports,0.35,0.25,0.0,0.06,0.66
+XOne,Tomb Raider (2013),2014,Action-Adventure,Square Enix,0.38,0.22,0.0,0.06,0.66
+XOne,The LEGO Movie Videogame,2014,Action-Adventure,Warner Bros. Interactive Entertainment,0.42,0.17,0.0,0.06,0.65
+XOne,WWE 2K16,2015,Sports,Take-Two Interactive,0.34,0.24,0.0,0.06,0.63
+XOne,Kinect Sports Rivals,2014,Sports,Microsoft Studios,0.3,0.25,0.02,0.05,0.62
+XOne,South Park: The Fractured But Whole,2017,Role-Playing,Ubisoft,0.4,0.17,0.0,0.06,0.62
+XOne,WWE 2K15,2014,Sports,2K Sports,0.32,0.23,0.0,0.05,0.61
+XOne,EA Sports UFC 2,2016,Sports,EA Sports,0.36,0.19,0.0,0.06,0.61
+XOne,NHL 17,2016,Sports,EA Sports,0.52,0.01,0.0,0.06,0.6
+XOne,Tekken 7,2017,Fighting,Namco Bandai Games,0.3,0.23,0.0,0.05,0.58
+XOne,LEGO Marvel Super Heroes 2,2017,Action,Warner Bros. Interactive Entertainment,0.32,0.2,0.0,0.05,0.57
+XOne,WWE 2K17,2016,Sports,2K Games,0.26,0.26,0.0,0.05,0.57
+XOne,Disney Infinity 2.0: Marvel Super Heroes,2014,Action-Adventure,Disney Interactive Studios,0.35,0.15,0.0,0.05,0.55
+XOne,Just Dance 2015,2014,Music,Ubisoft,0.36,0.13,0.0,0.05,0.54
+XOne,Dragon Ball Fighter Z,2018,Fighting,Namco Bandai Games,0.38,0.09,0.0,0.05,0.52
+XOne,Alien: Isolation,2014,Adventure,Sega,0.23,0.25,0.0,0.04,0.52
+XOne,Halo Wars 2,2017,Strategy,Microsoft Studios,0.31,0.15,0.0,0.05,0.51
+XOne,NHL 16,2015,Sports,EA Sports,0.41,0.05,0.0,0.05,0.51
+XOne,Lego Star Wars: The Force Awakens,2016,Action-Adventure,Warner Bros. Interactive Entertainment,0.24,0.22,0.0,0.04,0.5
+XOne,Mad Max (2013),2015,Action,Warner Bros. Interactive Entertainment,0.29,0.16,0.0,0.05,0.5
+XOne,LEGO Marvel's Avengers,2016,Action,Warner Bros. Interactive Entertainment,0.26,0.18,0.0,0.04,0.48
+XOne,Zoo Tycoon (2013),2013,Simulation,Microsoft Studios,0.25,0.18,0.0,0.04,0.48
+XOne,Steep,2016,Sports,Ubisoft,0.24,0.2,0.0,0.04,0.48
+XOne,Thief 4,2014,Action,Square Enix,0.26,0.17,0.0,0.04,0.48
+XOne,Just Dance 2014,2013,Music,Ubisoft,0.31,0.12,0.0,0.04,0.48
+XOne,EA Sports UFC,2014,Fighting,Electronic Arts,0.3,0.13,0.0,0.04,0.48
+XOne,BioShock The Collection,2016,Shooter,2K Games,0.35,0.08,0.0,0.05,0.48
+XOne,Dragon Ball: Xenoverse 2,2016,Action,Namco Bandai Games,0.33,0.09,0.0,0.05,0.47
+XOne,ARK: Survival Evolved,2017,Action-Adventure,Studio Wildcard,0.3,0.12,0.0,0.04,0.46
+XOne,Disney Infinity 3.0,2015,Action,Disney Interactive Studios,0.3,0.12,0.0,0.04,0.46
+XOne,Prey (2017),2017,Shooter,Bethesda Softworks,0.21,0.2,0.0,0.04,0.45
+XOne,Skylanders: Trap Team,2014,Platform,Activision,0.34,0.07,0.0,0.04,0.45
+XOne,Lego Batman 3: Beyond Gotham,2014,Action,Warner Bros. Interactive Entertainment,0.24,0.17,0.0,0.04,0.44
+XOne,EA Sports UFC 3,2018,Sports,EA Sports,0.3,0.1,0.0,0.04,0.44
+XOne,Rocksmith 2014,2014,Music,Ubisoft,0.31,0.08,0.0,0.04,0.43
+XOne,Sniper Elite 3,2014,Shooter,505 Games,0.27,0.12,0.0,0.04,0.43
+XOne,Hello Neighbor,2017,Action,Gearbox Software,0.27,0.11,0.0,0.04,0.42
+XOne,NHL 15,2014,Sports,EA Sports,0.32,0.06,0.0,0.04,0.42
+XOne,Project CARS,2015,Racing,Bandai Namco Games,0.21,0.16,0.0,0.04,0.41
+XOne,Destiny: The Collection,2016,Shooter,Activision,0.25,0.12,0.0,0.04,0.41
+XOne,Skylanders: SuperChargers,2015,Action-Adventure,Activision,0.31,0.05,0.0,0.04,0.4
+XOne,Deus Ex: Mankind Divided,2016,Role-Playing,Square Enix,0.25,0.11,0.0,0.04,0.39
+XOne,NHL 18,2017,Sports,EA Sports,0.32,0.03,0.0,0.04,0.39
+XOne,The Evil Within II,2017,Action,Bethesda Softworks,0.25,0.1,0.0,0.04,0.39
+XOne,Rayman Legends,2014,Platform,Ubisoft,0.13,0.22,0.0,0.03,0.38
+XOne,Just Dance 2016,2015,Music,Ubisoft,0.3,0.04,0.0,0.04,0.38
+XOne,Skylanders SWAP Force,2013,Misc,Activision,0.25,0.07,0.0,0.03,0.35
+XOne,Naruto Shippuden: Ultimate Ninja Storm 4,2016,Fighting,Namco Bandai Games,0.25,0.07,0.0,0.03,0.35
+XOne,Dragon Ball: XenoVerse,2015,Fighting,Namco Bandai Games,0.21,0.11,0.0,0.03,0.35
+XOne,Marvel vs. Capcom: Infinite,2017,Fighting,Capcom,0.26,0.05,0.0,0.03,0.34
+XOne,Just Dance 2017,2016,Music,Ubisoft,0.25,0.05,0.0,0.03,0.34
+XOne,The Lego Ninjago Movie Videogame,2017,Action,Warner Bros. Interactive Entertainment,0.21,0.09,0.0,0.03,0.33
+XOne,The Crew 2,2018,Racing,Ubisoft,0.2,0.1,0.0,0.03,0.33
+XOne,Farming Simulator 17,2016,Simulation,Focus Home Interactive,0.19,0.11,0.0,0.03,0.33
+XOne,METRO 2033,2014,Shooter,Deep Silver,0.15,0.14,0.0,0.03,0.31
+XOne,Hitman (2016),2017,Action,Square Enix,0.2,0.08,0.0,0.03,0.31
+XOne,LEGO City Undercover,2017,Platform,Warner Bros. Interactive Entertainment,0.15,0.12,0.0,0.03,0.3
+XOne,Final Fantasy Type-0,2015,Role-Playing,Square Enix,0.2,0.07,0.0,0.03,0.3
+XOne,Sniper Elite 4,2017,Shooter,Rebellion Developments,0.18,0.09,0.0,0.03,0.3
+XOne,Sonic Forces,2017,Platform,Sega,0.15,0.11,0.0,0.03,0.29
+XOne,Dark Souls II,2015,Role-Playing,Namco Bandai Games,0.19,0.07,0.0,0.03,0.28
+XOne,Battleborn,2016,Shooter,2K Games,0.2,0.05,0.0,0.03,0.28
+XOne,Rory McIlroy PGA Tour,2015,Sports,Electronic Arts,0.16,0.09,0.0,0.02,0.28
+XOne,Assassin's Creed The Ezio Collection,2016,Action,Ubisoft,0.13,0.12,0.0,0.02,0.27
+XOne,LEGO The Hobbit,2014,Action-Adventure,Warner Bros. Interactive Entertainment,0.13,0.13,0.0,0.02,0.27
+XOne,Metal Gear Solid: Ground Zeroes,2014,Action-Adventure,Konami Digital Entertainment,0.13,0.13,0.0,0.02,0.27
+XOne,Minecraft: Story Mode - Season Two,2017,Adventure,Telltale Games,0.17,0.08,0.0,0.02,0.27
+XOne,Skylanders Imaginators,2016,Platform,Activision,0.19,0.05,0.0,0.03,0.27
+XOne,Friday the 13th: The Game,2017,Action,Gun Media,0.21,0.03,0.0,0.03,0.27
+XOne,ReCore,2016,Action-Adventure,Microsoft Studios,0.16,0.06,0.01,0.02,0.26
+XOne,F1 2015,2015,Racing,Codemasters,0.09,0.15,0.0,0.02,0.25
+XOne,L.A. Noire,2017,Adventure,Rockstar Games,0.14,0.09,0.0,0.02,0.25
+XOne,Trials Fusion,2014,Racing,Ubisoft,0.12,0.1,0.0,0.02,0.25
+XOne,Call of Duty: Modern Warfare Remastered,2017,Shooter,Activision,0.16,0.06,0.0,0.02,0.24
+XOne,Zumba Fitness: World Party,2013,Misc,Majesco Entertainment,0.17,0.05,0.0,0.02,0.24
+XOne,Saints Row IV,2015,Action,Deep Silver,0.13,0.09,0.0,0.02,0.24
+XOne,Farming Simulator 2015,2015,Simulation,Koch Media,0.13,0.09,0.0,0.02,0.24
+XOne,A Way Out,2018,Action,Electronic Arts,0.17,0.05,0.0,0.02,0.24
+XOne,NBA Live 14,2013,Sports,EA Sports,0.19,0.02,0.0,0.02,0.24
+XOne,Payday 2,2015,Shooter,505 Games,0.14,0.07,0.0,0.02,0.23
+XOne,DiRT 4,2017,Racing,Codemasters,0.11,0.1,0.0,0.02,0.23
+XOne,NBA Live 15,2014,Sports,Electronic Arts,0.18,0.02,0.0,0.02,0.22
+XOne,F1 2016 (Codemasters),2016,Racing,Codemasters,0.09,0.12,0.0,0.02,0.22
+XOne,Deadpool,2015,Action,Activision,0.17,0.03,0.0,0.02,0.22
+XOne,The Amazing Spider-Man 2 (2014),2014,Action-Adventure,Activision,0.12,0.08,0.0,0.02,0.22
+XOne,Kingdom Come: Deliverance,2018,Role-Playing,Deep Silver,0.14,0.06,0.0,0.02,0.22
+XOne,Lords of the Fallen,2014,Role-Playing,Square Enix,0.1,0.1,0.0,0.02,0.22
+XOne,Super Lucky's Tale,2017,Platform,Microsoft Studios,0.13,0.07,0.0,0.02,0.22
+XOne,DiRT Rally,2016,Racing,Codemasters,0.12,0.08,0.0,0.02,0.21
+XOne,Just Dance 2018,2017,Music,Ubisoft,0.15,0.04,0.0,0.02,0.21
+XOne,Homefront: The Revolution,2016,Shooter,Deep Silver,0.1,0.09,0.0,0.02,0.21
+XOne,State of Decay,2015,Action-Adventure,Microsoft Studios,0.14,0.05,0.0,0.02,0.21
+XOne,NBA Live 18,2017,Sports,EA Sports,0.18,0.0,0.0,0.02,0.21
+XOne,theHunter: Call of the Wild,2017,Shooter,Astragon,0.18,0.0,0.0,0.02,0.21
+XOne,Sleeping Dogs,2014,Action-Adventure,Square Enix,0.1,0.09,0.0,0.02,0.2
+XOne,Project CARS 2,2017,Racing,Namco Bandai Games,0.01,0.18,0.0,0.01,0.2
+XOne,Batman: Return to Arkham,2016,Action,Warner Bros. Interactive Entertainment,0.12,0.06,0.0,0.02,0.2
+XOne,Dishonored,2015,Action,Bethesda Softworks,0.13,0.05,0.0,0.02,0.19
+XOne,One Piece: Burning Blood,2016,Fighting,Namco Bandai Games,0.11,0.07,0.0,0.02,0.19
+XOne,Fantasia: Music Evolved,2014,Music,Disney Interactive Studios,0.14,0.03,0.0,0.02,0.19
+XOne,Mirror's Edge 2,2016,Platform,Electronic Arts,0.11,0.06,0.0,0.02,0.19
+XOne,Dance Central: Spotlight,,Music,Unknown publisher,0.15,0.03,0.0,0.0,0.19
+XOne,Naruto to Boruto: Shinobi Striker,2018,Action,Bandai Namco Games,0.17,0.0,0.0,0.02,0.19
+XOne,XCOM 2,2016,Strategy,2K Games,0.15,0.02,0.0,0.02,0.19
+XOne,F1 2017,2017,Racing,Koch Media,0.04,0.13,0.0,0.01,0.19
+XOne,Shape Up,2014,Sports,Ubisoft,0.08,0.09,0.0,0.01,0.18
+XOne,Cities: Skylines,2017,Simulation,Deep Silver,0.13,0.03,0.0,0.02,0.18
+XOne,Sniper: Ghost Warrior 3,2017,Shooter,City Interactive,0.11,0.05,0.0,0.02,0.18
+XOne,Project Spark (Working Title),2014,Misc,Microsoft Studios,0.11,0.05,0.0,0.02,0.17
+XOne,Rush: A Disney Pixar Adventure,2017,Adventure,Microsoft Studios,0.15,0.0,0.0,0.02,0.17
+XOne,Fighter Within,2013,Fighting,Ubisoft,0.08,0.07,0.0,0.01,0.17
+XOne,Murdered: Soul Suspect,2014,Action-Adventure,Square Enix,0.08,0.07,0.0,0.01,0.17
+XOne,Pac-Man Championship Edition 2 + Arcade Game Series,2016,Action,Namco Bandai Games,0.15,0.0,0.0,0.02,0.16
+XOne,Angry Birds: Star Wars,2013,Puzzle,Activision,0.11,0.04,0.0,0.02,0.16
+XOne,Little Nightmares,2017,Platform,Namco Bandai Games,0.12,0.03,0.0,0.02,0.16
+XOne,The Walking Dead: Season One,2014,Adventure,Telltale Games,0.08,0.06,0.0,0.01,0.16
+XOne,Wolfenstein: The Old Blood,2015,Shooter,Bethesda Softworks,0.07,0.07,0.0,0.01,0.15
+XOne,Pro Evolution Soccer 2015,2014,Sports,Konami Digital Entertainment,0.04,0.1,0.0,0.01,0.15
+XOne,Transformer: Rise of the Dark Spark,2014,Shooter,Activision,0.1,0.03,0.0,0.01,0.15
+XOne,The Escapists 2,2017,Action,Sold Out,0.05,0.08,0.0,0.01,0.15
+XOne,Transformers: Devastation,2015,Action,Activision,0.1,0.04,0.0,0.01,0.15
+XOne,Spintires: MudRunner,2017,Simulation,Focus Home Interactive,0.11,0.02,0.0,0.01,0.15
+XOne,DmC: Devil May Cry,2015,Action,Capcom,0.09,0.04,0.0,0.01,0.15
+XOne,Attack on Titan (KOEI),2016,Action,Tecmo Koei,0.06,0.07,0.0,0.01,0.15
+XOne,Tony Hawk's Pro Skater 5,2015,Sports,Activision,0.11,0.02,0.0,0.01,0.14
+XOne,Naruto Shippuden: Ultimate Ninja Storm Legacy,2017,Fighting,Namco Bandai Games,0.11,0.02,0.0,0.01,0.14
+XOne,The Walking Dead: Season Two,2014,Misc,Telltale Games,0.08,0.05,0.0,0.01,0.14
+XOne,Resident Evil: Revelations 2,2015,Action,Capcom,0.1,0.02,0.0,0.01,0.14
+XOne,Dishonored: Death of the Outsider,2017,Action,Bethesda Softworks,0.07,0.06,0.0,0.01,0.14
+XOne,Ultimate Marvel vs. Capcom 3,2017,Fighting,Capcom,0.12,0.0,0.0,0.01,0.14
+XOne,The Elder Scrolls Online: Morrowind,2017,MMO,Bethesda Softworks,0.09,0.03,0.0,0.01,0.14
+XOne,Hasbro Family Fun Pack,2015,Misc,Ubisoft,0.1,0.02,0.0,0.01,0.13
+XOne,Rocksmith 2014 Edition Remastered,2016,Music,Ubisoft,0.12,0.0,0.0,0.01,0.13
+XOne,Song of the Deep,2016,Action,Insomniac Games,0.12,0.0,0.0,0.01,0.13
+XOne,NBA Live 16,2015,Sports,EA Sports,0.11,0.01,0.0,0.01,0.13
+XOne,Outlast Trinity,2017,Action,Warner Bros. Interactive Entertainment,0.1,0.02,0.0,0.01,0.13
+XOne,Sonic Mania,2017,Platform,Sega,0.09,0.03,0.0,0.01,0.13
+XOne,Dead by Daylight,2017,Action,505 Games,0.08,0.03,0.0,0.01,0.12
+XOne,Darksiders III,2018,Action,THQ Nordic,0.11,0.0,0.0,0.01,0.12
+XOne,Vampyr,2018,Role-Playing,Focus Home Interactive,0.07,0.04,0.0,0.01,0.12
+XOne,The Walking Dead - The Telltale Series: A New Frontier,2017,Adventure,Warner Bros. Interactive Entertainment,0.1,0.01,0.0,0.01,0.12
+XOne,NASCAR Heat 2,2017,Racing,505 Games,0.11,0.0,0.0,0.01,0.12
+XOne,Life is Strange,2016,Adventure,Square Enix,0.08,0.03,0.0,0.01,0.12
+XOne,Wolfenstein The Two Pack,2017,Shooter,Bethesda Softworks,0.11,0.0,0.0,0.01,0.12
+XOne,The Surge,2017,Action,Koch Media,0.07,0.04,0.0,0.01,0.12
+XOne,Naruto Shippuden Ultimate Ninja Storm 4: Road to Boruto,2017,Fighting,Namco Bandai Games,0.11,0.0,0.0,0.01,0.12
+XOne,Pro Evolution Soccer 2016,2015,Sports,Konami Digital Entertainment,0.05,0.06,0.0,0.01,0.12
+XOne,Pro Evolution Soccer 2018,2017,Sports,Konami Digital Entertainment,0.06,0.05,0.0,0.01,0.12
+XOne,7 Days to Die,2016,Action,Telltale Games,0.09,0.02,0.0,0.01,0.12
+XOne,Zombie Army Trilogy,2015,Shooter,Rebellion Developments,0.05,0.05,0.0,0.01,0.12
+XOne,Prototype: Biohazard Bundle,2016,Action,Activision,0.1,0.0,0.0,0.01,0.11
+XOne,Ride,2015,Racing,Milestone S.r.l.,0.05,0.05,0.0,0.01,0.11
+XOne,Agents of Mayhem,2017,Action,Deep Silver,0.07,0.03,0.0,0.01,0.11
+XOne,Metal Gear Solid V: The Definitive Experience,2016,Action,Konami Digital Entertainment,0.1,0.0,0.0,0.01,0.11
+XOne,Killer Instinct (2013),2014,Fighting,Microsoft Studios,0.07,0.03,0.0,0.01,0.11
+XOne,MXGP 2,2016,Racing,Milestone S.r.l.,0.07,0.02,0.0,0.01,0.1
+XOne,NASCAR Heat Evolution,2016,Racing,Dusenberry Martin Racing,0.09,0.0,0.0,0.01,0.1
+XOne,TrackMania Turbo,2016,Racing,Ubisoft,0.05,0.04,0.0,0.01,0.1
+XOne,Divinity: Original Sin,2015,Role-Playing,Focus Home Interactive,0.06,0.03,0.0,0.01,0.1
+XOne,Dead or Alive 5,2015,Fighting,Tecmo Koei,0.05,0.03,0.01,0.01,0.1
+XOne,Pro Evolution Soccer 2017,2016,Sports,Konami Digital Entertainment,0.05,0.03,0.0,0.01,0.1
+XOne,Resident Evil Zero,2016,Action-Adventure,Capcom,0.07,0.02,0.0,0.01,0.1
+XOne,Sword Art Online: Fatal Bullet,2018,Role-Playing,Namco Bandai Games,0.09,0.0,0.0,0.01,0.1
+XOne,Yooka-Laylee,2017,Platform,Sold Out,0.05,0.04,0.0,0.01,0.1
+XOne,Real Farm,2017,Simulation,Soedesco,0.08,0.0,0.0,0.01,0.1
+XOne,We Happy Few,2018,Action-Adventure,Gearbox Software,0.07,0.01,0.0,0.01,0.09
+XOne,Duke Nukem 3D: 20th Anniversary World Tour,2016,Shooter,Gearbox Software,0.08,0.0,0.0,0.01,0.09
+XOne,The Wolf Among Us,2014,Adventure,Telltale Games,0.06,0.02,0.0,0.01,0.09
+XOne,Attack on Titan 2,2018,Action,Koei Tecmo,0.08,0.0,0.0,0.01,0.09
+XOne,Rugby 15,2015,Sports,Bigben Interactive,0.03,0.05,0.0,0.01,0.09
+XOne,MXGP 3: The Official Motocross Videogame,2017,Racing,Milestone,0.06,0.02,0.0,0.01,0.09
+XOne,Bladestorm: Nightmare,2015,Action,Tecmo Koei,0.06,0.02,0.0,0.01,0.08
+XOne,Monster Energy Supercross - The Official Videogame,2018,Racing,Milestone S.r.l.,0.08,0.0,0.0,0.01,0.08
+XOne,America's Greatest Game Shows: Wheel of Fortune & Jeopardy!,2017,Misc,Ubisoft,0.08,0.0,0.0,0.01,0.08
+XOne,Dead Island Definitive Collection,2016,Action,Deep Silver,0.05,0.03,0.0,0.01,0.08
+XOne,Ride 2,2016,Racing,Milestone S.r.l,0.06,0.01,0.0,0.01,0.08
+XOne,Elite: Dangerous,2017,Simulation,Frontier Developments,0.07,0.0,0.0,0.01,0.08
+XOne,Just Dance: Disney Party 2,2015,Music,Ubisoft,0.06,0.01,0.0,0.01,0.08
+XOne,Bulletstorm: Full Clip Edition,2017,Shooter,Gearbox Software,0.06,0.01,0.0,0.01,0.08
+XOne,Micro Machines: World Series,2017,Racing,Codemasters,0.02,0.05,0.0,0.01,0.08
+XOne,Darksiders II,2015,Action-Adventure,Nordic Games,0.05,0.03,0.0,0.01,0.08
+XOne,Sherlock Holmes: Crimes & Punishments,2014,Adventure,Focus Home Interactive,0.03,0.04,0.0,0.01,0.08
+XOne,Toy Soldiers: War Chest,2015,Action,Ubisoft,0.07,0.0,0.0,0.01,0.08
+XOne,BlazBlue: Chrono Phantasma Extend,2015,Fighting,PQube,0.06,0.01,0.0,0.01,0.08
+XOne,Metal Gear Survive,2018,Action,Konami Digital Entertainment,0.05,0.01,0.0,0.01,0.08
+XOne,The Golf Club,2015,Sports,Ravenscourt,0.07,0.0,0.0,0.01,0.07
+XOne,Batman: A Telltale Game Series,2016,Adventure,Telltale Games,0.06,0.01,0.0,0.01,0.07
+XOne,Constructor HD,2017,Strategy,System 3,0.07,0.0,0.0,0.01,0.07
+XOne,Teenage Mutant Ninja Turtles: Mutants in Manhattan,2016,Action,Activision,0.05,0.01,0.0,0.01,0.07
+XOne,Valentino Rossi: The Game,2016,Racing,Namco Bandai Games,0.05,0.02,0.0,0.01,0.07
+XOne,Disneyland Adventures,2017,Action-Adventure,Microsoft Studios,0.05,0.01,0.0,0.01,0.07
+XOne,Dynasty Warriors 8: Empires,2014,Action,Tecmo Koei,0.04,0.02,0.0,0.01,0.07
+XOne,Resident Evil 6,2016,Shooter,Capcom,0.06,0.0,0.0,0.01,0.07
+XOne,Ghostbusters (2016),2016,Action,Activision,0.06,0.0,0.0,0.01,0.07
+XOne,R.B.I. Baseball 2017,2017,Sports,MLB.com,0.06,0.0,0.0,0.01,0.07
+XOne,Aven Colony,2017,Strategy,Sold Out,0.06,0.0,0.0,0.01,0.06
+XOne,Adventure Time: Finn & Jake Investigations,2015,Action,Little Orbit,0.04,0.02,0.0,0.01,0.06
+XOne,Atari Flashback Classics: Volume 1,2016,Misc,Atari,0.06,0.0,0.0,0.01,0.06
+XOne,MotoGP 17,2017,Racing,Koch Media,0.04,0.02,0.0,0.01,0.06
+XOne,Wasteland 2,2015,Role-Playing,Deep Silver,0.05,0.01,0.0,0.01,0.06
+XOne,MX vs ATV Supercross Encore 2017 Track Edition,2017,Racing,THQ Nordic,0.05,0.0,0.0,0.01,0.06
+XOne,Cartoon Network Battle Crashers,2016,Action,Maximum Games,0.05,0.01,0.0,0.01,0.06
+XOne,Hasbro Family Fun Pack Conquest Edition,2016,Misc,Ubisoft,0.05,0.0,0.0,0.01,0.06
+XOne,Sherlock Holmes: The Devil's Daughter,2016,Adventure,Bigben Interactive,0.05,0.0,0.0,0.01,0.06
+XOne,MX vs. ATV Supercross Encore,2015,Sports,Nordic Games,0.05,0.0,0.0,0.01,0.06
+XOne,Killing Floor 2Ê,2017,Shooter,Tripwire Interactive,0.05,0.0,0.0,0.01,0.06
+XOne,R.B.I. Baseball 2016,2016,Sports,MLB.com,0.05,0.0,0.0,0.01,0.06
+XOne,Okami,2017,Action,Capcom,0.05,0.0,0.0,0.01,0.06
+XOne,Rapala Fishing Pro Series,2017,Simulation,GameMill,0.05,0.0,0.0,0.01,0.06
+XOne,Arslan: The Warriors of Legend,2016,Action,Tecmo Koei,0.05,0.0,0.0,0.01,0.06
+XOne,Golf Club 2,2017,Sports,Maximum Games,0.05,0.0,0.0,0.01,0.06
+XOne,Mark McMorris Infinite Air,2016,Sports,Maximum Games,0.05,0.0,0.0,0.01,0.06
+XOne,Atari Flashback Classics: Volume 2,2016,Misc,Atari,0.05,0.0,0.0,0.01,0.06
+XOne,Hunting Simulator,2017,Shooter,Bigben Interactive,0.05,0.0,0.0,0.01,0.06
+XOne,Styx: Shards of Darknes,2017,Action,Focus Home Interactive,0.05,0.0,0.0,0.01,0.06
+XOne,Marvel's Guardians of the Galaxy: The Telltale Series,2017,Adventure,Warner Bros. Interactive Entertainment,0.05,0.0,0.0,0.01,0.05
+XOne,Baja: Edge of Control HD,2017,Racing,THQ Nordic,0.05,0.0,0.0,0.01,0.05
+XOne,Agatha Christie's The ABC Murders,2016,Adventure,Microids,0.04,0.0,0.0,0.01,0.05
+XOne,Brothers: A Tale of Two Sons,2015,Adventure,505 Games,0.04,0.01,0.0,0.01,0.05
+XOne,The Walking Dead: A Telltale Series Collection,2017,Adventure,Warner Bros. Interactive Entertainment,0.05,0.0,0.0,0.01,0.05
+XOne,Rugby 18,2017,Sports,Koch Media,0.04,0.0,0.0,0.01,0.05
+XOne,Has-Been Heroes,2017,Action,GameTrust,0.04,0.0,0.0,0.01,0.05
+XOne,Deformers,2017,Action,Ready at Dawn,0.04,0.0,0.0,0.01,0.05
+XOne,Extinction,2018,Action,Maximum Games,0.04,0.0,0.0,0.01,0.05
+XOne,Resident Evil 4 HD,2016,Action-Adventure,Capcom,0.04,0.0,0.0,0.01,0.05
+XOne,The Technomancer,2016,Role-Playing,Focus Home Interactive,0.03,0.02,0.0,0.0,0.05
+XOne,Cars 3: Driven to Win,2017,Racing,Warner Bros. Interactive Entertainment,0.04,0.0,0.0,0.01,0.05
+XOne,Pillars of Eternity,2017,Role-Playing,Paradox InteractiveÊ,0.04,0.0,0.0,0.01,0.05
+XOne,Just Sing,2016,Music,Ubisoft,0.04,0.0,0.0,0.01,0.05
+XOne,Mighty No. 9,2016,Platform,Deep Silver,0.04,0.0,0.0,0.01,0.05
+XOne,Batman: The Enemy Within,2017,Adventure,Telltale Games,0.04,0.0,0.0,0.01,0.05
+XOne,WRC 7,2017,Racing,Bigben Interactive,0.04,0.0,0.0,0.01,0.05
+XOne,King's Quest: The Complete Collection,2016,Adventure,Activision,0.04,0.0,0.0,0.01,0.05
+XOne,Marvel Pinball: Epic Collection Volume 1,2016,Puzzle,Nighthawk Interactive,0.04,0.0,0.0,0.01,0.05
+XOne,Road Rage,2017,Racing,Maximum Games,0.04,0.0,0.0,0.0,0.04
+XOne,Dragon's Dogma,2017,Role-Playing,Capcom,0.04,0.0,0.0,0.0,0.04
+XOne,Deer Hunter Reloaded,2017,Shooter,GameMill Entertainment,0.04,0.0,0.0,0.0,0.04
+XOne,Overcooked,2016,Action,Sold Out,0.04,0.0,0.0,0.0,0.04
+XOne,Resident Evil 5 HD,2016,Action,Capcom,0.04,0.0,0.0,0.0,0.04
+XOne,Darksiders: Warmastered Edition,2016,Action-Adventure,THQ Nordic,0.04,0.0,0.0,0.0,0.04
+XOne,Valkyria: Azure Revolution,2017,Role-Playing,Deep Silver,0.04,0.0,0.0,0.0,0.04
+XOne,Game of Thrones (Telltale),2015,Adventure,Telltale Games,0.04,0.0,0.0,0.0,0.04
+XOne,Terraria,2014,Action,505 Games,0.0,0.04,0.0,0.0,0.04
+XOne,Elex,2017,Role-Playing,THQ Nordic,0.04,0.0,0.0,0.0,0.04
+XOne,Battle Chasers: Nightwar,2017,Role-Playing,THQ Nordic,0.04,0.0,0.0,0.0,0.04
+XOne,Don't Starve,2018,Adventure,505 Games,0.04,0.0,0.0,0.0,0.04
+XOne,Dead Rising 2,2016,Action,Capcom,0.03,0.0,0.0,0.0,0.04
+XOne,Don Bradman Cricket 14,2015,Sports,Tru Blu Entertainment,0.0,0.04,0.0,0.0,0.04
+XOne,Monster Jam: Crush It,2016,Racing,GameMill,0.03,0.0,0.0,0.0,0.04
+XOne,Shadow Warrior (2013),2014,Shooter,Devolver Digital,0.0,0.04,0.0,0.0,0.04
+XOne,Dead Alliance,2017,Shooter,Maximum Games,0.03,0.0,0.0,0.0,0.04
+XOne,Warriors Orochi 3,2014,Action,Tecmo Koei,0.01,0.03,0.0,0.0,0.04
+XOne,Dead Rising,2016,Action,Capcom,0.03,0.0,0.0,0.0,0.04
+XOne,Sine Mora,2017,Action,THQ Nordic,0.03,0.0,0.0,0.0,0.04
+XOne,WRC 6,2016,Racing,PQube,0.03,0.0,0.0,0.0,0.03
+XOne,Black Mirror,2017,Adventure,THQ Nordic,0.03,0.0,0.0,0.0,0.03
+XOne,Pure Farming 2018,2018,Simulation,Techland,0.03,0.0,0.0,0.0,0.03
+XOne,MotoGP 15,2015,Racing,Milestone S.r.l.,0.0,0.03,0.0,0.0,0.03
+XOne,Raid: World War II,2017,Shooter,505 Games,0.03,0.0,0.0,0.0,0.03
+XOne,Carmageddon: Max Damage,2016,Action,Stainless Games,0.02,0.01,0.0,0.0,0.03
+XOne,INSIDE / LIMBO Double Pack,2017,Platform,505 Games,0.03,0.0,0.0,0.0,0.03
+XOne,Warhammer: The End Times - Vermintide,2016,Action,Games Workshop,0.03,0.0,0.0,0.0,0.03
+XOne,Stardew Valley,2017,Simulation,505 Games,0.02,0.0,0.0,0.0,0.03
+XOne,Ben 10 (2017),2017,Action,Outright Games,0.02,0.0,0.0,0.0,0.03
+XOne,The Pillars of the Earth,2017,Adventure,Kalypso Media,0.02,0.0,0.0,0.0,0.03
+XOne,Rime,2017,Adventure,Grey Box,0.02,0.0,0.0,0.0,0.03
+XOne,Worms: WMD,2016,Strategy,Team17 Digital Ltd,0.02,0.0,0.0,0.0,0.02
+XOne,Syberia III,2017,Adventure,Microids,0.02,0.0,0.0,0.0,0.02
+XOne,Moto Racer 4,2016,Racing,PQube,0.02,0.0,0.0,0.0,0.02
+XOne,Rugby League Live 4,2017,Sports,Tru Blu Entertainment,0.0,0.02,0.0,0.0,0.02
+XOne,ABZU,2017,Adventure,505 Games,0.02,0.0,0.0,0.0,0.02
+XOne,Pharaonic,2017,Action,Soedesco,0.02,0.0,0.0,0.0,0.02
+XOne,Geometry Wars 3: Dimensions Evolved,2016,Action,Activision,0.02,0.0,0.0,0.0,0.02
+XOne,Resident Evil: Revelations,2017,Action,Capcom,0.02,0.0,0.0,0.0,0.02
+XOne,Broken Sword 5: The Serpent's Curse,2015,Adventure,Revolution Software,0.0,0.02,0.0,0.0,0.02
+XOne,Rugby World Cup 2015,2015,Sports,Big Ben Interactive,0.0,0.02,0.0,0.0,0.02
+XOne,The Crew: Wild Run,2015,Racing,Ubisoft,0.0,0.02,0.0,0.0,0.02
+XOne,Prison Architect,2016,Simulation,Introversion Software,0.02,0.0,0.0,0.0,0.02
+XOne,The Dwarves,2016,Role-Playing,THQ Nordic,0.02,0.0,0.0,0.0,0.02
+XOne,Big Buck Hunter Arcade,2017,Shooter,GameMill,0.02,0.0,0.0,0.0,0.02
+XOne,Redout,2017,Racing,505 Games,0.02,0.0,0.0,0.0,0.02
+XOne,Troll and I,2017,Action,Maximum Games,0.02,0.0,0.0,0.0,0.02
+XOne,Portal Knights,2017,Role-Playing,505 Games,0.02,0.0,0.0,0.0,0.02
+XOne,Shaq-Fu: A Legend Reborn,2018,Action,Wired Productions,0.02,0.0,0.0,0.0,0.02
+XOne,Psycho-Pass,2014,Visual Novel,5pb,0.0,0.0,0.02,0.0,0.02
+XOne,Tropico 5,2016,Simulation,Kalypso Media,0.02,0.0,0.0,0.0,0.02
+XOne,Back to the Future: The Game,2015,Adventure,Telltale Games,0.0,0.02,0.0,0.0,0.02
+XOne,Saints Row: Gat out of Hell,2015,Action,Deep Silver,0.0,0.02,0.0,0.0,0.02
+XOne,Mega Man Legacy Collection 2,2017,Action,Capcom,0.02,0.0,0.0,0.0,0.02
+XOne,Dungeons 3,2017,Strategy,Kalypso Media,0.02,0.0,0.0,0.0,0.02
+XOne,Blackguards 2,2017,Strategy,Kalypso Media,0.02,0.0,0.0,0.0,0.02
+XOne,Rogue Trooper: Redux,2017,Shooter,Rebellion,0.02,0.0,0.0,0.0,0.02
+XOne,Vikings: Wolves of Midgard,2017,Action,Kalypso Media,0.01,0.0,0.0,0.0,0.02
+XOne,The Inner World: The Last Wind Monk,2017,Puzzle,Kalypso Media,0.01,0.0,0.0,0.0,0.02
+XOne,Assetto Corsa,2016,Racing,505 Games,0.0,0.01,0.0,0.0,0.02
+XOne,Le Tour de France 2017,2017,Simulation,Focus Home Interactive,0.0,0.01,0.0,0.0,0.02
+XOne,Lock's Quest,2017,Strategy,THQ Nordic,0.01,0.0,0.0,0.0,0.02
+XOne,WRC 5: FIA World Rally Championship,2015,Racing,Bigben Interactive,0.0,0.01,0.0,0.0,0.02
+XOne,FlatOut 4: Total Insanity,2017,Racing,Bigben Interactive,0.01,0.0,0.0,0.0,0.01
+XOne,Shadow Tactics: Blades of the Shogun,2017,Strategy,Kalypso Media,0.01,0.0,0.0,0.0,0.01
+XOne,The Town of Light,2017,Adventure,THQ Nordic,0.01,0.0,0.0,0.0,0.01
+XOne,Goat Simulator,2016,Simulation,Koch Media,0.0,0.01,0.0,0.0,0.01
+XOne,Rugby League Live 3,2015,Sports,Tru Blu Entertainment,0.0,0.01,0.0,0.0,0.01
+XOne,Assassin's Creed Chronicles,2016,Action,Ubisoft,0.0,0.01,0.0,0.0,0.01
+XOne,Sbastien Loeb Rally Evo,2016,Racing,Milestone S.r.l,0.0,0.01,0.0,0.0,0.01
+XOne,Rugby Challenge 3,2016,Sports,Alternative Software,0.0,0.01,0.0,0.0,0.01
+XOne,Rabbids Invasion: The Interactive TV Show,2014,Misc,Ubisoft,0.0,0.01,0.0,0.0,0.01
+XOne,ZombiU,2016,Action,Ubisoft,0.0,0.01,0.0,0.0,0.01
+XOne,This War of Mine,2016,Action,11 bit studios,0.0,0.01,0.0,0.0,0.01
+XOne,Battle Worlds: Kronos,2016,Strategy,Nordic Games,0.01,0.0,0.0,0.0,0.01
+XOne,ScreamRide,2015,Simulation,Microsoft Studios,0.0,0.01,0.0,0.0,0.01
+XOne,Torment: Tides of Numenera,2017,Role-Playing,Techland,0.01,0.0,0.0,0.0,0.01
+XOne,Ziggurat,2016,Shooter,Soedesco,0.0,0.01,0.0,0.0,0.01
+XOne,ATV Renegades,2017,Racing,Nighthawk Interactive,0.0,0.0,0.0,0.0,0.01
+XOne,This Is The Police,2017,Simulation,THQ Nordic,0.0,0.0,0.0,0.0,0.01
+XOne,Valhalla Hills,2017,Strategy,Kalypso Media,0.0,0.0,0.0,0.0,0.0
+XOne,Handball 16,2015,Sports,Bigben Interactive,0.0,0.0,0.0,0.0,0.0
+XOne,Shovel Knight,2015,Platform,Yacht Club Games,0.0,0.0,0.0,0.0,0.0
+XOne,Blood Bowl 2,2015,Sports,Focus Home Interactive,0.0,0.0,0.0,0.0,0.0
+XOne,The Peanuts Movie: Snoopy's Grand Adventure,2015,Platform,Activision,0.0,0.0,0.0,0.0,0.0
+XOne,Farming 2017 - The Simulation,2016,Simulation,UIG Entertainment,0.0,0.0,0.0,0.0,0.0
+XOne,Kung Fu Panda: Showdown of Legendary Legends,2015,Action,Little Orbit,0.0,0.0,0.0,0.0,0.0
+XOne,Strider (2014),2014,Platform,Capcom,0.0,0.0,0.0,0.0,0.0
+XOne,The Amazing Spider-Man 2,2014,Misc,Activision,0.0,0.0,0.0,0.0,0.0
+XOne,Mega Man Legacy Collection,2016,Platform,Capcom,0.0,0.0,0.0,0.0,0.0
+XOne,A Boy and His Blob,,Platform,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Agatha Christie: The ABC Murders,2016,Adventure,Microids,0.0,0.0,0.0,0.0,0.0
+XOne,Ancients of Ooga - The Forgotten Chapters,2016,Platform,Koch Media,0.0,0.0,0.0,0.0,0.0
+XOne,Another World,,Adventure,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Bladestorm: The Hundred Years' War,2015,Action,BioWare,0.0,0.0,0.0,0.0,0.0
+XOne,Brothers in Arms: Furious 4,2019,Shooter,Ubisoft,0.0,0.0,0.0,0.0,0.0
+XOne,Buzz Buzz Bang,,Action,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Woolfe: The Red Hood Diaries,,Adventure,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,SlashDash,,Action,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Devil May Cry 4,2015,Action,Capcom,0.0,0.0,0.0,0.0,0.0
+XOne,#IDARB,,Action,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Frog Toss,,Misc,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Gran Turismo 5 Prologue Spec III,2014,Misc,Wizards of the Coast,0.0,0.0,0.0,0.0,0.0
+XOne,Industry Giant II,2017,Strategy,UIG Entertainment,0.0,0.0,0.0,0.0,0.0
+XOne,Killer Instinct,2020,Misc,Microsoft Game Studios,0.0,0.0,0.0,0.0,0.0
+XOne,King's Quest I: Quest for the Crown (VGA Version),,Misc,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,LIMBO,,Platform,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Mount & Blade: Warband,2016,Role-Playing,Koch Media,0.0,0.0,0.0,0.0,0.0
+XOne,Neverwinter,,Role-Playing,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Pier Solar and the Great Architects,,Role-Playing,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Spectra 8bit Racing,,Racing,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Nero,,Puzzle,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Pinball FX 2,,Misc,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Gran Turismo HD Concept,,Misc,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Dear Esther,,Adventure,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Lightning Returns: Final Fantasy XIII,2013,Misc,Square Enix,0.0,0.0,0.0,0.0,0.0
+XOne,Oddworld: Abe's Oddysee New N' Tasty!,,Platform,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Lifeless Planet,,Puzzle,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Slender: The Arrival,2015,Adventure,Unknown,0.0,0.0,0.0,0.0,0.0
+XOne,Lovers in a Dangerous Spacetime,,Action,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Human Element,2015,Misc,Unknown,0.0,0.0,0.0,0.0,0.0
+XOne,Whore of the Orient,2020,Misc,Warner Bros. Interactive Entertainment,0.0,0.0,0.0,0.0,0.0
+XOne,Max: the Curse of Brotherhood,,Action-Adventure,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Axiom Verge,,Action,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Guacamelee!,,Action,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Carmageddon: Reincarnation,2015,Misc,Stainless Games,0.0,0.0,0.0,0.0,0.0
+XOne,The Banner Saga,,Role-Playing,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Cobalt,,Action,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Plague Inc.,,Strategy,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,BADLAND,,Action,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Halo: Spartan Assault,,Shooter,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Halo 6,2020,Shooter,Microsoft Game Studios,0.0,0.0,0.0,0.0,0.0
+XOne,D4,,Adventure,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Crimson Dragon,,Shooter,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Below,,Action-Adventure,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Peggle 2,,Misc,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,LocoCycle,,Action,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Powerstar Golf,,Sports,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Kingdom Hearts III,2019,Role-Playing,Square Enix,0.0,0.0,0.0,0.0,0.0
+XOne,Black Tusk Studios Game,2020,Misc,Microsoft Game Studios,0.0,0.0,0.0,0.0,0.0
+XOne,KickBeat,,Misc,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Reus,2016,Strategy,Soedesco,0.0,0.0,0.0,0.0,0.0
+XOne,Rogue Legacy,,Action,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Defense Grid 2,,Misc,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Hellraid,,Misc,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,There Came an Echo,,Misc,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Strike Suit Zero,,Misc,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Fable Legends,2019,Role-Playing,Microsoft Studios,0.0,0.0,0.0,0.0,0.0
+XOne,WonderFlick,2014,Misc,Level 5,0.0,0.0,0.0,0.0,0.0
+XOne,Monochroma,2014,Misc,Unknown,0.0,0.0,0.0,0.0,0.0
+XOne,FORCED,,Role-Playing,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Sea Animal Games for Toddlers and Kids with Jigsaw Puzzles,2013,Misc,Ubisoft,0.0,0.0,0.0,0.0,0.0
+XOne,Unmechanical,,Puzzle,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Divekick,,Fighting,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Child of Light,,Role-Playing,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Valiant Hearts: The Great War,,Adventure,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Hyper Light Drifter,,Role-Playing,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Legend of Raven,,Misc,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Xbox Fitness,,Misc,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Raven's Cry,2014,Role-Playing,TopWare Interactive,0.0,0.0,0.0,0.0,0.0
+XOne,Shantae: Half-Genie Hero,,Platform,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Tales from the Borderlands,2014,Adventure,Telltale Games,0.0,0.0,0.0,0.0,0.0
+XOne,Get Even,2015,Misc,Unknown,0.0,0.0,0.0,0.0,0.0
+XOne,Threes!,,Puzzle,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Worms Battlegrounds,,Strategy,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Stranger of Sword City,2016,Role-Playing,Experience Inc.,0.0,0.0,0.0,0.0,0.0
+XOne,The Book of Unwritten Tales 2,2015,Adventure,Nordic Games,0.0,0.0,0.0,0.0,0.0
+XOne,Puyo Puyo Tetris,2014,Puzzle,Sega,0.0,0.0,0.0,0.0,0.0
+XOne,Razor Global Domination Pro TourÊ,,Misc,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Gone HomeÊ,,Adventure,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Costume Quest 2,,Role-Playing,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Aztez,,Misc,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Not a Hero,,Misc,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Cult County,2015,Misc,Renegade Kid,0.0,0.0,0.0,0.0,0.0
+XOne,Adr1ft,2016,Adventure,505 Games,0.0,0.0,0.0,0.0,0.0
+XOne,R.B.I. Baseball 14,2014,Misc,MLB.com,0.0,0.0,0.0,0.0,0.0
+XOne,Blue EstateÊ,2014,Misc,Focus Home Interactive,0.0,0.0,0.0,0.0,0.0
+XOne,Source,,Misc,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Chariot,,Adventure,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Super Time Force,,Misc,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Pure PoolÊ,,Sports,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Never Alone,,Misc,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Space Hulk: Deathwing,2015,Shooter,Focus Home Interactive,0.0,0.0,0.0,0.0,0.0
+XOne,Red Goddess: Inner Mind,,Platform,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Mystereet F: The Detectives' Curtain Call,2014,Misc,5pb,0.0,0.0,0.0,0.0,0.0
+XOne,Chaos;Child,2014,Visual Novel,5pb,0.0,0.0,0.0,0.0,0.0
+XOne,Fenix Rage,,Platform,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,FRU,,Puzzle,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Shiness: The Lightning Kingdom,,Role-Playing,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Ori and the Blind Forest,,Platform,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Phantom Dust (2015),,Action,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Scalebound,2014,Action,PlatinumGames,0.0,0.0,0.0,0.0,0.0
+XOne,Crackdown 3,2019,Action,Microsoft Studios,0.0,0.0,0.0,0.0,0.0
+XOne,EA Sports PGA Tour,2015,Sports,EA Sports,0.0,0.0,0.0,0.0,0.0
+XOne,Lara Croft and the Temple of Osiris,2014,Action,Square Enix,0.0,0.0,0.0,0.0,0.0
+XOne,Wulverblade,,Action,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Gunscape,,Action,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Cuphead,,Action,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Knight Squad,,Action,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Dead Island 2,2017,Action,Deep Silver,0.0,0.0,0.0,0.0,0.0
+XOne,Inside,,Platform,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Tetris UltimateÊ,2014,Puzzle,Ubisoft,0.0,0.0,0.0,0.0,0.0
+XOne,Afro Samurai 2,2015,Action,Versus Evil,0.0,0.0,0.0,0.0,0.0
+XOne,The Legend of Korra (2014),2014,Action,Activision,0.0,0.0,0.0,0.0,0.0
+XOne,Azito x Tatsunoko Legends,,Simulation,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Shooting Love Trilogy,2015,Shooter,Triangle Service,0.0,0.0,0.0,0.0,0.0
+XOne,AirMech Arena,,Action,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,The Walking Dead: Season Three,,Action,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,King of Wushu,2015,Action,Snail Game,0.0,0.0,0.0,0.0,0.0
+XOne,MercuryÊ,2015,Action,Unknown,0.0,0.0,0.0,0.0,0.0
+XOne,Pneuma: Breath of Life,,Puzzle,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,The Escapists,,Action,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Superhot,,Shooter,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Spectra,,Racing,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Space Engineers,,Simulation,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,No Time to Explain,,Action,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Funk of Titans,,Platform,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Fruit Ninja Kinect 2,,Action,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Blues and Bullets,,Action-Adventure,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Game 4,,Strategy,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Raiden V,2016,Action,Moss,0.0,0.0,0.0,0.0,0.0
+XOne,Assassin's Creed Chronicles: China,2015,Action-Adventure,Ubisoft,0.0,0.0,0.0,0.0,0.0
+XOne,Pathologic,2015,Adventure,Ice-pick Lodge,0.0,0.0,0.0,0.0,0.0
+XOne,Geometry Wars 3: Dimensions,,Shooter,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Assassin's Creed: Victory,2015,Action,Ubisoft,0.0,0.0,0.0,0.0,0.0
+XOne,The Banner Saga 2,,Role-Playing,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Gigantic,,Action,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Magic Duels: Origin,,Misc,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Shiftlings,,Platform,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Oceanhorn: Monster of Uncharted Seas,,Action,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Beyond Eyes,,Adventure,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Inside My Radio,,Platform,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Kaiju Panic,,Strategy,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Tembo the Badass Elephant,,Platform,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Assassin's Creed Chronicles: Russia,,Action,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Assassin's Creed Chronicles: India,,Action,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Overlord: Fellowship of Evil,,Action,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,R.B.I. Baseball 15,2015,Sports,MLB.com,0.0,0.0,0.0,0.0,0.0
+XOne,The Walking Dead: Michonne,,Adventure,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Unravel,,Platform,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Tachyon Project,,Action,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Cross Reverie,2017,Role-Playing,Sinxsoft,0.0,0.0,0.0,0.0,0.0
+XOne,Goosebumps: The Game,,Adventure,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,The Escapists: The Walking Dead,2015,Action,Team17 Software,0.0,0.0,0.0,0.0,0.0
+XOne,Woodcutter Simulator 2016,2015,Action,Namco Bandai Games,0.0,0.0,0.0,0.0,0.0
+XOne,Professional Farmer 2016,2015,Action,Namco Bandai Games,0.0,0.0,0.0,0.0,0.0
+XOne,Professional Lumberjack 2016,2015,Simulation,Namco Bandai Games,0.0,0.0,0.0,0.0,0.0
+XOne,Alekhine's Gun,2016,Action,Maximum Games,0.0,0.0,0.0,0.0,0.0
+XOne,World to the West,2017,Action-Adventure,Soedesco,0.0,0.0,0.0,0.0,0.0
+XOne,The Binding of Isaac: Rebirth,,Action,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Super Dungeon Bros,2016,Action,Wired Productions,0.0,0.0,0.0,0.0,0.0
+XOne,Pro Cycling Manager 2016,2016,Sports,Focus Home Interactive,0.0,0.0,0.0,0.0,0.0
+XOne,De-formers,,Action,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Wonder Boy: The Dragon's Trap (Remake),,Platform,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Rock of Ages II: Bigger and Boulder,,Action,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Fe,,Action,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,We Sing (2016),2016,Music,THQ Nordic,0.0,0.0,0.0,0.0,0.0
+XOne,Don Bradman Cricket 17,2016,Sports,Tru Blu Entertainment,0.0,0.0,0.0,0.0,0.0
+XOne,Ace Combat 7: Skies Unknown,2019,Shooter,Bandai Namco Games,0.0,0.0,0.0,0.0,0.0
+XOne,The Sexy Brutale,,Adventure,Unknown publisher,0.0,0.0,0.0,0.0,0.0
+XOne,Metro Exodus,2019,Shooter,Deep Silver,0.0,0.0,0.0,0.0,0.0
+XOne,Anthem,2019,Role-Playing,Electronic Arts,0.0,0.0,0.0,0.0,0.0
+XOne,AereA,2017,Role-Playing,Soedesco,0.0,0.0,0.0,0.0,0.0
+XOne,Moons Of Madness,2018,Role-Playing,Unknown,0.0,0.0,0.0,0.0,0.0
+XOne,Iron Harvest,2018,Strategy,Unknown,0.0,0.0,0.0,0.0,0.0
+XOne,Biomutant,2018,Action,THQ Nordic,0.0,0.0,0.0,0.0,0.0
+XOne,de Blob,2017,Platform,THQ Nordic,0.0,0.0,0.0,0.0,0.0
+XOne,Outcast: Second Contact,2017,Adventure,Bigben Interactive,0.0,0.0,0.0,0.0,0.0
+XOne,Code Vein,2019,Action,Bandai Namco Entertainment,0.0,0.0,0.0,0.0,0.0

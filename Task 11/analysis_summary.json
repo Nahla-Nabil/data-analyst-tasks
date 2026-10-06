@@ -1,0 +1,5207 @@
+{
+  "rows_raw": 16719,
+  "rows_clean": 16717,
+  "missing_pct_overview": {
+    "Name": 0.0,
+    "Year_of_Release": 1.6,
+    "Genre": 0.0,
+    "Publisher": 0.3,
+    "Critic_Score": 51.3,
+    "Critic_Count": 51.3,
+    "User_Score": 54.6,
+    "User_Count": 54.6,
+    "Developer": 39.6,
+    "Rating": 40.5
+  },
+  "quality_steps": [
+    {
+      "step": 1,
+      "check": "Load the raw file",
+      "found": "16,719 rows, 16 columns, 31 platforms, 12 genres, 582 publishers",
+      "action": "Read as-is, nothing changed yet",
+      "rows_after": 16719
+    },
+    {
+      "step": 2,
+      "check": "Data types",
+      "found": "10 numeric columns expected, 0 wrongly typed; User_Score already numeric (no 'tbd' strings)",
+      "action": "Types accepted as loaded",
+      "rows_after": 16719
+    },
+    {
+      "step": 3,
+      "check": "Exact duplicate rows",
+      "found": "0 rows duplicated on all 16 columns",
+      "action": "Nothing to remove",
+      "rows_after": 16719
+    },
+    {
+      "step": 4,
+      "check": "Duplicates on Name + Platform + Year",
+      "found": "4 rows in 2 pairs: Madden NFL 13 (PS3 2012), (unnamed title) (GEN 1993)",
+      "action": "Kept the row with the higher Global_Sales (identical scores and developer, the other row only carries a few thousand units)",
+      "rows_after": 16717
+    },
+    {
+      "step": 5,
+      "check": "Missing game title / genre",
+      "found": "1 rows without a title, 1 rows without a genre (same row)",
+      "action": "Kept the row with Flag_Unnamed = Yes and the placeholder name '(unnamed title)'; genre set to 'Unknown' so it still appears in the pivots",
+      "rows_after": 16717
+    },
+    {
+      "step": 6,
+      "check": "Missing Year_of_Release",
+      "found": "269 rows missing (12 belong to a title whose release years differ between platforms, the rest have no other row)",
+      "action": "Imputed 111 of them from the same title on other platforms (all known years agree); left 158 blank and flagged Flag_Year_Unknown - they are excluded from the yearly trend",
+      "rows_after": 16717
+    },
+    {
+      "step": 7,
+      "check": "Years after the 22 Dec 2016 cutoff",
+      "found": "4 rows dated 2017-2020 (Imagine: Makeup Artist 2020, Phantasy Star Online 2 x2, Brothers Conflict)",
+      "action": "Kept with Flag_Year_Future = Yes and excluded from the trend line, which stops at 2016",
+      "rows_after": 16717
+    },
+    {
+      "step": 8,
+      "check": "Missing Publisher / Developer",
+      "found": "54 rows without publisher, 6,622 without developer",
+      "action": "Publisher set to 'Unknown publisher' (kept in the totals, flagged); developer kept as a placeholder and used for display only",
+      "rows_after": 16717
+    },
+    {
+      "step": 9,
+      "check": "Sales additivity and negative values",
+      "found": "8 rows where the four regions differ from Global_Sales by more than 0.01M (max 0.02M = rounding), 0 negative values",
+      "action": "Kept the published Global_Sales (the gap is rounding in the source), no row changed",
+      "rows_after": 16717
+    },
+    {
+      "step": 10,
+      "check": "Ratings completeness",
+      "found": "8,581 rows with no critic score, 9,128 with no user score, 8,709 rows rated by critics or users; 1 row has a user score of 0 (4 votes only)",
+      "action": "Left blank (never invented); the ESRB column had 6769 missing values, set to 'Unknown' and grouped into Rating_Band for the charts",
+      "rows_after": 16717
+    },
+    {
+      "step": 11,
+      "check": "PS4 file",
+      "found": "1034 rows, 6 rows repeating a title (all with 0.00M sales - announced games), 207 missing Year and Publisher, latin-1 encoding",
+      "action": "Removed the repeated titles, filled Year with a blank (flagged by absence), publisher/genre to 'Unknown publisher'/'Unknown' -> 1031 rows",
+      "rows_after": 16717
+    },
+    {
+      "step": 12,
+      "check": "XboxOne file",
+      "found": "613 rows, 2 rows repeating a title (all with 0.00M sales - announced games), 108 missing Year and Publisher, latin-1 encoding",
+      "action": "Removed the repeated titles, filled Year with a blank (flagged by absence), publisher/genre to 'Unknown publisher'/'Unknown' -> 612 rows",
+      "rows_after": 16717
+    },
+    {
+      "step": 99,
+      "check": "Output",
+      "found": "16,717 rows x 28 columns in Cleaned_Video_Games.csv; 1031 PS4 and 612 Xbox One rows",
+      "action": "Cleaned files written; every decision above is reversible from this log",
+      "rows_after": 16717
+    }
+  ],
+  "flags": {
+    "unnamed": 1,
+    "year_imputed": 111,
+    "year_unknown": 158,
+    "year_future": 4,
+    "unknown_publisher": 54
+  },
+  "genre": [
+    {
+      "Genre": "Action",
+      "Games": 3370,
+      "Sales": 1745.27,
+      "Sales_Share_%": 19.6,
+      "Avg_Sales_M": 0.52,
+      "Games_Share_%": 20.2
+    },
+    {
+      "Genre": "Adventure",
+      "Games": 1303,
+      "Sales": 237.69,
+      "Sales_Share_%": 2.7,
+      "Avg_Sales_M": 0.18,
+      "Games_Share_%": 7.8
+    },
+    {
+      "Genre": "Fighting",
+      "Games": 849,
+      "Sales": 447.48,
+      "Sales_Share_%": 5.0,
+      "Avg_Sales_M": 0.53,
+      "Games_Share_%": 5.1
+    },
+    {
+      "Genre": "Misc",
+      "Games": 1750,
+      "Sales": 803.18,
+      "Sales_Share_%": 9.0,
+      "Avg_Sales_M": 0.46,
+      "Games_Share_%": 10.5
+    },
+    {
+      "Genre": "Platform",
+      "Games": 888,
+      "Sales": 828.08,
+      "Sales_Share_%": 9.3,
+      "Avg_Sales_M": 0.93,
+      "Games_Share_%": 5.3
+    },
+    {
+      "Genre": "Puzzle",
+      "Games": 580,
+      "Sales": 243.02,
+      "Sales_Share_%": 2.7,
+      "Avg_Sales_M": 0.42,
+      "Games_Share_%": 3.5
+    },
+    {
+      "Genre": "Racing",
+      "Games": 1249,
+      "Sales": 728.9,
+      "Sales_Share_%": 8.2,
+      "Avg_Sales_M": 0.58,
+      "Games_Share_%": 7.5
+    },
+    {
+      "Genre": "Role-Playing",
+      "Games": 1500,
+      "Sales": 934.4,
+      "Sales_Share_%": 10.5,
+      "Avg_Sales_M": 0.62,
+      "Games_Share_%": 9.0
+    },
+    {
+      "Genre": "Shooter",
+      "Games": 1323,
+      "Sales": 1052.94,
+      "Sales_Share_%": 11.8,
+      "Avg_Sales_M": 0.8,
+      "Games_Share_%": 7.9
+    },
+    {
+      "Genre": "Simulation",
+      "Games": 874,
+      "Sales": 390.42,
+      "Sales_Share_%": 4.4,
+      "Avg_Sales_M": 0.45,
+      "Games_Share_%": 5.2
+    },
+    {
+      "Genre": "Sports",
+      "Games": 2347,
+      "Sales": 1331.99,
+      "Sales_Share_%": 14.9,
+      "Avg_Sales_M": 0.57,
+      "Games_Share_%": 14.0
+    },
+    {
+      "Genre": "Strategy",
+      "Games": 683,
+      "Sales": 174.5,
+      "Sales_Share_%": 2.0,
+      "Avg_Sales_M": 0.26,
+      "Games_Share_%": 4.1
+    },
+    {
+      "Genre": "Unknown",
+      "Games": 1,
+      "Sales": 2.39,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 2.39,
+      "Games_Share_%": 0.0
+    }
+  ],
+  "top_genre_games": "Action",
+  "top_genre_sales": "Action",
+  "platform": [
+    {
+      "Platform": "PS2",
+      "Games": 2161,
+      "Sales": 1255.64,
+      "Sales_Share_%": 14.1,
+      "Avg_Sales_M": 0.58
+    },
+    {
+      "Platform": "X360",
+      "Games": 1262,
+      "Sales": 971.63,
+      "Sales_Share_%": 10.9,
+      "Avg_Sales_M": 0.77
+    },
+    {
+      "Platform": "PS3",
+      "Games": 1330,
+      "Sales": 939.42,
+      "Sales_Share_%": 10.5,
+      "Avg_Sales_M": 0.71
+    },
+    {
+      "Platform": "Wii",
+      "Games": 1320,
+      "Sales": 908.13,
+      "Sales_Share_%": 10.2,
+      "Avg_Sales_M": 0.69
+    },
+    {
+      "Platform": "DS",
+      "Games": 2152,
+      "Sales": 807.1,
+      "Sales_Share_%": 9.0,
+      "Avg_Sales_M": 0.38
+    },
+    {
+      "Platform": "PS",
+      "Games": 1197,
+      "Sales": 730.68,
+      "Sales_Share_%": 8.2,
+      "Avg_Sales_M": 0.61
+    },
+    {
+      "Platform": "GBA",
+      "Games": 822,
+      "Sales": 318.5,
+      "Sales_Share_%": 3.6,
+      "Avg_Sales_M": 0.39
+    },
+    {
+      "Platform": "PS4",
+      "Games": 393,
+      "Sales": 314.23,
+      "Sales_Share_%": 3.5,
+      "Avg_Sales_M": 0.8
+    },
+    {
+      "Platform": "PSP",
+      "Games": 1209,
+      "Sales": 294.3,
+      "Sales_Share_%": 3.3,
+      "Avg_Sales_M": 0.24
+    },
+    {
+      "Platform": "PC",
+      "Games": 974,
+      "Sales": 260.3,
+      "Sales_Share_%": 2.9,
+      "Avg_Sales_M": 0.27
+    },
+    {
+      "Platform": "3DS",
+      "Games": 520,
+      "Sales": 259.09,
+      "Sales_Share_%": 2.9,
+      "Avg_Sales_M": 0.5
+    },
+    {
+      "Platform": "XB",
+      "Games": 824,
+      "Sales": 258.26,
+      "Sales_Share_%": 2.9,
+      "Avg_Sales_M": 0.31
+    },
+    {
+      "Platform": "GB",
+      "Games": 98,
+      "Sales": 255.45000000000002,
+      "Sales_Share_%": 2.9,
+      "Avg_Sales_M": 2.61
+    },
+    {
+      "Platform": "NES",
+      "Games": 98,
+      "Sales": 251.07,
+      "Sales_Share_%": 2.8,
+      "Avg_Sales_M": 2.56
+    },
+    {
+      "Platform": "N64",
+      "Games": 319,
+      "Sales": 218.88,
+      "Sales_Share_%": 2.5,
+      "Avg_Sales_M": 0.69
+    },
+    {
+      "Platform": "SNES",
+      "Games": 239,
+      "Sales": 200.05,
+      "Sales_Share_%": 2.2,
+      "Avg_Sales_M": 0.84
+    },
+    {
+      "Platform": "GC",
+      "Games": 556,
+      "Sales": 199.36,
+      "Sales_Share_%": 2.2,
+      "Avg_Sales_M": 0.36
+    },
+    {
+      "Platform": "XOne",
+      "Games": 247,
+      "Sales": 159.44,
+      "Sales_Share_%": 1.8,
+      "Avg_Sales_M": 0.65
+    },
+    {
+      "Platform": "2600",
+      "Games": 133,
+      "Sales": 97.08,
+      "Sales_Share_%": 1.1,
+      "Avg_Sales_M": 0.73
+    },
+    {
+      "Platform": "WiiU",
+      "Games": 147,
+      "Sales": 82.16,
+      "Sales_Share_%": 0.9,
+      "Avg_Sales_M": 0.56
+    },
+    {
+      "Platform": "PSV",
+      "Games": 432,
+      "Sales": 54.12,
+      "Sales_Share_%": 0.6,
+      "Avg_Sales_M": 0.13
+    },
+    {
+      "Platform": "SAT",
+      "Games": 173,
+      "Sales": 33.59,
+      "Sales_Share_%": 0.4,
+      "Avg_Sales_M": 0.19
+    },
+    {
+      "Platform": "GEN",
+      "Games": 28,
+      "Sales": 30.75,
+      "Sales_Share_%": 0.3,
+      "Avg_Sales_M": 1.1
+    },
+    {
+      "Platform": "DC",
+      "Games": 52,
+      "Sales": 15.97,
+      "Sales_Share_%": 0.2,
+      "Avg_Sales_M": 0.31
+    },
+    {
+      "Platform": "SCD",
+      "Games": 6,
+      "Sales": 1.87,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.31
+    },
+    {
+      "Platform": "NG",
+      "Games": 12,
+      "Sales": 1.44,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.12
+    },
+    {
+      "Platform": "WS",
+      "Games": 6,
+      "Sales": 1.42,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.24
+    },
+    {
+      "Platform": "TG16",
+      "Games": 2,
+      "Sales": 0.16,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.08
+    },
+    {
+      "Platform": "3DO",
+      "Games": 3,
+      "Sales": 0.1,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.03
+    },
+    {
+      "Platform": "GG",
+      "Games": 1,
+      "Sales": 0.04,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.04
+    },
+    {
+      "Platform": "PCFX",
+      "Games": 1,
+      "Sales": 0.03,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.03
+    }
+  ],
+  "platform_family": [
+    {
+      "Platform_Family": "PlayStation",
+      "Games": 6722,
+      "Sales": 3588.39,
+      "Sales_Share_%": 40.2
+    },
+    {
+      "Platform_Family": "Nintendo",
+      "Games": 6271,
+      "Sales": 3499.79,
+      "Sales_Share_%": 39.2
+    },
+    {
+      "Platform_Family": "Xbox",
+      "Games": 2333,
+      "Sales": 1389.33,
+      "Sales_Share_%": 15.6
+    },
+    {
+      "Platform_Family": "PC",
+      "Games": 974,
+      "Sales": 260.3,
+      "Sales_Share_%": 2.9
+    },
+    {
+      "Platform_Family": "Other",
+      "Games": 157,
+      "Sales": 100.23,
+      "Sales_Share_%": 1.1
+    },
+    {
+      "Platform_Family": "Sega",
+      "Games": 260,
+      "Sales": 82.22,
+      "Sales_Share_%": 0.9
+    }
+  ],
+  "top_platform": "PS2",
+  "worst_platform": "PCFX",
+  "publisher": [
+    {
+      "Publisher": "Nintendo",
+      "Games": 706,
+      "Sales": 1788.81,
+      "Sales_Share_%": 20.1,
+      "Avg_Sales_M": 2.53
+    },
+    {
+      "Publisher": "Electronic Arts",
+      "Games": 1355,
+      "Sales": 1116.95,
+      "Sales_Share_%": 12.5,
+      "Avg_Sales_M": 0.82
+    },
+    {
+      "Publisher": "Activision",
+      "Games": 985,
+      "Sales": 731.16,
+      "Sales_Share_%": 8.2,
+      "Avg_Sales_M": 0.74
+    },
+    {
+      "Publisher": "Sony Computer Entertainment",
+      "Games": 687,
+      "Sales": 606.48,
+      "Sales_Share_%": 6.8,
+      "Avg_Sales_M": 0.88
+    },
+    {
+      "Publisher": "Ubisoft",
+      "Games": 933,
+      "Sales": 471.61,
+      "Sales_Share_%": 5.3,
+      "Avg_Sales_M": 0.51
+    },
+    {
+      "Publisher": "Take-Two Interactive",
+      "Games": 422,
+      "Sales": 403.82,
+      "Sales_Share_%": 4.5,
+      "Avg_Sales_M": 0.96
+    },
+    {
+      "Publisher": "THQ",
+      "Games": 715,
+      "Sales": 338.44,
+      "Sales_Share_%": 3.8,
+      "Avg_Sales_M": 0.47
+    },
+    {
+      "Publisher": "Konami Digital Entertainment",
+      "Games": 834,
+      "Sales": 282.39,
+      "Sales_Share_%": 3.2,
+      "Avg_Sales_M": 0.34
+    },
+    {
+      "Publisher": "Sega",
+      "Games": 638,
+      "Sales": 270.35,
+      "Sales_Share_%": 3.0,
+      "Avg_Sales_M": 0.42
+    },
+    {
+      "Publisher": "Namco Bandai Games",
+      "Games": 939,
+      "Sales": 254.62,
+      "Sales_Share_%": 2.9,
+      "Avg_Sales_M": 0.27
+    },
+    {
+      "Publisher": "Microsoft Game Studios",
+      "Games": 191,
+      "Sales": 248.32,
+      "Sales_Share_%": 2.8,
+      "Avg_Sales_M": 1.3
+    },
+    {
+      "Publisher": "Capcom",
+      "Games": 386,
+      "Sales": 200.02,
+      "Sales_Share_%": 2.2,
+      "Avg_Sales_M": 0.52
+    },
+    {
+      "Publisher": "Atari",
+      "Games": 367,
+      "Sales": 156.83,
+      "Sales_Share_%": 1.8,
+      "Avg_Sales_M": 0.43
+    },
+    {
+      "Publisher": "Warner Bros. Interactive Entertainment",
+      "Games": 235,
+      "Sales": 151.79,
+      "Sales_Share_%": 1.7,
+      "Avg_Sales_M": 0.65
+    },
+    {
+      "Publisher": "Square Enix",
+      "Games": 234,
+      "Sales": 144.35,
+      "Sales_Share_%": 1.6,
+      "Avg_Sales_M": 0.62
+    },
+    {
+      "Publisher": "Disney Interactive Studios",
+      "Games": 218,
+      "Sales": 117.37,
+      "Sales_Share_%": 1.3,
+      "Avg_Sales_M": 0.54
+    },
+    {
+      "Publisher": "Eidos Interactive",
+      "Games": 198,
+      "Sales": 98.65,
+      "Sales_Share_%": 1.1,
+      "Avg_Sales_M": 0.5
+    },
+    {
+      "Publisher": "LucasArts",
+      "Games": 90,
+      "Sales": 85.83,
+      "Sales_Share_%": 1.0,
+      "Avg_Sales_M": 0.95
+    },
+    {
+      "Publisher": "Bethesda Softworks",
+      "Games": 76,
+      "Sales": 85.05,
+      "Sales_Share_%": 1.0,
+      "Avg_Sales_M": 1.12
+    },
+    {
+      "Publisher": "Midway Games",
+      "Games": 198,
+      "Sales": 69.67,
+      "Sales_Share_%": 0.8,
+      "Avg_Sales_M": 0.35
+    },
+    {
+      "Publisher": "Acclaim Entertainment",
+      "Games": 185,
+      "Sales": 66.54,
+      "Sales_Share_%": 0.7,
+      "Avg_Sales_M": 0.36
+    },
+    {
+      "Publisher": "Vivendi Games",
+      "Games": 164,
+      "Sales": 57.94,
+      "Sales_Share_%": 0.7,
+      "Avg_Sales_M": 0.35
+    },
+    {
+      "Publisher": "SquareSoft",
+      "Games": 52,
+      "Sales": 57.65,
+      "Sales_Share_%": 0.6,
+      "Avg_Sales_M": 1.11
+    },
+    {
+      "Publisher": "505 Games",
+      "Games": 191,
+      "Sales": 55.32,
+      "Sales_Share_%": 0.6,
+      "Avg_Sales_M": 0.29
+    },
+    {
+      "Publisher": "Tecmo Koei",
+      "Games": 348,
+      "Sales": 53.54,
+      "Sales_Share_%": 0.6,
+      "Avg_Sales_M": 0.15
+    },
+    {
+      "Publisher": "Codemasters",
+      "Games": 150,
+      "Sales": 47.27,
+      "Sales_Share_%": 0.5,
+      "Avg_Sales_M": 0.32
+    },
+    {
+      "Publisher": "Virgin Interactive",
+      "Games": 62,
+      "Sales": 43.87,
+      "Sales_Share_%": 0.5,
+      "Avg_Sales_M": 0.71
+    },
+    {
+      "Publisher": "Unknown",
+      "Games": 201,
+      "Sales": 34.410000000000004,
+      "Sales_Share_%": 0.4,
+      "Avg_Sales_M": 0.17
+    },
+    {
+      "Publisher": "Enix Corporation",
+      "Games": 30,
+      "Sales": 33.74,
+      "Sales_Share_%": 0.4,
+      "Avg_Sales_M": 1.12
+    },
+    {
+      "Publisher": "Deep Silver",
+      "Games": 121,
+      "Sales": 25.37,
+      "Sales_Share_%": 0.3,
+      "Avg_Sales_M": 0.21
+    },
+    {
+      "Publisher": "GT Interactive",
+      "Games": 45,
+      "Sales": 25.23,
+      "Sales_Share_%": 0.3,
+      "Avg_Sales_M": 0.56
+    },
+    {
+      "Publisher": "D3Publisher",
+      "Games": 184,
+      "Sales": 23.74,
+      "Sales_Share_%": 0.3,
+      "Avg_Sales_M": 0.13
+    },
+    {
+      "Publisher": "Sony Computer Entertainment Europe",
+      "Games": 15,
+      "Sales": 23.37,
+      "Sales_Share_%": 0.3,
+      "Avg_Sales_M": 1.56
+    },
+    {
+      "Publisher": "Hudson Soft",
+      "Games": 81,
+      "Sales": 22.94,
+      "Sales_Share_%": 0.3,
+      "Avg_Sales_M": 0.28
+    },
+    {
+      "Publisher": "MTV Games",
+      "Games": 41,
+      "Sales": 20.72,
+      "Sales_Share_%": 0.2,
+      "Avg_Sales_M": 0.51
+    },
+    {
+      "Publisher": "Universal Interactive",
+      "Games": 23,
+      "Sales": 17.77,
+      "Sales_Share_%": 0.2,
+      "Avg_Sales_M": 0.77
+    },
+    {
+      "Publisher": "Banpresto",
+      "Games": 73,
+      "Sales": 17.4,
+      "Sales_Share_%": 0.2,
+      "Avg_Sales_M": 0.24
+    },
+    {
+      "Publisher": "Rising Star Games",
+      "Games": 87,
+      "Sales": 16.82,
+      "Sales_Share_%": 0.2,
+      "Avg_Sales_M": 0.19
+    },
+    {
+      "Publisher": "Infogrames",
+      "Games": 62,
+      "Sales": 16.34,
+      "Sales_Share_%": 0.2,
+      "Avg_Sales_M": 0.26
+    },
+    {
+      "Publisher": "Majesco Entertainment",
+      "Games": 92,
+      "Sales": 15.790000000000001,
+      "Sales_Share_%": 0.2,
+      "Avg_Sales_M": 0.17
+    },
+    {
+      "Publisher": "Hasbro Interactive",
+      "Games": 16,
+      "Sales": 15.22,
+      "Sales_Share_%": 0.2,
+      "Avg_Sales_M": 0.95
+    },
+    {
+      "Publisher": "Nippon Ichi Software",
+      "Games": 106,
+      "Sales": 13.66,
+      "Sales_Share_%": 0.2,
+      "Avg_Sales_M": 0.13
+    },
+    {
+      "Publisher": "989 Studios",
+      "Games": 14,
+      "Sales": 13.32,
+      "Sales_Share_%": 0.1,
+      "Avg_Sales_M": 0.95
+    },
+    {
+      "Publisher": "Zoo Digital Publishing",
+      "Games": 104,
+      "Sales": 12.81,
+      "Sales_Share_%": 0.1,
+      "Avg_Sales_M": 0.12
+    },
+    {
+      "Publisher": "Atlus",
+      "Games": 67,
+      "Sales": 12.36,
+      "Sales_Share_%": 0.1,
+      "Avg_Sales_M": 0.18
+    },
+    {
+      "Publisher": "Level 5",
+      "Games": 27,
+      "Sales": 12.24,
+      "Sales_Share_%": 0.1,
+      "Avg_Sales_M": 0.45
+    },
+    {
+      "Publisher": "Empire Interactive",
+      "Games": 53,
+      "Sales": 11.29,
+      "Sales_Share_%": 0.1,
+      "Avg_Sales_M": 0.21
+    },
+    {
+      "Publisher": "ASCII Entertainment",
+      "Games": 20,
+      "Sales": 10.89,
+      "Sales_Share_%": 0.1,
+      "Avg_Sales_M": 0.54
+    },
+    {
+      "Publisher": "3DO",
+      "Games": 36,
+      "Sales": 10.120000000000001,
+      "Sales_Share_%": 0.1,
+      "Avg_Sales_M": 0.28
+    },
+    {
+      "Publisher": "Crave Entertainment",
+      "Games": 71,
+      "Sales": 9.86,
+      "Sales_Share_%": 0.1,
+      "Avg_Sales_M": 0.14
+    },
+    {
+      "Publisher": "RedOctane",
+      "Games": 4,
+      "Sales": 8.68,
+      "Sales_Share_%": 0.1,
+      "Avg_Sales_M": 2.17
+    },
+    {
+      "Publisher": "Focus Home Interactive",
+      "Games": 61,
+      "Sales": 8.5,
+      "Sales_Share_%": 0.1,
+      "Avg_Sales_M": 0.14
+    },
+    {
+      "Publisher": "TDK Mediactive",
+      "Games": 36,
+      "Sales": 8.31,
+      "Sales_Share_%": 0.1,
+      "Avg_Sales_M": 0.23
+    },
+    {
+      "Publisher": "Global Star",
+      "Games": 39,
+      "Sales": 7.65,
+      "Sales_Share_%": 0.1,
+      "Avg_Sales_M": 0.2
+    },
+    {
+      "Publisher": "Mindscape",
+      "Games": 31,
+      "Sales": 7.64,
+      "Sales_Share_%": 0.1,
+      "Avg_Sales_M": 0.25
+    },
+    {
+      "Publisher": "Fox Interactive",
+      "Games": 8,
+      "Sales": 7.39,
+      "Sales_Share_%": 0.1,
+      "Avg_Sales_M": 0.92
+    },
+    {
+      "Publisher": "Psygnosis",
+      "Games": 32,
+      "Sales": 7.27,
+      "Sales_Share_%": 0.1,
+      "Avg_Sales_M": 0.23
+    },
+    {
+      "Publisher": "Activision Value",
+      "Games": 29,
+      "Sales": 6.95,
+      "Sales_Share_%": 0.1,
+      "Avg_Sales_M": 0.24
+    },
+    {
+      "Publisher": "Ignition Entertainment",
+      "Games": 61,
+      "Sales": 6.73,
+      "Sales_Share_%": 0.1,
+      "Avg_Sales_M": 0.11
+    },
+    {
+      "Publisher": "Interplay",
+      "Games": 30,
+      "Sales": 6.65,
+      "Sales_Share_%": 0.1,
+      "Avg_Sales_M": 0.22
+    },
+    {
+      "Publisher": "SouthPeak Games",
+      "Games": 37,
+      "Sales": 6.25,
+      "Sales_Share_%": 0.1,
+      "Avg_Sales_M": 0.17
+    },
+    {
+      "Publisher": "Spike",
+      "Games": 37,
+      "Sales": 6.17,
+      "Sales_Share_%": 0.1,
+      "Avg_Sales_M": 0.17
+    },
+    {
+      "Publisher": "Red Orb",
+      "Games": 2,
+      "Sales": 5.24,
+      "Sales_Share_%": 0.1,
+      "Avg_Sales_M": 2.62
+    },
+    {
+      "Publisher": "Parker Bros.",
+      "Games": 7,
+      "Sales": 4.970000000000001,
+      "Sales_Share_%": 0.1,
+      "Avg_Sales_M": 0.71
+    },
+    {
+      "Publisher": "BAM! Entertainment",
+      "Games": 35,
+      "Sales": 4.95,
+      "Sales_Share_%": 0.1,
+      "Avg_Sales_M": 0.14
+    },
+    {
+      "Publisher": "Tomy Corporation",
+      "Games": 18,
+      "Sales": 4.95,
+      "Sales_Share_%": 0.1,
+      "Avg_Sales_M": 0.28
+    },
+    {
+      "Publisher": "Imagic",
+      "Games": 4,
+      "Sales": 4.82,
+      "Sales_Share_%": 0.1,
+      "Avg_Sales_M": 1.2
+    },
+    {
+      "Publisher": "Arena Entertainment",
+      "Games": 2,
+      "Sales": 4.72,
+      "Sales_Share_%": 0.1,
+      "Avg_Sales_M": 2.36
+    },
+    {
+      "Publisher": "Zoo Games",
+      "Games": 33,
+      "Sales": 4.67,
+      "Sales_Share_%": 0.1,
+      "Avg_Sales_M": 0.14
+    },
+    {
+      "Publisher": "PQube",
+      "Games": 45,
+      "Sales": 4.55,
+      "Sales_Share_%": 0.1,
+      "Avg_Sales_M": 0.1
+    },
+    {
+      "Publisher": "Koch Media",
+      "Games": 17,
+      "Sales": 4.53,
+      "Sales_Share_%": 0.1,
+      "Avg_Sales_M": 0.27
+    },
+    {
+      "Publisher": "Ubisoft Annecy",
+      "Games": 14,
+      "Sales": 4.46,
+      "Sales_Share_%": 0.1,
+      "Avg_Sales_M": 0.32
+    },
+    {
+      "Publisher": "City Interactive",
+      "Games": 19,
+      "Sales": 4.45,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.23
+    },
+    {
+      "Publisher": "Play It",
+      "Games": 14,
+      "Sales": 4.3100000000000005,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.31
+    },
+    {
+      "Publisher": "Destineer",
+      "Games": 45,
+      "Sales": 4.29,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.1
+    },
+    {
+      "Publisher": "Nordic Games",
+      "Games": 37,
+      "Sales": 4.19,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.11
+    },
+    {
+      "Publisher": "Palcom",
+      "Games": 1,
+      "Sales": 4.17,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 4.17
+    },
+    {
+      "Publisher": "Marvelous Interactive",
+      "Games": 56,
+      "Sales": 4.05,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.07
+    },
+    {
+      "Publisher": "ChunSoft",
+      "Games": 18,
+      "Sales": 4.0,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.22
+    },
+    {
+      "Publisher": "Idea Factory",
+      "Games": 133,
+      "Sales": 3.97,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.03
+    },
+    {
+      "Publisher": "Kadokawa Shoten",
+      "Games": 50,
+      "Sales": 3.77,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.08
+    },
+    {
+      "Publisher": "Game Factory",
+      "Games": 32,
+      "Sales": 3.75,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.12
+    },
+    {
+      "Publisher": "Gotham Games",
+      "Games": 7,
+      "Sales": 3.72,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.53
+    },
+    {
+      "Publisher": "Natsume",
+      "Games": 18,
+      "Sales": 3.69,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.2
+    },
+    {
+      "Publisher": "Square",
+      "Games": 6,
+      "Sales": 3.64,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.61
+    },
+    {
+      "Publisher": "Ocean",
+      "Games": 14,
+      "Sales": 3.61,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.26
+    },
+    {
+      "Publisher": "GSP",
+      "Games": 16,
+      "Sales": 3.54,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.22
+    },
+    {
+      "Publisher": "SCi",
+      "Games": 17,
+      "Sales": 3.52,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.21
+    },
+    {
+      "Publisher": "Mattel Interactive",
+      "Games": 12,
+      "Sales": 3.5100000000000002,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.29
+    },
+    {
+      "Publisher": "DTP Entertainment",
+      "Games": 44,
+      "Sales": 3.47,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.08
+    },
+    {
+      "Publisher": "Takara",
+      "Games": 16,
+      "Sales": 3.45,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.22
+    },
+    {
+      "Publisher": "Oxygen Interactive",
+      "Games": 22,
+      "Sales": 3.43,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.16
+    },
+    {
+      "Publisher": "Maxis",
+      "Games": 3,
+      "Sales": 3.39,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 1.13
+    },
+    {
+      "Publisher": "Titus",
+      "Games": 19,
+      "Sales": 3.32,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.17
+    },
+    {
+      "Publisher": "Valve Software",
+      "Games": 3,
+      "Sales": 3.2,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 1.07
+    },
+    {
+      "Publisher": "Black Bean Games",
+      "Games": 34,
+      "Sales": 3.1,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.09
+    },
+    {
+      "Publisher": "GungHo",
+      "Games": 13,
+      "Sales": 3.1,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.24
+    },
+    {
+      "Publisher": "Coleco",
+      "Games": 5,
+      "Sales": 3.06,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.61
+    },
+    {
+      "Publisher": "Human Entertainment",
+      "Games": 13,
+      "Sales": 3.0,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.23
+    },
+    {
+      "Publisher": "Mojang",
+      "Games": 5,
+      "Sales": 2.91,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.58
+    },
+    {
+      "Publisher": "Avanquest",
+      "Games": 26,
+      "Sales": 2.87,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.11
+    },
+    {
+      "Publisher": "Taito",
+      "Games": 19,
+      "Sales": 2.84,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.15
+    },
+    {
+      "Publisher": "JVC",
+      "Games": 8,
+      "Sales": 2.8,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.35
+    },
+    {
+      "Publisher": "Ghostlight",
+      "Games": 15,
+      "Sales": 2.7800000000000002,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.19
+    },
+    {
+      "Publisher": "Scholastic Inc.",
+      "Games": 10,
+      "Sales": 2.77,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.28
+    },
+    {
+      "Publisher": "Telltale Games",
+      "Games": 27,
+      "Sales": 2.75,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.1
+    },
+    {
+      "Publisher": "Sammy Corporation",
+      "Games": 11,
+      "Sales": 2.73,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.25
+    },
+    {
+      "Publisher": "Takara Tomy",
+      "Games": 38,
+      "Sales": 2.73,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.07
+    },
+    {
+      "Publisher": "Midas Interactive Entertainment",
+      "Games": 24,
+      "Sales": 2.71,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.11
+    },
+    {
+      "Publisher": "Imagineer",
+      "Games": 16,
+      "Sales": 2.65,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.17
+    },
+    {
+      "Publisher": "Alchemist",
+      "Games": 43,
+      "Sales": 2.63,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.06
+    },
+    {
+      "Publisher": "SNK",
+      "Games": 22,
+      "Sales": 2.5900000000000003,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.12
+    },
+    {
+      "Publisher": "NCSoft",
+      "Games": 6,
+      "Sales": 2.58,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.43
+    },
+    {
+      "Publisher": "Rondomedia",
+      "Games": 14,
+      "Sales": 2.52,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.18
+    },
+    {
+      "Publisher": "Compile",
+      "Games": 6,
+      "Sales": 2.46,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.41
+    },
+    {
+      "Publisher": "Kalypso Media",
+      "Games": 29,
+      "Sales": 2.42,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.08
+    },
+    {
+      "Publisher": "Red Storm Entertainment",
+      "Games": 3,
+      "Sales": 2.32,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.77
+    },
+    {
+      "Publisher": "UEP Systems",
+      "Games": 1,
+      "Sales": 2.25,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 2.25
+    },
+    {
+      "Publisher": "Marvelous Entertainment",
+      "Games": 12,
+      "Sales": 2.25,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.19
+    },
+    {
+      "Publisher": "Sony Online Entertainment",
+      "Games": 7,
+      "Sales": 2.23,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.32
+    },
+    {
+      "Publisher": "Enterbrain",
+      "Games": 15,
+      "Sales": 2.23,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.15
+    },
+    {
+      "Publisher": "Kemco",
+      "Games": 21,
+      "Sales": 2.22,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.11
+    },
+    {
+      "Publisher": "Video System",
+      "Games": 4,
+      "Sales": 2.18,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.55
+    },
+    {
+      "Publisher": "Mastiff",
+      "Games": 16,
+      "Sales": 2.17,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.14
+    },
+    {
+      "Publisher": "Microprose",
+      "Games": 6,
+      "Sales": 2.02,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.34
+    },
+    {
+      "Publisher": "ASC Games",
+      "Games": 3,
+      "Sales": 2.02,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.67
+    },
+    {
+      "Publisher": "RTL",
+      "Games": 8,
+      "Sales": 1.97,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.25
+    },
+    {
+      "Publisher": "Agetec",
+      "Games": 8,
+      "Sales": 1.9400000000000002,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.24
+    },
+    {
+      "Publisher": "20th Century Fox Video Games",
+      "Games": 5,
+      "Sales": 1.9400000000000002,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.39
+    },
+    {
+      "Publisher": "Jaleco",
+      "Games": 23,
+      "Sales": 1.94,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.08
+    },
+    {
+      "Publisher": "Success",
+      "Games": 19,
+      "Sales": 1.94,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.1
+    },
+    {
+      "Publisher": "Nobilis",
+      "Games": 13,
+      "Sales": 1.91,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.15
+    },
+    {
+      "Publisher": "Zushi Games",
+      "Games": 18,
+      "Sales": 1.86,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.1
+    },
+    {
+      "Publisher": "Metro 3D",
+      "Games": 12,
+      "Sales": 1.84,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.15
+    },
+    {
+      "Publisher": "Rocket Company",
+      "Games": 17,
+      "Sales": 1.82,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.11
+    },
+    {
+      "Publisher": "Little Orbit",
+      "Games": 26,
+      "Sales": 1.76,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.07
+    },
+    {
+      "Publisher": "System 3 Arcade Software",
+      "Games": 14,
+      "Sales": 1.74,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.12
+    },
+    {
+      "Publisher": "Crystal Dynamics",
+      "Games": 5,
+      "Sales": 1.71,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.34
+    },
+    {
+      "Publisher": "Hello Games",
+      "Games": 1,
+      "Sales": 1.7,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 1.7
+    },
+    {
+      "Publisher": "Valve",
+      "Games": 1,
+      "Sales": 1.7,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 1.7
+    },
+    {
+      "Publisher": "Hudson Entertainment",
+      "Games": 11,
+      "Sales": 1.69,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.15
+    },
+    {
+      "Publisher": "Accolade",
+      "Games": 3,
+      "Sales": 1.6800000000000002,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.56
+    },
+    {
+      "Publisher": "5pb",
+      "Games": 62,
+      "Sales": 1.66,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.03
+    },
+    {
+      "Publisher": "From Software",
+      "Games": 15,
+      "Sales": 1.6300000000000001,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.11
+    },
+    {
+      "Publisher": "Xplosiv",
+      "Games": 10,
+      "Sales": 1.62,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.16
+    },
+    {
+      "Publisher": "Avanquest Software",
+      "Games": 8,
+      "Sales": 1.6199999999999999,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.2
+    },
+    {
+      "Publisher": "Mastertronic",
+      "Games": 13,
+      "Sales": 1.61,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.12
+    },
+    {
+      "Publisher": "PopCap Games",
+      "Games": 15,
+      "Sales": 1.57,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.1
+    },
+    {
+      "Publisher": "LEGO Media",
+      "Games": 7,
+      "Sales": 1.56,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.22
+    },
+    {
+      "Publisher": "Touchstone",
+      "Games": 4,
+      "Sales": 1.56,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.39
+    },
+    {
+      "Publisher": "Westwood Studios",
+      "Games": 1,
+      "Sales": 1.55,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 1.55
+    },
+    {
+      "Publisher": "Laguna",
+      "Games": 4,
+      "Sales": 1.55,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.39
+    },
+    {
+      "Publisher": "Storm City Games",
+      "Games": 19,
+      "Sales": 1.51,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.08
+    },
+    {
+      "Publisher": "Slightly Mad Studios",
+      "Games": 3,
+      "Sales": 1.48,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.49
+    },
+    {
+      "Publisher": "Knowledge Adventure",
+      "Games": 4,
+      "Sales": 1.46,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.36
+    },
+    {
+      "Publisher": "Genki",
+      "Games": 8,
+      "Sales": 1.46,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.18
+    },
+    {
+      "Publisher": "XS Games",
+      "Games": 12,
+      "Sales": 1.44,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.12
+    },
+    {
+      "Publisher": "Tigervision",
+      "Games": 3,
+      "Sales": 1.42,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.47
+    },
+    {
+      "Publisher": "Rage Software",
+      "Games": 7,
+      "Sales": 1.42,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.2
+    },
+    {
+      "Publisher": "Arc System Works",
+      "Games": 27,
+      "Sales": 1.41,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.05
+    },
+    {
+      "Publisher": "JoWood Productions",
+      "Games": 22,
+      "Sales": 1.41,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.06
+    },
+    {
+      "Publisher": "Pinnacle",
+      "Games": 5,
+      "Sales": 1.4,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.28
+    },
+    {
+      "Publisher": "Compile Heart",
+      "Games": 21,
+      "Sales": 1.36,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.06
+    },
+    {
+      "Publisher": "FuRyu",
+      "Games": 28,
+      "Sales": 1.36,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.05
+    },
+    {
+      "Publisher": "GameMill Entertainment",
+      "Games": 11,
+      "Sales": 1.36,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.12
+    },
+    {
+      "Publisher": "NewKidCo",
+      "Games": 9,
+      "Sales": 1.33,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.15
+    },
+    {
+      "Publisher": "Aqua Plus",
+      "Games": 23,
+      "Sales": 1.29,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.06
+    },
+    {
+      "Publisher": "Sony Oznline Entertainment",
+      "Games": 1,
+      "Sales": 1.28,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 1.28
+    },
+    {
+      "Publisher": "Sony Computer Entertainment America",
+      "Games": 3,
+      "Sales": 1.26,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.42
+    },
+    {
+      "Publisher": "Brash Entertainment",
+      "Games": 10,
+      "Sales": 1.23,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.12
+    },
+    {
+      "Publisher": "Falcom Corporation",
+      "Games": 16,
+      "Sales": 1.23,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.08
+    },
+    {
+      "Publisher": "Russel",
+      "Games": 6,
+      "Sales": 1.2100000000000002,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.2
+    },
+    {
+      "Publisher": "Black Label Games",
+      "Games": 1,
+      "Sales": 1.2,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 1.2
+    },
+    {
+      "Publisher": "Milestone S.r.l.",
+      "Games": 15,
+      "Sales": 1.2,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.08
+    },
+    {
+      "Publisher": "Gathering of Developers",
+      "Games": 9,
+      "Sales": 1.19,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.13
+    },
+    {
+      "Publisher": "Playlogic Game Factory",
+      "Games": 14,
+      "Sales": 1.19,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.08
+    },
+    {
+      "Publisher": "Aruze Corp",
+      "Games": 3,
+      "Sales": 1.1800000000000002,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.39
+    },
+    {
+      "Publisher": "BMG Interactive Entertainment",
+      "Games": 7,
+      "Sales": 1.18,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.17
+    },
+    {
+      "Publisher": "Jester Interactive",
+      "Games": 3,
+      "Sales": 1.15,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.38
+    },
+    {
+      "Publisher": "Trion Worlds",
+      "Games": 4,
+      "Sales": 1.14,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.28
+    },
+    {
+      "Publisher": "Gust",
+      "Games": 13,
+      "Sales": 1.1,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.08
+    },
+    {
+      "Publisher": "Gremlin Interactive Ltd",
+      "Games": 9,
+      "Sales": 1.1,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.12
+    },
+    {
+      "Publisher": "Acquire",
+      "Games": 13,
+      "Sales": 1.08,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.08
+    },
+    {
+      "Publisher": "Epoch",
+      "Games": 7,
+      "Sales": 1.05,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.15
+    },
+    {
+      "Publisher": "Mentor Interactive",
+      "Games": 5,
+      "Sales": 1.03,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.21
+    },
+    {
+      "Publisher": "Telegames",
+      "Games": 8,
+      "Sales": 1.02,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.13
+    },
+    {
+      "Publisher": "O-Games",
+      "Games": 17,
+      "Sales": 1.0,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.06
+    },
+    {
+      "Publisher": "Square Enix ",
+      "Games": 2,
+      "Sales": 0.99,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.5
+    },
+    {
+      "Publisher": "Big Ben Interactive",
+      "Games": 7,
+      "Sales": 0.98,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.14
+    },
+    {
+      "Publisher": "Nippon Columbia",
+      "Games": 7,
+      "Sales": 0.98,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.14
+    },
+    {
+      "Publisher": "IE Institute",
+      "Games": 5,
+      "Sales": 0.9600000000000001,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.19
+    },
+    {
+      "Publisher": "SNK Playmore",
+      "Games": 18,
+      "Sales": 0.9600000000000001,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.05
+    },
+    {
+      "Publisher": "Broccoli",
+      "Games": 22,
+      "Sales": 0.96,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.04
+    },
+    {
+      "Publisher": "Sunsoft",
+      "Games": 10,
+      "Sales": 0.9500000000000001,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.1
+    },
+    {
+      "Publisher": "Jorudan",
+      "Games": 3,
+      "Sales": 0.95,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.32
+    },
+    {
+      "Publisher": "UFO Interactive",
+      "Games": 16,
+      "Sales": 0.9400000000000001,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.06
+    },
+    {
+      "Publisher": "Xseed Games",
+      "Games": 5,
+      "Sales": 0.94,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.19
+    },
+    {
+      "Publisher": "Screenlife",
+      "Games": 6,
+      "Sales": 0.91,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.15
+    },
+    {
+      "Publisher": "CTO SpA",
+      "Games": 2,
+      "Sales": 0.9,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.45
+    },
+    {
+      "Publisher": "DreamCatcher Interactive",
+      "Games": 17,
+      "Sales": 0.9,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.05
+    },
+    {
+      "Publisher": "Victor Interactive",
+      "Games": 9,
+      "Sales": 0.89,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.1
+    },
+    {
+      "Publisher": "Destination Software, Inc",
+      "Games": 12,
+      "Sales": 0.88,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.07
+    },
+    {
+      "Publisher": "Funbox Media",
+      "Games": 5,
+      "Sales": 0.87,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.17
+    },
+    {
+      "Publisher": "Quelle",
+      "Games": 1,
+      "Sales": 0.87,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.87
+    },
+    {
+      "Publisher": "mixi, Inc",
+      "Games": 1,
+      "Sales": 0.87,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.87
+    },
+    {
+      "Publisher": "TalonSoft",
+      "Games": 1,
+      "Sales": 0.87,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.87
+    },
+    {
+      "Publisher": "Mud Duck Productions",
+      "Games": 3,
+      "Sales": 0.85,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.28
+    },
+    {
+      "Publisher": "Harmonix Music Systems",
+      "Games": 2,
+      "Sales": 0.85,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.42
+    },
+    {
+      "Publisher": "Ackkstudios",
+      "Games": 10,
+      "Sales": 0.8300000000000001,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.08
+    },
+    {
+      "Publisher": "Conspiracy Entertainment",
+      "Games": 14,
+      "Sales": 0.8300000000000001,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.06
+    },
+    {
+      "Publisher": "NovaLogic",
+      "Games": 3,
+      "Sales": 0.8200000000000001,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.27
+    },
+    {
+      "Publisher": "Mystique",
+      "Games": 1,
+      "Sales": 0.82,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.82
+    },
+    {
+      "Publisher": "Square EA",
+      "Games": 1,
+      "Sales": 0.8,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.8
+    },
+    {
+      "Publisher": "Paradox Interactive",
+      "Games": 23,
+      "Sales": 0.79,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.03
+    },
+    {
+      "Publisher": "NEC Interchannel",
+      "Games": 8,
+      "Sales": 0.78,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.1
+    },
+    {
+      "Publisher": "Men-A-Vision",
+      "Games": 1,
+      "Sales": 0.77,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.77
+    },
+    {
+      "Publisher": "Pioneer LDC",
+      "Games": 4,
+      "Sales": 0.74,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.18
+    },
+    {
+      "Publisher": "ArtDink",
+      "Games": 9,
+      "Sales": 0.73,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.08
+    },
+    {
+      "Publisher": "Gamebridge",
+      "Games": 2,
+      "Sales": 0.73,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.36
+    },
+    {
+      "Publisher": "Nihon Falcom Corporation",
+      "Games": 7,
+      "Sales": 0.73,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.1
+    },
+    {
+      "Publisher": "Starfish",
+      "Games": 10,
+      "Sales": 0.72,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.07
+    },
+    {
+      "Publisher": "Quest",
+      "Games": 1,
+      "Sales": 0.71,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.71
+    },
+    {
+      "Publisher": "Data Age",
+      "Games": 2,
+      "Sales": 0.71,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.36
+    },
+    {
+      "Publisher": "Illusion Softworks",
+      "Games": 1,
+      "Sales": 0.7,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.7
+    },
+    {
+      "Publisher": "Astragon",
+      "Games": 7,
+      "Sales": 0.67,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.1
+    },
+    {
+      "Publisher": "Home Entertainment Suppliers",
+      "Games": 5,
+      "Sales": 0.67,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.13
+    },
+    {
+      "Publisher": "Media Rings",
+      "Games": 3,
+      "Sales": 0.65,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.22
+    },
+    {
+      "Publisher": "Wanadoo",
+      "Games": 5,
+      "Sales": 0.65,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.13
+    },
+    {
+      "Publisher": "Sting",
+      "Games": 9,
+      "Sales": 0.64,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.07
+    },
+    {
+      "Publisher": "Bigben Interactive",
+      "Games": 13,
+      "Sales": 0.64,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.05
+    },
+    {
+      "Publisher": "Elf",
+      "Games": 2,
+      "Sales": 0.64,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.32
+    },
+    {
+      "Publisher": "Prototype",
+      "Games": 29,
+      "Sales": 0.63,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.02
+    },
+    {
+      "Publisher": "Universal Gamex",
+      "Games": 1,
+      "Sales": 0.63,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.63
+    },
+    {
+      "Publisher": "Seta Corporation",
+      "Games": 6,
+      "Sales": 0.63,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.1
+    },
+    {
+      "Publisher": "Aspyr",
+      "Games": 8,
+      "Sales": 0.62,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.08
+    },
+    {
+      "Publisher": "Wizard Video Games",
+      "Games": 1,
+      "Sales": 0.62,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.62
+    },
+    {
+      "Publisher": "TDK Core",
+      "Games": 5,
+      "Sales": 0.62,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.12
+    },
+    {
+      "Publisher": "Foreign Media Games",
+      "Games": 9,
+      "Sales": 0.6,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.07
+    },
+    {
+      "Publisher": "Kadokawa Games",
+      "Games": 16,
+      "Sales": 0.6,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.04
+    },
+    {
+      "Publisher": "ESP",
+      "Games": 5,
+      "Sales": 0.59,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.12
+    },
+    {
+      "Publisher": "Mumbo Jumbo",
+      "Games": 6,
+      "Sales": 0.5800000000000001,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.1
+    },
+    {
+      "Publisher": "Nordcurrent",
+      "Games": 5,
+      "Sales": 0.5700000000000001,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.11
+    },
+    {
+      "Publisher": "Asylum Entertainment",
+      "Games": 6,
+      "Sales": 0.57,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.09
+    },
+    {
+      "Publisher": "CPG Products",
+      "Games": 1,
+      "Sales": 0.54,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.54
+    },
+    {
+      "Publisher": "AQ Interactive",
+      "Games": 5,
+      "Sales": 0.53,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.11
+    },
+    {
+      "Publisher": "BPS",
+      "Games": 2,
+      "Sales": 0.52,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.26
+    },
+    {
+      "Publisher": "Answer Software",
+      "Games": 1,
+      "Sales": 0.5,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.5
+    },
+    {
+      "Publisher": "Hect",
+      "Games": 3,
+      "Sales": 0.5,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.17
+    },
+    {
+      "Publisher": "Rebellion",
+      "Games": 2,
+      "Sales": 0.49,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.24
+    },
+    {
+      "Publisher": "Avalon Interactive",
+      "Games": 6,
+      "Sales": 0.48000000000000004,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.08
+    },
+    {
+      "Publisher": "Swing! Entertainment",
+      "Games": 6,
+      "Sales": 0.48000000000000004,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.08
+    },
+    {
+      "Publisher": "The Adventure Company",
+      "Games": 5,
+      "Sales": 0.48000000000000004,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.1
+    },
+    {
+      "Publisher": "Pack In Soft",
+      "Games": 1,
+      "Sales": 0.48,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.48
+    },
+    {
+      "Publisher": "Popcorn Arcade",
+      "Games": 9,
+      "Sales": 0.48,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.05
+    },
+    {
+      "Publisher": "Ultravision",
+      "Games": 1,
+      "Sales": 0.47,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.47
+    },
+    {
+      "Publisher": "Activision Blizzard",
+      "Games": 1,
+      "Sales": 0.47,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.47
+    },
+    {
+      "Publisher": "Irem Software Engineering",
+      "Games": 12,
+      "Sales": 0.46,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.04
+    },
+    {
+      "Publisher": "Shogakukan",
+      "Games": 5,
+      "Sales": 0.45,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.09
+    },
+    {
+      "Publisher": "Aksys Games",
+      "Games": 8,
+      "Sales": 0.44,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.06
+    },
+    {
+      "Publisher": "Idea Factory International",
+      "Games": 7,
+      "Sales": 0.44,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.06
+    },
+    {
+      "Publisher": "Angel Studios",
+      "Games": 3,
+      "Sales": 0.43999999999999995,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.15
+    },
+    {
+      "Publisher": "NEC",
+      "Games": 3,
+      "Sales": 0.43000000000000005,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.14
+    },
+    {
+      "Publisher": "Tetris Online",
+      "Games": 1,
+      "Sales": 0.43,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.43
+    },
+    {
+      "Publisher": "PlayV",
+      "Games": 4,
+      "Sales": 0.42000000000000004,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.11
+    },
+    {
+      "Publisher": "Microids",
+      "Games": 11,
+      "Sales": 0.42000000000000004,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.04
+    },
+    {
+      "Publisher": "Jack of All Games",
+      "Games": 3,
+      "Sales": 0.42,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.14
+    },
+    {
+      "Publisher": "Electronic Arts Victor",
+      "Games": 2,
+      "Sales": 0.42,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.21
+    },
+    {
+      "Publisher": "TYO",
+      "Games": 1,
+      "Sales": 0.42,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.42
+    },
+    {
+      "Publisher": "Valcon Games",
+      "Games": 7,
+      "Sales": 0.42,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.06
+    },
+    {
+      "Publisher": "bitComposer Games",
+      "Games": 5,
+      "Sales": 0.41000000000000003,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.08
+    },
+    {
+      "Publisher": "Magical Company",
+      "Games": 1,
+      "Sales": 0.41,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.41
+    },
+    {
+      "Publisher": "MTO",
+      "Games": 8,
+      "Sales": 0.4,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.05
+    },
+    {
+      "Publisher": "NCS",
+      "Games": 3,
+      "Sales": 0.4,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.13
+    },
+    {
+      "Publisher": "ValuSoft",
+      "Games": 4,
+      "Sales": 0.39999999999999997,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.1
+    },
+    {
+      "Publisher": "P2 Games",
+      "Games": 3,
+      "Sales": 0.39,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.13
+    },
+    {
+      "Publisher": "989 Sports",
+      "Games": 1,
+      "Sales": 0.38,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.38
+    },
+    {
+      "Publisher": "Graffiti",
+      "Games": 6,
+      "Sales": 0.37,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.06
+    },
+    {
+      "Publisher": "Blast! Entertainment Ltd",
+      "Games": 6,
+      "Sales": 0.37,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.06
+    },
+    {
+      "Publisher": "Hip Interactive",
+      "Games": 5,
+      "Sales": 0.36000000000000004,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.07
+    },
+    {
+      "Publisher": "New",
+      "Games": 1,
+      "Sales": 0.36,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.36
+    },
+    {
+      "Publisher": "Rebellion Developments",
+      "Games": 3,
+      "Sales": 0.35000000000000003,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.12
+    },
+    {
+      "Publisher": "Time Warner Interactive",
+      "Games": 5,
+      "Sales": 0.35,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.07
+    },
+    {
+      "Publisher": "Performance Designed Products",
+      "Games": 2,
+      "Sales": 0.35,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.18
+    },
+    {
+      "Publisher": "Magix",
+      "Games": 2,
+      "Sales": 0.35,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.18
+    },
+    {
+      "Publisher": "ITT Family Games",
+      "Games": 1,
+      "Sales": 0.34,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.34
+    },
+    {
+      "Publisher": "DSI Games",
+      "Games": 5,
+      "Sales": 0.33,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.07
+    },
+    {
+      "Publisher": "Cave",
+      "Games": 10,
+      "Sales": 0.33,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.03
+    },
+    {
+      "Publisher": "Evolved Games",
+      "Games": 8,
+      "Sales": 0.33,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.04
+    },
+    {
+      "Publisher": "Starpath Corp.",
+      "Games": 1,
+      "Sales": 0.33,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.33
+    },
+    {
+      "Publisher": "Yacht Club Games",
+      "Games": 4,
+      "Sales": 0.33,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.08
+    },
+    {
+      "Publisher": "U.S. Gold",
+      "Games": 4,
+      "Sales": 0.33,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.08
+    },
+    {
+      "Publisher": "Benesse",
+      "Games": 6,
+      "Sales": 0.33,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.06
+    },
+    {
+      "Publisher": "Indie Games",
+      "Games": 3,
+      "Sales": 0.32,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.11
+    },
+    {
+      "Publisher": "Hackberry",
+      "Games": 7,
+      "Sales": 0.31,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.04
+    },
+    {
+      "Publisher": "Agatsuma Entertainment",
+      "Games": 3,
+      "Sales": 0.31,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.1
+    },
+    {
+      "Publisher": "CBS Electronics",
+      "Games": 1,
+      "Sales": 0.31,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.31
+    },
+    {
+      "Publisher": "CokeM Interactive",
+      "Games": 1,
+      "Sales": 0.31,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.31
+    },
+    {
+      "Publisher": "CCP",
+      "Games": 2,
+      "Sales": 0.30000000000000004,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.15
+    },
+    {
+      "Publisher": "Mad Catz",
+      "Games": 3,
+      "Sales": 0.30000000000000004,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.1
+    },
+    {
+      "Publisher": "Hamster Corporation",
+      "Games": 2,
+      "Sales": 0.30000000000000004,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.15
+    },
+    {
+      "Publisher": "Neko Entertainment",
+      "Games": 7,
+      "Sales": 0.3,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.04
+    },
+    {
+      "Publisher": "Reef Entertainment",
+      "Games": 7,
+      "Sales": 0.3,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.04
+    },
+    {
+      "Publisher": "Core Design Ltd.",
+      "Games": 2,
+      "Sales": 0.29000000000000004,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.15
+    },
+    {
+      "Publisher": "Media Factory",
+      "Games": 2,
+      "Sales": 0.29000000000000004,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.15
+    },
+    {
+      "Publisher": "Wargaming.net",
+      "Games": 1,
+      "Sales": 0.29,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.29
+    },
+    {
+      "Publisher": "Playmates",
+      "Games": 1,
+      "Sales": 0.28,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.28
+    },
+    {
+      "Publisher": "Nichibutsu",
+      "Games": 1,
+      "Sales": 0.28,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.28
+    },
+    {
+      "Publisher": "Data Design Interactive",
+      "Games": 3,
+      "Sales": 0.28,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.09
+    },
+    {
+      "Publisher": "Excalibur Publishing",
+      "Games": 4,
+      "Sales": 0.28,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.07
+    },
+    {
+      "Publisher": "Game Life",
+      "Games": 2,
+      "Sales": 0.28,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.14
+    },
+    {
+      "Publisher": "Daedalic",
+      "Games": 3,
+      "Sales": 0.27999999999999997,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.09
+    },
+    {
+      "Publisher": "CyberFront",
+      "Games": 14,
+      "Sales": 0.27,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.02
+    },
+    {
+      "Publisher": "Vic Tokai",
+      "Games": 2,
+      "Sales": 0.27,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.14
+    },
+    {
+      "Publisher": "Culture Brain",
+      "Games": 4,
+      "Sales": 0.27,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.07
+    },
+    {
+      "Publisher": "Liquid Games",
+      "Games": 2,
+      "Sales": 0.27,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.14
+    },
+    {
+      "Publisher": "Telstar",
+      "Games": 3,
+      "Sales": 0.27,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.09
+    },
+    {
+      "Publisher": "ASCII Media Works",
+      "Games": 9,
+      "Sales": 0.27,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.03
+    },
+    {
+      "Publisher": "Syscom",
+      "Games": 2,
+      "Sales": 0.27,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.14
+    },
+    {
+      "Publisher": "Pacific Century Cyber Works",
+      "Games": 1,
+      "Sales": 0.26,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.26
+    },
+    {
+      "Publisher": "Vir2L Studios",
+      "Games": 3,
+      "Sales": 0.26,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.09
+    },
+    {
+      "Publisher": "Nippon Telenet",
+      "Games": 2,
+      "Sales": 0.26,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.13
+    },
+    {
+      "Publisher": "Asgard",
+      "Games": 8,
+      "Sales": 0.25,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.03
+    },
+    {
+      "Publisher": "Axela",
+      "Games": 1,
+      "Sales": 0.25,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.25
+    },
+    {
+      "Publisher": "Paon",
+      "Games": 6,
+      "Sales": 0.25,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.04
+    },
+    {
+      "Publisher": "Yeti",
+      "Games": 11,
+      "Sales": 0.24,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.02
+    },
+    {
+      "Publisher": "Tru Blu Entertainment",
+      "Games": 7,
+      "Sales": 0.24,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.03
+    },
+    {
+      "Publisher": "Xing Entertainment",
+      "Games": 1,
+      "Sales": 0.24,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.24
+    },
+    {
+      "Publisher": "Essential Games",
+      "Games": 3,
+      "Sales": 0.23,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.08
+    },
+    {
+      "Publisher": "American Softworks",
+      "Games": 1,
+      "Sales": 0.23,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.23
+    },
+    {
+      "Publisher": "Asmik Ace Entertainment",
+      "Games": 3,
+      "Sales": 0.23,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.08
+    },
+    {
+      "Publisher": "Daito",
+      "Games": 4,
+      "Sales": 0.22999999999999998,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.06
+    },
+    {
+      "Publisher": "Quinrose",
+      "Games": 14,
+      "Sales": 0.22,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.02
+    },
+    {
+      "Publisher": "O3 Entertainment",
+      "Games": 3,
+      "Sales": 0.22,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.07
+    },
+    {
+      "Publisher": "Detn8 Games",
+      "Games": 1,
+      "Sales": 0.22,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.22
+    },
+    {
+      "Publisher": "Bomb",
+      "Games": 1,
+      "Sales": 0.22,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.22
+    },
+    {
+      "Publisher": "Vatical Entertainment",
+      "Games": 2,
+      "Sales": 0.22,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.11
+    },
+    {
+      "Publisher": "Tommo",
+      "Games": 5,
+      "Sales": 0.21000000000000002,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.04
+    },
+    {
+      "Publisher": "Mercury Games",
+      "Games": 4,
+      "Sales": 0.21,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.05
+    },
+    {
+      "Publisher": "Sears",
+      "Games": 1,
+      "Sales": 0.21,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.21
+    },
+    {
+      "Publisher": "On Demand",
+      "Games": 1,
+      "Sales": 0.21,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.21
+    },
+    {
+      "Publisher": "Funsta",
+      "Games": 4,
+      "Sales": 0.2,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.05
+    },
+    {
+      "Publisher": "Funcom",
+      "Games": 2,
+      "Sales": 0.2,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.1
+    },
+    {
+      "Publisher": "Slitherine Software",
+      "Games": 4,
+      "Sales": 0.2,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.05
+    },
+    {
+      "Publisher": "Merscom LLC",
+      "Games": 1,
+      "Sales": 0.2,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.2
+    },
+    {
+      "Publisher": "Micro Cabin",
+      "Games": 3,
+      "Sales": 0.2,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.07
+    },
+    {
+      "Publisher": "System 3",
+      "Games": 2,
+      "Sales": 0.19,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.1
+    },
+    {
+      "Publisher": "Gamecock",
+      "Games": 4,
+      "Sales": 0.19,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.05
+    },
+    {
+      "Publisher": "Alternative Software",
+      "Games": 6,
+      "Sales": 0.19,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.03
+    },
+    {
+      "Publisher": "CDV Software Entertainment",
+      "Games": 6,
+      "Sales": 0.19,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.03
+    },
+    {
+      "Publisher": "Tripwire Interactive",
+      "Games": 2,
+      "Sales": 0.19,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.1
+    },
+    {
+      "Publisher": "SSI",
+      "Games": 1,
+      "Sales": 0.19,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.19
+    },
+    {
+      "Publisher": "Happinet",
+      "Games": 5,
+      "Sales": 0.19,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.04
+    },
+    {
+      "Publisher": "DHM Interactive",
+      "Games": 3,
+      "Sales": 0.18,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.06
+    },
+    {
+      "Publisher": "Media Works",
+      "Games": 5,
+      "Sales": 0.18,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.04
+    },
+    {
+      "Publisher": "Phenomedia",
+      "Games": 4,
+      "Sales": 0.18,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.04
+    },
+    {
+      "Publisher": "Sunrise Interactive",
+      "Games": 4,
+      "Sales": 0.17,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.04
+    },
+    {
+      "Publisher": "Panther Software",
+      "Games": 1,
+      "Sales": 0.17,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.17
+    },
+    {
+      "Publisher": "Adeline Software",
+      "Games": 1,
+      "Sales": 0.17,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.17
+    },
+    {
+      "Publisher": "Asmik Corp",
+      "Games": 2,
+      "Sales": 0.17,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.08
+    },
+    {
+      "Publisher": "Xicat Interactive",
+      "Games": 3,
+      "Sales": 0.16999999999999998,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.06
+    },
+    {
+      "Publisher": "Insomniac Games",
+      "Games": 3,
+      "Sales": 0.16999999999999998,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.06
+    },
+    {
+      "Publisher": "Aques",
+      "Games": 1,
+      "Sales": 0.16,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.16
+    },
+    {
+      "Publisher": "Tivola",
+      "Games": 3,
+      "Sales": 0.16,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.05
+    },
+    {
+      "Publisher": "Gainax Network Systems",
+      "Games": 2,
+      "Sales": 0.16,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.08
+    },
+    {
+      "Publisher": "Comfort",
+      "Games": 6,
+      "Sales": 0.15,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.02
+    },
+    {
+      "Publisher": "Data East",
+      "Games": 2,
+      "Sales": 0.15,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.08
+    },
+    {
+      "Publisher": "Global A Entertainment",
+      "Games": 4,
+      "Sales": 0.15,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.04
+    },
+    {
+      "Publisher": "Kaga Create",
+      "Games": 6,
+      "Sales": 0.15,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.02
+    },
+    {
+      "Publisher": "White Park Bay Software",
+      "Games": 1,
+      "Sales": 0.15,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.15
+    },
+    {
+      "Publisher": "Game Arts",
+      "Games": 1,
+      "Sales": 0.14,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.14
+    },
+    {
+      "Publisher": "General Entertainment",
+      "Games": 1,
+      "Sales": 0.14,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.14
+    },
+    {
+      "Publisher": "Sony Music Entertainment",
+      "Games": 1,
+      "Sales": 0.14,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.14
+    },
+    {
+      "Publisher": "Imadio",
+      "Games": 1,
+      "Sales": 0.14,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.14
+    },
+    {
+      "Publisher": "EA Games",
+      "Games": 1,
+      "Sales": 0.14,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.14
+    },
+    {
+      "Publisher": "HMH Interactive",
+      "Games": 2,
+      "Sales": 0.13,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.06
+    },
+    {
+      "Publisher": "Daedalic Entertainment",
+      "Games": 3,
+      "Sales": 0.13,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.04
+    },
+    {
+      "Publisher": "SCS Software",
+      "Games": 1,
+      "Sales": 0.13,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.13
+    },
+    {
+      "Publisher": "Moss",
+      "Games": 2,
+      "Sales": 0.13,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.06
+    },
+    {
+      "Publisher": "Havas Interactive",
+      "Games": 1,
+      "Sales": 0.13,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.13
+    },
+    {
+      "Publisher": "responDESIGN",
+      "Games": 2,
+      "Sales": 0.13,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.06
+    },
+    {
+      "Publisher": "Myelin Media",
+      "Games": 3,
+      "Sales": 0.13,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.04
+    },
+    {
+      "Publisher": "DreamWorks Interactive",
+      "Games": 1,
+      "Sales": 0.13,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.13
+    },
+    {
+      "Publisher": "Milestone S.r.l",
+      "Games": 5,
+      "Sales": 0.12000000000000001,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.02
+    },
+    {
+      "Publisher": "Crytek",
+      "Games": 1,
+      "Sales": 0.12,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.12
+    },
+    {
+      "Publisher": "LSP Games",
+      "Games": 4,
+      "Sales": 0.12,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.03
+    },
+    {
+      "Publisher": "SPS",
+      "Games": 1,
+      "Sales": 0.12,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.12
+    },
+    {
+      "Publisher": "NDA Productions",
+      "Games": 1,
+      "Sales": 0.12,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.12
+    },
+    {
+      "Publisher": "FunSoft",
+      "Games": 1,
+      "Sales": 0.12,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.12
+    },
+    {
+      "Publisher": "dramatic create",
+      "Games": 6,
+      "Sales": 0.12,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.02
+    },
+    {
+      "Publisher": "Flight-Plan",
+      "Games": 2,
+      "Sales": 0.12,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.06
+    },
+    {
+      "Publisher": "T&E Soft",
+      "Games": 1,
+      "Sales": 0.12,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.12
+    },
+    {
+      "Publisher": "Gameloft",
+      "Games": 1,
+      "Sales": 0.11,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.11
+    },
+    {
+      "Publisher": "FuRyu Corporation",
+      "Games": 5,
+      "Sales": 0.11,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.02
+    },
+    {
+      "Publisher": "TOHO",
+      "Games": 1,
+      "Sales": 0.11,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.11
+    },
+    {
+      "Publisher": "TopWare Interactive",
+      "Games": 4,
+      "Sales": 0.11,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.03
+    },
+    {
+      "Publisher": "Bohemia Interactive",
+      "Games": 1,
+      "Sales": 0.11,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.11
+    },
+    {
+      "Publisher": "Pack-In-Video",
+      "Games": 2,
+      "Sales": 0.11,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.06
+    },
+    {
+      "Publisher": "PM Studios",
+      "Games": 1,
+      "Sales": 0.11,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.11
+    },
+    {
+      "Publisher": "Ascaron Entertainment GmbH",
+      "Games": 3,
+      "Sales": 0.11,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.04
+    },
+    {
+      "Publisher": "PopTop Software",
+      "Games": 1,
+      "Sales": 0.11,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.11
+    },
+    {
+      "Publisher": "10TACLE Studios",
+      "Games": 3,
+      "Sales": 0.11,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.04
+    },
+    {
+      "Publisher": "Simon & Schuster Interactive",
+      "Games": 1,
+      "Sales": 0.11,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.11
+    },
+    {
+      "Publisher": "inXile Entertainment",
+      "Games": 1,
+      "Sales": 0.1,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.1
+    },
+    {
+      "Publisher": "Enjoy Gaming ltd.",
+      "Games": 1,
+      "Sales": 0.1,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.1
+    },
+    {
+      "Publisher": "Type-Moon",
+      "Games": 1,
+      "Sales": 0.1,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.1
+    },
+    {
+      "Publisher": "Interplay Productions",
+      "Games": 1,
+      "Sales": 0.1,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.1
+    },
+    {
+      "Publisher": "Interchannel",
+      "Games": 4,
+      "Sales": 0.1,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.02
+    },
+    {
+      "Publisher": "Image Epoch",
+      "Games": 1,
+      "Sales": 0.1,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.1
+    },
+    {
+      "Publisher": "GameTek",
+      "Games": 1,
+      "Sales": 0.1,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.1
+    },
+    {
+      "Publisher": "Phantom EFX",
+      "Games": 1,
+      "Sales": 0.1,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.1
+    },
+    {
+      "Publisher": "1C Company",
+      "Games": 3,
+      "Sales": 0.1,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.03
+    },
+    {
+      "Publisher": "TGL",
+      "Games": 4,
+      "Sales": 0.09999999999999999,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.02
+    },
+    {
+      "Publisher": "Creative Core",
+      "Games": 3,
+      "Sales": 0.09999999999999999,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.03
+    },
+    {
+      "Publisher": "Revolution Software",
+      "Games": 2,
+      "Sales": 0.09000000000000001,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.05
+    },
+    {
+      "Publisher": "Athena",
+      "Games": 2,
+      "Sales": 0.09000000000000001,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.05
+    },
+    {
+      "Publisher": "Edia",
+      "Games": 2,
+      "Sales": 0.09000000000000001,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.05
+    },
+    {
+      "Publisher": "Griffin International",
+      "Games": 1,
+      "Sales": 0.09,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.09
+    },
+    {
+      "Publisher": "Tradewest",
+      "Games": 3,
+      "Sales": 0.09,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.03
+    },
+    {
+      "Publisher": "Hearty Robin",
+      "Games": 1,
+      "Sales": 0.09,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.09
+    },
+    {
+      "Publisher": "Groove Games",
+      "Games": 2,
+      "Sales": 0.09,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.04
+    },
+    {
+      "Publisher": "Origin Systems",
+      "Games": 1,
+      "Sales": 0.09,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.09
+    },
+    {
+      "Publisher": "Nippon Amuse",
+      "Games": 1,
+      "Sales": 0.09,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.09
+    },
+    {
+      "Publisher": "Arika",
+      "Games": 3,
+      "Sales": 0.09,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.03
+    },
+    {
+      "Publisher": "Dusenberry Martin Racing",
+      "Games": 2,
+      "Sales": 0.09,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.04
+    },
+    {
+      "Publisher": "Culture Publishers",
+      "Games": 1,
+      "Sales": 0.09,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.09
+    },
+    {
+      "Publisher": "MC2 Entertainment",
+      "Games": 3,
+      "Sales": 0.08,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.03
+    },
+    {
+      "Publisher": "Glams",
+      "Games": 1,
+      "Sales": 0.08,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.08
+    },
+    {
+      "Publisher": "KID",
+      "Games": 4,
+      "Sales": 0.08,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.02
+    },
+    {
+      "Publisher": "Seventh Chord",
+      "Games": 1,
+      "Sales": 0.08,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.08
+    },
+    {
+      "Publisher": "Mitsui",
+      "Games": 1,
+      "Sales": 0.08,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.08
+    },
+    {
+      "Publisher": "Milestone",
+      "Games": 1,
+      "Sales": 0.08,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.08
+    },
+    {
+      "Publisher": "Abylight",
+      "Games": 1,
+      "Sales": 0.08,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.08
+    },
+    {
+      "Publisher": "Yuke's",
+      "Games": 3,
+      "Sales": 0.08,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.03
+    },
+    {
+      "Publisher": "Flashpoint Games",
+      "Games": 2,
+      "Sales": 0.08,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.04
+    },
+    {
+      "Publisher": "Crimson Cow",
+      "Games": 2,
+      "Sales": 0.08,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.04
+    },
+    {
+      "Publisher": "Cloud Imperium Games Corporation",
+      "Games": 2,
+      "Sales": 0.08,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.04
+    },
+    {
+      "Publisher": "Iceberg Interactive",
+      "Games": 3,
+      "Sales": 0.08,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.03
+    },
+    {
+      "Publisher": "Experience Inc.",
+      "Games": 3,
+      "Sales": 0.08,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.03
+    },
+    {
+      "Publisher": "Elite",
+      "Games": 1,
+      "Sales": 0.07,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.07
+    },
+    {
+      "Publisher": "Evolution Games",
+      "Games": 1,
+      "Sales": 0.07,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.07
+    },
+    {
+      "Publisher": "Aria",
+      "Games": 1,
+      "Sales": 0.07,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.07
+    },
+    {
+      "Publisher": "Warp",
+      "Games": 1,
+      "Sales": 0.07,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.07
+    },
+    {
+      "Publisher": "Locus",
+      "Games": 1,
+      "Sales": 0.07,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.07
+    },
+    {
+      "Publisher": "Misawa",
+      "Games": 2,
+      "Sales": 0.07,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.04
+    },
+    {
+      "Publisher": "Encore",
+      "Games": 4,
+      "Sales": 0.07,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.02
+    },
+    {
+      "Publisher": "Altron",
+      "Games": 1,
+      "Sales": 0.07,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.07
+    },
+    {
+      "Publisher": "Coconuts Japan",
+      "Games": 2,
+      "Sales": 0.07,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.04
+    },
+    {
+      "Publisher": "Princess Soft",
+      "Games": 3,
+      "Sales": 0.07,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.02
+    },
+    {
+      "Publisher": "MLB.com",
+      "Games": 2,
+      "Sales": 0.060000000000000005,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.03
+    },
+    {
+      "Publisher": "Office Create",
+      "Games": 2,
+      "Sales": 0.06,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.03
+    },
+    {
+      "Publisher": "iWin",
+      "Games": 1,
+      "Sales": 0.06,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.06
+    },
+    {
+      "Publisher": "Zenrin",
+      "Games": 2,
+      "Sales": 0.06,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.03
+    },
+    {
+      "Publisher": "Yumedia",
+      "Games": 1,
+      "Sales": 0.06,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.06
+    },
+    {
+      "Publisher": "7G//AMES",
+      "Games": 3,
+      "Sales": 0.06,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.02
+    },
+    {
+      "Publisher": "Grand Prix Games",
+      "Games": 1,
+      "Sales": 0.06,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.06
+    },
+    {
+      "Publisher": "Imax",
+      "Games": 1,
+      "Sales": 0.06,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.06
+    },
+    {
+      "Publisher": "Fortyfive",
+      "Games": 1,
+      "Sales": 0.06,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.06
+    },
+    {
+      "Publisher": "Alawar Entertainment",
+      "Games": 2,
+      "Sales": 0.06,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.03
+    },
+    {
+      "Publisher": "Virtual Play Games",
+      "Games": 2,
+      "Sales": 0.06,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.03
+    },
+    {
+      "Publisher": "Focus Multimedia",
+      "Games": 4,
+      "Sales": 0.06,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.02
+    },
+    {
+      "Publisher": "Licensed 4U",
+      "Games": 3,
+      "Sales": 0.06,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.02
+    },
+    {
+      "Publisher": "Ecole",
+      "Games": 1,
+      "Sales": 0.06,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.06
+    },
+    {
+      "Publisher": "Gearbox Software",
+      "Games": 2,
+      "Sales": 0.06,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.03
+    },
+    {
+      "Publisher": "DigiCube",
+      "Games": 1,
+      "Sales": 0.06,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.06
+    },
+    {
+      "Publisher": "Sonnet",
+      "Games": 2,
+      "Sales": 0.06,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.03
+    },
+    {
+      "Publisher": "HAL Laboratory",
+      "Games": 1,
+      "Sales": 0.06,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.06
+    },
+    {
+      "Publisher": "GN Software",
+      "Games": 3,
+      "Sales": 0.05,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.02
+    },
+    {
+      "Publisher": "Devolver Digital",
+      "Games": 2,
+      "Sales": 0.05,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.02
+    },
+    {
+      "Publisher": "Vap",
+      "Games": 1,
+      "Sales": 0.05,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.05
+    },
+    {
+      "Publisher": "Team17 Software",
+      "Games": 1,
+      "Sales": 0.05,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.05
+    },
+    {
+      "Publisher": "Ertain",
+      "Games": 1,
+      "Sales": 0.05,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.05
+    },
+    {
+      "Publisher": "The Learning Company",
+      "Games": 1,
+      "Sales": 0.05,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.05
+    },
+    {
+      "Publisher": "Marvel Entertainment",
+      "Games": 1,
+      "Sales": 0.05,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.05
+    },
+    {
+      "Publisher": "Lexicon Entertainment",
+      "Games": 2,
+      "Sales": 0.05,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.02
+    },
+    {
+      "Publisher": "Mamba Games",
+      "Games": 2,
+      "Sales": 0.05,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.02
+    },
+    {
+      "Publisher": "System Soft",
+      "Games": 4,
+      "Sales": 0.05,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.01
+    },
+    {
+      "Publisher": "Sweets",
+      "Games": 2,
+      "Sales": 0.05,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.02
+    },
+    {
+      "Publisher": "MediaQuest",
+      "Games": 1,
+      "Sales": 0.05,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.05
+    },
+    {
+      "Publisher": "Max Five",
+      "Games": 1,
+      "Sales": 0.05,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.05
+    },
+    {
+      "Publisher": "Big Fish Games",
+      "Games": 2,
+      "Sales": 0.05,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.02
+    },
+    {
+      "Publisher": "Pow",
+      "Games": 1,
+      "Sales": 0.05,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.05
+    },
+    {
+      "Publisher": "Pony Canyon",
+      "Games": 1,
+      "Sales": 0.05,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.05
+    },
+    {
+      "Publisher": "Phantagram",
+      "Games": 1,
+      "Sales": 0.05,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.05
+    },
+    {
+      "Publisher": "Minato Station",
+      "Games": 3,
+      "Sales": 0.05,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.02
+    },
+    {
+      "Publisher": "Navarre Corp",
+      "Games": 1,
+      "Sales": 0.05,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.05
+    },
+    {
+      "Publisher": "TechnoSoft",
+      "Games": 1,
+      "Sales": 0.05,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.05
+    },
+    {
+      "Publisher": "WayForward Technologies",
+      "Games": 1,
+      "Sales": 0.05,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.05
+    },
+    {
+      "Publisher": "Kool Kizz",
+      "Games": 1,
+      "Sales": 0.04,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.04
+    },
+    {
+      "Publisher": "Monte Christo Multimedia",
+      "Games": 1,
+      "Sales": 0.04,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.04
+    },
+    {
+      "Publisher": "Alvion",
+      "Games": 2,
+      "Sales": 0.04,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.02
+    },
+    {
+      "Publisher": "Games Workshop",
+      "Games": 1,
+      "Sales": 0.04,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.04
+    },
+    {
+      "Publisher": "G.Rev",
+      "Games": 2,
+      "Sales": 0.04,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.02
+    },
+    {
+      "Publisher": "Aerosoft",
+      "Games": 3,
+      "Sales": 0.04,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.01
+    },
+    {
+      "Publisher": "Gakken",
+      "Games": 2,
+      "Sales": 0.04,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.02
+    },
+    {
+      "Publisher": "Ivolgamus",
+      "Games": 1,
+      "Sales": 0.04,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.04
+    },
+    {
+      "Publisher": "Yamasa Entertainment",
+      "Games": 2,
+      "Sales": 0.04,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.02
+    },
+    {
+      "Publisher": "2D Boy",
+      "Games": 1,
+      "Sales": 0.04,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.04
+    },
+    {
+      "Publisher": "Sold Out",
+      "Games": 2,
+      "Sales": 0.04,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.02
+    },
+    {
+      "Publisher": "Introversion Software",
+      "Games": 2,
+      "Sales": 0.04,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.02
+    },
+    {
+      "Publisher": "Societa",
+      "Games": 1,
+      "Sales": 0.04,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.04
+    },
+    {
+      "Publisher": "Legacy Interactive",
+      "Games": 1,
+      "Sales": 0.04,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.04
+    },
+    {
+      "Publisher": "Summitsoft",
+      "Games": 1,
+      "Sales": 0.04,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.04
+    },
+    {
+      "Publisher": "Riverhillsoft",
+      "Games": 1,
+      "Sales": 0.04,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.04
+    },
+    {
+      "Publisher": "Playmore",
+      "Games": 1,
+      "Sales": 0.04,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.04
+    },
+    {
+      "Publisher": "imageepoch Inc.",
+      "Games": 2,
+      "Sales": 0.04,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.02
+    },
+    {
+      "Publisher": "Paon Corporation",
+      "Games": 1,
+      "Sales": 0.03,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.03
+    },
+    {
+      "Publisher": "ASK",
+      "Games": 1,
+      "Sales": 0.03,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.03
+    },
+    {
+      "Publisher": "49Games",
+      "Games": 1,
+      "Sales": 0.03,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.03
+    },
+    {
+      "Publisher": "id Software",
+      "Games": 1,
+      "Sales": 0.03,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.03
+    },
+    {
+      "Publisher": "NetRevo",
+      "Games": 2,
+      "Sales": 0.03,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.02
+    },
+    {
+      "Publisher": "Number None",
+      "Games": 1,
+      "Sales": 0.03,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.03
+    },
+    {
+      "Publisher": "Fields",
+      "Games": 1,
+      "Sales": 0.03,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.03
+    },
+    {
+      "Publisher": "Easy Interactive",
+      "Games": 2,
+      "Sales": 0.03,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.02
+    },
+    {
+      "Publisher": "Fuji",
+      "Games": 1,
+      "Sales": 0.03,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.03
+    },
+    {
+      "Publisher": "Datam Polystar",
+      "Games": 2,
+      "Sales": 0.03,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.02
+    },
+    {
+      "Publisher": "Cygames",
+      "Games": 1,
+      "Sales": 0.03,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.03
+    },
+    {
+      "Publisher": "Extreme Entertainment Group",
+      "Games": 1,
+      "Sales": 0.03,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.03
+    },
+    {
+      "Publisher": "Nexon",
+      "Games": 1,
+      "Sales": 0.03,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.03
+    },
+    {
+      "Publisher": "Blue Byte",
+      "Games": 2,
+      "Sales": 0.03,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.02
+    },
+    {
+      "Publisher": "BushiRoad",
+      "Games": 1,
+      "Sales": 0.03,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.03
+    },
+    {
+      "Publisher": "HuneX",
+      "Games": 2,
+      "Sales": 0.03,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.02
+    },
+    {
+      "Publisher": "KSS",
+      "Games": 1,
+      "Sales": 0.03,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.03
+    },
+    {
+      "Publisher": "Kando Games",
+      "Games": 1,
+      "Sales": 0.03,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.03
+    },
+    {
+      "Publisher": "Kamui",
+      "Games": 1,
+      "Sales": 0.03,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.03
+    },
+    {
+      "Publisher": "Maximum Family Games",
+      "Games": 1,
+      "Sales": 0.03,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.03
+    },
+    {
+      "Publisher": "Just Flight",
+      "Games": 1,
+      "Sales": 0.03,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.03
+    },
+    {
+      "Publisher": "Stainless Games",
+      "Games": 2,
+      "Sales": 0.03,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.02
+    },
+    {
+      "Publisher": "Headup Games",
+      "Games": 1,
+      "Sales": 0.03,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.03
+    },
+    {
+      "Publisher": "Kids Station",
+      "Games": 1,
+      "Sales": 0.03,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.03
+    },
+    {
+      "Publisher": "Strategy First",
+      "Games": 1,
+      "Sales": 0.03,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.03
+    },
+    {
+      "Publisher": "Her Interactive",
+      "Games": 1,
+      "Sales": 0.03,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.03
+    },
+    {
+      "Publisher": "Kokopeli Digital Studios",
+      "Games": 1,
+      "Sales": 0.03,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.03
+    },
+    {
+      "Publisher": "Dorart",
+      "Games": 2,
+      "Sales": 0.03,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.02
+    },
+    {
+      "Publisher": "Views",
+      "Games": 2,
+      "Sales": 0.03,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.02
+    },
+    {
+      "Publisher": "Berkeley",
+      "Games": 1,
+      "Sales": 0.03,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.03
+    },
+    {
+      "Publisher": "Sunflowers",
+      "Games": 1,
+      "Sales": 0.03,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.03
+    },
+    {
+      "Publisher": "Tryfirst",
+      "Games": 1,
+      "Sales": 0.03,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.03
+    },
+    {
+      "Publisher": "Marvelous Games",
+      "Games": 1,
+      "Sales": 0.02,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.02
+    },
+    {
+      "Publisher": "GOA",
+      "Games": 1,
+      "Sales": 0.02,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.02
+    },
+    {
+      "Publisher": "Gaga",
+      "Games": 1,
+      "Sales": 0.02,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.02
+    },
+    {
+      "Publisher": "Mycom",
+      "Games": 1,
+      "Sales": 0.02,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.02
+    },
+    {
+      "Publisher": "Codemasters Online",
+      "Games": 1,
+      "Sales": 0.02,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.02
+    },
+    {
+      "Publisher": "RED Entertainment",
+      "Games": 1,
+      "Sales": 0.02,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.02
+    },
+    {
+      "Publisher": "Quintet",
+      "Games": 1,
+      "Sales": 0.02,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.02
+    },
+    {
+      "Publisher": "Phoenix Games",
+      "Games": 1,
+      "Sales": 0.02,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.02
+    },
+    {
+      "Publisher": "Plenty",
+      "Games": 1,
+      "Sales": 0.02,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.02
+    },
+    {
+      "Publisher": "New World Computing",
+      "Games": 1,
+      "Sales": 0.02,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.02
+    },
+    {
+      "Publisher": "Nitroplus",
+      "Games": 2,
+      "Sales": 0.02,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.01
+    },
+    {
+      "Publisher": "fonfun",
+      "Games": 1,
+      "Sales": 0.02,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.02
+    },
+    {
+      "Publisher": "Revolution (Japan)",
+      "Games": 1,
+      "Sales": 0.02,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.02
+    },
+    {
+      "Publisher": "Warashi",
+      "Games": 1,
+      "Sales": 0.02,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.02
+    },
+    {
+      "Publisher": "Visco",
+      "Games": 1,
+      "Sales": 0.02,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.02
+    },
+    {
+      "Publisher": "Epic Games",
+      "Games": 1,
+      "Sales": 0.02,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.02
+    },
+    {
+      "Publisher": "Masque Publishing",
+      "Games": 1,
+      "Sales": 0.02,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.02
+    },
+    {
+      "Publisher": "Karin Entertainment",
+      "Games": 1,
+      "Sales": 0.02,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.02
+    },
+    {
+      "Publisher": "Graphsim Entertainment",
+      "Games": 1,
+      "Sales": 0.02,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.02
+    },
+    {
+      "Publisher": "Technos Japan Corporation",
+      "Games": 1,
+      "Sales": 0.02,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.02
+    },
+    {
+      "Publisher": "Imageworks",
+      "Games": 1,
+      "Sales": 0.02,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.02
+    },
+    {
+      "Publisher": "King Records",
+      "Games": 1,
+      "Sales": 0.02,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.02
+    },
+    {
+      "Publisher": "Mirai Shounen",
+      "Games": 1,
+      "Sales": 0.02,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.02
+    },
+    {
+      "Publisher": "Saurus",
+      "Games": 1,
+      "Sales": 0.02,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.02
+    },
+    {
+      "Publisher": "Giga",
+      "Games": 1,
+      "Sales": 0.02,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.02
+    },
+    {
+      "Publisher": "Giza10",
+      "Games": 1,
+      "Sales": 0.02,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.02
+    },
+    {
+      "Publisher": "Paradox Development",
+      "Games": 1,
+      "Sales": 0.01,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.01
+    },
+    {
+      "Publisher": "Piacci",
+      "Games": 1,
+      "Sales": 0.01,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.01
+    },
+    {
+      "Publisher": "Ongakukan",
+      "Games": 1,
+      "Sales": 0.01,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.01
+    },
+    {
+      "Publisher": "Red Flagship",
+      "Games": 1,
+      "Sales": 0.01,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.01
+    },
+    {
+      "Publisher": "Naxat Soft",
+      "Games": 1,
+      "Sales": 0.01,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.01
+    },
+    {
+      "Publisher": "Otomate",
+      "Games": 1,
+      "Sales": 0.01,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.01
+    },
+    {
+      "Publisher": "Interchannel-Holon",
+      "Games": 1,
+      "Sales": 0.01,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.01
+    },
+    {
+      "Publisher": "Media Entertainment",
+      "Games": 1,
+      "Sales": 0.01,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.01
+    },
+    {
+      "Publisher": "Michaelsoft",
+      "Games": 1,
+      "Sales": 0.01,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.01
+    },
+    {
+      "Publisher": "Lighthouse Interactive",
+      "Games": 1,
+      "Sales": 0.01,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.01
+    },
+    {
+      "Publisher": "Inti Creates",
+      "Games": 1,
+      "Sales": 0.01,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.01
+    },
+    {
+      "Publisher": "Takuyo",
+      "Games": 1,
+      "Sales": 0.01,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.01
+    },
+    {
+      "Publisher": "Interworks Unlimited, Inc.",
+      "Games": 1,
+      "Sales": 0.01,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.01
+    },
+    {
+      "Publisher": "Genterprise",
+      "Games": 1,
+      "Sales": 0.01,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.01
+    },
+    {
+      "Publisher": "EON Digital Entertainment",
+      "Games": 1,
+      "Sales": 0.01,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.01
+    },
+    {
+      "Publisher": "UIG Entertainment",
+      "Games": 1,
+      "Sales": 0.01,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.01
+    },
+    {
+      "Publisher": "Commseed",
+      "Games": 1,
+      "Sales": 0.01,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.01
+    },
+    {
+      "Publisher": "Ascaron Entertainment",
+      "Games": 1,
+      "Sales": 0.01,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.01
+    },
+    {
+      "Publisher": "Boost On",
+      "Games": 1,
+      "Sales": 0.01,
+      "Sales_Share_%": 0.0,
+      "Avg_Sales_M": 0.01
+    }
+  ],
+  "top_publisher": "Nintendo",
+  "top10_publisher_share_pct": 70.2,
+  "publisher_count": 582,
+  "top_games": [
+    {
+      "Game": "Wii Sports",
+      "Platform": "Wii",
+      "Release_Year": 2006.0,
+      "Genre": "Sports",
+      "Publisher": "Nintendo",
+      "NA_Sales": 41.36,
+      "EU_Sales": 28.96,
+      "JP_Sales": 3.77,
+      "Global_Sales": 82.53
+    },
+    {
+      "Game": "Super Mario Bros.",
+      "Platform": "NES",
+      "Release_Year": 1985.0,
+      "Genre": "Platform",
+      "Publisher": "Nintendo",
+      "NA_Sales": 29.08,
+      "EU_Sales": 3.58,
+      "JP_Sales": 6.81,
+      "Global_Sales": 40.24
+    },
+    {
+      "Game": "Mario Kart Wii",
+      "Platform": "Wii",
+      "Release_Year": 2008.0,
+      "Genre": "Racing",
+      "Publisher": "Nintendo",
+      "NA_Sales": 15.68,
+      "EU_Sales": 12.76,
+      "JP_Sales": 3.79,
+      "Global_Sales": 35.52
+    },
+    {
+      "Game": "Wii Sports Resort",
+      "Platform": "Wii",
+      "Release_Year": 2009.0,
+      "Genre": "Sports",
+      "Publisher": "Nintendo",
+      "NA_Sales": 15.61,
+      "EU_Sales": 10.93,
+      "JP_Sales": 3.28,
+      "Global_Sales": 32.77
+    },
+    {
+      "Game": "Pokemon Red/Pokemon Blue",
+      "Platform": "GB",
+      "Release_Year": 1996.0,
+      "Genre": "Role-Playing",
+      "Publisher": "Nintendo",
+      "NA_Sales": 11.27,
+      "EU_Sales": 8.89,
+      "JP_Sales": 10.22,
+      "Global_Sales": 31.37
+    },
+    {
+      "Game": "Tetris",
+      "Platform": "GB",
+      "Release_Year": 1989.0,
+      "Genre": "Puzzle",
+      "Publisher": "Nintendo",
+      "NA_Sales": 23.2,
+      "EU_Sales": 2.26,
+      "JP_Sales": 4.22,
+      "Global_Sales": 30.26
+    },
+    {
+      "Game": "New Super Mario Bros.",
+      "Platform": "DS",
+      "Release_Year": 2006.0,
+      "Genre": "Platform",
+      "Publisher": "Nintendo",
+      "NA_Sales": 11.28,
+      "EU_Sales": 9.14,
+      "JP_Sales": 6.5,
+      "Global_Sales": 29.8
+    },
+    {
+      "Game": "Wii Play",
+      "Platform": "Wii",
+      "Release_Year": 2006.0,
+      "Genre": "Misc",
+      "Publisher": "Nintendo",
+      "NA_Sales": 13.96,
+      "EU_Sales": 9.18,
+      "JP_Sales": 2.93,
+      "Global_Sales": 28.92
+    },
+    {
+      "Game": "New Super Mario Bros. Wii",
+      "Platform": "Wii",
+      "Release_Year": 2009.0,
+      "Genre": "Platform",
+      "Publisher": "Nintendo",
+      "NA_Sales": 14.44,
+      "EU_Sales": 6.94,
+      "JP_Sales": 4.7,
+      "Global_Sales": 28.32
+    },
+    {
+      "Game": "Duck Hunt",
+      "Platform": "NES",
+      "Release_Year": 1984.0,
+      "Genre": "Shooter",
+      "Publisher": "Nintendo",
+      "NA_Sales": 26.93,
+      "EU_Sales": 0.63,
+      "JP_Sales": 0.28,
+      "Global_Sales": 28.31
+    }
+  ],
+  "top20_nintendo": 17,
+  "top1pct_share_pct": 22.0,
+  "top100_share_pct": 20.5,
+  "long_tail_pct": 34.6,
+  "yearly": [
+    {
+      "year": 1980,
+      "games": 9,
+      "sales": 11.38
+    },
+    {
+      "year": 1981,
+      "games": 46,
+      "sales": 35.77
+    },
+    {
+      "year": 1982,
+      "games": 36,
+      "sales": 28.86
+    },
+    {
+      "year": 1983,
+      "games": 17,
+      "sales": 16.79
+    },
+    {
+      "year": 1984,
+      "games": 14,
+      "sales": 50.36
+    },
+    {
+      "year": 1985,
+      "games": 14,
+      "sales": 53.94
+    },
+    {
+      "year": 1986,
+      "games": 21,
+      "sales": 37.07
+    },
+    {
+      "year": 1987,
+      "games": 16,
+      "sales": 21.74
+    },
+    {
+      "year": 1988,
+      "games": 15,
+      "sales": 47.22
+    },
+    {
+      "year": 1989,
+      "games": 17,
+      "sales": 73.45
+    },
+    {
+      "year": 1990,
+      "games": 16,
+      "sales": 49.39
+    },
+    {
+      "year": 1991,
+      "games": 41,
+      "sales": 32.23
+    },
+    {
+      "year": 1992,
+      "games": 43,
+      "sales": 76.17
+    },
+    {
+      "year": 1993,
+      "games": 61,
+      "sales": 48.37
+    },
+    {
+      "year": 1994,
+      "games": 121,
+      "sales": 79.18
+    },
+    {
+      "year": 1995,
+      "games": 219,
+      "sales": 88.11
+    },
+    {
+      "year": 1996,
+      "games": 263,
+      "sales": 199.15
+    },
+    {
+      "year": 1997,
+      "games": 289,
+      "sales": 200.98
+    },
+    {
+      "year": 1998,
+      "games": 379,
+      "sales": 256.45
+    },
+    {
+      "year": 1999,
+      "games": 339,
+      "sales": 251.39
+    },
+    {
+      "year": 2000,
+      "games": 350,
+      "sales": 201.58
+    },
+    {
+      "year": 2001,
+      "games": 484,
+      "sales": 332.33
+    },
+    {
+      "year": 2002,
+      "games": 842,
+      "sales": 400.66
+    },
+    {
+      "year": 2003,
+      "games": 783,
+      "sales": 367.18
+    },
+    {
+      "year": 2004,
+      "games": 764,
+      "sales": 419.92
+    },
+    {
+      "year": 2005,
+      "games": 947,
+      "sales": 460.47
+    },
+    {
+      "year": 2006,
+      "games": 1018,
+      "sales": 523.43
+    },
+    {
+      "year": 2007,
+      "games": 1202,
+      "sales": 606.79
+    },
+    {
+      "year": 2008,
+      "games": 1440,
+      "sales": 680.75
+    },
+    {
+      "year": 2009,
+      "games": 1430,
+      "sales": 659.56
+    },
+    {
+      "year": 2010,
+      "games": 1269,
+      "sales": 595.1
+    },
+    {
+      "year": 2011,
+      "games": 1153,
+      "sales": 510.86
+    },
+    {
+      "year": 2012,
+      "games": 661,
+      "sales": 360.51
+    },
+    {
+      "year": 2013,
+      "games": 547,
+      "sales": 361.74
+    },
+    {
+      "year": 2014,
+      "games": 581,
+      "sales": 331.51
+    },
+    {
+      "year": 2015,
+      "games": 606,
+      "sales": 268.05
+    },
+    {
+      "year": 2016,
+      "games": 502,
+      "sales": 130.1
+    },
+    {
+      "year": 2017,
+      "games": 3,
+      "sales": 0.06
+    },
+    {
+      "year": 2020,
+      "games": 1,
+      "sales": 0.29
+    }
+  ],
+  "peak_year": 2008,
+  "decade": [
+    {
+      "Decade": "1980s",
+      "Games": 205,
+      "Sales": 376.58,
+      "Sales_Share_%": 4.2
+    },
+    {
+      "Decade": "1990s",
+      "Games": 1771,
+      "Sales": 1281.42,
+      "Sales_Share_%": 14.4
+    },
+    {
+      "Decade": "2000s",
+      "Games": 9260,
+      "Sales": 4652.67,
+      "Sales_Share_%": 52.5
+    },
+    {
+      "Decade": "2010s",
+      "Games": 5322,
+      "Sales": 2557.93,
+      "Sales_Share_%": 28.8
+    },
+    {
+      "Decade": "2020s",
+      "Games": 1,
+      "Sales": 0.29,
+      "Sales_Share_%": 0.0
+    }
+  ],
+  "regions": [
+    {
+      "region": "NA_Sales",
+      "sales": 4402.6,
+      "share": 49.4
+    },
+    {
+      "region": "EU_Sales",
+      "sales": 2424.7,
+      "share": 27.2
+    },
+    {
+      "region": "JP_Sales",
+      "sales": 1297.4,
+      "share": 14.6
+    },
+    {
+      "region": "Other_Sales",
+      "sales": 791.3,
+      "share": 8.9
+    }
+  ],
+  "region_mix_by_decade": [
+    {
+      "Decade": "1980s",
+      "NA_Sales": 62.6,
+      "EU_Sales": 8.3,
+      "JP_Sales": 27.2,
+      "Other_Sales": 1.9
+    },
+    {
+      "Decade": "1990s",
+      "NA_Sales": 45.1,
+      "EU_Sales": 22.1,
+      "JP_Sales": 29.1,
+      "Other_Sales": 3.7
+    },
+    {
+      "Decade": "2000s",
+      "NA_Sales": 52.0,
+      "EU_Sales": 27.0,
+      "JP_Sales": 11.0,
+      "Other_Sales": 10.0
+    },
+    {
+      "Decade": "2010s",
+      "NA_Sales": 44.5,
+      "EU_Sales": 33.1,
+      "JP_Sales": 11.9,
+      "Other_Sales": 10.5
+    },
+    {
+      "Decade": "2020s",
+      "NA_Sales": 93.1,
+      "EU_Sales": 0.0,
+      "JP_Sales": 0.0,
+      "Other_Sales": 6.9
+    }
+  ],
+  "region_mix_by_genre": [
+    {
+      "Genre": "Action",
+      "NA_Sales": 50.4,
+      "EU_Sales": 29.8,
+      "JP_Sales": 9.3,
+      "Other_Sales": 10.6
+    },
+    {
+      "Genre": "Sports",
+      "NA_Sales": 51.4,
+      "EU_Sales": 28.3,
+      "JP_Sales": 10.2,
+      "Other_Sales": 10.1
+    },
+    {
+      "Genre": "Shooter",
+      "NA_Sales": 56.3,
+      "EU_Sales": 30.2,
+      "JP_Sales": 3.7,
+      "Other_Sales": 9.9
+    },
+    {
+      "Genre": "Role-Playing",
+      "NA_Sales": 35.4,
+      "EU_Sales": 20.2,
+      "JP_Sales": 38.0,
+      "Other_Sales": 6.4
+    },
+    {
+      "Genre": "Platform",
+      "NA_Sales": 53.8,
+      "EU_Sales": 24.2,
+      "JP_Sales": 15.8,
+      "Other_Sales": 6.2
+    },
+    {
+      "Genre": "Misc",
+      "NA_Sales": 50.7,
+      "EU_Sales": 26.5,
+      "JP_Sales": 13.5,
+      "Other_Sales": 9.3
+    }
+  ],
+  "ratings": {
+    "pearson_critic": 0.246,
+    "spearman_critic": 0.394,
+    "pearson_user": 0.088,
+    "spearman_user": 0.15,
+    "n_critic": 8136,
+    "n_user": 7589,
+    "band": [
+      {
+        "Critic_Band": "No critic score",
+        "Games": 8581,
+        "Sales": 3313.59,
+        "Avg_Sales_M": 0.39
+      },
+      {
+        "Critic_Band": "Under 60",
+        "Games": 1913,
+        "Sales": 514.29,
+        "Avg_Sales_M": 0.27
+      },
+      {
+        "Critic_Band": "60-69",
+        "Games": 1849,
+        "Sales": 678.3100000000001,
+        "Avg_Sales_M": 0.37
+      },
+      {
+        "Critic_Band": "70-79",
+        "Games": 2363,
+        "Sales": 1418.79,
+        "Avg_Sales_M": 0.6
+      },
+      {
+        "Critic_Band": "80-89",
+        "Games": 1678,
+        "Sales": 2051.39,
+        "Avg_Sales_M": 1.22
+      },
+      {
+        "Critic_Band": "90+",
+        "Games": 333,
+        "Sales": 943.89,
+        "Avg_Sales_M": 2.83
+      }
+    ],
+    "top_rated": [
+      {
+        "Game": "Uncharted 2: Among Thieves",
+        "Platform": "PS3",
+        "Release_Year": 2009.0,
+        "Critic_Score": 96.0,
+        "Critic_Count": 105.0,
+        "User_Score": 8.8,
+        "Global_Sales": 6.66
+      },
+      {
+        "Game": "Call of Duty: Modern Warfare 2",
+        "Platform": "X360",
+        "Release_Year": 2009.0,
+        "Critic_Score": 94.0,
+        "Critic_Count": 100.0,
+        "User_Score": 6.3,
+        "Global_Sales": 13.47
+      },
+      {
+        "Game": "Uncharted 4: A Thief's End",
+        "Platform": "PS4",
+        "Release_Year": 2016.0,
+        "Critic_Score": 93.0,
+        "Critic_Count": 113.0,
+        "User_Score": 7.9,
+        "Global_Sales": 5.38
+      },
+      {
+        "Game": "God of War III",
+        "Platform": "PS3",
+        "Release_Year": 2010.0,
+        "Critic_Score": 92.0,
+        "Critic_Count": 101.0,
+        "User_Score": 8.7,
+        "Global_Sales": 4.8
+      },
+      {
+        "Game": "Bloodborne",
+        "Platform": "PS4",
+        "Release_Year": 2015.0,
+        "Critic_Score": 92.0,
+        "Critic_Count": 100.0,
+        "User_Score": 8.6,
+        "Global_Sales": 2.48
+      },
+      {
+        "Game": "XCOM 2",
+        "Platform": "PC",
+        "Release_Year": 2016.0,
+        "Critic_Score": 88.0,
+        "Critic_Count": 104.0,
+        "User_Score": 7.1,
+        "Global_Sales": 0.23
+      },
+      {
+        "Game": "Heavy Rain",
+        "Platform": "PS3",
+        "Release_Year": 2010.0,
+        "Critic_Score": 87.0,
+        "Critic_Count": 107.0,
+        "User_Score": 7.7,
+        "Global_Sales": 3.03
+      },
+      {
+        "Game": "Rise of the Tomb Raider",
+        "Platform": "XOne",
+        "Release_Year": 2015.0,
+        "Critic_Score": 86.0,
+        "Critic_Count": 102.0,
+        "User_Score": 8.0,
+        "Global_Sales": 1.38
+      },
+      {
+        "Game": "Halo 5: Guardians",
+        "Platform": "XOne",
+        "Release_Year": 2015.0,
+        "Critic_Score": 84.0,
+        "Critic_Count": 101.0,
+        "User_Score": 6.4,
+        "Global_Sales": 4.48
+      },
+      {
+        "Game": "Alan Wake",
+        "Platform": "X360",
+        "Release_Year": 2010.0,
+        "Critic_Score": 83.0,
+        "Critic_Count": 100.0,
+        "User_Score": 8.1,
+        "Global_Sales": 1.33
+      }
+    ]
+  },
+  "consoles": {
+    "rows": [
+      {
+        "Platform": "PS4",
+        "Titles": 1031,
+        "Global_M": 595.6,
+        "NA_%": 35.5,
+        "EU_%": 43.2,
+        "JP_%": 5.8,
+        "Other_%": 15.5,
+        "Avg_M": 0.578
+      },
+      {
+        "Platform": "Xbox One",
+        "Titles": 612,
+        "Global_M": 269.0,
+        "NA_%": 60.5,
+        "EU_%": 30.2,
+        "JP_%": 0.2,
+        "Other_%": 9.1,
+        "Avg_M": 0.44
+      }
+    ],
+    "shared_titles": 516,
+    "ps4_wins_share_pct": 72.0,
+    "ratio": 2.01,
+    "cross_check_n": 373,
+    "cross_check_newer_m": 366.3,
+    "cross_check_main_m": 283.2,
+    "cross_check_higher_pct": 33.0
+  },
+  "kpi": {
+    "Total games": "16,717",
+    "Total global sales": "8,920.3M",
+    "Top genre (sales)": "Action (1,745.3M)",
+    "Top genre (titles)": "Action (3,370 games)",
+    "Top platform": "PS2 (1,255.6M)",
+    "Top publisher": "Nintendo (1,788.8M)",
+    "Top selling game": "Wii Sports (82.53M)",
+    "Largest region": "North America (NA_Sales = 4,402.6M, 49.4%)",
+    "Avg critic score": "69.0 (n = 8,136)",
+    "Share of rows with reviews": "52.1%",
+    "Peak year": "2008 (680.8M)",
+    "Years covered": "1980-2020"
+  },
+  "totals": {
+    "games": 16717,
+    "global_sales": 8920.3,
+    "avg_per_game": 0.534,
+    "median_per_game": 0.17,
+    "platforms": 31,
+    "genres": 13,
+    "rated_rows": 8709,
+    "avg_critic": 69.0,
+    "avg_user": 7.13,
+    "year_min": 1980,
+    "year_max": 2020
+  }
+}

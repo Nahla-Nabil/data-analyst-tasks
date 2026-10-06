@@ -1,0 +1,42 @@
+{
+  "1. Genres (ordered by total sales)": [
+    6,
+    18
+  ],
+  "2. Platforms (ordered by total sales)": [
+    23,
+    53
+  ],
+  "3. Platform families": [
+    58,
+    63
+  ],
+  "4. Publishers - top 20 by sales, then the rest": [
+    68,
+    89
+  ],
+  "5. Critic score bands": [
+    94,
+    99
+  ],
+  "6. ESRB rating bands": [
+    104,
+    109
+  ],
+  "7. Decades": [
+    114,
+    118
+  ],
+  "8. Best-selling titles (SUMIF over the Game column)": [
+    123,
+    137
+  ],
+  "9. Regional mix": [
+    142,
+    145
+  ],
+  "10. Do reviews go with sales?": [
+    150,
+    156
+  ]
+}
