@@ -3,6 +3,8 @@
 # kept on the PC, not on GitHub: submitted zips, generated Power BI projects (the .pbix has the report),
 # Tableau extracts (the .twbx has the data) and local Power BI helper scripts
 **/NahlaNabil.zip
+**/NahlaNabil_Task12.zip
+**/NahlaNabil_Task12_slim.zip
 **/PowerBI/
 **/*.hyper
 Task 9/powerbi_tools/
