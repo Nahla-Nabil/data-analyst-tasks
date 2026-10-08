@@ -34,8 +34,15 @@ Then read `FINAL_REPORT.md` (the complete project report) and `KEY_INSIGHTS.md` 
 | `KEY_INSIGHTS.md` | KPI scorecard, findings, recommendations |
 | `cleaning_log.json` / `analysis_summary.json` | Machine-readable cleaning record and every reported number |
 
-## Rebuild (to verify)
+## Screenshots
 
+![Dashboard, all data](screenshots/1_dashboard_all_data.png)
+![Filtered: Manhattan + entire homes — every card and chart follows](screenshots/2_filtered_manhattan_entire.png)
+
+The filtered shot proves the slicers drive everything: 13,198 listings, $233 avg, 100% entire homes,
+top area Upper East Side.
+
+## Rebuild (to verify)
 ```
 python "Task 12/clean_data.py"       # raw -> Cleaned_AB_NYC_2019.csv
 python "Task 12/analysis.py"         # cleaned -> analysis_summary.json

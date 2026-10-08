@@ -175,12 +175,15 @@ try:
               ["1 night", "2 nights", "3 nights", "4-7 nights", "8-29 nights",
                "30 nights (monthly)", "31+ nights"])
 
-    for col, w in zip(("A", "C", "D", "E", "H", "I", "J", "L", "M", "P", "Q", "S", "T", "V", "W", "AL", "AM"),
-                       (14, 20, 12, 12, 20, 12, 12, 26, 12, 22, 12, 20, 12, 22, 12, 26, 12)):
+    for col, w in zip(("A", "C", "D", "E", "H", "I", "J", "L", "M", "P", "Q", "S", "T", "V", "W",
+                        "AL", "AM", "AX", "AY", "AZ", "BA", "BB", "BC"),
+                       (14, 20, 12, 12, 20, 12, 12, 26, 12, 22, 12, 20, 12, 22, 12,
+                        26, 12, 20, 12, 20, 12, 20, 12)):
         piv.Columns(col).ColumnWidth = w
 
-    # live feed: top-15 neighbourhoods for the bar chart
-    piv.Range("AL3").Value = "Chart feed: top 15 neighbourhoods (live)"
+    # live feeds: plain-formula ranges OUTSIDE the pivots (charts must not point
+    # into a pivot table: Excel turns them into pivot charts with every series)
+    piv.Range("AL3").Value = "Chart feeds (live formulas over the pivots)"
     piv.Range("AL3").Font.Bold = True
     piv.Range("AL3").Font.Color = rgb(DEEPPINK)
     piv.Range("AL5").Value = "Neighbourhood"
@@ -190,6 +193,26 @@ try:
         piv.Cells(r, 38).Formula = f"=IF(L{r}=\"\",\"\",L{r})"
         piv.Cells(r, 39).Formula = f"=IF(M{r}=\"\",\"\",M{r})"
         piv.Cells(r, 39).NumberFormat = "#,##0"
+    piv.Range("AX5").Value = "Borough"
+    piv.Range("AY5").Value = "Listings"
+    piv.Range("AZ5").Value = "Borough"
+    piv.Range("BA5").Value = "Avg price"
+    for i in range(5):
+        r = 6 + i
+        piv.Cells(r, 50).Formula = f"=IF(C{r}=\"\",\"\",C{r})"
+        piv.Cells(r, 51).Formula = f"=IF(D{r}=\"\",NA(),D{r})"  # NA() points are skipped, zeros would plot
+        piv.Cells(r, 51).NumberFormat = "#,##0"
+        piv.Cells(r, 52).Formula = f"=IF(C{r}=\"\",\"\",C{r})"
+        piv.Cells(r, 53).Formula = f"=IF(E{r}=\"\",NA(),E{r})"
+        piv.Cells(r, 53).NumberFormat = "$#,##0"
+    # availability feed with short labels (the full "Fully open (365)" overflows the chart edge)
+    piv.Range("BB5").Value = "Availability"
+    piv.Range("BC5").Value = "Listings"
+    for i in range(5):
+        r = 6 + i
+        piv.Cells(r, 54).Formula = f"=IF(S{r}=\"Fully open (365)\",\"Open all year\",IF(S{r}=\"\",\"\",S{r}))"
+        piv.Cells(r, 55).Formula = f"=IF(T{r}=\"\",NA(),T{r})"
+        piv.Cells(r, 55).NumberFormat = "#,##0"
 
     # ------------------------------------------------------------ canvas
     dash.Activate()
@@ -214,20 +237,30 @@ try:
         s.Shadow.Visible = False
         return s
 
-    def cloud(left, top, w, h, fill="FFFFFF", alpha=0.0):
+    def cloud(left, top, w, h, fill="FFFFFF"):
+        """A proper cloud: 4 overlapping ovals + base, grouped (msoShapeCloud
+        renders as a bowtie in this Excel build, so it is not used)."""
+        names = []
+
+        def oval(l, t, ww, hh):
+            s = shapes.AddShape(OVAL, l, t, ww, hh)
+            s.Fill.ForeColor.RGB = rgb(fill)
+            s.Line.Visible = False
+            s.Shadow.Visible = False
+            names.append(s.Name)
+            return s
+
+        oval(left + w * 0.05, top + h * 0.35, w * 0.35, h * 0.65)
+        oval(left + w * 0.25, top + h * 0.05, w * 0.40, h * 0.80)
+        oval(left + w * 0.55, top + h * 0.15, w * 0.38, h * 0.70)
+        oval(left + w * 0.10, top + h * 0.45, w * 0.80, h * 0.55)
         try:
-            s = shapes.AddShape(CLOUD, left, top, w, h)
+            g = shapes.Range(names).Group()
+            g.Line.Visible = False
+            g.Shadow.Visible = False
+            return g
         except Exception:
-            s = shapes.AddShape(OVAL, left, top, w, h)
-        s.Fill.ForeColor.RGB = rgb(fill)
-        try:
-            s.Fill.Transparency = alpha
-        except Exception:
-            pass
-        s.Line.ForeColor.RGB = rgb("D6E7F5")
-        s.Line.Weight = 1.0
-        s.Shadow.Visible = False
-        return s
+            return None
 
     def text(left, top, w, h, value, size=10, bold=False, color=INK, align=1, link=None, italic=False):
         t = shapes.AddTextbox(1, left, top, w, h)
@@ -251,16 +284,15 @@ try:
         return t
 
     W = 1400
-    # header: deep-blue sky band + pink strip + clouds
+    # header: deep-blue sky band + pink strip + clouds (right side only, clear of the title)
     box(0, 0, W - 4, 66, DEEPBLUE, None, radius=False)
     box(0, 66, W - 4, 10, PINK, None, radius=False)
-    for cx, cy, cw, chh in [(1050, 6, 120, 40), (1210, 22, 90, 30), (60, 10, 70, 24), (950, 30, 70, 22)]:
-        cloud(cx, cy, cw, chh, alpha=0.15)
+    for cx, cy, cw, chh in [(1060, 8, 120, 38), (1210, 24, 90, 28), (950, 30, 70, 22)]:
+        cloud(cx, cy, cw, chh)
     text(18, 10, 700, 26, "New York City Airbnb  |  Sweet-Stay Dashboard", 20, True, "FFFFFF")
-    text(18, 40, 900, 16, "", 9, False, "D6E4F0", link="='Pivot Tables'!$B$80")
-    text(W - 380, 12, 362, 44,
-         "Source: AB_NYC_2019.csv (Inside Airbnb, snapshot Sep 2019)\n48,884 listings  |  37,455 hosts  |  221 neighbourhoods",
-         8, False, "D6E4F0", align=3)
+    text(18, 40, 900, 14, "", 9, False, "D6E4F0", link="='Pivot Tables'!$B$80")
+    text(18, 53, 700, 12, "AB_NYC_2019 (Inside Airbnb)  |  Sep 2019 snapshot  |  48,884 listings  |  221 areas",
+         7.5, False, "D6E4F0")
 
     # KPI card formulas on the Pivot Tables sheet
     gp = lambda f: f'IFERROR(GETPIVOTDATA("{f}",\'Pivot Tables\'!$A$5),0)'
@@ -367,15 +399,14 @@ try:
     CX, CY, CW, CH, G = 200, 282, 388, 250, 10
     pos = lambda c, r: (CX + c * (CW + G), CY + r * (CH + G))
 
-    ch = chart(ptBor, xlColumnClustered, *pos(0, 0), CW, CH)
+    ch = chart(ptBor, xlColumnClustered, *pos(0, 0), CW, CH, source=piv.Range("AX5:AY10"))
     style_chart(ch, "Listings by borough (85% in two boroughs)")
     candy_points(ch.SeriesCollection(1))
     ch.SeriesCollection(1).HasDataLabels = True
     ch.SeriesCollection(1).DataLabels().NumberFormat = "#,##0"
     ch.ChartGroups(1).GapWidth = 55
 
-    ch = chart(ptBor, xlColumnClustered, *pos(1, 0), CW, CH,
-               source=piv.Range(f"D5:E{5 + ptBor.TableRange1.Rows.Count - 1}"))
+    ch = chart(ptBor, xlColumnClustered, *pos(1, 0), CW, CH, source=piv.Range("AZ5:BA10"))
     style_chart(ch, "Average nightly price by borough ($)")
     color_series(ch.SeriesCollection(1), PINK)
     ch.ChartGroups(1).GapWidth = 55
@@ -421,11 +452,12 @@ try:
     except Exception:
         pass
 
-    ch = chart(ptAv, xlColumnClustered, *pos(2, 1), CW, CH)
+    ch = chart(ptAv, xlColumnClustered, *pos(2, 1), CW, CH, source=piv.Range("BB5:BC10"))
     style_chart(ch, "Availability: barbelled supply")
     color_series(ch.SeriesCollection(1), YELLOW)
     ch.ChartGroups(1).GapWidth = 55
     ch.Axes(xlCategory).TickLabels.Font.Size = 7
+    ch.Axes(xlCategory).TickLabels.Orientation = 45  # last label overflows when horizontal
 
     ch = chart(ptStay, xlColumnClustered, *pos(0, 2), CW * 2 + G, CH)
     style_chart(ch, "Minimum stay: short breaks + a 30-night monthly spike")
@@ -445,7 +477,7 @@ try:
         "5. 86% of hosts hold one listing, but firms (Sonder 327, Blueground 232) top the chart.\n"
         "6. Two businesses in one file: 1-3 night stays plus a 30-night monthly spike."
     )
-    t = text(ix + 12, iy + 30, CW - 24, CH - 36, insights, 9, False, INK)
+    t = text(ix + 12, iy + 30, CW - 24, CH - 36, insights, 8.5, False, INK)
     t.TextFrame2.TextRange.ParagraphFormat.SpaceAfter = 2
 
     # how-to panel spans full width below
@@ -462,9 +494,8 @@ try:
     text(hx + 320, hy + 8, CW * 3 + G * 2 - 340, 104, howto, 9, False, INK)
 
     # ------------------------------------------------------------ slicers
-    box(8, 88, 182, hy + 120 - 88, "FFFFFF")
+    box(8, 88, 182, 552, "FFFFFF")
     text(18, 96, 160, 16, "FILTERS", 10, True, DEEPBLUE)
-    cloud(100, 96, 70, 22, fill="F2F7FD")
     all_pts = list(pivots.values())
 
     def slicer(field, caption, top_, height, cols=1, name=None):
@@ -512,11 +543,8 @@ try:
     if os.path.exists(OUT):
         os.remove(OUT)
     wb.SaveAs(OUT, FileFormat=51)
-    try:
-        dash.ExportAsFixedFormat(0, PDF)  # preview pdf of the dashboard sheet
-        print("pdf preview:", os.path.basename(PDF))
-    except Exception as e:
-        print("pdf preview skipped:", str(e)[:120])
+    # NOTE: no PDF export here - ExportAsFixedFormat hangs on machines without a PDF
+    # driver (use export_screenshots.py for PNG previews instead).
     print("saved", OUT)
     wb.Close(False)
 finally:

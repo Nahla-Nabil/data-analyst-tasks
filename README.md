@@ -360,7 +360,7 @@ flowchart TB
 
 <table>
 <tr>
-<td width="46%"><a href="Task%2012"><img src="Task 12/charts/11_map_sample.png" alt="Task 12 preview"></a></td>
+<td width="46%"><a href="Task%2012"><img src="Task 12/screenshots/1_dashboard_all_data.png" alt="Task 12 preview"></a></td>
 <td>
 
 **What I did**
