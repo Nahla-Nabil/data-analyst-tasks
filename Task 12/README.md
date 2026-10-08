@@ -9,6 +9,8 @@ The map basemap needs internet for its tiles; every chart works offline (plotly.
 
 Prefer Office? Open **`Airbnb_Dashboard.xlsx`** (enable editing so the slicers work) — same story in
 candy colours with clouds: 7 KPI cards, 7 pivot charts, 5 slicers and insight panels.
+Or open **`Airbnb_NYC_Dashboard.pbix`** in Power BI Desktop (built from `PowerBI/` via `build_powerbi.py`,
+see `Power_BI_Guide.md`): 5 pages, 15 DAX measures, synced slicers, candy theme.
 
 Then read `FINAL_REPORT.md` (the complete project report) and `KEY_INSIGHTS.md` (findings + decisions).
 
@@ -24,8 +26,10 @@ Then read `FINAL_REPORT.md` (the complete project report) and `KEY_INSIGHTS.md` 
 | `build_dashboard.py` | Builds the self-contained Plotly dashboard |
 | `build_excel_base.py` | Base workbook: `Airbnb_Base.xlsx` (tblAirbnb + 17 KPI formulas + 6 analysis tables + logs) |
 | `build_excel_dashboard.py` | Excel COM layer: 7 pivots, 7 charts, 5 slicers, candy+clouds design → `Airbnb_Dashboard.xlsx` |
+| `build_powerbi.py` | PBIP project: `PowerBI/` (5 pages, 15 DAX measures, synced slicers, candy theme) → save as `.pbix` in Power BI Desktop |
 | `Airbnb_NYC_Dashboard.html` | Interactive dashboard (KPIs, filters, map, table) |
 | `Airbnb_Dashboard.xlsx` | Excel dashboard (same story, pivots + slicers + clouds) |
+| `Airbnb_NYC_Dashboard.pbix` | Power BI dashboard (5 pages, data included) + `screenshots/powerbi_*.png` |
 | `FINAL_REPORT.md` | Final report: overview → cleaning → analysis → dashboard → insights → recommendations |
 | `KEY_INSIGHTS.md` | KPI scorecard, findings, recommendations |
 | `cleaning_log.json` / `analysis_summary.json` | Machine-readable cleaning record and every reported number |
@@ -38,6 +42,14 @@ Then read `FINAL_REPORT.md` (the complete project report) and `KEY_INSIGHTS.md` 
 The filtered shot proves the slicers drive everything: 13,198 listings, $233 avg, 100% entire homes,
 top area Upper East Side.
 
+### Power BI pages
+
+![PBIP overview](screenshots/powerbi_1_overview.png)
+![PBIP prices](screenshots/powerbi_2_prices.png)
+![PBIP demand](screenshots/powerbi_3_demand.png)
+![PBIP supply](screenshots/powerbi_4_supply.png)
+![PBIP insights](screenshots/powerbi_5_insights.png)
+
 ## Rebuild (to verify)
 ```
 python "Task 12/clean_data.py"       # raw -> Cleaned_AB_NYC_2019.csv
@@ -46,6 +58,8 @@ python "Task 12/make_charts.py"      # cleaned -> charts/*.png
 python "Task 12/build_dashboard.py"  # cleaned -> Airbnb_NYC_Dashboard.html
 python "Task 12/build_excel_base.py"       # cleaned -> Airbnb_Base.xlsx
 python "Task 12/build_excel_dashboard.py"  # base -> Airbnb_Dashboard.xlsx (needs Excel)
+python "Task 12/build_powerbi.py"    # cleaned -> PowerBI/*.pbip (open in Power BI Desktop, Refresh, save as .pbix)
+python "Task 12/export_screenshots.py"  # dashboard -> screenshots/1-2_*.png (needs Excel)
 ```
 
 Excel notes: open `Airbnb_Dashboard.xlsx` with **Enable Editing** so the slicers work.

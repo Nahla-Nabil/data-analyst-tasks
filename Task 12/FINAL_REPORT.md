@@ -82,6 +82,10 @@ table with borough filter and click-to-sort**. Slicers: chart legends, switcher 
 The same story ships in Excel too. **`Airbnb_Dashboard.xlsx`** (candy design with clouds):
 7 live KPI cards, 7 pivot charts, 5 slicers (borough, room type, price band, availability, host size)
 on one shared pivot cache, plus KPIs/Analysis/Pivot Tables/Data/Cleaning Log/Data Dictionary sheets.
+And in Power BI: **`Airbnb_NYC_Dashboard.pbix`** (built from `PowerBI/` — see `Power_BI_Guide.md`):
+5 pages (Overview, Prices, Demand, Supply, Insights), 15 DAX measures including a Pearson
+price–reviews correlation and a Top Neighbourhood measure, synced slicers and the same candy theme.
+Price averages exclude $1,000+ outliers, matching this report.
 
 ## 7. Key findings
 
