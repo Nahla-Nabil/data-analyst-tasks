@@ -370,7 +370,7 @@ flowchart TB
 
 **💡 Key finding:** **Manhattan ($149) costs 2.3× the Bronx ($65)**, yet **price buys zero reviews (r = −0.06)** — demand follows value corridors (Queens, Bed-Stuy), and 36% of "supply" shows zero open days.
 
-📎 [Report](Task%2012/FINAL_REPORT.md) · [Insights](Task%2012/KEY_INSIGHTS.md) · [HTML dashboard](Task%2012/Airbnb_NYC_Dashboard.html) · [Excel](Task%2012/Airbnb_Dashboard.xlsx) · [Power BI (.pbix)](Task%2012/Airbnb_NYC_Dashboard.pbix) · [Power BI guide](Task%2012/Power_BI_Guide.md)
+📎 [Report](Task%2012/FINAL_REPORT.md) · [Insights](Task%2012/KEY_INSIGHTS.md) · [HTML dashboard](Task%2012/Airbnb_NYC_Dashboard.html) · [Excel](Task%2012/Airbnb_Dashboard.xlsx) · [Power BI (.pbix)](Task%2012/Airbnb_NYC_Dashboard.pbix)
 </td>
 </tr>
 </table>

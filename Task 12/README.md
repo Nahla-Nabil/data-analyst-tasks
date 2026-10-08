@@ -9,8 +9,8 @@ The map basemap needs internet for its tiles; every chart works offline (plotly.
 
 Prefer Office? Open **`Airbnb_Dashboard.xlsx`** (enable editing so the slicers work) — same story in
 candy colours with clouds: 7 KPI cards, 7 pivot charts, 5 slicers and insight panels.
-Or open **`Airbnb_NYC_Dashboard.pbix`** in Power BI Desktop (built from `PowerBI/` via `build_powerbi.py`,
-see `Power_BI_Guide.md`): 5 pages, 15 DAX measures, synced slicers, candy theme.
+Or open **`Airbnb_NYC_Dashboard.pbix`** in Power BI Desktop (built from `PowerBI/` via `build_powerbi.py`):
+5 pages, 15 DAX measures, synced slicers, candy theme.
 
 Then read `FINAL_REPORT.md` (the complete project report) and `KEY_INSIGHTS.md` (findings + decisions).
 
