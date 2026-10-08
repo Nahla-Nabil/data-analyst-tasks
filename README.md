@@ -45,7 +45,7 @@
 | <img src="assets/chips/09.svg" alt="09" width="56"> | [**Customer Data Analysis**](#task-9) | Customers · 2,150 records | HTML, Power BI and PDF summary | $750+ orders: 26% of orders, 45% of revenue |
 | <img src="assets/chips/10.svg" alt="10" width="56"> | [**Movie Analytics**](#task-10) | TMDB 5000 · 4,803 movies | Power BI dashboard (7 pages) | Small films return most per dollar; $100M+ films are the safest bet |
 | <img src="assets/chips/11.svg" alt="11" width="56"> | [**Video Game Industry**](#task-11) | Games · 16,717 titles | Excel dashboard (Pivots, Slicers and Timeline) | Top 1% of titles take 22% of all sales |
-| <img src="assets/chips/12.svg" alt="12" width="56"> | [**NYC Airbnb — Final Project**](#task-12) | Airbnb NYC · 48,884 listings | HTML + Excel + Power BI dashboards, final report | Manhattan $149 vs Bronx $65; price buys zero reviews (r = −0.06) |
+| <img src="assets/chips/12.svg" alt="12" width="56"> | [**NYC Airbnb — Final Project**](#task-12) | Airbnb NYC · 48,884 listings | HTML + Excel dashboards, final report | Manhattan $149 vs Bronx $65; price buys zero reviews (r = −0.06) |
 
 <br>
 
@@ -365,12 +365,12 @@ flowchart TB
 
 **What I did**
 - Cleaned 48,895 NYC listings (11 impossible $0 prices removed, 10,052 review gaps resolved 1:1, outliers flagged never dropped)
-- Answered all 7 EDA questions with 12 charts and **three dashboards**: self-contained **HTML/Plotly**, **Excel** (7 pivots, 7 charts, 5 slicers, candy+clouds design) and **Power BI** (PBIP, 5 pages, 15 DAX measures)
+- Answered all 7 EDA questions with 12 charts and **two dashboards**: self-contained **HTML/Plotly** and **Excel** (7 pivots, 7 charts, 5 slicers, candy+clouds design)
 - Delivered a final report plus insights with 7 recommendations
 
 **💡 Key finding:** **Manhattan ($149) costs 2.3× the Bronx ($65)**, yet **price buys zero reviews (r = −0.06)** — demand follows value corridors (Queens, Bed-Stuy), and 36% of "supply" shows zero open days.
 
-📎 [Report](Task%2012/FINAL_REPORT.md) · [Insights](Task%2012/KEY_INSIGHTS.md) · [HTML dashboard](Task%2012/Airbnb_NYC_Dashboard.html) · [Excel](Task%2012/Airbnb_Dashboard.xlsx) · [Power BI guide](Task%2012/Power_BI_Guide.md)
+📎 [Report](Task%2012/FINAL_REPORT.md) · [Insights](Task%2012/KEY_INSIGHTS.md) · [HTML dashboard](Task%2012/Airbnb_NYC_Dashboard.html) · [Excel](Task%2012/Airbnb_Dashboard.xlsx)
 </td>
 </tr>
 </table>

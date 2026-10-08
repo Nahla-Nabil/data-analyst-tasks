@@ -9,8 +9,6 @@ The map basemap needs internet for its tiles; every chart works offline (plotly.
 
 Prefer Office? Open **`Airbnb_Dashboard.xlsx`** (enable editing so the slicers work) — same story in
 candy colours with clouds: 7 KPI cards, 7 pivot charts, 5 slicers and insight panels.
-Or open **`PowerBI/Airbnb_NYC_Dashboard.pbip`** in Power BI Desktop (see `Power_BI_Guide.md`):
-5 pages, 15 DAX measures, synced slicers, candy theme.
 
 Then read `FINAL_REPORT.md` (the complete project report) and `KEY_INSIGHTS.md` (findings + decisions).
 
@@ -19,17 +17,15 @@ Then read `FINAL_REPORT.md` (the complete project report) and `KEY_INSIGHTS.md` 
 | File | Contents |
 |---|---|
 | `data_raw/AB_NYC_2019.csv` | Raw dataset, never modified (48,895 rows × 16 columns) |
-| `Cleaned_AB_NYC_2019.csv` | Cleaned + engineered data (48,884 rows × 26 columns) |
+| `Cleaned_AB_NYC_2019.csv` | Cleaned + engineered data (48,884 rows × 30 columns) |
 | `clean_data.py` | Cleaning pipeline (raw → cleaned + `cleaning_log.json`) |
 | `analysis.py` | EDA pipeline (cleaned → `analysis_summary.json`) |
 | `make_charts.py` | 12 matplotlib charts in `charts/` |
 | `build_dashboard.py` | Builds the self-contained Plotly dashboard |
 | `build_excel_base.py` | Base workbook: `Airbnb_Base.xlsx` (tblAirbnb + 17 KPI formulas + 6 analysis tables + logs) |
 | `build_excel_dashboard.py` | Excel COM layer: 7 pivots, 7 charts, 5 slicers, candy+clouds design → `Airbnb_Dashboard.xlsx` |
-| `build_powerbi.py` | PBIP project: `PowerBI/` (5 pages, 15 DAX measures, synced slicers, candy theme) |
 | `Airbnb_NYC_Dashboard.html` | Interactive dashboard (KPIs, filters, map, table) |
 | `Airbnb_Dashboard.xlsx` | Excel dashboard (same story, pivots + slicers + clouds) |
-| `PowerBI/` + `Power_BI_Guide.md` | Power BI project and how to open/refresh/save it |
 | `FINAL_REPORT.md` | Final report: overview → cleaning → analysis → dashboard → insights → recommendations |
 | `KEY_INSIGHTS.md` | KPI scorecard, findings, recommendations |
 | `cleaning_log.json` / `analysis_summary.json` | Machine-readable cleaning record and every reported number |
@@ -50,7 +46,6 @@ python "Task 12/make_charts.py"      # cleaned -> charts/*.png
 python "Task 12/build_dashboard.py"  # cleaned -> Airbnb_NYC_Dashboard.html
 python "Task 12/build_excel_base.py"       # cleaned -> Airbnb_Base.xlsx
 python "Task 12/build_excel_dashboard.py"  # base -> Airbnb_Dashboard.xlsx (needs Excel)
-python "Task 12/build_powerbi.py"    # cleaned -> PowerBI/*.pbip
 ```
 
 Excel notes: open `Airbnb_Dashboard.xlsx` with **Enable Editing** so the slicers work.
@@ -71,7 +66,8 @@ freezes Excel; every Dashboard card stays a live formula).
   `flag_price_outlier`; means/correlations use price ≤ $1,000. 43 rows demanding ≥ 365 minimum
   nights kept with `flag_min_nights_extreme`.
 - **Engineered:** `price_band`, `avail_segment`, `host_size`, `booked_proxy`
-  (= 365 − availability_365), `revenue_proxy` (= price × booked_proxy).
+  (= 365 − availability_365), `revenue_proxy` (= price × booked_proxy), plus Excel helpers
+  `price_capped`, `is_entire_home`, `is_zero_avail`, `stay_bin`.
 
 ## Headline results
 

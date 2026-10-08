@@ -79,11 +79,9 @@ Self-contained Plotly dashboard (plotly.js embedded; map tiles need internet): *
 6,000-point listing map, price-vs-reviews scatter, availability bar — plus a **Top-25 neighbourhood
 table with borough filter and click-to-sort**. Slicers: chart legends, switcher buttons, table filter.
 
-The same story ships in two more tools. **`Airbnb_Dashboard.xlsx`** (candy design with clouds):
+The same story ships in Excel too. **`Airbnb_Dashboard.xlsx`** (candy design with clouds):
 7 live KPI cards, 7 pivot charts, 5 slicers (borough, room type, price band, availability, host size)
 on one shared pivot cache, plus KPIs/Analysis/Pivot Tables/Data/Cleaning Log/Data Dictionary sheets.
-**`PowerBI/Airbnb_NYC_Dashboard.pbip`** (see `Power_BI_Guide.md`): 5 pages, 15 DAX measures
-(incl. Pearson r and Top Neighbourhood), synced slicers and the same candy theme.
 
 ## 7. Key findings
 
