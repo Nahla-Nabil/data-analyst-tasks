@@ -1,6 +1,6 @@
 <a id="top"></a>
 <p align="center">
-   <img src="assets/banner.svg" alt="Data Analyst Internship at VOLTIX - Nahla Nabil - 11 of 12 tasks complete" width="100%">
+   <img src="assets/banner.svg" alt="Data Analyst Internship at VOLTIX - Nahla Nabil - 12 of 12 tasks complete" width="100%">
 </p>
 
 <p align="center">
@@ -26,7 +26,7 @@
 
 <br>
 
-<img src="assets/stats.svg" alt="11 of 12 tasks, 172K+ rows cleaned, 16 dashboards and reports, 4 core tools" width="100%">
+<img src="assets/stats.svg" alt="12 of 12 tasks, 221K+ rows cleaned, 19 dashboards and reports, 4 core tools" width="100%">
 
 <br>
 
@@ -45,7 +45,7 @@
 | <img src="assets/chips/09.svg" alt="09" width="56"> | [**Customer Data Analysis**](#task-9) | Customers · 2,150 records | HTML, Power BI and PDF summary | $750+ orders: 26% of orders, 45% of revenue |
 | <img src="assets/chips/10.svg" alt="10" width="56"> | [**Movie Analytics**](#task-10) | TMDB 5000 · 4,803 movies | Power BI dashboard (7 pages) | Small films return most per dollar; $100M+ films are the safest bet |
 | <img src="assets/chips/11.svg" alt="11" width="56"> | [**Video Game Industry**](#task-11) | Games · 16,717 titles | Excel dashboard (Pivots, Slicers and Timeline) | Top 1% of titles take 22% of all sales |
-| <img src="assets/chips/12.svg" alt="12" width="56"> | *coming soon* | | | |
+| <img src="assets/chips/12.svg" alt="12" width="56"> | [**NYC Airbnb — Final Project**](#task-12) | Airbnb NYC · 48,884 listings | HTML + Excel + Power BI dashboards, final report | Manhattan $149 vs Bronx $65; price buys zero reviews (r = −0.06) |
 
 <br>
 
@@ -76,7 +76,7 @@ timeline
     section Week 5
         02 Oct : Task 10 · Movies
         05 Oct : Task 11 · Video games
-        Next : Task 12
+        08 Oct : Task 12 · NYC Airbnb
 ```
 
 <br>
@@ -355,7 +355,27 @@ flowchart TB
 
 <p align="right"><a href="#top">↑ back to top</a></p>
 
-<p align="center"><b>Task 12:</b> <i>coming soon. It will be added here once it is released.</i></p>
+<a id="task-12"></a>
+<img src="assets/headers/task12.svg" alt="Task 12: NYC Airbnb Final Project" width="100%">
+
+<table>
+<tr>
+<td width="46%"><a href="Task%2012"><img src="Task 12/charts/11_map_sample.png" alt="Task 12 preview"></a></td>
+<td>
+
+**What I did**
+- Cleaned 48,895 NYC listings (11 impossible $0 prices removed, 10,052 review gaps resolved 1:1, outliers flagged never dropped)
+- Answered all 7 EDA questions with 12 charts and **three dashboards**: self-contained **HTML/Plotly**, **Excel** (7 pivots, 7 charts, 5 slicers, candy+clouds design) and **Power BI** (PBIP, 5 pages, 15 DAX measures)
+- Delivered a final report plus insights with 7 recommendations
+
+**💡 Key finding:** **Manhattan ($149) costs 2.3× the Bronx ($65)**, yet **price buys zero reviews (r = −0.06)** — demand follows value corridors (Queens, Bed-Stuy), and 36% of "supply" shows zero open days.
+
+📎 [Report](Task%2012/FINAL_REPORT.md) · [Insights](Task%2012/KEY_INSIGHTS.md) · [HTML dashboard](Task%2012/Airbnb_NYC_Dashboard.html) · [Excel](Task%2012/Airbnb_Dashboard.xlsx) · [Power BI guide](Task%2012/Power_BI_Guide.md)
+</td>
+</tr>
+</table>
+
+<p align="right"><a href="#top">↑ back to top</a></p>
 
 <br>
 

@@ -1,0 +1,93 @@
+{
+  "source": "AB_NYC_2019.csv",
+  "steps": [
+    {
+      "action": "duplicates",
+      "detail": "0 fully-duplicate rows, 0 duplicate ids -> none found, nothing removed"
+    },
+    {
+      "action": "price_zero",
+      "detail": "removed 11 rows with price == 0 (impossible nightly price, 0.02% of file)"
+    },
+    {
+      "action": "missing_names",
+      "detail": "name: 16 -> 'Unnamed listing'; host_name: 21 -> 'Unknown host' (both flagged)"
+    },
+    {
+      "action": "reviews",
+      "detail": "10052 rows missing last_review/reviews_per_month are exactly the zero-review rows: reviews_per_month filled with 0, flag_never_reviewed set, last_review left as NaT"
+    },
+    {
+      "action": "price_outliers",
+      "detail": "239 rows priced above $1000 (max $10000) kept with flag_price_outlier; means/correlations use price <= 1000"
+    },
+    {
+      "action": "minimum_nights",
+      "detail": "43 rows require >= 365 nights (max 1250) kept with flag_min_nights_extreme; spikes at 1/2/3/30 nights are genuine monthly-rental behaviour"
+    },
+    {
+      "action": "coordinates",
+      "detail": "0 rows outside the NYC bounding box -> none, no action"
+    },
+    {
+      "action": "excel_helpers",
+      "detail": "added price_capped (min(price,1000)), is_entire_home, is_zero_avail, stay_bin"
+    },
+    {
+      "action": "features",
+      "detail": "added price_band, avail_segment, host_size, booked_proxy (=365-availability_365), revenue_proxy (=price*booked_proxy), price_capped, is_entire_home, is_zero_avail, stay_bin"
+    }
+  ],
+  "rows_in": 48895,
+  "cols_in": [
+    "id",
+    "name",
+    "host_id",
+    "host_name",
+    "neighbourhood_group",
+    "neighbourhood",
+    "latitude",
+    "longitude",
+    "room_type",
+    "price",
+    "minimum_nights",
+    "number_of_reviews",
+    "last_review",
+    "reviews_per_month",
+    "calculated_host_listings_count",
+    "availability_365"
+  ],
+  "rows_out": 48884,
+  "cols_out": [
+    "id",
+    "name",
+    "host_id",
+    "host_name",
+    "neighbourhood_group",
+    "neighbourhood",
+    "latitude",
+    "longitude",
+    "room_type",
+    "price",
+    "minimum_nights",
+    "number_of_reviews",
+    "last_review",
+    "reviews_per_month",
+    "calculated_host_listings_count",
+    "availability_365",
+    "flag_name_missing",
+    "flag_host_name_missing",
+    "flag_never_reviewed",
+    "flag_price_outlier",
+    "flag_min_nights_extreme",
+    "price_band",
+    "avail_segment",
+    "host_size",
+    "booked_proxy",
+    "revenue_proxy",
+    "price_capped",
+    "is_entire_home",
+    "is_zero_avail",
+    "stay_bin"
+  ]
+}

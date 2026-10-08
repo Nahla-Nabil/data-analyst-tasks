@@ -1,0 +1,548 @@
+{
+  "kpis": {
+    "listings": 48884,
+    "hosts": 37455,
+    "neighbourhoods": 221,
+    "median_price": 105.0,
+    "mean_price_capped": 141.3,
+    "median_price_entire": 160.0,
+    "median_price_private": 70.0,
+    "median_price_shared": 45.0,
+    "pct_entire": 52.0,
+    "pct_private": 45.7,
+    "pct_shared": 2.4,
+    "pct_manhattan": 44.3,
+    "pct_brooklyn": 41.1,
+    "pct_never_reviewed": 20.6,
+    "pct_avail_zero": 35.9,
+    "mean_availability": 112.8,
+    "median_availability": 45.0,
+    "total_reviews": 1137628,
+    "mean_reviews": 23.27
+  },
+  "boroughs": [
+    {
+      "neighbourhood_group": "Bronx",
+      "n": 1090,
+      "entire_share": 0.348,
+      "mean_reviews": 25.977981651376147,
+      "mean_avail": 165.79449541284404,
+      "median": 65.0,
+      "mean": 85.4,
+      "share": 0.0223
+    },
+    {
+      "neighbourhood_group": "Brooklyn",
+      "n": 20095,
+      "entire_share": 0.476,
+      "mean_reviews": 24.197661109728788,
+      "mean_avail": 100.21731774073153,
+      "median": 90.0,
+      "mean": 117.9,
+      "share": 0.4111
+    },
+    {
+      "neighbourhood_group": "Manhattan",
+      "n": 21660,
+      "entire_share": 0.609,
+      "mean_reviews": 20.98656509695291,
+      "mean_avail": 111.98457987072946,
+      "median": 149.0,
+      "mean": 178.9,
+      "share": 0.4431
+    },
+    {
+      "neighbourhood_group": "Queens",
+      "n": 5666,
+      "entire_share": 0.37,
+      "mean_reviews": 27.70031768443346,
+      "mean_avail": 144.45181786092482,
+      "median": 75.0,
+      "mean": 95.0,
+      "share": 0.1159
+    },
+    {
+      "neighbourhood_group": "Staten Island",
+      "n": 373,
+      "entire_share": 0.472,
+      "mean_reviews": 30.94101876675603,
+      "mean_avail": 199.67828418230562,
+      "median": 75.0,
+      "mean": 98.6,
+      "share": 0.0076
+    }
+  ],
+  "room_types": [
+    {
+      "room_type": "Entire home/apt",
+      "n": 25407,
+      "mean_reviews": 22.844098083205417,
+      "mean_avail": 111.92624079977959,
+      "median": 160.0,
+      "mean": 194.6,
+      "share": 0.5197
+    },
+    {
+      "room_type": "Private room",
+      "n": 22319,
+      "mean_reviews": 24.104081724091582,
+      "mean_avail": 111.20363815583136,
+      "median": 70.0,
+      "mean": 84.8,
+      "share": 0.4566
+    },
+    {
+      "room_type": "Shared room",
+      "n": 1158,
+      "mean_reviews": 16.622625215889464,
+      "mean_avail": 161.87305699481865,
+      "median": 45.0,
+      "mean": 67.7,
+      "share": 0.0237
+    }
+  ],
+  "top_neighbourhoods_by_count": [
+    {
+      "neighbourhood": "Williamsburg",
+      "n": 3919,
+      "med_price_capped": 105.0,
+      "mean_reviews": 21.797397295228375
+    },
+    {
+      "neighbourhood": "Bedford-Stuyvesant",
+      "n": 3710,
+      "med_price_capped": 80.0,
+      "mean_reviews": 29.667924528301885
+    },
+    {
+      "neighbourhood": "Harlem",
+      "n": 2658,
+      "med_price_capped": 89.0,
+      "mean_reviews": 28.578630549285176
+    },
+    {
+      "neighbourhood": "Bushwick",
+      "n": 2462,
+      "med_price_capped": 65.0,
+      "mean_reviews": 21.32047116165719
+    },
+    {
+      "neighbourhood": "Upper West Side",
+      "n": 1971,
+      "med_price_capped": 150.0,
+      "mean_reviews": 18.294266869609334
+    },
+    {
+      "neighbourhood": "Hell's Kitchen",
+      "n": 1958,
+      "med_price_capped": 166.0,
+      "mean_reviews": 25.652196118488252
+    },
+    {
+      "neighbourhood": "East Village",
+      "n": 1853,
+      "med_price_capped": 150.0,
+      "mean_reviews": 24.10685375067458
+    },
+    {
+      "neighbourhood": "Upper East Side",
+      "n": 1798,
+      "med_price_capped": 149.0,
+      "mean_reviews": 17.622914349276975
+    },
+    {
+      "neighbourhood": "Crown Heights",
+      "n": 1564,
+      "med_price_capped": 85.0,
+      "mean_reviews": 23.278772378516624
+    },
+    {
+      "neighbourhood": "Midtown",
+      "n": 1545,
+      "med_price_capped": 208.5,
+      "mean_reviews": 12.585113268608414
+    },
+    {
+      "neighbourhood": "East Harlem",
+      "n": 1117,
+      "med_price_capped": 99.0,
+      "mean_reviews": 32.628469113697406
+    },
+    {
+      "neighbourhood": "Greenpoint",
+      "n": 1114,
+      "med_price_capped": 119.0,
+      "mean_reviews": 17.429982046678635
+    },
+    {
+      "neighbourhood": "Chelsea",
+      "n": 1113,
+      "med_price_capped": 199.0,
+      "mean_reviews": 21.240790655884997
+    },
+    {
+      "neighbourhood": "Lower East Side",
+      "n": 911,
+      "med_price_capped": 138.0,
+      "mean_reviews": 26.521405049396268
+    },
+    {
+      "neighbourhood": "Astoria",
+      "n": 900,
+      "med_price_capped": 85.0,
+      "mean_reviews": 21.455555555555556
+    }
+  ],
+  "priciest_neighbourhoods_min30": [
+    {
+      "neighbourhood": "Tribeca",
+      "n": 177,
+      "med_price_capped": 282.0,
+      "mean_reviews": 11.491525423728813
+    },
+    {
+      "neighbourhood": "NoHo",
+      "n": 78,
+      "med_price_capped": 250.0,
+      "mean_reviews": 12.743589743589743
+    },
+    {
+      "neighbourhood": "Flatiron District",
+      "n": 80,
+      "med_price_capped": 223.0,
+      "mean_reviews": 17.7375
+    },
+    {
+      "neighbourhood": "Midtown",
+      "n": 1545,
+      "med_price_capped": 208.5,
+      "mean_reviews": 12.585113268608414
+    },
+    {
+      "neighbourhood": "West Village",
+      "n": 768,
+      "med_price_capped": 200.0,
+      "mean_reviews": 19.381510416666668
+    },
+    {
+      "neighbourhood": "Financial District",
+      "n": 744,
+      "med_price_capped": 200.0,
+      "mean_reviews": 9.315860215053764
+    },
+    {
+      "neighbourhood": "Chelsea",
+      "n": 1113,
+      "med_price_capped": 199.0,
+      "mean_reviews": 21.240790655884997
+    },
+    {
+      "neighbourhood": "Greenwich Village",
+      "n": 392,
+      "med_price_capped": 196.0,
+      "mean_reviews": 16.647959183673468
+    },
+    {
+      "neighbourhood": "SoHo",
+      "n": 358,
+      "med_price_capped": 195.0,
+      "mean_reviews": 20.20949720670391
+    },
+    {
+      "neighbourhood": "Murray Hill",
+      "n": 484,
+      "med_price_capped": 190.0,
+      "mean_reviews": 9.369834710743802
+    },
+    {
+      "neighbourhood": "DUMBO",
+      "n": 36,
+      "med_price_capped": 189.0,
+      "mean_reviews": 38.388888888888886
+    },
+    {
+      "neighbourhood": "Theater District",
+      "n": 288,
+      "med_price_capped": 189.0,
+      "mean_reviews": 15.07638888888889
+    },
+    {
+      "neighbourhood": "Battery Park City",
+      "n": 70,
+      "med_price_capped": 187.5,
+      "mean_reviews": 8.285714285714286
+    },
+    {
+      "neighbourhood": "Nolita",
+      "n": 253,
+      "med_price_capped": 175.5,
+      "mean_reviews": 22.268774703557312
+    },
+    {
+      "neighbourhood": "Vinegar Hill",
+      "n": 34,
+      "med_price_capped": 175.0,
+      "mean_reviews": 16.029411764705884
+    }
+  ],
+  "cheapest_neighbourhoods_min30": [
+    {
+      "neighbourhood": "Ridgewood",
+      "n": 423,
+      "med_price_capped": 60.0,
+      "mean_reviews": 18.38770685579196
+    },
+    {
+      "neighbourhood": "East Elmhurst",
+      "n": 185,
+      "med_price_capped": 60.0,
+      "mean_reviews": 81.65945945945946
+    },
+    {
+      "neighbourhood": "Woodside",
+      "n": 235,
+      "med_price_capped": 60.0,
+      "mean_reviews": 21.425531914893618
+    },
+    {
+      "neighbourhood": "Wakefield",
+      "n": 50,
+      "med_price_capped": 60.0,
+      "mean_reviews": 25.58
+    },
+    {
+      "neighbourhood": "Elmhurst",
+      "n": 237,
+      "med_price_capped": 59.0,
+      "mean_reviews": 23.434599156118143
+    },
+    {
+      "neighbourhood": "Norwood",
+      "n": 31,
+      "med_price_capped": 58.0,
+      "mean_reviews": 16.741935483870968
+    },
+    {
+      "neighbourhood": "Parkchester",
+      "n": 39,
+      "med_price_capped": 55.0,
+      "mean_reviews": 23.358974358974358
+    },
+    {
+      "neighbourhood": "Borough Park",
+      "n": 136,
+      "med_price_capped": 53.5,
+      "mean_reviews": 16.41176470588235
+    },
+    {
+      "neighbourhood": "Woodhaven",
+      "n": 88,
+      "med_price_capped": 52.0,
+      "mean_reviews": 31.727272727272727
+    },
+    {
+      "neighbourhood": "Corona",
+      "n": 64,
+      "med_price_capped": 40.0,
+      "mean_reviews": 28.21875
+    }
+  ],
+  "correlations_capped": {
+    "price_vs_reviews": -0.058,
+    "price_vs_reviews_per_month": -0.056,
+    "price_vs_availability": 0.118,
+    "reviews_vs_rpm": 0.589
+  },
+  "median_price_by_reviews_bucket": {
+    "0": 120.0,
+    "1-10": 105.0,
+    "11-50": 100.0,
+    "51-200": 100.0,
+    "200+": 99.0
+  },
+  "avail_segments": {
+    "Inactive (0 days)": 17530,
+    "High (181-364)": 13066,
+    "Low (1-90)": 11711,
+    "Medium (91-180)": 5282,
+    "Fully open (365)": 1295
+  },
+  "price_bands": {
+    "Mid ($75-150)": 18710,
+    "Budget (<$75)": 15236,
+    "Premium ($150-300)": 11581,
+    "Luxury ($300+)": 3357
+  },
+  "host_sizes_listings_share": {
+    "Single (1)": 0.6608,
+    "Small (2-5)": 0.2412,
+    "Mid (6-20)": 0.0529,
+    "Large (21+)": 0.0451
+  },
+  "single_listing_hosts_share": 0.862,
+  "top_hosts": [
+    {
+      "host_id": 219517861,
+      "host_name": "Sonder (NYC)",
+      "listings": 327
+    },
+    {
+      "host_id": 107434423,
+      "host_name": "Blueground",
+      "listings": 232
+    },
+    {
+      "host_id": 30283594,
+      "host_name": "Kara",
+      "listings": 121
+    },
+    {
+      "host_id": 137358866,
+      "host_name": "Kazuya",
+      "listings": 103
+    },
+    {
+      "host_id": 16098958,
+      "host_name": "Jeremy & Laura",
+      "listings": 96
+    },
+    {
+      "host_id": 12243051,
+      "host_name": "Sonder",
+      "listings": 96
+    },
+    {
+      "host_id": 61391963,
+      "host_name": "Corporate Housing",
+      "listings": 91
+    },
+    {
+      "host_id": 22541573,
+      "host_name": "Ken",
+      "listings": 87
+    },
+    {
+      "host_id": 200380610,
+      "host_name": "Pranjal",
+      "listings": 65
+    },
+    {
+      "host_id": 7503643,
+      "host_name": "Vida",
+      "listings": 52
+    }
+  ],
+  "min_nights_spikes": {
+    "1": 12717,
+    "2": 11693,
+    "3": 7998,
+    "30": 3758,
+    "4": 3302,
+    "5": 3033,
+    "7": 2058,
+    "6": 752
+  },
+  "last_review_range": [
+    "2011-03-28 00:00:00",
+    "2019-07-08 00:00:00"
+  ],
+  "performance_by_borough": [
+    {
+      "neighbourhood_group": "Bronx",
+      "mean_reviews": 26.0,
+      "mean_rpm": 1.5,
+      "mean_booked": 199.2,
+      "median_revenue_proxy": 11805.0
+    },
+    {
+      "neighbourhood_group": "Brooklyn",
+      "mean_reviews": 24.2,
+      "mean_rpm": 1.0,
+      "mean_booked": 264.8,
+      "median_revenue_proxy": 23542.0
+    },
+    {
+      "neighbourhood_group": "Manhattan",
+      "mean_reviews": 21.0,
+      "mean_rpm": 1.0,
+      "mean_booked": 253.0,
+      "median_revenue_proxy": 33945.0
+    },
+    {
+      "neighbourhood_group": "Queens",
+      "mean_reviews": 27.7,
+      "mean_rpm": 1.6,
+      "mean_booked": 220.5,
+      "median_revenue_proxy": 16165.0
+    },
+    {
+      "neighbourhood_group": "Staten Island",
+      "mean_reviews": 30.9,
+      "mean_rpm": 1.6,
+      "mean_booked": 165.3,
+      "median_revenue_proxy": 10527.0
+    }
+  ],
+  "top_neighbourhoods_by_reviews": [
+    {
+      "neighbourhood": "East Elmhurst",
+      "n": 185,
+      "mean_reviews": 81.65945945945946,
+      "mean_rpm": 4.458
+    },
+    {
+      "neighbourhood": "Jamaica",
+      "n": 231,
+      "mean_reviews": 42.900432900432904,
+      "mean_rpm": 2.617142857142857
+    },
+    {
+      "neighbourhood": "South Slope",
+      "n": 284,
+      "mean_reviews": 36.63732394366197,
+      "mean_rpm": 1.0623591549295774
+    },
+    {
+      "neighbourhood": "Canarsie",
+      "n": 147,
+      "mean_reviews": 36.31292517006803,
+      "mean_rpm": 1.9713605442176871
+    },
+    {
+      "neighbourhood": "Flushing",
+      "n": 426,
+      "mean_reviews": 34.78403755868545,
+      "mean_rpm": 1.9245305164319249
+    },
+    {
+      "neighbourhood": "Cypress Hills",
+      "n": 135,
+      "mean_reviews": 33.2,
+      "mean_rpm": 1.8557777777777777
+    },
+    {
+      "neighbourhood": "East Harlem",
+      "n": 1117,
+      "mean_reviews": 32.628469113697406,
+      "mean_rpm": 1.413661593554163
+    },
+    {
+      "neighbourhood": "Gowanus",
+      "n": 247,
+      "mean_reviews": 31.210526315789473,
+      "mean_rpm": 1.174331983805668
+    },
+    {
+      "neighbourhood": "East New York",
+      "n": 218,
+      "mean_reviews": 31.004587155963304,
+      "mean_rpm": 1.7491743119266054
+    },
+    {
+      "neighbourhood": "Prospect Heights",
+      "n": 357,
+      "mean_reviews": 30.462184873949578,
+      "mean_rpm": 0.947843137254902
+    }
+  ]
+}
